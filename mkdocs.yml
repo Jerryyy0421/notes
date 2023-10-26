@@ -1,0 +1,28 @@
+site_name: 我的第一个站点
+
+nav:
+  - 首页: index.md  
+  - 数学学习: Math.md
+
+theme:
+  name: material
+
+markdown_extensions:
+    - meta # 支持markdown博客文件头的元数据，比如标题
+    - toc:
+        permalink: "#"
+        baselevel: 1
+        separator: "_"
+    - footnotes # 支持脚注
+    - admonition  # 支持提示块
+    - pymdownx.details  # 提示块可折叠
+    - attr_list 
+    - pymdownx.inlinehilite # 支持行内语法高亮
+    # - pymdownx.highlight: # 支持代码块语法高亮，！！！跟mermaid冲突
+    #     linenums: true # 显示行号
+    - pymdownx.superfences: # 可在列表等处嵌入块
+        # make exceptions to highlighting of code:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:mermaid2.fence_mermaid
