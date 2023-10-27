@@ -1,0 +1,1406 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="生生不息">
+      
+      
+      
+      
+        <link rel="prev" href="../../algorithm/Math-In-ACM-I/">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>CodeForces 补全计划（1826 ~ 1850） - Ana_Su's NoteBook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1826_codeforces_round_870_div_2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Ana_Su&#39;s NoteBook" class="md-header__button md-logo" aria-label="Ana_Su's NoteBook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ana_Su's NoteBook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CodeForces 补全计划（1826 ~ 1850）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Math/" class="md-tabs__link">
+          
+  
+  数理学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../algorithm/Math-In-ACM-I/" class="md-tabs__link">
+          
+  
+  算法竞赛
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Ana_Su&#39;s NoteBook" class="md-nav__button md-logo" aria-label="Ana_Su's NoteBook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
+
+    </a>
+    Ana_Su's NoteBook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            首页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    数理学习
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            数理学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    算法竞赛
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            算法竞赛
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    算法专题
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            算法专题
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithm/Math-In-ACM-I/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数学1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    CF 补全计划
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            CF 补全计划
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1826 ~ 1850
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1826 ~ 1850
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1826_codeforces_round_870_div_2" class="md-nav__link">
+    1826. Codeforces Round 870 (Div. 2)
+  </a>
+  
+    <nav class="md-nav" aria-label="1826. Codeforces Round 870 (Div. 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e_walk_the_runway" class="md-nav__link">
+    E. Walk the Runway
+  </a>
+  
+    <nav class="md-nav" aria-label="E. Walk the Runway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f_fading_into_fog" class="md-nav__link">
+    F. Fading into Fog
+  </a>
+  
+    <nav class="md-nav" aria-label="F. Fading into Fog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_1" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1828_codeforces_round_873_div_2" class="md-nav__link">
+    1828. Codeforces Round 873 (Div. 2)
+  </a>
+  
+    <nav class="md-nav" aria-label="1828. Codeforces Round 873 (Div. 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d2_range_sorting_hard_version" class="md-nav__link">
+    D2. Range Sorting (Hard Version)
+  </a>
+  
+    <nav class="md-nav" aria-label="D2. Range Sorting (Hard Version)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_2" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_palindrome_partition" class="md-nav__link">
+    E. Palindrome Partition
+  </a>
+  
+    <nav class="md-nav" aria-label="E. Palindrome Partition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_3" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f_two_centroids" class="md-nav__link">
+    F. Two Centroids
+  </a>
+  
+    <nav class="md-nav" aria-label="F. Two Centroids">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_4" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1829_codeforces_round_871_div_4" class="md-nav__link">
+    1829. Codeforces Round 871 (Div. 4)
+  </a>
+  
+    <nav class="md-nav" aria-label="1829. Codeforces Round 871 (Div. 4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#g_hits_different" class="md-nav__link">
+    G. Hits Different
+  </a>
+  
+    <nav class="md-nav" aria-label="G. Hits Different">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_5" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1837_educational_codeforces_round_149_rated_for_div_2" class="md-nav__link">
+    1837. Educational Codeforces Round 149 (Rated for Div. 2)
+  </a>
+  
+    <nav class="md-nav" aria-label="1837. Educational Codeforces Round 149 (Rated for Div. 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e_playoff_fixing" class="md-nav__link">
+    E. Playoff Fixing
+  </a>
+  
+    <nav class="md-nav" aria-label="E. Playoff Fixing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_6" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f_editorial_for_two" class="md-nav__link">
+    F. Editorial for Two
+  </a>
+  
+    <nav class="md-nav" aria-label="F. Editorial for Two">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_7" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1840_codeforces_round_878_div_3" class="md-nav__link">
+    1840. Codeforces Round 878 (Div. 3)
+  </a>
+  
+    <nav class="md-nav" aria-label="1840. Codeforces Round 878 (Div. 3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f_railguns" class="md-nav__link">
+    F. Railguns
+  </a>
+  
+    <nav class="md-nav" aria-label="F. Railguns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_8" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_8" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g2_in_search_of_truth_hard_version" class="md-nav__link">
+    G2. In Search of Truth (Hard Version)
+  </a>
+  
+    <nav class="md-nav" aria-label="G2. In Search of Truth (Hard Version)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_9" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_9" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1848_codeforces_round_885_div_2" class="md-nav__link">
+    1848. Codeforces Round 885 (Div. 2)
+  </a>
+  
+    <nav class="md-nav" aria-label="1848. Codeforces Round 885 (Div. 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_vika_and_price_tags" class="md-nav__link">
+    C. Vika and Price Tags
+  </a>
+  
+    <nav class="md-nav" aria-label="C. Vika and Price Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_10" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_10" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d_vika_and_bonuses" class="md-nav__link">
+    D. Vika and Bonuses
+  </a>
+  
+    <nav class="md-nav" aria-label="D. Vika and Bonuses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_11" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_11" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f_vika_and_wiki" class="md-nav__link">
+    F. Vika and Wiki
+  </a>
+  
+    <nav class="md-nav" aria-label="F. Vika and Wiki">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_12" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_12" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1850_codeforces_round_886_div_4" class="md-nav__link">
+    1850. Codeforces Round 886 (Div. 4)
+  </a>
+  
+    <nav class="md-nav" aria-label="1850. Codeforces Round 886 (Div. 4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f_we_were_both_children" class="md-nav__link">
+    F. We Were Both Children
+  </a>
+  
+    <nav class="md-nav" aria-label="F. We Were Both Children">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_13" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_13" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h_the_third_letter" class="md-nav__link">
+    H. The Third Letter
+  </a>
+  
+    <nav class="md-nav" aria-label="H. The Third Letter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_14" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution_14" class="md-nav__link">
+    Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>1826 ~ 1850</h1>
+
+<p>千里之行，始于足下。</p>
+<!--more-->
+
+<h2 id="1826_codeforces_round_870_div_2">1826. <a href="https://codeforces.com/contest/1826">Codeforces Round 870 (Div. 2)</a><a class="headerlink" href="#1826_codeforces_round_870_div_2" title="Permanent link">#</a></h2>
+<h3 id="e_walk_the_runway"><a href="https://codeforces.com/contest/1826/problem/E">E. Walk the Runway</a><a class="headerlink" href="#e_walk_the_runway" title="Permanent link">#</a></h3>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h4>
+<p><span class="arithmatex">\(n\)</span> 个人每个人都有一个价值 <span class="arithmatex">\(p_i\)</span>，然后这 <span class="arithmatex">\(n\)</span> 个人有 <span class="arithmatex">\(m\)</span> 维数值，要求你从中选取若干个人并且可以任意调整选的人的顺序，要求选的人满足 <span class="arithmatex">\(m\)</span> 维中每一维里选的人的数值都严格递增。</p>
+<p><span class="arithmatex">\(n \le 5000,m \le 500\)</span>。</p>
+<h4 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">#</a></h4>
+<p>如果我们已知两个人之间的偏序关系，我们可以在两个人之间连一条有向边（或不连），故这 <span class="arithmatex">\(n\)</span> 个人的关系可以用一个有向无环图来表示，在图上跑 dfs，时间复杂度是 <span class="arithmatex">\(O(n^2)\)</span>，是完全够的，那么我们现在研究如何求任意两个人之间偏序关系。</p>
+<p>直接暴力求偏序关系的时间复杂度是 <span class="arithmatex">\(O(n^2m)\)</span>，显然是会 T 的，那么我们可以用 bitset 来优化。对每一维排完序后前面的肯定不会排在这个数的后面，故每次用 bitset 的 &amp; 运算即可，时间复杂度是 <span class="arithmatex">\(O(\dfrac{m}{w})\)</span>，其中 <span class="arithmatex">\(w\)</span> 等于 <span class="arithmatex">\(64\)</span>。</p>
+<p><a href="https://codeforces.com/contest/1826/submission/212761847">Code</a></p>
+<h3 id="f_fading_into_fog"><a href="https://codeforces.com/contest/1826/problem/F">F. Fading into Fog</a><a class="headerlink" href="#f_fading_into_fog" title="Permanent link">#</a></h3>
+<h4 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">#</a></h4>
+<p>交互题</p>
+<p>有 <span class="arithmatex">\(n\)</span> 个隐藏点，每次你可以给出 <span class="arithmatex">\(a\)</span>，<span class="arithmatex">\(b\)</span>，<span class="arithmatex">\(c\)</span>，询问一条形如 <span class="arithmatex">\(ax+by+c=0\)</span> 的直线，交互库会以<strong>任意顺序</strong>告诉你每个点在直线上的投影（保证每个返回的投影点与真实投影点的距离不超过 <span class="arithmatex">\(10^{-4}\)</span>）。</p>
+<p>请用最少的询问求出这些隐藏点的位置，精度相差 <span class="arithmatex">\(10^{-3}\)</span> 即可。</p>
+<p>保证每个隐藏点的与其他隐藏点的 <span class="arithmatex">\(x\)</span> 坐标和 <span class="arithmatex">\(y\)</span> 坐标都至少相差 <span class="arithmatex">\(1\)</span>，每次询问的 <span class="arithmatex">\(∣a∣+∣b∣≥0.1\)</span>。</p>
+<h4 id="solution_1">Solution<a class="headerlink" href="#solution_1" title="Permanent link">#</a></h4>
+<p>通过画图观察不难发现，其实最多三次询问就可以确定这 <span class="arithmatex">\(n\)</span> 个点了，所以题目就变为不超过三次询问求出 <span class="arithmatex">\(n\)</span> 点，一条平行 <span class="arithmatex">\(x\)</span> 轴，一条平行 <span class="arithmatex">\(y\)</span> 轴，一条斜着的边（但是很贴近 <span class="arithmatex">\(x\)</span> 轴），前两个就可以确定这 <span class="arithmatex">\(n\)</span> 个点的横纵坐标，第三个完全确定这 <span class="arithmatex">\(n\)</span> 个点。</p>
+<p>为什么第三条线要贴近 <span class="arithmatex">\(x\)</span> 轴呢？因为我们的处理方法是对第一，三条线得到的 <span class="arithmatex">\(n\)</span> 个投影点按横坐标排序，选一条贴近 <span class="arithmatex">\(x\)</span> 轴的线保证这 <span class="arithmatex">\(n\)</span> 个点和第一条线的 <span class="arithmatex">\(n\)</span> 个点顺序一致，这样的话我们就可以算出每个点纵坐标的值，但不准确可能会有误差，但是我们知道每个点的纵坐标，所以我们可以找纵坐标和我们计算的估计值中最贴近的值来替换。</p>
+<p>值得注意的是，本题对精度要求较高，应用 <code>long double</code> 来存储</p>
+<p><a href="https://codeforces.com/contest/1826/submission/212805712">Code</a></p>
+<h2 id="1828_codeforces_round_873_div_2">1828. <a href="https://codeforces.com/contest/1828">Codeforces Round 873 (Div. 2)</a><a class="headerlink" href="#1828_codeforces_round_873_div_2" title="Permanent link">#</a></h2>
+<h3 id="d2_range_sorting_hard_version"><a href="https://codeforces.com/contest/1828/problem/D2">D2. Range Sorting (Hard Version)</a><a class="headerlink" href="#d2_range_sorting_hard_version" title="Permanent link">#</a></h3>
+<h4 id="description_2">Description<a class="headerlink" href="#description_2" title="Permanent link">#</a></h4>
+<p>对一个数组 <span class="arithmatex">\(\{p_i\}\)</span> 的一段区间 <span class="arithmatex">\([l,r]\)</span> 排序的代价为 <span class="arithmatex">\(r−l\)</span> ，对整个数组 <span class="arithmatex">\(p_i\)</span> 排序的代价为选定若干区间并排序，使得整个数组有序的代价之和。</p>
+<p>求 <span class="arithmatex">\(\{a_i\}\)</span> 的所有子段排序的代价之和。</p>
+<p>Easy Version <span class="arithmatex">\(n \le 5 \times 10^3\)</span></p>
+<p>Hard Version <span class="arithmatex">\(n \le 3 \times 10^5\)</span></p>
+<h4 id="solution_2">Solution<a class="headerlink" href="#solution_2" title="Permanent link">#</a></h4>
+<p>有点难想。</p>
+<p>仔细观察样例，不难发现一些性质：</p>
+<ul>
+<li>操作区间一定是不重叠的，不然直接对整个区间操作更优。</li>
+<li>尽可能多区间操作会使答案更优。</li>
+<li>更分成两个区间操作则一定满足前一个区间的最大值小于后一个区间的最小值。</li>
+</ul>
+<p>那么基于以上性质，我们很容易搞出 <span class="arithmatex">\(O(n^3)\)</span> 暴力：枚举区间左右端点，枚举中间间隔点，提前用 st表 预处理出区间最大最小值然后来求，但是这样发现连 Easy Version 都过不了，故我们可以来稍改进一下思路。</p>
+<p>对于 Easy Version，我们可以固定左端点，每次枚举右端点，每次向后加入一个新的数时，我们要重新计算对答案的贡献，我们算 <span class="arithmatex">\([l, r]\)</span> 区间的答案就是区间长度减去最多可拆分区间数，假设我们已经知道了 <span class="arithmatex">\([l, r - 1]\)</span> 区间的答案以及划分区间，加入 <span class="arithmatex">\(a_r\)</span> 数后，我们其实就是要把这个数和某个区间合并，满足合并后的区间的最小值依然大于前面区间的最大值。所以我们可以记录之前几个划分区间的最大值，然后不断向前跳，看 <span class="arithmatex">\(a_r\)</span> 可以和哪几个区间合并，找到第一个可以合并的区间就直接合并，这样一定是最优的。合并完之后更新新的拆分区间，答案也比较好统计，时间复杂度 <span class="arithmatex">\(O(n^2)\)</span>。</p>
+<p>对于 Hard Vesion，我们发现很难从 Easy Version 上再继续优化，我们换另一个思路。能过 <span class="arithmatex">\(3 \times 10^5\)</span> 的做法应该是 <span class="arithmatex">\(O(nlogn)\)</span> 或 <span class="arithmatex">\(O(n)\)</span> 的，所以我们要找到这个复杂度的算法应该是算每个位置所能做出的贡献。我们先算最坏情况下一共的代价为 <span class="arithmatex">\(\sum_{i = 2}^{n}(i - 1)(n - i + 1)\)</span>，然后我们再算每个位置对代价能减少的贡献。若能对答案产生减少的贡献，对于一个大区间，我们一定可以拆分成两个小区间。对于每个位置，我们不妨假设这个位置 <span class="arithmatex">\(i\)</span> 上的数是后一个区间的最小值。然后我们往后找到第一个小于 <span class="arithmatex">\(a_i\)</span> 的数的位置 <span class="arithmatex">\(r_i\)</span>（这里求“第一个小于“这样的位置，我们可以用单调栈来求），然后再往前找第一个小于 <span class="arithmatex">\(a_i\)</span> 的数的位置 <span class="arithmatex">\(l_i\)</span>，那么我们可以确定后一个区间的左端点是 <span class="arithmatex">\((l_i + 1)\)</span>，右端点是在 <span class="arithmatex">\(i \sim (r_i - 1)\)</span> 里选。然后前一个区间的右端点是 <span class="arithmatex">\(l_i\)</span>，最后只用确定前一个区间的左端点，这里我们可以用 st表 先求出区间最大值，然后不断跳表来求出左端点 <span class="arithmatex">\(kdl\)</span>。然后这个位置的数对答案减少的贡献为 <span class="arithmatex">\((r_i - i)\times(l_i - kdl + 1)\)</span>，时间复杂度为 <span class="arithmatex">\(O(nlogn)\)</span>。</p>
+<p><a href="https://codeforces.com/contest/1828/submission/212909151">Code (Easy Version)</a></p>
+<p><a href="https://codeforces.com/contest/1828/submission/213004607">Code (Hard Version)</a></p>
+<h3 id="e_palindrome_partition"><a href="https://codeforces.com/contest/1828/problem/E">E. Palindrome Partition</a><a class="headerlink" href="#e_palindrome_partition" title="Permanent link">#</a></h3>
+<h4 id="description_3">Description<a class="headerlink" href="#description_3" title="Permanent link">#</a></h4>
+<p>称一个字符串是好的，当且仅当它是一个长度为偶数的回文串或由若干长度为偶数的回文串拼接而成。</p>
+<p>给定一个长度为 <span class="arithmatex">\(n\)</span> 的字符串 <span class="arithmatex">\(s\)</span>，求有多少 <span class="arithmatex">\(s\)</span> 的子串是好的。</p>
+<p><span class="arithmatex">\(1≤n≤5×10^5\)</span>，<span class="arithmatex">\(s\)</span> 仅包含小写字母。</p>
+<h4 id="solution_3">Solution<a class="headerlink" href="#solution_3" title="Permanent link">#</a></h4>
+<p>根据数据范围可以得出正解的时间复杂度应该是 <span class="arithmatex">\(O(n)\)</span> 或 <span class="arithmatex">\(O(nlogn)\)</span> 的。</p>
+<p>本题采用动态规划，可以令 <span class="arithmatex">\(g[i]\)</span> 表示以 <span class="arithmatex">\(i\)</span> 结尾的好串个数，那么显然答案就是 <span class="arithmatex">\(\sum_{i = 1}^n g[i]\)</span> 。那么怎么求 <span class="arithmatex">\(g[i]\)</span> 呢，我们考虑到对于一个回文串，我们把它尽可能多分为由若干回文字串组成，分到不能分为止。这样分解出来的每一个回文串里一定不会包含回文前缀 / 后缀（因为要是包含的话就又可以分解了）。这样分解之后，对于一个好的字符串，一定是由若干小的不可分解的回文串组成。而且显然这种分解方法是唯一的。说明这样的话，对于每个好的字符串而言我们只算了一次，正是我们想要的。基于这个思路，我们再引入一个新的数组 <span class="arithmatex">\(f[i]\)</span>，<span class="arithmatex">\(f[i]\)</span> 表示以 <span class="arithmatex">\(i\)</span> 结尾的回文串的最小长度，因为以 <span class="arithmatex">\(i\)</span> 结尾的字串一定是包含以 <span class="arithmatex">\(i\)</span> 结尾的最小回文串的，而且基于之前的分解方法，我们可以得到 <span class="arithmatex">\(g[i] = g[i - f[i]] + 1(f[i] \ne 0)\)</span>，当 <span class="arithmatex">\(f[i] = 0\)</span> 时，<span class="arithmatex">\(g[i] = 0\)</span>。那么现在我们将问题转化为了如何求 <span class="arithmatex">\(f[i]\)</span>，我们先进行一遍 Manacher 算法，求出以每一位为对称轴的最大回文半径，由于要求是偶回文，所以我们只考虑以两个位置中间为轴。我们发现，若以第 <span class="arithmatex">\(i\)</span> 位为轴，那么 <span class="arithmatex">\([i + 1, i + len[i]]\)</span> 这个范围内是都可以作为回文结尾的，可以被 <span class="arithmatex">\(i\)</span> 覆盖。而想要让回文最小，就是从后向前扫一遍，如果先被以 <span class="arithmatex">\(i\)</span> 覆盖的，一定满足以 <span class="arithmatex">\(i\)</span> 为轴回文最小，我们知道了右端点和回文轴就可以计算出回文长度了，也就可以计算出 <span class="arithmatex">\(f[i]\)</span> 了，要注意的是，如果区间中一部分点被之前的对称轴覆盖了，那么我们被之后对称轴覆盖时要跳过这几个点，可以用双向链表来维护。</p>
+<p><a href="https://codeforces.com/contest/1828/submission/213452328">Code</a></p>
+<h3 id="f_two_centroids"><a href="https://codeforces.com/contest/1828/problem/F">F. Two Centroids</a><a class="headerlink" href="#f_two_centroids" title="Permanent link">#</a></h3>
+<h4 id="description_4">Description<a class="headerlink" href="#description_4" title="Permanent link">#</a></h4>
+<h4 id="solution_4">Solution<a class="headerlink" href="#solution_4" title="Permanent link">#</a></h4>
+<h2 id="1829_codeforces_round_871_div_4">1829. <a href="https://codeforces.com/contest/1829">Codeforces Round 871 (Div. 4)</a><a class="headerlink" href="#1829_codeforces_round_871_div_4" title="Permanent link">#</a></h2>
+<h3 id="g_hits_different"><a href="https://codeforces.com/contest/1829/problem/G">G. Hits Different</a><a class="headerlink" href="#g_hits_different" title="Permanent link">#</a></h3>
+<h4 id="description_5">Description<a class="headerlink" href="#description_5" title="Permanent link">#</a></h4>
+<p><img alt="1829G" src="1829G.png" /></p>
+<p>若干块以金字塔状摆放，用球击倒下方的，上方也会倒下，第 <span class="arithmatex">\(n\)</span> 块分数 <span class="arithmatex">\(n^2\)</span>，问用球打第 <span class="arithmatex">\(n\)</span> 块能得多少分</p>
+<h4 id="solution_5">Solution<a class="headerlink" href="#solution_5" title="Permanent link">#</a></h4>
+<p>方法一：</p>
+<p>​   动态规划， <span class="arithmatex">\(f[i]\)</span> 表示击打第 <span class="arithmatex">\(i\)</span> 块能得的分数，<span class="arithmatex">\(f[i] = f[左上] + f[右上] - f[公共]\)</span>，因为左上和右上是有公共部分会多算，所以简单容斥一下</p>
+<p>方法二：</p>
+<p>​   还是动态规划，先把图倾斜 <span class="arithmatex">\(45°\)</span></p>
+<p>​   <img alt="1829G-sol1" src="1829G-sol1.png" /></p>
+<p>​   感觉变好看了一点（？）</p>
+<p>​   再转45°</p>
+<p><img alt="1829G-sol2" src="1829G-sol2.png" /></p>
+<p>​   嗯，变成一个简单二维DP就能解决的问题了</p>
+<p><a href="https://codeforces.com/contest/1829/submission/211201013">Code (Method I)</a></p>
+<p><a href="https://codeforces.com/contest/1829/submission/211200275">Code (Method II)</a></p>
+<h2 id="1837_educational_codeforces_round_149_rated_for_div_2">1837. <a href="https://codeforces.com/contest/1837">Educational Codeforces Round 149 (Rated for Div. 2)</a><a class="headerlink" href="#1837_educational_codeforces_round_149_rated_for_div_2" title="Permanent link">#</a></h2>
+<h3 id="e_playoff_fixing"><a href="https://codeforces.com/contest/1837/problem/E">E. Playoff Fixing</a><a class="headerlink" href="#e_playoff_fixing" title="Permanent link">#</a></h3>
+<h4 id="description_6">Description<a class="headerlink" href="#description_6" title="Permanent link">#</a></h4>
+<p>给定数 <span class="arithmatex">\(k\)</span>，一共有 <span class="arithmatex">\(2^k\)</span> 个人参加比赛，序号越小的实力越强。每轮第 <span class="arithmatex">\(2i\)</span> 和 <span class="arithmatex">\(2i-1\)</span> 进行比赛，一共进行 <span class="arithmatex">\(k\)</span> 轮，最后要求序号为 <span class="arithmatex">\(1\)</span> 的一直留到最后一轮，序号为 <span class="arithmatex">\(2\)</span> 的留到倒数第二轮，序号为 <span class="arithmatex">\(3 \sim 4\)</span> 的留到倒数第三轮，以此类推，序号 <span class="arithmatex">\(2^{k - 1} + 1\)</span> 到 <span class="arithmatex">\(2^k\)</span> 的人要求第一轮淘汰，给定部分人当前位置，如果这个位置上还没确定选手就用 <span class="arithmatex">\(-1\)</span> 表示，问一共又有多少种表示合法方案</p>
+<h4 id="solution_6">Solution<a class="headerlink" href="#solution_6" title="Permanent link">#</a></h4>
+<p>第一轮中，我们可以知道序号 <span class="arithmatex">\(2^{k - 1} + 1\)</span> 到 <span class="arithmatex">\(2^k\)</span> 的人可以安排在哪里，一定是在 <span class="arithmatex">\(\{1,2\}\)</span>，<span class="arithmatex">\(\{3,4\},\cdots, \{2^k - 1,2^k\}\)</span> 中各选一个，如果两个都没选则两个位置都可以放，记一下这种情况的个数是 <span class="arithmatex">\(cnt1\)</span>，如果一个位置放了小于 <span class="arithmatex">\(2^{k-1}\)</span> 的序号，那么只能选另一个位置放，如果两个位置都被选了且不合法，那么就返回 <span class="arithmatex">\(0\)</span>，设一共有 <span class="arithmatex">\(cnt2\)</span> 个可以放的位置，那么这轮方案数是 <span class="arithmatex">\(2^{cnt1} \times cnt1 !\)</span> 而且这一轮放置的人下一轮都被淘汰了，所以无后效性，然后下一轮其实就变为规模折半的子问题，不断迭代计算即可</p>
+<p><a href="https://codeforces.com/contest/1837/submission/211143124">Code</a></p>
+<h3 id="f_editorial_for_two"><a href="https://codeforces.com/contest/1837/problem/F">F. Editorial for Two</a><a class="headerlink" href="#f_editorial_for_two" title="Permanent link">#</a></h3>
+<h4 id="description_7">Description<a class="headerlink" href="#description_7" title="Permanent link">#</a></h4>
+<p><span class="arithmatex">\(n\)</span> 个数中选 <span class="arithmatex">\(k\)</span> 个数（不改变在原序列中顺序），要求这 <span class="arithmatex">\(k\)</span> 个数分为前后两半后，这前后两部分和的最大值尽可能小。</p>
+<h4 id="solution_7">Solution<a class="headerlink" href="#solution_7" title="Permanent link">#</a></h4>
+<p>这道题可以用二分来做，对于二分值 <span class="arithmatex">\(lim\)</span>，先正着扫一遍，再倒着扫一遍，扫到第 <span class="arithmatex">\(i\)</span> 位置时，我们只要算一下前 <span class="arithmatex">\(i - 1\)</span> 位置中 和不超过 <span class="arithmatex">\(lim\)</span> 的最多可以选的数的个数 + 后 <span class="arithmatex">\(i\)</span> 到 <span class="arithmatex">\(n\)</span> 位置中 和不超过 <span class="arithmatex">\(k\)</span> 的最多可以选的数的个数  之和是不是大于 <span class="arithmatex">\(k\)</span> 即可。</p>
+<p><a href="https://codeforces.com/contest/1837/submission/211151946">Code</a></p>
+<h2 id="1840_codeforces_round_878_div_3">1840. <a href="https://codeforces.com/contest/1840">Codeforces Round 878 (Div. 3)</a><a class="headerlink" href="#1840_codeforces_round_878_div_3" title="Permanent link">#</a></h2>
+<h3 id="f_railguns"><a href="https://codeforces.com/contest/1840/problem/F">F. Railguns</a><a class="headerlink" href="#f_railguns" title="Permanent link">#</a></h3>
+<h4 id="description_8">Description<a class="headerlink" href="#description_8" title="Permanent link">#</a></h4>
+<p>Tema 在 <span class="arithmatex">\(n⋅m\)</span> 的网格内要从 <span class="arithmatex">\((0,0)\)</span> 走到 <span class="arithmatex">\(n⋅m\)</span>。第 <span class="arithmatex">\(0\)</span> 秒末 Tema 位于 <span class="arithmatex">\((0,0)\)</span>。</p>
+<p>每次行动 Tema 可以选择向下走，向右走或不动。</p>
+<p>机器人会发射 <span class="arithmatex">\(r\)</span> 次激光炮以阻挠他前进，具体为在第 <span class="arithmatex">\(t\)</span> 秒，向第 <span class="arithmatex">\(x\)</span> 行或第 <span class="arithmatex">\(x\)</span> 列发射激光炮，一整列或一整行都会受到炮击。若 Tema 在第 <span class="arithmatex">\(t\)</span> 秒末还停留在被炮击的单元格内则会被击毁。求 Tema 从 <span class="arithmatex">\((0,0)\)</span> 到达 <span class="arithmatex">\((n,m)\)</span> 的最短时间，若无法抵达，则输出 <span class="arithmatex">\(−1\)</span>。</p>
+<p><span class="arithmatex">\(r\)</span> 次炮击格式为 <span class="arithmatex">\(t\)</span>，<span class="arithmatex">\(d\)</span>，<span class="arithmatex">\(coord\)</span> ，<span class="arithmatex">\(t\)</span> 表示炮击发生的时间，<span class="arithmatex">\(d\)</span> 表示炮击方式 ( <span class="arithmatex">\(d=1\)</span> 时攻击一整行，<span class="arithmatex">\(d=2\)</span> 时攻击一整列)，<span class="arithmatex">\(coord\)</span> 表示攻击的是具体哪一行/列）</p>
+<h4 id="solution_8">Solution<a class="headerlink" href="#solution_8" title="Permanent link">#</a></h4>
+<p>设 <span class="arithmatex">\(f[i][j][k]\)</span> 表示在 <span class="arithmatex">\(k\)</span> 时刻到第 <span class="arithmatex">\(i\)</span> 行第 <span class="arithmatex">\(j\)</span> 列是否合法，由于我们发现时间 <span class="arithmatex">\(t\)</span> 的范围是到 <span class="arithmatex">\(10^9\)</span> 且到达某位置的时间 <span class="arithmatex">\(t\)</span> 只和 <span class="arithmatex">\(i\)</span>，<span class="arithmatex">\(j\)</span>，和停下躲避了几次有关，而且躲避的次数最多不超过 <span class="arithmatex">\(100\)</span> 次，所以 <span class="arithmatex">\(k\)</span> 可以用停下躲避的次数来表示，这样转移方程就很简单了  <span class="arithmatex">\(f[i][j][k] = f[i - 1][j][k] | f[i][j - 1][k] | f[i][j][k - 1]\)</span> 。</p>
+<p><a href="https://codeforces.com/contest/1840/submission/211968399">Code</a></p>
+<h3 id="g2_in_search_of_truth_hard_version"><a href="https://codeforces.com/contest/1840/problem/G2">G2. In Search of Truth (Hard Version)</a><a class="headerlink" href="#g2_in_search_of_truth_hard_version" title="Permanent link">#</a></h3>
+<h4 id="description_9">Description<a class="headerlink" href="#description_9" title="Permanent link">#</a></h4>
+<p>交互题</p>
+<p>一个转盘共 <span class="arithmatex">\(n\)</span>（ <span class="arithmatex">\(n\)</span> 未知 ）个格子，格子 <span class="arithmatex">\(1\)</span> 到 <span class="arithmatex">\(n\)</span> 乱序编号，你每次可以顺/逆时针旋转 <span class="arithmatex">\(k\)</span> 个格子，输出顺/逆时针（分别用“+”、“-”表示）和 <span class="arithmatex">\(k\)</span>。需要读取起始格子的编号和每次旋转后格子的编号，求 <span class="arithmatex">\(n\)</span>。</p>
+<p>Easy Version 中旋转次数不大于 <span class="arithmatex">\(2023\)</span> 。</p>
+<p>Hard Version 中旋转次数不大于 <span class="arithmatex">\(1000\)</span> 。</p>
+<p><span class="arithmatex">\(n≤1×10^6,−10^9≤k≤10^9\)</span> 。</p>
+<h4 id="solution_9">Solution<a class="headerlink" href="#solution_9" title="Permanent link">#</a></h4>
+<p>很不错的一道题</p>
+<p>对于 Easy Version，参考 BSGS 算法，先连续 999 次 +1，然后每次 +1000，这样最多 1000 次就可以循环完一圈，然后走完一圈后必定会落在最初连续的前 1000 个格子上，我们可以通过转了多少正好可以走一圈来推算 n 的大小，最多询问 999 + 1000 次。</p>
+<p>对于 Hard Version，我们在 Easy Version 基础上稍加改进，我们对于一个 <span class="arithmatex">\(n\)</span>，可以先转 <span class="arithmatex">\(n_0\)</span>，然后再按 G1 的方法去转，先连续转 <span class="arithmatex">\(d\)</span> 个 <span class="arithmatex">\(+1\)</span>，再一直 <span class="arithmatex">\(+d\)</span> 直到转完一圈为止，但是这个 <span class="arithmatex">\(n_0\)</span> 和 <span class="arithmatex">\(d\)</span> 如何确定呢。我们可以先随机 <span class="arithmatex">\(k\)</span> 次，然后去这 <span class="arithmatex">\(k\)</span> 次中得到的最大的数选为 <span class="arithmatex">\(n_0\)</span>，因为如果直接选的话，选的数可能过大或过小，若是不随机选 <span class="arithmatex">\(k\)</span> 个数而是连续选 <span class="arithmatex">\(k\)</span> 个或间隔选 <span class="arithmatex">\(k\)</span> 个则容易被卡掉。不过这个算法由于是一定程度上取决于随机数的，所以不一定完全正确，当 <span class="arithmatex">\(n\)</span> 大于 <span class="arithmatex">\(n_0 + d^2\)</span> 时，就无法转到一圈，此时不对。所以 <span class="arithmatex">\(k\)</span> 次算出的数必须有一个要大于 <span class="arithmatex">\(n - d^2\)</span>，出错的概率为 <span class="arithmatex">\(P(A) = (\frac{n - d^2 - 1}{n})^k,(k + 2d = 1000)\)</span>，不难发现通过改变 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(k\)</span> 大小是可以改变出错概率的，当选择 <span class="arithmatex">\(k = 400, d = 300\)</span> 时，即使是在 <span class="arithmatex">\(n = 10^6\)</span> 情况下 <span class="arithmatex">\(P(A)\)</span> 的数量级才是 <span class="arithmatex">\(10^{-17}\)</span>，远远小于 <span class="arithmatex">\(1\)</span>，故可以通过此题。</p>
+<p><a href="https://codeforces.com/contest/1840/submission/212058294">Code (Easy Version)</a></p>
+<p><a href="https://codeforces.com/contest/1840/submission/212063730">Code (Hard Version)</a></p>
+<h2 id="1848_codeforces_round_885_div_2">1848. <a href="https://codeforces.com/contest/1848">Codeforces Round 885 (Div. 2)</a><a class="headerlink" href="#1848_codeforces_round_885_div_2" title="Permanent link">#</a></h2>
+<h3 id="c_vika_and_price_tags"><a href="https://codeforces.com/contest/1848/problem/C">C. Vika and Price Tags</a><a class="headerlink" href="#c_vika_and_price_tags" title="Permanent link">#</a></h3>
+<h4 id="description_10">Description<a class="headerlink" href="#description_10" title="Permanent link">#</a></h4>
+<p>有 <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span> 两个长度均为 <span class="arithmatex">\(n\)</span> 序列， 一次变换记为 $a_i \to b_i, b_i \to \left | a_i - b_i \right | $，问是否可以经过若干次变换使得 <span class="arithmatex">\(a\)</span> 中所有元素全部变成 <span class="arithmatex">\(0\)</span>。</p>
+<h4 id="solution_10">Solution<a class="headerlink" href="#solution_10" title="Permanent link">#</a></h4>
+<p>不难发现，若 <span class="arithmatex">\((a_i, b_i)\)</span> 中有一个元素变为 <span class="arithmatex">\(0\)</span>（不是 <span class="arithmatex">\((0, 0)\)</span> 情况），则 <span class="arithmatex">\((a_i, b_i)\)</span> 则会经历 <span class="arithmatex">\((0, x) \to (x, 0) \to, (x, x) \to(0, x)\)</span> 以 <span class="arithmatex">\(3\)</span> 为周期的变换。</p>
+<p>所以我们要求的是每个元素变为 <span class="arithmatex">\((x, 0)\)</span> 的次数模 <span class="arithmatex">\(3\)</span> 的余数。</p>
+<p>不妨设 <span class="arithmatex">\(a &gt;&gt; b\)</span>，则变换经历 <span class="arithmatex">\((a, b) \to (b, a - b) \to (a - b, a - 2b) \to (a - 2b, b)\)</span> 。不难发现每三次会经历一次周期，每次 <span class="arithmatex">\(a \to a - 2b\)</span>。这样的话我们就可以用辗转相除法来求了。</p>
+<p><a href="https://codeforces.com/contest/1848/submission/220325561">Code</a></p>
+<h3 id="d_vika_and_bonuses"><a href="https://codeforces.com/contest/1848/problem/D">D. Vika and Bonuses</a><a class="headerlink" href="#d_vika_and_bonuses" title="Permanent link">#</a></h3>
+<h4 id="description_11">Description<a class="headerlink" href="#description_11" title="Permanent link">#</a></h4>
+<p>初始有一个数 <span class="arithmatex">\(s\)</span>，每次可以进行两种操作，获得价值为 <span class="arithmatex">\(s\)</span> 的利润或让 <span class="arithmatex">\(s \to s + (s \mod 10)\)</span>，你可以进行 <span class="arithmatex">\(k\)</span> 次，问 <span class="arithmatex">\(k\)</span> 次之后的最大价值。</p>
+<h4 id="solution_11">Solution<a class="headerlink" href="#solution_11" title="Permanent link">#</a></h4>
+<p>不难发现，个位是 <span class="arithmatex">\(5\)</span> / <span class="arithmatex">\(0\)</span> 的话，最多只能操作一次。</p>
+<p>个位是 <span class="arithmatex">\(1\)</span> / <span class="arithmatex">\(3\)</span> / <span class="arithmatex">\(7\)</span> / <span class="arithmatex">\(9\)</span> 的话，操作一次后变为 <span class="arithmatex">\(2\)</span> / <span class="arithmatex">\(6\)</span> / <span class="arithmatex">\(4\)</span> / <span class="arithmatex">\(8\)</span>。</p>
+<p>而个位如果是 <span class="arithmatex">\(2\)</span> / <span class="arithmatex">\(4\)</span> / <span class="arithmatex">\(6\)</span> / <span class="arithmatex">\(8\)</span> 的话，则会有 <span class="arithmatex">\(2 \to 4 \to 8 \to 6\)</span> 的循环，我们记 <span class="arithmatex">\(4\)</span> 次操作为一个周期，一个周期可以让 <span class="arithmatex">\(s \to s + 20\)</span>。</p>
+<p>则题目变为求周期数 <span class="arithmatex">\(x\)</span>，使 <span class="arithmatex">\((s + 20 \times x) \times (k - 4 \times x)\)</span> 最大，但是注意，这个周期的开头我们还要枚举，因为末尾可能是 <span class="arithmatex">\(2\)</span> / <span class="arithmatex">\(4\)</span> / <span class="arithmatex">\(6\)</span> / <span class="arithmatex">\(8\)</span> 中任一数。</p>
+<p><a href="https://codeforces.com/contest/1848/submission/220463956">Code</a> </p>
+<h3 id="f_vika_and_wiki"><a href="https://codeforces.com/contest/1848/problem/F">F. Vika and Wiki</a><a class="headerlink" href="#f_vika_and_wiki" title="Permanent link">#</a></h3>
+<h4 id="description_12">Description<a class="headerlink" href="#description_12" title="Permanent link">#</a></h4>
+<p>给定一个长度为 <span class="arithmatex">\(n\)</span> 的数组 <span class="arithmatex">\(a\)</span>（其中 <span class="arithmatex">\(n\)</span> 为 <span class="arithmatex">\(2\)</span> 的幂次），记一次变换为将整个数组 <span class="arithmatex">\(a_i \to a_i \oplus a_{(i + 1) \mod n}\)</span>。 </p>
+<h4 id="solution_12">Solution<a class="headerlink" href="#solution_12" title="Permanent link">#</a></h4>
+<p>手动模拟若干次后，我们发现当进行 <span class="arithmatex">\(2^n - 1\)</span> 次后，数组每个元素 <span class="arithmatex">\(a_i \to \oplus_{j = 0}^{2^n}a_{i + j(\mod n)}\)</span>，利用这个性质我们可以先进行 <span class="arithmatex">\(2 ^n - 1\)</span> 次然后再进行 <span class="arithmatex">\(1\)</span> 次。这样就进行了 <span class="arithmatex">\(2^k\)</span> 次，时间复杂度为 <span class="arithmatex">\(O(nlogn)\)</span>。</p>
+<p><a href="https://codeforces.com/contest/1848/submission/220480211">Code</a></p>
+<h2 id="1850_codeforces_round_886_div_4">1850. <a href="https://codeforces.com/contest/1850">Codeforces Round 886 (Div. 4)</a><a class="headerlink" href="#1850_codeforces_round_886_div_4" title="Permanent link">#</a></h2>
+<h3 id="f_we_were_both_children"><a href="https://codeforces.com/contest/1850/problem/F">F. We Were Both Children</a><a class="headerlink" href="#f_we_were_both_children" title="Permanent link">#</a></h3>
+<h4 id="description_13">Description<a class="headerlink" href="#description_13" title="Permanent link">#</a></h4>
+<p><span class="arithmatex">\(n\)</span> 只青蛙，每次只挑 <span class="arithmatex">\(a_i\)</span> 的倍数的格子，要你再前 <span class="arithmatex">\(n\)</span> 格内放置一个陷阱，使尽可能多的青蛙跳进去。</p>
+<p><span class="arithmatex">\(n \le 10^5\)</span> 。</p>
+<h4 id="solution_13">Solution<a class="headerlink" href="#solution_13" title="Permanent link">#</a></h4>
+<p>如果知道第 <span class="arithmatex">\(i\)</span> 个格子能跳 <span class="arithmatex">\(f_i\)</span> 只青蛙，则可以将所有 <span class="arithmatex">\(i\)</span> 倍数格子全部加上 <span class="arithmatex">\(f_i\)</span> 。</p>
+<p>故两层循环枚举即可。时间复杂度 <span class="arithmatex">\(O(\sum_{i = 1}^n \dfrac{n}{i}) \approx O(nlnn)\)</span> 。</p>
+<p><a href="https://codeforces.com/contest/1850/submission/218473979">Code</a></p>
+<h3 id="h_the_third_letter"><a href="https://codeforces.com/contest/1850/problem/H">H. The Third Letter</a><a class="headerlink" href="#h_the_third_letter" title="Permanent link">#</a></h3>
+<h4 id="description_14">Description<a class="headerlink" href="#description_14" title="Permanent link">#</a></h4>
+<p>若干点分布在一系列 <span class="arithmatex">\(x\)</span> 轴上，告诉你若干点之间的约束条件（在 左 / 右 xx 的位置处）。然后问你这一系列条件是否合理。</p>
+<h4 id="solution_14">Solution<a class="headerlink" href="#solution_14" title="Permanent link">#</a></h4>
+<p>本题的模型可以抽象成一个有向图。但是这 <span class="arithmatex">\(n\)</span> 个点可能是若干连通块，不一定全是连通的。</p>
+<p>每次从一个点出发，设这个点的位置是 <span class="arithmatex">\(0\)</span>，然后标记出所有和这个点相关的点的坐标。</p>
+<p>最后再把这些约束关系一一查询，看最后是否满足条件。</p>
+<p><a href="https://codeforces.com/contest/1850/submission/219780470">Code</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 <a href="https://github.com/AnaSuuuu"  target="_blank" rel="noopener">Ana Su</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AnaSuuuu" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/Ana_Suuuu" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
