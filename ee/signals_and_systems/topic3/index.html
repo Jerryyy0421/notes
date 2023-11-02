@@ -18,7 +18,7 @@
     
     
       
-        <title>Signals and Systems - Ana_Su's NoteBook</title>
+        <title>Topic3 - Ana_Su's NoteBook</title>
       
     
     
@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -98,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Signals and Systems
+              Topic3
             
           </span>
         </div>
@@ -754,6 +759,55 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    第三章 离散系统的时域分析
+  </a>
+  
+    <nav class="md-nav" aria-label="第三章 离散系统的时域分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s-31-lti" class="md-nav__link">
+    \(\S 3.1\) LTI 离散系统的响应
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s-32" class="md-nav__link">
+    \(\S 3.2\) 单位序列和单位序列响应
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s-33" class="md-nav__link">
+    \(\S 3.3\) 卷积和
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s-34" class="md-nav__link">
+    \(\S 3.4\) 卷反卷积积积分的性质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -767,9 +821,43 @@
                   
 
 
-  <h1>Signals and Systems</h1>
+  <h1>Topic3</h1>
 
-
+<h2 id="_1">第三章 离散系统的时域分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="s-31-lti"><span class="arithmatex">\(\S 3.1\)</span> LTI 离散系统的响应<a class="headerlink" href="#s-31-lti" title="Permanent link">&para;</a></h3>
+<p>LTI 系统时域分析</p>
+<p>线性时不变系统（Linear Time-Invariant System）：如果一个系统既线性又时不变，我们则称为线性时不变系统。</p>
+<blockquote>
+<p>为什么研究 LTI 系统？</p>
+</blockquote>
+<p><span class="arithmatex">\(h[n]\)</span> 是单位脉冲响应。<span class="arithmatex">\(h[n]\)</span> 是 LTI 系统的唯一标识，两个 LTI 系统的 <span class="arithmatex">\(h[n]\)</span> 相同，则它们完全相同。</p>
+<p><span class="arithmatex">\(y[n] = x[n] \ast h[n]\)</span></p>
+<blockquote>
+<p>如何计算？</p>
+<ul>
+<li>列表法：</li>
+<li><span class="arithmatex">\(y[n]\)</span> 最左（右）边 = <span class="arithmatex">\(x[n]\)</span> 最左（右）边 +  <span class="arithmatex">\(h[n]\)</span> 最左（右）边</li>
+<li>列出表格，相加计算。</li>
+<li>卷积公式法</li>
+<li><span class="arithmatex">\(x[n] \ast h[n] = \sum_{k = -\infty}^{+\infty} x[k]h[n - k]\)</span></li>
+</ul>
+</blockquote>
+<p>若 <span class="arithmatex">\(x[n]\)</span> 长度为 <span class="arithmatex">\(n_1\)</span>，<span class="arithmatex">\(h[n]\)</span> 长度为 <span class="arithmatex">\(n_2\)</span>，那么 <span class="arithmatex">\(y[n] = x[n] \ast h[n]\)</span>长度为 <span class="arithmatex">\(n_1 + n_2 - 2\)</span>。</p>
+<p>若 <span class="arithmatex">\(x[n]\)</span> 长度为 <span class="arithmatex">\(N\)</span>，<span class="arithmatex">\(h[n]\)</span> 长度为 <span class="arithmatex">\(N\)</span>，那么 <span class="arithmatex">\(y[n] = x[n] \ast h[n]\)</span> 乘法运算 <span class="arithmatex">\(N^2\)</span> 次，加法运算 <span class="arithmatex">\((N - 1)^2\)</span> 次。</p>
+<p>卷积公式</p>
+<p><span class="arithmatex">\(x[n] \ast h[n] = \sum_{k = -\infty}^{+\infty} x[k]h[n - k] = \sum_{k = -\infty}^{+\infty} x[k]h[-(k - n)]\)</span></p>
+<blockquote>
+<p>证明：
+$$
+先证明 x[n] = \sum_{k = -\infty}^{+\infty} x[k]\delta[n - k] \
+然后又有 \delta[n] \to <a href="LTI">h</a>, \delta[n - k] \to <a href="时不变性">h - k</a> \
+x[k]\delta[n - k] \to x[k]h<a href="线性系统齐次性">n - k</a> \
+\sum_{k = -\infty}^{+\infty}x[k]\delta[n - k] \to \sum_{k = -\infty}^{+\infty}x[k]h<a href="线性系统叠加性">n - k</a>
+$$</p>
+</blockquote>
+<h3 id="s-32"><span class="arithmatex">\(\S 3.2\)</span> 单位序列和单位序列响应<a class="headerlink" href="#s-32" title="Permanent link">&para;</a></h3>
+<h3 id="s-33"><span class="arithmatex">\(\S 3.3\)</span> 卷积和<a class="headerlink" href="#s-33" title="Permanent link">&para;</a></h3>
+<h3 id="s-34"><span class="arithmatex">\(\S 3.4\)</span> 卷反卷积积积分的性质<a class="headerlink" href="#s-34" title="Permanent link">&para;</a></h3>
 
 
 
