@@ -18,7 +18,7 @@
     
     
       
-        <title>第三章 傅里叶变换和系统的频域 - Ana_Su's NoteBook</title>
+        <title>Signals and Systems - Ana_Su's NoteBook</title>
       
     
     
@@ -72,11 +72,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第三章 傅里叶变换和系统的频域
+              Signals and Systems
             
           </span>
         </div>
@@ -1271,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../signals-and-systems/topic1.md" class="md-nav__link">
+      <a href="../topic1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1291,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../signals-and-systems/topic2.md" class="md-nav__link">
+      <a href="../topic2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1311,7 +1306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../signals-and-systems/topic4.md" class="md-nav__link">
+      <a href="../topic4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1853,7 +1848,7 @@
         
   
   <span class="md-ellipsis">
-    Geometry
+    计算几何初步
   </span>
   
 
@@ -1889,6 +1884,8 @@
       
         
           
+        
+      
         
       
         
@@ -1966,6 +1963,26 @@
   
   <span class="md-ellipsis">
     1851 ~ 1875
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/cf/cf1876/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1876 ~ 1900
   </span>
   
 
@@ -2291,77 +2308,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1 傅里叶级数
-  </a>
-  
-    <nav class="md-nav" aria-label="1 傅里叶级数">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
-    1.1 三角形式的傅里叶级数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
-    1.2 指数形式的傅里叶级数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2 傅里叶变换
-  </a>
-  
-    <nav class="md-nav" aria-label="2 傅里叶变换">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
-    2.1 基本概念
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22" class="md-nav__link">
-    2.2 典型信号的傅里叶变换
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
-    2.3 傅里叶变换的性质
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2376,108 +2322,9 @@
                   
 
 
-<h1 id="_1">第三章 傅里叶变换和系统的频域<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="1">1 傅里叶级数<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<h3 id="11">1.1 三角形式的傅里叶级数<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
-<p>对于周期函数 <span class="arithmatex">\(f(t)\)</span> ，若其满足 <span class="arithmatex">\(Dirichlet\)</span> 条件，我们就可以对它进行傅里叶变换，可以得到如下公式：</p>
-<div class="arithmatex">\[
-f(t) = a_0 + \sum_{n = 1}^{\infty}[a_n\cos (n\omega t) + b_n\sin (n\omega t)]
-\]</div>
-<p>其中对于各个项的系数有如下表达式</p>
-<div class="arithmatex">\[\begin{cases}
-a_0 = \dfrac{1}{T}\int_{t_0}^{t_0 + T}f(t)dt \\
-a_n = \dfrac{2}{T}\int_{t_0}^{t_0 + T}f(t)\cos (n\omega t)dt \\
-b_n = \dfrac{2}{T}\int_{t_0}^{t_0 + T}f(t)\sin (n\omega t)dt
-\end{cases}\]</div>
-<div class="admonition tips">
-<p class="admonition-title"><span class="arithmatex">\(Dirichlet\)</span> 条件</p>
-<ul>
-<li>在一周期内，如果有间断点存在，则间断点个数是有限个。</li>
-<li>在一周期内，极大值和极小值的数目应是有限个。</li>
-<li>在一周期内，信号是绝对可积的，即 <span class="arithmatex">\(\int_{t_0}^{t_0 + T}|f(t)|dt\)</span> 等于有限值。</li>
-<li>值得注意的是，一般情况下 <span class="arithmatex">\(Dirichlet\)</span> 条件都不用考虑。</li>
-</ul>
-</div>
-<h3 id="12">1.2 指数形式的傅里叶级数<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
-<p>在学习了复数之后，我们可以把三角函数用复数形式表示出来</p>
-<div class="arithmatex">\[\begin{cases}
-\cos(n\omega t) = \dfrac{1}{2}(e^{jn\omega t} + e^{-jn\omega t}) \\
-\sin(n\omega t) = \dfrac{1}{2j}(e^{jn\omega t} - e^{-jn\omega t})
-\end{cases}\]</div>
-<p>代入到原来的公式里可得</p>
-<div class="arithmatex">\[
-f(t) = \sum_{n=-\infty}^{\infty}F(n\omega)e^{jn\omega t}
-\]</div>
-<p>其中傅里叶级数的系数 <span class="arithmatex">\(F(n\omega)\)</span> （简写作 <span class="arithmatex">\(F_n\)</span> ）等于
-$$
-F_n = \dfrac{1}{T}\int_{t_0}^{t_0 + T}f(t)e^{-jn\omega t}dt
-$$</p>
-<h2 id="2">2 傅里叶变换<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<h3 id="21">2.1 基本概念<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
-<p>对于非周期函数，我们可以理解为 <span class="arithmatex">\(T\)</span> 为无穷大，代入到原先傅里叶级数的公式之中，可以得到：</p>
-<div class="arithmatex">\[\begin{cases}
-x(j\omega) = \int_{-\infty}^{+\infty}x(t)e^{-j\omega t}dt (傅里叶变换)\\
-x(t) = \dfrac{1}{2\pi}\int_{-\infty}^{+\infty}x(j\omega)e^{j\omega t}dt(傅里叶反变换)
-\end{cases}\]</div>
-<p>其中 <span class="arithmatex">\(x(t)\)</span> 是时间域，<span class="arithmatex">\(x(j\omega)\)</span> 是频域。</p>
-<p>由于 <span class="arithmatex">\(x(j\omega) = x(j\omega)e^{j\theta (\omega)}\)</span>，故我们也称 <span class="arithmatex">\(|x(j\omega)|\)</span> 为幅度谱，称 <span class="arithmatex">\(\theta (\omega)\)</span> 为相位谱。</p>
-<h3 id="22">2.2 典型信号的傅里叶变换<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
-<ul>
-<li><span class="arithmatex">\(e^{-at}u(t) \stackrel{F}{\longrightarrow} \dfrac{1}{a + j\omega} (a &gt; 0)\)</span></li>
-</ul>
-<details class="tips">
-<summary>拓展</summary>
-<ul>
-<li><span class="arithmatex">\(te^{-at}u(t) \stackrel{F}{\longrightarrow} \dfrac{1}{(a + j\omega)^2}\)</span></li>
-</ul>
-</details>
-<ul>
-<li><span class="arithmatex">\(\delta(t) \stackrel{F}{\longrightarrow} 1\)</span></li>
-<li><span class="arithmatex">\(1 \stackrel{F}{\longrightarrow} 2\pi \delta(\omega)\)</span></li>
-<li><span class="arithmatex">\(E g_{\tau}(t) \stackrel{F}{\longrightarrow} E \tau Sa(\dfrac{\tau}{2}\omega) = \dfrac{2E\sin (\dfrac{\tau}{2}\omega)}{\omega}\)</span></li>
-<li><span class="arithmatex">\(\dfrac{\sin (\tau t)}{\pi t} \stackrel{F}{\longrightarrow} g_{\tau}(t)\)</span></li>
-<li><span class="arithmatex">\(\cos (\omega_0 t) \stackrel{F}{\longrightarrow} \pi [\delta (\omega + \omega_0) + \delta(\omega - \omega_0)]\)</span></li>
-<li><span class="arithmatex">\(\sin (\omega_0 t) \stackrel{F}{\longrightarrow} \dfrac{\pi}{j} [\delta (\omega - \omega_0) - \delta(\omega + \omega_0)]\)</span></li>
-<li><span class="arithmatex">\(u(t) \stackrel{F}{\longrightarrow} \dfrac{1}{j \omega} + \pi \delta (\omega)\)</span></li>
-</ul>
-<h3 id="23">2.3 傅里叶变换的性质<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
-<ul>
-<li>线性性质
-  \begin{equation}
-    ax_1(t) + bx_2(t) \stackrel{F}{\longrightarrow} aX_1(j\omega) + bX_2(j\omega)
-  \end{equation}</li>
-<li>时移性质
-  \begin{equation}
-    x(t - t_0) \stackrel{F}{\longrightarrow} X(j\omega)e^{-j\omega t_0}
-  \end{equation}</li>
-<li>频移性质
-  \begin{equation}
-    x(t)e^{j\omega_0 t} \stackrel{F}{\longrightarrow} X(j(\omega - \omega_0))
-  \end{equation}</li>
-<li>
-<p>时域微分性质
-  \begin{equation}
-    \dfrac{dx(t)}{dt} \stackrel{F}{\longrightarrow} j\omega X(j\omega)
-  \end{equation}</p>
-</li>
-<li>
-<p>频域微分性质
-  \begin{equation}
-    tx(t) \stackrel{F}{\longrightarrow} j\dfrac{dX(j\omega)}{d\omega}
-  \end{equation}</p>
-</li>
-<li>时域卷积性质
-  \begin{equation}
-    x(t) \ast h(t) \stackrel{F}{\longrightarrow} X(j\omega)H(j\omega)
-  \end{equation}<blockquote>
-<p>时域卷积等于频域相乘。</p>
-</blockquote>
-</li>
-<li>频域卷积性质</li>
-</ul>
-<p>卷积定理
-时域卷积定理
-频域卷积定理</p>
+  <h1>Signals and Systems</h1>
+
+
 
 
 
