@@ -676,6 +676,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5 等价关系与偏序关系
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -927,6 +934,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1038,6 +1053,86 @@
   
   <span class="md-ellipsis">
     随机变量数字特征
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probability/topic5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    大数定律及中心极限定理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probability/topic6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    样本及样本函数的分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probability/topic7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    参数估计
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probability/topic8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    假设检验
   </span>
   
 
@@ -2450,6 +2545,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5 等价关系与偏序关系
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2618,6 +2720,60 @@
 <li><span class="arithmatex">\(M_t = M + M^2 + M^3 + \dots\)</span> </li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+<h3 id="5">5 等价关系与偏序关系<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>等价关系</p>
+<ul>
+<li>设 <span class="arithmatex">\(R\)</span> 是非空集合上的关系，若 <span class="arithmatex">\(R\)</span> 是自反，对称，传递的，则称 <span class="arithmatex">\(R\)</span> 是 <span class="arithmatex">\(A\)</span> 上的等价关系。若 <span class="arithmatex">\(R\)</span> 是等价关系且 <span class="arithmatex">\(&lt;x, y&gt; \in R\)</span>，那么 <span class="arithmatex">\(x \sim y\)</span>，称 <span class="arithmatex">\(x\)</span> 等价于 <span class="arithmatex">\(y\)</span>。 </li>
+</ul>
+</li>
+<li>
+<p>等价类</p>
+<ul>
+<li>
+<p>设 <span class="arithmatex">\(R\)</span> 为非空集合 <span class="arithmatex">\(A\)</span> 上的等价关系，<span class="arithmatex">\(\forall x \in A\)</span>，令 <span class="arithmatex">\([x]_R = {y |\ y \in A \wedge y R x}\)</span>，则称 <span class="arithmatex">\([x]_R\)</span> 为 <span class="arithmatex">\(x\)</span> 关于 <span class="arithmatex">\(R\)</span> 的等价类，简称为 <span class="arithmatex">\(x\)</span> 的等价类，简记为 <span class="arithmatex">\([x]\)</span>。</p>
+</li>
+<li>
+<p>性质</p>
+<ul>
+<li><span class="arithmatex">\(\forall x \in A\)</span>，<span class="arithmatex">\([x]\)</span> 是 <span class="arithmatex">\(A\)</span> 的非空子集。</li>
+<li>若 <span class="arithmatex">\(xRy\)</span>，则 <span class="arithmatex">\([x] = [y]\)</span>。</li>
+<li>若 <span class="arithmatex">\(x\not R y\)</span>，则 <span class="arithmatex">\([x]\)</span> 与 <span class="arithmatex">\([y]\)</span> 无交集。</li>
+<li>所有等价类的并集是 <span class="arithmatex">\(A\)</span>。  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>商集</p>
+<ul>
+<li>设 <span class="arithmatex">\(R\)</span> 为非空集合 <span class="arithmatex">\(A\)</span> 上的等价关系，以 <span class="arithmatex">\(R\)</span> 的所有等价类作为元素的集合称为 <span class="arithmatex">\(A\)</span> 关于 <span class="arithmatex">\(R\)</span> 的商集，记作 <span class="arithmatex">\(A/R\)</span>，<span class="arithmatex">\(A/R = \{[x]_R |\ x\in A\}\)</span>。 </li>
+</ul>
+</li>
+<li>
+<p>集合的划分</p>
+<ul>
+<li>设 <span class="arithmatex">\(A\)</span> 为非空集合，若 <span class="arithmatex">\(A\)</span> 的子集族 <span class="arithmatex">\(\pi(\pi \subseteq P(A))\)</span> 满足下列条件，则称 <span class="arithmatex">\(\pi\)</span> 是 <span class="arithmatex">\(A\)</span> 的一个划分，称 <span class="arithmatex">\(\pi\)</span> 中的元素是 <span class="arithmatex">\(A\)</span> 中的划分块。<ul>
+<li><span class="arithmatex">\(\varnothing \not \in \pi\)</span>  </li>
+<li><span class="arithmatex">\(\forall x \forall y(x, y \in \pi \wedge x \not ={y} \to x \cap y = \varnothing)\)</span></li>
+<li><span class="arithmatex">\(\cup \pi = A\)</span></li>
+</ul>
+</li>
+<li>集合的划分和等价关系是一一对应的，对于给定的划分 <span class="arithmatex">\(\pi\)</span>，有 <span class="arithmatex">\(R = \{&lt;x, y&gt;|\ x, y \in A\wedge x 和 y 在 \pi 的同一划分块中\}\)</span>。</li>
+</ul>
+</li>
+<li>
+<p>偏序关系</p>
+<ul>
+<li>非空集合 <span class="arithmatex">\(A\)</span> 上的自反，反对称和传递关系称为 <span class="arithmatex">\(A\)</span> 上的偏序关系，记作 <span class="arithmatex">\(preceq\)</span>，设 <span class="arithmatex">\(preceq\)</span> 为偏序关系，如果 <span class="arithmatex">\(&lt;x, y&gt; \in \preceq\)</span>，则记作 <span class="arithmatex">\(x \preceq y\)</span>，读作 <span class="arithmatex">\(x\)</span> 小于或等于 <span class="arithmatex">\(y\)</span>。<strong>这里表示的是在此偏 序关系里，同一有序对中 <span class="arithmatex">\(x\)</span> 一定出现在 <span class="arithmatex">\(y\)</span> 的前面。</strong></li>
+<li>偏序集：一个集合 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(A\)</span> 上的偏序关系 <span class="arithmatex">\(R\)</span> 一起称作偏序集，记作 <span class="arithmatex">\(&lt;A, R&gt;\)</span>。</li>
+<li><span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(y\)</span> 可比：对于偏序集 <span class="arithmatex">\(&lt;A, \preceq&gt;\)</span>，若某 <span class="arithmatex">\(x, y \in A\)</span> 满足 <span class="arithmatex">\(x\preceq y \wedge y \preceq x\)</span>，则 <span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(y\)</span> 可比。</li>
+<li><span class="arithmatex">\(y\)</span> 盖住 <span class="arithmatex">\(x\)</span>：若 <span class="arithmatex">\(x \prec y\)</span>（即 <span class="arithmatex">\(x \preceq y \wedge x \not ={y}\)</span>），且不存在 <span class="arithmatex">\(z \in A\)</span> 使得 <span class="arithmatex">\(x \prec z \prec y\)</span>，则称 <span class="arithmatex">\(y\)</span> 盖住 <span class="arithmatex">\(x\)</span>。</li>
+<li>全序关系：对于</li>
 </ul>
 </li>
 </ul>
