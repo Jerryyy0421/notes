@@ -1066,6 +1066,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4 例题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1871,6 +1878,8 @@
       
         
       
+        
+      
     
     
     
@@ -1913,6 +1922,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1949,7 +1962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../acm/algorithm/math/number-theory/Math-In-ACM-I/" class="md-nav__link">
+      <a href="../../../acm/algorithm/math/number-theory/topic1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1969,11 +1982,51 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../acm/algorithm/math/number-theory/Math-In-ACM-I/" class="md-nav__link">
+      <a href="../../../acm/algorithm/math/number-theory/topic2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数论进阶
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/algorithm/math/poly/topic1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     多项式初步
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/algorithm/math/game-theory/topic1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博弈论初步
   </span>
   
 
@@ -2037,11 +2090,101 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../acm/algorithm/geometry/geometry/" class="md-nav__link">
+      <a href="../../../acm/algorithm/geometry/topic1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     计算几何初步
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    字符串
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            字符串
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/algorithm/string/topic1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字符串初步
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/algorithm/string/topic2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字符串进阶
   </span>
   
 
@@ -2538,6 +2681,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4 例题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2556,8 +2706,85 @@
 <h1 id="_1">大数定律及中心极限定理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="0">0 总结<a class="headerlink" href="#0" title="Permanent link">&para;</a></h2>
 <h2 id="1">1 切比雪夫不等式<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>设 <span class="arithmatex">\(X\)</span> 的数学期望和方差都存在，则对任意给定的正数 <span class="arithmatex">\(\varepsilon\)</span>，有</p>
+<div class="arithmatex">\[\begin{equation}
+  P \left \{|X - E(X)| \ge \varepsilon \right \} \le \dfrac{D(X)}{\varepsilon^2}
+\end{equation}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>方差 <span class="arithmatex">\(D(X)\)</span> 越小,事件 <span class="arithmatex">\(|X - E(X)| &lt; \varepsilon\)</span> 的概率越大。说明 <span class="arithmatex">\(X\)</span> 的取值越集中在均值 <span class="arithmatex">\(E(X)\)</span> 附近， 即 <span class="arithmatex">\(X\)</span> 偏离 <span class="arithmatex">\(E(X)\)</span> 的程度越小, 故方差 <span class="arithmatex">\(D(X)\)</span> 确实是反映 <span class="arithmatex">\(X\)</span> 偏离 <span class="arithmatex">\(E(X)\)</span> 程度的量.</li>
+<li>无需知道 <span class="arithmatex">\(X\)</span> 的分布,只要知道 <span class="arithmatex">\(D(X)\)</span>，就可对 <span class="arithmatex">\(X\)</span> 落入以 <span class="arithmatex">\(E(X)\)</span> 为中心的对称区间 <span class="arithmatex">\((E(X) - \varepsilon, E(X) + \varepsilon)\)</span> 内（或外）的概率进行粗略估值。 </li>
+</ul>
+</div>
+</li>
+</ul>
 <h2 id="2">2 大数定律<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>依概率收敛</p>
+<p>设 <span class="arithmatex">\(X_1, X_2, \cdots, X_n, \cdots\)</span> 是一个随机变量序列，<span class="arithmatex">\(a\)</span> 是一个常数，若对任何正数 <span class="arithmatex">\(\varepsilon\)</span>，有 <span class="arithmatex">\(\lim_{n \to \infty}P\{|X_n - a| &lt; \varepsilon\} = 1\)</span>，则称序列 <span class="arithmatex">\(X_1, X_2, \cdots, X_n, \cdots\)</span> 依概率收敛于 <span class="arithmatex">\(a\)</span>，记为 <span class="arithmatex">\(X_n \stackrel{p}{\longrightarrow} a\)</span>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>另一种形式 <span class="arithmatex">\(\lim_{n \to \infty}P\{|X_n - a| \ge \varepsilon\} = 0\)</span></li>
+<li>依概率收敛与高数中的收敛意义不同。</li>
+<li>设 <span class="arithmatex">\(X_n \stackrel{p}{\longrightarrow} a, Y_n \stackrel{p}{\longrightarrow} b\)</span> 函数 <span class="arithmatex">\(g(x, y)\)</span> 在 <span class="arithmatex">\((a, b)\)</span> 连续，则 <span class="arithmatex">\(g(X_n, Y_n) \stackrel{p}{\longrightarrow} g(a, b)\)</span>。</li>
+</ul>
+</div>
+</li>
+<li>
+<p>切比雪夫大数定律</p>
+<p>设随机变量序列 <span class="arithmatex">\(X_1, X_2, \cdots, X_n, \cdots\)</span> 相互独立，且均存在数学期望及方差，且方差有界（即存在正数 <span class="arithmatex">\(M\)</span>，使 <span class="arithmatex">\(D(X_n) \le M, (n = 1, 2, \cdots)\)</span>），则对任意给定的 <span class="arithmatex">\(\varepsilon &gt; 0\)</span>，恒有</p>
+<div class="arithmatex">\[\begin{equation}
+  \lim_{n \to \infty} P \left \{ \left |\dfrac{1}{n} \sum_{k = 1}^nX_k - \dfrac{1}{n}\sum_{k = 1}^nE(X_k) \right | &lt; \varepsilon \right \} = 1
+\end{equation}\]</div>
+<p>这说明了 <span class="arithmatex">\(\bar X \stackrel{p}{\longrightarrow} E(\bar X)\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>若随机序列 <span class="arithmatex">\(\{X_n\}\)</span>，对于每项均有 <span class="arithmatex">\(E(X_k) = \mu, D(X_k) = \sigma^2\)</span>，则</p>
+<div class="arithmatex">\[\begin{equation}
+  \lim_{n \to \infty} P \left \{ \left |\dfrac{1}{n} \sum_{k = 1}^nX_k - \mu \right | &lt; \sigma \right \} = 1
+\end{equation}\]</div>
+</div>
+</li>
+<li>
+<p>伯努利大数定律</p>
+<p>设 <span class="arithmatex">\(n_A\)</span> 是 <span class="arithmatex">\(n\)</span> 次独立重复试验中事件 <span class="arithmatex">\(A\)</span> 发生的次数，<span class="arithmatex">\(p\)</span> 是事件 <span class="arithmatex">\(A\)</span> 在一次实验中发生的概率，则对任意 <span class="arithmatex">\(\varepsilon &gt; 0\)</span> 有</p>
+<div class="arithmatex">\[\begin{equation}
+  \lim_{n \to \infty} P \left \{ \left |\dfrac{n_A}{n} - p \right | &lt; \varepsilon \right \} = 1
+\end{equation}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>当 <span class="arithmatex">\(n \to \infty\)</span> 时，事件的频率收敛于概率。</li>
+<li>伯努利大数定理表示当试验次数 <span class="arithmatex">\(n\)</span> 很大时，可用事件发生的频率代替概率。</li>
+</ul>
+</div>
+</li>
+<li>
+<p>辛钦大数定律（独立同分布大数定律）</p>
+<p>设随机变量序列 <span class="arithmatex">\(X_1, X_2, \cdots, X_n, \cdots\)</span> 相互独立，且服从同一分布，且 <span class="arithmatex">\(E(X_k) = \mu\)</span>，则对任意给定的 <span class="arithmatex">\(\varepsilon &gt; 0\)</span>，恒有</p>
+<div class="arithmatex">\[\begin{equation}
+  \lim_{n \to \infty} P \left \{ \left |\dfrac{1}{n}\sum_{k = 1}^n X_k - \mu \right | &lt; \varepsilon \right \} = 1
+\end{equation}\]</div>
+</li>
+</ul>
 <h2 id="3">3 中心极限定理<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>依分布收敛</p>
+</li>
+<li>
+<p>莱维—林德伯格定理</p>
+</li>
+<li>
+<p>德莫弗-拉普拉斯定理中心极限定理</p>
+</li>
+</ul>
+<h2 id="4">4 例题<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 
 
 
