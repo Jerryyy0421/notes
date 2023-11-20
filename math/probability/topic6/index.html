@@ -184,6 +184,18 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/AnaSuuuu/notes" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ana_Su/notes
+  </div>
+</a>
+      </div>
+    
   </nav>
   
 </header>
@@ -350,6 +362,18 @@
     </a>
     Ana_Su's NoteBook
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AnaSuuuu/notes" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ana_Su/notes
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -2730,12 +2754,108 @@
                 
                   
 
+  
+  
+
 
 <h1 id="_1">样本及样本函数的分布<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="0">0 总结<a class="headerlink" href="#0" title="Permanent link">&para;</a></h2>
 <h2 id="1">1 总体与样本<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>总体：<ul>
+<li>所研究对象的全体称为总体。</li>
+<li>总体中的每个具体对象称为个体。  </li>
+<li>总体中所包含的个体总数叫做总体容量。</li>
+</ul>
+</li>
+<li>简单随机样本：<ul>
+<li>从总体中抽取若干个体进行观察试验，以获得有关总体的信息，这一抽取过程称为抽样，所抽取的部分个体称为样本。   </li>
+<li>样本中所包含的个体数目称为样本容量。</li>
+<li>简单随机抽样的样本要有三个特点：<ul>
+<li>随机性：每个个体有同等机会被抽取到。</li>
+<li>代表性：每次取出的样本与总体有相同的分布。</li>
+<li>独立性：各次抽样是相互独立的。</li>
+</ul>
+</li>
+<li>每次抽样得到的具体数值称为样本值。</li>
+</ul>
+</li>
+<li>
+<p>总体、样本、样本值的关系</p>
+<ul>
+<li>总体分布决定了样本取值的概率规律，也就是样本取到样本值的规律，因而可以由样本值去推断总体</li>
+<li>样本的联合分布函数</li>
+</ul>
+<p>\begin{equation}
+    F(x_1, x_2, \cdots, x_n) = \prod_{i = 1}^{n} F_X(x_i) 
+  \end{equation}</p>
+<ul>
+<li>样本的联合概率密度</li>
+</ul>
+<p>\begin{equation}
+    f(x_1, x_2, \cdots, x_n) = \prod_{i = 1}^{n} f_X(x_i) 
+  \end{equation}</p>
+<ul>
+<li>样本的联合分布律</li>
+</ul>
+<div class="arithmatex">\[\begin{equation}
+    P \left\{ X_1 = x_1, X_2 = x_2, \cdots, X_n = x_n \right\} = \prod_{i=1}^{n} p_X(x_i)
+\end{equation}\]</div>
+</li>
+</ul>
 <h2 id="2">2 直方图与样本分布函数<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>直方图<ul>
+<li>组距：横坐标每格代表的间距。</li>
+<li>分点应比样本观测值多取一位有效数字。</li>
+<li>作用：样本容量足够大时，落在小区间的频率近似为其概率，所以直方图可以大致反映随机变量的概率分布。</li>
+</ul>
+</li>
+<li>
+<p>样本分布函数</p>
+<ul>
+<li>
+<p>样本分布函数记为</p>
+<div class="arithmatex">\[\begin{equation}
+  F_n(x) = 
+  \begin{cases}
+  0 &amp; x &lt; x_{(1)}\\
+  \sum_{j = 1}^i f_i &amp; x_{(1)} \le x \le x_{(k)}\\
+  1 &amp; x \ge x_{(k)}
+  \end{cases}
+\end{equation}\]</div>
+</li>
+<li>
+<p>由伯努利大数定律可知，<span class="arithmatex">\(F_n(x)\)</span> 按概率收敛于 <span class="arithmatex">\(F(x)\)</span>。 </p>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="3">3 样本函数及其概率分布<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>统计量<ul>
+<li>统计量是样本函数, 是一个随机变量。</li>
+<li>统计量对应的样本函数 <span class="arithmatex">\(g(X_1, X_2, \cdots, X_n)\)</span> 中不含任何未知参数。</li>
+</ul>
+</li>
+<li>
+<p>常用的统计量</p>
+<ul>
+<li>样本均值</li>
+<li>样本方差</li>
+<li>样本标准差</li>
+<li>样本k阶原点矩</li>
+<li>样本k阶中心矩</li>
+<li>样本最小值</li>
+<li>样本最大值</li>
+</ul>
+<p><img alt="6.3-1" src="../images/6/6.3-1.png" />
+<img alt="6.3-2" src="../images/6/6.3-2.png" /></p>
+</li>
+<li>
+<p>正态总体的两个抽样分布定理</p>
+</li>
+</ul>
 <h2 id="4-chi2">4 <span class="arithmatex">\(\chi^2\)</span> 分布<a class="headerlink" href="#4-chi2" title="Permanent link">&para;</a></h2>
 <h2 id="5-t">5 t 分布<a class="headerlink" href="#5-t" title="Permanent link">&para;</a></h2>
 <h2 id="6-f">6 F 分布<a class="headerlink" href="#6-f" title="Permanent link">&para;</a></h2>
