@@ -17,7 +17,7 @@
         <link rel="next" href="../topic7/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
@@ -1131,6 +1131,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7 例题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1195,6 +1202,8 @@
   
     
     
+      
+        
       
         
       
@@ -1380,6 +1389,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../physics/chap10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    量子力学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1468,6 +1497,8 @@
       
         
       
+        
+      
     
     
     
@@ -1504,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ee/signals-and-systems/topic1/" class="md-nav__link">
+      <a href="../../../ee/signals-and-systems/chap1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1524,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ee/signals-and-systems/topic2/" class="md-nav__link">
+      <a href="../../../ee/signals-and-systems/chap2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1544,11 +1575,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ee/signals-and-systems/topic4/" class="md-nav__link">
+      <a href="../../../ee/signals-and-systems/chap3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     傅里叶变换
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ee/signals-and-systems/chap4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    拉普拉斯变换
   </span>
   
 
@@ -1573,6 +1624,8 @@
   
     
     
+      
+        
       
         
       
@@ -1661,6 +1714,26 @@
   
   <span class="md-ellipsis">
     多极放大电路
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ee/analog-circuit-design/chap5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    放大电路中的反馈
   </span>
   
 
@@ -2740,6 +2813,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7 例题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2834,31 +2914,153 @@
 <h2 id="3">3 样本函数及其概率分布<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>统计量<ul>
-<li>统计量是样本函数, 是一个随机变量。</li>
+<li>统计量是样本函数，是一个随机变量。</li>
 <li>统计量对应的样本函数 <span class="arithmatex">\(g(X_1, X_2, \cdots, X_n)\)</span> 中不含任何未知参数。</li>
 </ul>
 </li>
 <li>
 <p>常用的统计量</p>
 <ul>
-<li>样本均值</li>
-<li>样本方差</li>
-<li>样本标准差</li>
-<li>样本k阶原点矩</li>
-<li>样本k阶中心矩</li>
-<li>样本最小值</li>
-<li>样本最大值</li>
+<li>样本均值 <span class="arithmatex">\(\bar X = \dfrac{1}{n}\sum_{i = 1}^n X_i\)</span></li>
+<li>样本方差 <span class="arithmatex">\(S^2 = \dfrac{1}{n - 1}\sum_{i = 1}^n(X_i - X)\)</span></li>
+<li>样本标准差 <span class="arithmatex">\(S = \sqrt{S^2}\)</span></li>
+<li>样本k阶原点矩 <span class="arithmatex">\(A_k\)</span></li>
+<li>样本k阶中心矩 $$</li>
+<li>样本最小值 <span class="arithmatex">\(X_{(1)} = \max \left\{X_1, X_2, \cdots, X_n\right\}\)</span></li>
+<li>样本最大值 <span class="arithmatex">\(X_{(n)} = \max \left\{X_1, X_2, \cdots, X_n\right\}\)</span></li>
 </ul>
 <p><img alt="6.3-1" src="../images/6/6.3-1.png" />
 <img alt="6.3-2" src="../images/6/6.3-2.png" /></p>
 </li>
 <li>
 <p>正态总体的两个抽样分布定理</p>
+<ul>
+<li><span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> 是来自正态总体 <span class="arithmatex">\(N(\mu, \sigma^2)\)</span> 的样本，<span class="arithmatex">\(\bar x\)</span> 是样本均值，则随机变量</li>
+</ul>
+<div class="arithmatex">\[\begin{equation}
+  u = \dfrac{(\bar X - \mu)}{\frac{\sigma}{\sqrt{n}}} \sim N(0, 1)
+\end{equation}\]</div>
+<ul>
+<li>设 <span class="arithmatex">\(X \sim N(\mu_1, \sigma_1^2), Y \sim N(\mu_2, \sigma_2^2)\)</span> 分别独立地从总体 <span class="arithmatex">\(X\)</span> 和总体 <span class="arithmatex">\(Y\)</span> 中抽取样本 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> 及 <span class="arithmatex">\(Y_1, Y_2, \cdots, Y_n\)</span>，样本均值分别为 <span class="arithmatex">\(\bar X\)</span> 和 <span class="arithmatex">\(\bar Y\)</span>。则随机变量</li>
+</ul>
+<div class="arithmatex">\[\begin{equation}
+  u = \dfrac{(\bar X - \bar Y - (\mu_1 - \mu_2))}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}} \sim N(0, 1)
+\end{equation}\]</div>
 </li>
 </ul>
 <h2 id="4-chi2">4 <span class="arithmatex">\(\chi^2\)</span> 分布<a class="headerlink" href="#4-chi2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>设 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> 相互独立分布，都服从 <span class="arithmatex">\(N(0, 1)\)</span>，则称随机变量 <span class="arithmatex">\(\chi^2 = X_1^2 + X_2^2 + \cdots + X_n^2\)</span> 服从自由度为 <span class="arithmatex">\(n\)</span> 的 <span class="arithmatex">\(\chi^2\)</span> 分布，记为 <span class="arithmatex">\(\chi^2 \sim \chi^2(n)\)</span>。这里自由度是独立的服从标准正态分布的随机变量的个数。</p>
+<p><img alt="6.4-1" src="../images/6/6.4-1.png" /></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\chi^2\)</span> 的性质</p>
+<ul>
+<li>若 <span class="arithmatex">\(\chi^2 \sim \chi^2(n)\)</span>，则 <span class="arithmatex">\(E(\chi^2) = n,D(\chi^2) = 2n\)</span>。</li>
+<li>若 <span class="arithmatex">\(X \sim \chi^2(n_1), Y \sim \chi^2(n_2)\)</span>，且 <span class="arithmatex">\(X, Y\)</span> 相互独立，则 <span class="arithmatex">\(X + Y \sim \chi^2(n_1 + n_2)\)</span>。</li>
+<li>当 <span class="arithmatex">\(n\)</span> 充分大时，<span class="arithmatex">\(\chi^2\)</span> 近似服从 <span class="arithmatex">\(N(n, 2n)\)</span>，<span class="arithmatex">\(\dfrac{\chi^2(n) - n}{\sqrt{2n}}\)</span> 近似服从 <span class="arithmatex">\(N(0, 1)\)</span>。</li>
+<li>
+<p>设 <span class="arithmatex">\(\chi^2 \sim \chi^2(n)\)</span>，对给定正数 <span class="arithmatex">\(\alpha(0 &lt; \alpha &lt; 1)\)</span>，把满足条件 </p>
+<div class="arithmatex">\[\begin{equation}
+  P \left\{ \chi^2 &gt; \chi_{\alpha}^2(n)\right\} = \int_{\chi_{\alpha}^2(n)}^{+\infty}f(x)dx = \alpha
+\end{equation}\]</div>
+<p>的点 <span class="arithmatex">\(\chi_{\alpha}^2(n)\)</span> 称为 <span class="arithmatex">\(\chi^2(n)\)</span> 分布的上 <span class="arithmatex">\(\alpha\)</span> 分位点。</p>
+<p>并且当 <span class="arithmatex">\(n\)</span> 充分大时， <span class="arithmatex">\(\chi_{\alpha}^2 \approx n + \sqrt{2n}u_{\alpha}\)</span>，其中 <span class="arithmatex">\(u_{\alpha}\)</span> 是标准正态分布的上 <span class="arithmatex">\(\alpha\)</span> 分位数。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>相关定理</p>
+<ul>
+<li>
+<p>设 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> 是来自总体 <span class="arithmatex">\(N(\mu, \sigma^2)\)</span> 的样本，则随机变量</p>
+<div class="arithmatex">\[\begin{equation}
+  \chi^2 = \dfrac{1}{\sigma^2}\sum_{i = 1}^n (X_i - \mu)^2 \sim \chi^2(n)
+\end{equation}\]</div>
+</li>
+<li>
+<p>设总体 <span class="arithmatex">\(X\)</span> 服从正态分布 <span class="arithmatex">\(N(\mu, \sigma^2)\)</span>，从总体 <span class="arithmatex">\(X\)</span> 中抽取样本 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span>，样本均值和样本方差分别为 <span class="arithmatex">\(\bar X\)</span> 和 <span class="arithmatex">\(S^2\)</span>，则有</p>
+<ul>
+<li><span class="arithmatex">\(\bar X\)</span> 和 <span class="arithmatex">\(S^2\)</span> 相互独立。</li>
+<li><span class="arithmatex">\(\dfrac{(n - 1)S^2}{\sigma^2} = \dfrac{1}{\sigma^2}\sum_{i = 1}^{n}(X_i - \bar X)^2 \sim \chi^2(n - 1)\)</span> </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="5-t">5 t 分布<a class="headerlink" href="#5-t" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>设 <span class="arithmatex">\(X \sim N(0, 1), Y \sim \chi^2(n)\)</span>，且 <span class="arithmatex">\(X\)</span> 与 <span class="arithmatex">\(Y\)</span> 独立，则称随机变量 <span class="arithmatex">\(T = \dfrac{X}{\sqrt{Y/n}}\)</span> 服从自由度为 <span class="arithmatex">\(n\)</span> 的 t 分布，记作 <span class="arithmatex">\(T \sim t(n)\)</span>。这里的自由度源于 <span class="arithmatex">\(\chi^2(n)\)</span> 的自由度。特殊的，<span class="arithmatex">\(n = 1\)</span> 时为柯西分布。</p>
+<p><img alt="6.5-1" src="../images/6/6.5-1.png" /></p>
+</li>
+<li>
+<p>设 <span class="arithmatex">\(t \sim t(n)\)</span>，对给定正数 <span class="arithmatex">\(\alpha(0 &lt; \alpha &lt; 1)\)</span>，把满足条件 </p>
+<div class="arithmatex">\[\begin{equation}
+  P \left\{ t(n) &gt; t_{\alpha}(n)\right\} = \int_{t_{\alpha}(n)}^{+\infty}f(x)dx = \alpha
+\end{equation}\]</div>
+<p>的点 <span class="arithmatex">\(t_{\alpha}(n)\)</span> 称为 <span class="arithmatex">\(t(n)\)</span> 分布的上 <span class="arithmatex">\(\alpha\)</span> 分位点。</p>
+<p>特殊地，有 <span class="arithmatex">\(-t_{\alpha}(n) = t_{1 - \alpha}(n)\)</span>。</p>
+</li>
+<li>
+<p>相关定理</p>
+<ul>
+<li>
+<p>设 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> 是来自总体 <span class="arithmatex">\(N(\mu, \sigma^2)\)</span> 的样本，样本均值为 <span class="arithmatex">\(\bar X\)</span>，样本方差为 <span class="arithmatex">\(S^2\)</span>，则随机变量</p>
+<div class="arithmatex">\[\begin{equation}
+  T = \dfrac{\bar X - \mu}{\frac{S}{\sqrt{n}}} \sim t(n - 1)
+\end{equation}\]</div>
+</li>
+<li>
+<p>设从两个正态总体 <span class="arithmatex">\(N_1(\mu_1, \sigma^2), N_2(\mu_2, \sigma^2)\)</span> 中分别独立地抽取样本，样本容量依次为 <span class="arithmatex">\(n_1\)</span> 和 <span class="arithmatex">\(n_2\)</span>，样本均值依次为 <span class="arithmatex">\(\bar X\)</span> 和 <span class="arithmatex">\(\bar Y\)</span>，样本方差依次为 <span class="arithmatex">\(S_1^2\)</span> 和 <span class="arithmatex">\(S_2^2\)</span>。记</p>
+<div class="arithmatex">\[\begin{equation}
+  S_W = \sqrt{\dfrac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n_1 + n_2 - 2}}
+\end{equation}\]</div>
+<p>则随机变量</p>
+<div class="arithmatex">\[\begin{equation}
+  T = \dfrac{\bar X - \bar Y - (\mu_1 - \mu_2)}{S_W\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \sim t(n_1 + n_2 - 2)
+\end{equation}\]</div>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="6-f">6 F 分布<a class="headerlink" href="#6-f" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>设 <span class="arithmatex">\(X \sim \chi^2(n_1), Y \sim \chi^2(n_2)\)</span>，且 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 相互独立，则称随机变量 <span class="arithmatex">\(F = \dfrac{  X / n_1}{Y / n_2}\)</span> 服从第一自由度为 <span class="arithmatex">\(n_1\)</span>， 第二自由度为 <span class="arithmatex">\(n_2\)</span> 的 F 分布，记作 <span class="arithmatex">\(F \sim F(n_1, n_2)\)</span>。</p>
+</li>
+<li>
+<p>设 <span class="arithmatex">\(F \sim F(n_1, n_2)\)</span>，对给定正数 <span class="arithmatex">\(\alpha(0 &lt; \alpha &lt; 1)\)</span>，把满足条件 </p>
+<div class="arithmatex">\[\begin{equation}
+  P \left\{ F &gt; F_{\alpha}(n_1, n_2)\right\} = \int_{F_{\alpha}(n_1, n_2)}^{+\infty}f(x)dx = \alpha
+\end{equation}\]</div>
+<p>的点 <span class="arithmatex">\(F_{\alpha}(n_1, n_2)\)</span> 称为 <span class="arithmatex">\(F(n_1, n_2)\)</span> 分布的上 <span class="arithmatex">\(\alpha\)</span> 分位点。</p>
+<p>且满足性质 <span class="arithmatex">\(F_{1 - \alpha}(n_1, n_2) = \dfrac{1}{F_{\alpha}(n_2, n_1)}\)</span>。</p>
+</li>
+<li>
+<p>相关定理</p>
+<ul>
+<li>
+<p>设 <span class="arithmatex">\(X_1, X_2, \cdots, X_{n_1}\)</span> 是来自总体 <span class="arithmatex">\(N(\mu_1, \sigma_1^2)\)</span> 的样本，<span class="arithmatex">\(Y_1, Y_2, \cdots, Y_{n_2}\)</span> 是来自总体 <span class="arithmatex">\(N(\mu_2, \sigma_2^2)\)</span> 的样本，且这两个样本相互独立，则随机变量</p>
+<div class="arithmatex">\[\begin{equation}
+    F = \dfrac{n_2\sigma_2^2\sum_{i = 1}^{n_1}(X_i - \mu_1)^2}{n_1\sigma_1^2\sum_{j = 1}^{n_2}(Y_j - \mu_2)^2} \sim F(n_1, n_2)
+\end{equation}\]</div>
+</li>
+<li>
+<p>设从两个正态总体 <span class="arithmatex">\(N(\mu_1, \sigma_1^2), N(\mu_2, \sigma_2^2)\)</span> 中分别独立地各抽取一个样本，它们的样本容量分别为 <span class="arithmatex">\(n_1\)</span> 和 <span class="arithmatex">\(n_2\)</span>，样本均值依次为 <span class="arithmatex">\(\bar X\)</span> 和 <span class="arithmatex">\(\bar Y\)</span>，样本方差依次为 <span class="arithmatex">\(S_1^2\)</span> 和 <span class="arithmatex">\(S_2^2\)</span>。则随机变量</p>
+<div class="arithmatex">\[\begin{equation}
+    F = \dfrac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2} = \dfrac{S_1^2}{S_2^2} \cdot \dfrac{\sigma_1^2}{\sigma_2^2} \sim F(n_1 - 1, n_2 - 1)
+\end{equation}\]</div>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="6.6-3" src="../images/6/6.6-3.png" /></p>
+<h2 id="7">7 例题<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p><img alt="6.4-2" src="../images/6/6.4-2.png" />
+  <img alt="6.5-2" src="../images/6/6.5-2.png" />
+  <img alt="6.5-3" src="../images/6/6.5-3.png" /></p>
 
 
 
