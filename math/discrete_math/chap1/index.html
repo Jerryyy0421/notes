@@ -667,6 +667,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8 例题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2938,6 +2945,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8 例题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2984,7 +2998,7 @@
 <p>复合命题 “<span class="arithmatex">\(p\)</span> 或 <span class="arithmatex">\(q\)</span>” 称为 <span class="arithmatex">\(p\)</span> 与 <span class="arithmatex">\(q\)</span> 的<strong>析取式</strong>，记作 <span class="arithmatex">\(p \vee q\)</span>。<span class="arithmatex">\(\vee\)</span> 称为<strong>析取联结词</strong>。</p>
 </li>
 <li>
-<p>复合命题 “如果 <span class="arithmatex">\(p\)</span>，则 <span class="arithmatex">\(q\)</span>” 称为 <span class="arithmatex">\(p\)</span> 与 <span class="arithmatex">\(q\)</span> 的<strong>蕴涵式</strong>，记作 <span class="arithmatex">\(p \to q\)</span>。称 <span class="arithmatex">\(p\)</span> 为蕴涵式的前件，<span class="arithmatex">\(q\)</span> 为蕴涵式的后件。<span class="arithmatex">\(\to\)</span> 称为蕴涵联结词。<strong>该命题为假当且仅当 <span class="arithmatex">\(p\)</span> 为真且 <span class="arithmatex">\(q\)</span>为假</strong>。</p>
+<p><mark class="critic">复合命题 “如果 <span class="arithmatex">\(p\)</span>，则 <span class="arithmatex">\(q\)</span>” 称为 <span class="arithmatex">\(p\)</span> 与 <span class="arithmatex">\(q\)</span> 的<strong>蕴涵式</strong>，记作 <span class="arithmatex">\(p \to q\)</span>。称 <span class="arithmatex">\(p\)</span> 为蕴涵式的前件，<span class="arithmatex">\(q\)</span> 为蕴涵式的后件。<span class="arithmatex">\(\to\)</span> 称为蕴涵联结词。<strong>该命题为假当且仅当 <span class="arithmatex">\(p\)</span> 为真且 <span class="arithmatex">\(q\)</span>为假</strong>。</mark></p>
 <blockquote>
 <p><span class="arithmatex">\(q\)</span> 是 <span class="arithmatex">\(p\)</span> 的必要条件，<span class="arithmatex">\(p\)</span> 是 <span class="arithmatex">\(q\)</span> 的充分条件。等同于"只要 <span class="arithmatex">\(p\)</span> 就 <span class="arithmatex">\(q\)</span>"，“<span class="arithmatex">\(p\)</span> 仅当 <span class="arithmatex">\(q\)</span>”，“只有 <span class="arithmatex">\(q\)</span> 才 <span class="arithmatex">\(p\)</span>”等。</p>
 <p>若两个命题均是否定行为，可以考虑先化作逆否命题形式。</p>
@@ -3007,7 +3021,7 @@
 </ul>
 </li>
 <li>
-<p>命题公式层次的定义：</p>
+<p><mark class="critic">命题公式层次的定义：</mark></p>
 <ul>
 <li>单个命题是 <span class="arithmatex">\(0\)</span> 层公式。</li>
 <li><span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n + 1\)</span> 层当且仅当：<ul>
@@ -3026,9 +3040,9 @@
 <li>
 <p><span class="arithmatex">\(n\)</span> 元真值函数 <span class="arithmatex">\(F:\{0, 1\}^n \to \{0, 1\}\)</span>，对于 <span class="arithmatex">\(n\)</span> 个命题变项有 <span class="arithmatex">\(2^{2^n}\)</span> 个真值函数 。</p>
 <blockquote>
-<p>因为 <span class="arithmatex">\(n\)</span> 个变量可以形成 <span class="arithmatex">\(2^n\)</span> 个结果，对于每个结果，又有 <span class="arithmatex">\(0 / 1\)</span> 的选择，故一共 <span class="arithmatex">\(2^{2^n}\)</span>。</p>
+<p><mark class="critic">因为 <span class="arithmatex">\(n\)</span> 个变量可以形成 <span class="arithmatex">\(2^n\)</span> 个结果，对于每个结果，又有 <span class="arithmatex">\(0 / 1\)</span> 的选择，只要其中有一个结果不一样就算是不同的，故一共 <span class="arithmatex">\(2^{2^n}\)</span>。</mark></p>
 <p><img alt="1.1-2" src="../images/1/1.1-2.jpg" /></p>
-<p>参考 <a href="https://blog.csdn.net/qq_45472866/article/details/108023600">离散数学n元变量的真值函数（或者真值表的种类数）有 2<sup>(2</sup>n)个 详解</a></p>
+<p>参考 <a href="https://blog.csdn.net/qq_45472866/article/details/108023600">离散数学n元变量的真值函数（或者真值表的种类数）有 <span class="arithmatex">\(2^{2^n}\)</span> 个 详解</a></p>
 </blockquote>
 </li>
 </ul>
@@ -3065,8 +3079,13 @@
 <blockquote>
 <p><span class="arithmatex">\(n\)</span> 个命题变项产生 <span class="arithmatex">\(2^n\)</span> 个极小（大）项。</p>
 <p>用 <span class="arithmatex">\(m_i(M_i)\)</span> 表示第 <span class="arithmatex">\(i\)</span> 个极小（大）项，<span class="arithmatex">\(i\)</span> 是该极小（大）项成真（假）赋值的十进制表示。</p>
-<p><span class="arithmatex">\(\neg m_I \Leftrightarrow M_i\)</span>，<span class="arithmatex">\(\neg M_i \Leftrightarrow m_i\)</span>。</p>
+<p><span class="arithmatex">\(\neg m_i \Leftrightarrow M_i\)</span>，<span class="arithmatex">\(\neg M_i \Leftrightarrow m_i\)</span>。</p>
 </blockquote>
+<details class="example">
+<summary>举个栗子（以极小项来说明）</summary>
+<p><img alt="1.4-1" src="../images/1/1.4-1.png" />
+<img alt="1.4-2" src="../images/1/1.4-2.png" />  </p>
+</details>
 </li>
 <li>
 <p><strong>主析取范式</strong>：由极小项组成的析取范式，<strong>主合取范式</strong>：由极大项合取组成的合取范式。</p>
@@ -3102,9 +3121,11 @@
 </ul>
 <h2 id="5">5 联结词全功能集<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <ul>
-<li><span class="arithmatex">\(S\)</span> 是一个联结词集合，若<strong>任何</strong> <span class="arithmatex">\(n\)</span> 元函数均可以由仅含 <span class="arithmatex">\(S\)</span> 中联结词构成的公式表示，则称 <span class="arithmatex">\(S\)</span> 是联结词全功能集（注意：若 <span class="arithmatex">\(S\)</span> 是全功能集，那么任何命题公式都可以用 <span class="arithmatex">\(S\)</span> 中联结词表示）。</li>
-</ul>
+<li>
+<p><span class="arithmatex">\(S\)</span> 是一个联结词集合，若<strong>任何</strong> <span class="arithmatex">\(n\)</span> 元函数均可以由仅含 <span class="arithmatex">\(S\)</span> 中联结词构成的公式表示，则称 <span class="arithmatex">\(S\)</span> 是联结词全功能集（注意：若 <span class="arithmatex">\(S\)</span> 是全功能集，那么任何命题公式都可以用 <span class="arithmatex">\(S\)</span> 中联结词表示）。</p>
 <p><img alt="1.5-1" src="../images/1/1.5-1.png" /></p>
+</li>
+</ul>
 <blockquote>
 <p>实质上是先证明任一命题都是可以化作主析取 / 合取范式，故可用 <span class="arithmatex">\(\{\neg,\vee,\wedge\}\)</span> 表示，然后证 <span class="arithmatex">\(\vee,\wedge,\neg\)</span> 三者之间是可以相互推的，故后面三个也都是全功能集。</p>
 </blockquote>
@@ -3113,9 +3134,9 @@
 <p>与非式：<span class="arithmatex">\(p \uparrow q \Leftrightarrow \neg(p\wedge q)\)</span></p>
 <p>或非式：<span class="arithmatex">\(p \downarrow q \Leftrightarrow \neg(p \vee q)\)</span></p>
 <p><img alt="1.5-2" src="../images/1/1.5-2.png" /></p>
+<p><img alt="1.5-3" src="../images/1/1.5-3.png" /></p>
 </li>
 </ul>
-<p><img alt="1.5-3" src="../images/1/1.5-3.png" /></p>
 <blockquote>
 <p>不难发现，<span class="arithmatex">\(\uparrow\)</span> 和 <span class="arithmatex">\(\downarrow\)</span> 可以把 <span class="arithmatex">\(\vee,\wedge,\neg\)</span> 都表示出来，故 <span class="arithmatex">\(\{\uparrow\},\{\downarrow\}\)</span> 是联结词全功能集。 </p>
 </blockquote>
@@ -3137,6 +3158,13 @@
 <li>合并简单合取式生成所有可能出现在最简展开式中的项。</li>
 <li>确定最简展开式中的项。</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">举个栗子</p>
+<p>举个例子说明一下是怎么实现的。</p>
+<p>对于公式 <span class="arithmatex">\(F\)</span>，我们可以求出它的主析取范式，然后自然也可以得到所有极小项角码的二进制表示。</p>
+<p>现在我们可以将其中一部分极小项合并，但合并的条件是这两个角码二进制有且只有一位不同，比如 <span class="arithmatex">\(101\)</span> 和 <span class="arithmatex">\(111\)</span>，那么第二位取什么都不影响结果，故可以合并为 <span class="arithmatex">\(1-1\)</span>。然后合并的这一项可以替代原来的两项而存在。</p>
+<p>经过多次合并之后我们也就可以用较少的简单合取式来代替原来的公式了。</p>
+</div>
 </li>
 </ul>
 <h2 id="7">7 推理理论<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
@@ -3153,6 +3181,87 @@
 </li>
 <li>
 <p><strong>归谬法（反证法）</strong>：把推理的结论 <span class="arithmatex">\(B\)</span> 的否定 <span class="arithmatex">\(\neg B\)</span> 作为前提，推出矛盾，即证明原为有效结论。</p>
+</li>
+</ul>
+<h2 id="8">8 例题<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>e.g.1 <strong>较为复杂的命题化</strong></p>
+<p>“如果我上街，我就去书店看看，除非我很累。” 将其命题化。</p>
+<details class="success">
+<summary>Solution</summary>
+<p>p: 我上街，q: 我去书店看看，r: 我很累</p>
+<p><span class="arithmatex">\(\neg r \to (p \to q)\)</span></p>
+</details>
+</li>
+<li>
+<p>e.g.2 <strong>命题化解决实际问题</strong></p>
+<p><img alt="1.8-01" src="../images/1/1.8-01.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="1.8-02" src="../images/1/1.8-02.png" /></p>
+<blockquote>
+<p>知道大致解题思路即可。</p>
+</blockquote>
+</details>
+</li>
+<li>
+<p>e.g.3 <strong>求主析取范式</strong></p>
+<p><span class="arithmatex">\(((p \vee q) \to r) \to p\)</span> 求主析取范式。</p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="1.8-03" src="../images/1/1.8-03.png" /></p>
+<blockquote>
+<p>BTW，注意看这里对于缺陷的操作是如何补齐的，这里少 <span class="arithmatex">\(q\)</span> 和 <span class="arithmatex">\(\neg q\)</span> 的时候是用 <span class="arithmatex">\(\wedge (\neg q \vee q)\)</span> 来补齐的，即对于主析取范式，我们应该合取简单析取式来补齐。而对于主合取范式，我们应该析取简单合取式来补齐。这里与例五形成对比。</p>
+</blockquote>
+</details>
+</li>
+<li>
+<p>e.g.4 <strong>利用真值表求主析取范式</strong></p>
+<p>已知 <span class="arithmatex">\(p \wedge q \vee r\)</span> 的真值表，求它的主析取范式。</p>
+<p><img alt="1.8-04" src="../images/1/1.8-04.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><span class="arithmatex">\(p \wedge q \vee r \Leftrightarrow m_1 \vee m_3 \vee m_5 \vee m_6 \vee m_7\)</span></p>
+</details>
+</li>
+<li>
+<p>e.g.5 <strong>求主合取范式</strong></p>
+<p><span class="arithmatex">\(p \wedge q \vee r\)</span> 的主合取范式。</p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="1.8-05" src="../images/1/1.8-05.png" /></p>
+<blockquote>
+<p>BTW，注意看这里缺项的操作是如何补齐的，这里少 <span class="arithmatex">\(q\)</span> 和 <span class="arithmatex">\(\neg q\)</span> 的时候是用 <span class="arithmatex">\(\vee (\neg q \wedge q)\)</span> 来补齐的。即对于主合取范式，我们应该析取简单合取式来补齐。而对于主析取范式，我们应该合取简单析取式来补齐。这里与例三形成对比。</p>
+</blockquote>
+</details>
+</li>
+<li>
+<p>e.g.6 <strong>组合电路</strong></p>
+<p>楼梯里有一盏灯由上下 <span class="arithmatex">\(2\)</span> 个开关控制，要求按动任何一个开关都能打开或关闭灯，试设计一个这样的线路。</p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="1.8-06" src="../images/1/1.8-06.png" /></p>
+<p><img alt="1.8-07" src="../images/1/1.8-07.png" /></p>
+</details>
+</li>
+<li>
+<p>e.g.7 <strong>附加前提证明法</strong></p>
+<p>前提：<span class="arithmatex">\(p \to (q \to r), \neg s \vee p, q\)</span></p>
+<p>结论：<span class="arithmatex">\(s \to r\)</span></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="1.8-08" src="../images/1/1.8-08.png" /></p>
+</details>
+</li>
+<li>
+<p>e.g.8 <strong>归谬法</strong></p>
+<p>前提：<span class="arithmatex">\(p \to (\neg (r \wedge s) \to \neg q), \neg s, p\)</span></p>
+<p>结论：<span class="arithmatex">\(\neg q\)</span></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="1.8-09" src="../images/1/1.8-09.png" /></p>
+</details>
 </li>
 </ul>
 
