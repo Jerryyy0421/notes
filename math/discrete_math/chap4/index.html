@@ -713,6 +713,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6 例题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2910,6 +2917,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6 例题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3070,7 +3084,7 @@
 <li>
 <p>闭包的构造方法</p>
 <ul>
-<li>设 R 为 A 上的关系，则有<ul>
+<li>设 <span class="arithmatex">\(R\)</span> 为 <span class="arithmatex">\(A\)</span> 上的关系，则有<ul>
 <li><span class="arithmatex">\(r(R) = R \cup R^0\)</span></li>
 <li><span class="arithmatex">\(s(R) = R \cup R^{-1}\)</span></li>
 <li><span class="arithmatex">\(t(R) = R \cup R^2 \cup R^3 \cup \dots\)</span></li>
@@ -3097,7 +3111,7 @@
 <p>等价类</p>
 <ul>
 <li>
-<p>设 <span class="arithmatex">\(R\)</span> 为非空集合 <span class="arithmatex">\(A\)</span> 上的等价关系，<span class="arithmatex">\(\forall x \in A\)</span>，令 <span class="arithmatex">\([x]_R = {y |\ y \in A \wedge y R x}\)</span>，则称 <span class="arithmatex">\([x]_R\)</span> 为 <span class="arithmatex">\(x\)</span> 关于 <span class="arithmatex">\(R\)</span> 的等价类，简称为 <span class="arithmatex">\(x\)</span> 的等价类，简记为 <span class="arithmatex">\([x]\)</span>。</p>
+<p>设 <span class="arithmatex">\(R\)</span> 为非空集合 <span class="arithmatex">\(A\)</span> 上的等价关系，<span class="arithmatex">\(\forall x \in A\)</span>，令 <span class="arithmatex">\([x]_R = k\{y |\ y \in A \wedge y R x\}\)</span>，则称 <span class="arithmatex">\([x]_R\)</span> 为 <span class="arithmatex">\(x\)</span> 关于 <span class="arithmatex">\(R\)</span> 的等价类，简称为 <span class="arithmatex">\(x\)</span> 的等价类，简记为 <span class="arithmatex">\([x]\)</span>。</p>
 </li>
 <li>
 <p>性质</p>
@@ -3114,7 +3128,12 @@
 <p>商集</p>
 <ul>
 <li>设 <span class="arithmatex">\(R\)</span> 为非空集合 <span class="arithmatex">\(A\)</span> 上的等价关系，以 <span class="arithmatex">\(R\)</span> 的所有等价类作为元素的集合称为 <span class="arithmatex">\(A\)</span> 关于 <span class="arithmatex">\(R\)</span> 的商集，记作 <span class="arithmatex">\(A/R\)</span>，<span class="arithmatex">\(A/R = \{[x]_R |\ x\in A\}\)</span>。 </li>
+<li>商集里的元素是若干个等价类。</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">举个栗子</p>
+<p><img alt="4.5-1" src="../images/4/4.5-1.png" /></p>
+</div>
 </li>
 <li>
 <p>集合的划分</p>
@@ -3131,7 +3150,7 @@
 <li>
 <p>偏序关系</p>
 <ul>
-<li>非空集合 <span class="arithmatex">\(A\)</span> 上的自反，反对称和传递关系称为 <span class="arithmatex">\(A\)</span> 上的偏序关系，记作 <span class="arithmatex">\(preceq\)</span>，设 <span class="arithmatex">\(preceq\)</span> 为偏序关系，如果 <span class="arithmatex">\(&lt;x, y&gt; \in \preceq\)</span>，则记作 <span class="arithmatex">\(x \preceq y\)</span>，读作 <span class="arithmatex">\(x\)</span> 小于或等于 <span class="arithmatex">\(y\)</span>。<strong>这里表示的是在此偏 序关系里，同一有序对中 <span class="arithmatex">\(x\)</span> 一定出现在 <span class="arithmatex">\(y\)</span> 的前面。</strong></li>
+<li>非空集合 <span class="arithmatex">\(A\)</span> 上的自反，反对称和传递关系称为 <span class="arithmatex">\(A\)</span> 上的偏序关系，记作 <span class="arithmatex">\(preceq\)</span>，设 <span class="arithmatex">\(preceq\)</span> 为偏序关系，如果 <span class="arithmatex">\(&lt;x, y&gt; \in \preceq\)</span>，则记作 <span class="arithmatex">\(x \preceq y\)</span>，读作 <span class="arithmatex">\(x\)</span> 小于或等于 <span class="arithmatex">\(y\)</span>。<strong>这里表示的是在此偏序关系里，同一有序对中 <span class="arithmatex">\(x\)</span> 一定出现在 <span class="arithmatex">\(y\)</span> 的前面。</strong></li>
 <li>偏序集：一个集合 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(A\)</span> 上的偏序关系 <span class="arithmatex">\(R\)</span> 一起称作偏序集，记作 <span class="arithmatex">\(&lt;A, R&gt;\)</span>。</li>
 <li><span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(y\)</span> 可比：对于偏序集 <span class="arithmatex">\(&lt;A, \preceq&gt;\)</span>，若某 <span class="arithmatex">\(x, y \in A\)</span> 满足 <span class="arithmatex">\(x\preceq y \wedge y \preceq x\)</span>，则 <span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(y\)</span> 可比。</li>
 <li><span class="arithmatex">\(y\)</span> 盖住 <span class="arithmatex">\(x\)</span>：若 <span class="arithmatex">\(x \prec y\)</span>（即 <span class="arithmatex">\(x \preceq y \wedge x \not ={y}\)</span>），且不存在 <span class="arithmatex">\(z \in A\)</span> 使得 <span class="arithmatex">\(x \prec z \prec y\)</span>，则称 <span class="arithmatex">\(y\)</span> 盖住 <span class="arithmatex">\(x\)</span>。</li>
@@ -3160,13 +3179,13 @@
 <p>对于偏序集 <span class="arithmatex">\(&lt;A, \preceq&gt;\)</span>，且 <span class="arithmatex">\(B \subseteq A, y \in A\)</span>。</p>
 <ul>
 <li>
-<p>上界：若 <span class="arithmatex">\(\forall x(x \in B \to x \preceq y)\)</span> 成立，则称 <span class="arithmatex">\(y\)</span> 为 <span class="arithmatex">\(B\)</span> 的最大元。（说明所有元素都和 <span class="arithmatex">\(y\)</span> 有偏序关系）</p>
+<p>上界：若 <span class="arithmatex">\(\forall x(x \in B \to x \preceq y)\)</span> 成立，则称 <span class="arithmatex">\(y\)</span> 为 <span class="arithmatex">\(B\)</span> 的上界。（说明所有元素都和 <span class="arithmatex">\(y\)</span> 有偏序关系）</p>
 </li>
 <li>
 <p>上确界：上界中的最小元。</p>
 </li>
 <li>
-<p>下届：若 <span class="arithmatex">\(\forall x(x \in B \to y \preceq x)\)</span> 成立，则称 <span class="arithmatex">\(y\)</span> 为 <span class="arithmatex">\(B\)</span> 的最小元。（说明所有元素都和 <span class="arithmatex">\(y\)</span> 有偏序关系）</p>
+<p>下届：若 <span class="arithmatex">\(\forall x(x \in B \to y \preceq x)\)</span> 成立，则称 <span class="arithmatex">\(y\)</span> 为 <span class="arithmatex">\(B\)</span> 的下界。（说明所有元素都和 <span class="arithmatex">\(y\)</span> 有偏序关系）</p>
 </li>
 <li>
 <p>下确界：下界中的最大元。</p>
@@ -3187,6 +3206,29 @@
 </div>
 </li>
 </ul>
+</li>
+</ul>
+<h2 id="6">6 例题<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>e.g.1</p>
+<p><img alt="4.6-01" src="../images/4/4.6-01.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="4.6-02" src="../images/4/4.6-02.png" /></p>
+<p><img alt="4.6-03" src="../images/4/4.6-03.png" /></p>
+<blockquote>
+<p><strong>这里需要注意的是，在 <span class="arithmatex">\(F \upharpoonright \{a\}\)</span> 和 <span class="arithmatex">\(F[\{a\}]\)</span> 中，<span class="arithmatex">\(\{a\}\)</span> 是一个集合而非元素，故这里的定义域中的元素是 <span class="arithmatex">\(a\)</span> 而非 <span class="arithmatex">\(\{a\}\)</span>，不要弄混。</strong></p>
+</blockquote>
+</details>
+</li>
+<li>
+<p>e.g.2 </p>
+<p><img alt="4.6-04" src="../images/4/4.6-04.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="4.6-05" src="../images/4/4.6-05.png" /></p>
+</details>
 </li>
 </ul>
 

@@ -2912,48 +2912,56 @@
 <p class="admonition-title">Note</p>
 <ul>
 <li><span class="arithmatex">\(D\)</span> 的基图：用无向边代替有向边。</li>
-<li>n 阶图：n 个顶点的图。</li>
+<li><span class="arithmatex">\(n\)</span> 阶图：<span class="arithmatex">\(n\)</span> 个顶点的图。</li>
 <li>零图：<span class="arithmatex">\(E = \varnothing\)</span></li>
-<li>平凡图：1 阶零图</li>
+<li>平凡图：<span class="arithmatex">\(1\)</span> 阶零图</li>
 <li>空图：<span class="arithmatex">\(V = \varnothing\)</span></li>
-<li>通常用 G 表示无向图，D 表示有向图，也常用 G 泛指无向图和有向图。</li>
+<li>通常用 <span class="arithmatex">\(G\)</span> 表示无向图，<span class="arithmatex">\(D\)</span> 表示有向图，也常用 <span class="arithmatex">\(G\)</span> 泛指无向图和有向图。</li>
 </ul>
 </div>
 </li>
 <li>
 <p>关联与相邻：</p>
 <p>在无向图中，若某点和某边相连，则称这个点和边关联。</p>
-<p>对于无向图，相邻指两条边之间有公共结点，故两条边相邻。
-对于有向图，对于 e 的起点 u，终点 v。称 u 邻接到 v，v 邻接于 u。</p>
+<p>对于无向图，若两条边之间有公共端点，则称 <span class="arithmatex">\(u, v\)</span> 是相邻的，若两条边 <span class="arithmatex">\(e, e'\)</span> 至少有一个公共端点，则称 <span class="arithmatex">\(e, e'\)</span> 是相邻的。</p>
+<p>对于有向图，对于 <span class="arithmatex">\(e\)</span> 的起点 <span class="arithmatex">\(u\)</span>，终点 <span class="arithmatex">\(v\)</span>。称 <span class="arithmatex">\(u\)</span> 邻接到 <span class="arithmatex">\(v\)</span>，<span class="arithmatex">\(v\)</span> 邻接于 <span class="arithmatex">\(u\)</span>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>从某点发出的边和这个点的关联次数为 1，若为自环则关联次数为 2。</li>
+<li>从某点发出的边和这个点的关联次数为 <span class="arithmatex">\(1\)</span>，若为自环则关联次数为 <span class="arithmatex">\(2\)</span>。</li>
 <li>无边关联的顶点称作孤立点。</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>关联是指点和边之间的关系。</li>
+<li>相邻既指点和点之间的关系，也指边和边之间的关系。</li>
+<li>邻接指的是点和边之间的关系，且是有向的。</li>
 </ul>
 </div>
 </li>
 <li>
 <p>顶点的度数：</p>
 <ul>
-<li>v 的度数（度）<span class="arithmatex">\(d(v)\)</span>：v作为边的端点次数之和。</li>
-<li>v 的出度 <span class="arithmatex">\(d^+(v)\)</span>：v 作为边的始点次数之和。</li>
-<li>v 的入度 <span class="arithmatex">\(d^-(v)\)</span>：v 作为边的终点次数之和。</li>
-<li>悬挂顶点: 度数为 1 的顶点。</li>
+<li><span class="arithmatex">\(v\)</span> 的度数（度）<span class="arithmatex">\(d(v)\)</span>：<span class="arithmatex">\(v\)</span> 作为边的端点次数之和。</li>
+<li><span class="arithmatex">\(v\)</span> 的出度 <span class="arithmatex">\(d^+(v)\)</span>：<span class="arithmatex">\(v\)</span> 作为边的始点次数之和。</li>
+<li><span class="arithmatex">\(v\)</span> 的入度 <span class="arithmatex">\(d^-(v)\)</span>：<span class="arithmatex">\(v\)</span> 作为边的终点次数之和。</li>
+<li>悬挂顶点: 度数为 <span class="arithmatex">\(1\)</span> 的顶点。</li>
 <li>悬挂边: 与悬挂顶点关联的边。</li>
-<li>G 的最大度 <span class="arithmatex">\(\Delta(G)=\max\{d(v)| v \subseteq V\}\)</span></li>
-<li>G 的最小度 <span class="arithmatex">\(\delta(G)=\min\{d(v)| v \subseteq V\}\)</span></li>
+<li><span class="arithmatex">\(G\)</span> 的最大度 <span class="arithmatex">\(\Delta(G)=\max\{d(v)| v \subseteq V\}\)</span></li>
+<li><span class="arithmatex">\(G\)</span> 的最小度 <span class="arithmatex">\(\delta(G)=\min\{d(v)| v \subseteq V\}\)</span></li>
 </ul>
 </li>
 <li>
 <p>握手定理</p>
-<p>任意无向图和有向图的所有顶点度数之和都等于边数的 2 倍，并且有向图的所有顶点入度之和等于出度之和等于边数。</p>
+<p>任意无向图和有向图的所有顶点度数之和都等于边数的 <span class="arithmatex">\(2\)</span> 倍，并且有向图的所有顶点入度之和等于出度之和等于边数。</p>
 </li>
 <li>
 <p>多重图和简单图</p>
 <ul>
-<li>在无向图中，如果有 2 条或 2 条以上的边关联同一对顶点，则称这些边为平行边，平行边的条数称为重数。</li>
-<li>在有向图中，如果有 2 条或 2 条以上的边具有相同的始点和终点，则称这些边为有向平行边，简称平行边。平行边的条数称为重数。</li>
+<li>在无向图中，如果有 <span class="arithmatex">\(2\)</span> 条或 <span class="arithmatex">\(2\)</span> 条以上的边关联同一对顶点，则称这些边为平行边，平行边的条数称为重数。</li>
+<li>在有向图中，如果有 <span class="arithmatex">\(2\)</span> 条或 <span class="arithmatex">\(2\)</span> 条以上的边具有相同的始点和终点，则称这些边为有向平行边，简称平行边。平行边的条数称为重数。</li>
 <li>含平行边的图称为多重图。</li>
 <li>既无平行边也无环的图称为简单图。</li>
 </ul>
@@ -2961,8 +2969,7 @@
 <li>
 <p>图的同构</p>
 <ul>
-<li>如果一个图上的点可以通过点的映射变换变成另外一个图，那么这两个图就是同构的。</li>
-<li>如果两个图的邻接矩阵经过合同变换可以变成相同的矩阵，那么则称这两个图是同构的。记作 <span class="arithmatex">\(G_1 \cong G_2\)</span>。</li>
+<li>如果一个图上的点可以通过点的映射变换变成另外一个图，那么这两个图就是同构的。或者说，如果两个图的邻接矩阵经过合同变换可以变成相同的矩阵，那么则称这两个图是同构的。记作 <span class="arithmatex">\(G_1 \cong G_2\)</span>。</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2981,8 +2988,8 @@
 <li>
 <p>完全图</p>
 <ul>
-<li>n 阶无向完全图 <span class="arithmatex">\(K_n\)</span>: 每个顶点都与其余顶点相邻的 n 阶无向简单图。</li>
-<li>n 阶有向完全图: 每对顶点之间均有两条方向相反的有向边的 n 阶有向简单图。</li>
+<li><span class="arithmatex">\(n\)</span> 阶无向完全图 <span class="arithmatex">\(K_n\)</span>: 每个顶点都与其余顶点相邻的 n 阶无向简单图。</li>
+<li><span class="arithmatex">\(n\)</span> 阶有向完全图: 每对顶点之间均有两条方向相反的有向边的 n 阶有向简单图。</li>
 </ul>
 </li>
 <li>

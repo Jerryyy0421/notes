@@ -2939,7 +2939,8 @@
 <p class="admonition-title">Note</p>
 <ul>
 <li><span class="arithmatex">\(\varnothing \subseteq \varnothing\)</span></li>
-<li><span class="arithmatex">\(\{\varnothing \}\)</span> 和 <span class="arithmatex">\(\varnothing\)</span> 都表示集合，后者表示空集，前者表示集合有一个元素，空集元素，故 <span class="arithmatex">\(P(\varnothing) = \varnothing\)</span>，<span class="arithmatex">\(P(\{\varnothing \}) = \{\varnothing, \{\varnothing \}\}\)</span>。</li>
+<li><span class="arithmatex">\(\{\varnothing \}\)</span> 和 <span class="arithmatex">\(\varnothing\)</span> 都表示集合，后者表示空集，前者表示集合有一个元素，空集元素。<strong>它们都既可以表示集合也可以表示元素。</strong></li>
+<li><span class="arithmatex">\(P(\varnothing) = \{ \varnothing \}\)</span>，<span class="arithmatex">\(P(\{\varnothing \}) = \{\varnothing, \{\varnothing \}\}\)</span>，<span class="arithmatex">\(P(\{\varnothing, \{\varnothing\}\}) = \{\varnothing, \{\varnothing\}, \{\{\varnothing\}\}, \{\varnothing, \{\varnothing\}\}\}\)</span>。</li>
 </ul>
 </div>
 <h2 id="2">2 集合的基本运算<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
@@ -2962,7 +2963,7 @@
 <ul>
 <li><span class="arithmatex">\(\varnothing \subseteq A - B \subseteq A\)</span></li>
 <li><span class="arithmatex">\(A \subseteq B \Leftrightarrow A - B = \varnothing\)</span></li>
-<li><span class="arithmatex">\(A \cap B \Leftrightarrow A - B = A\)</span></li>
+<li><span class="arithmatex">\(A \cap B = \varnothing \Leftrightarrow A - B = A\)</span></li>
 <li><span class="arithmatex">\(A \oplus C = B \oplus C \Rightarrow A = B\)</span></li>
 </ul>
 <details class="success">
@@ -3023,8 +3024,9 @@
 </ul>
 <h2 id="4">4 例题<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <ul>
-<li>e.g.1 求欧拉函数 <span class="arithmatex">\(\varphi (n)\)</span> 的值。</li>
-</ul>
+<li>
+<p>e.g.1 </p>
+<p>求欧拉函数 <span class="arithmatex">\(\varphi (n)\)</span> 的值。</p>
 <details class="success">
 <summary>Solution</summary>
 <p>欧拉函数表示的是 <span class="arithmatex">\(0 \sim n - 1\)</span> 中与 <span class="arithmatex">\(n\)</span> 的互素的数的个数。</p>
@@ -3038,44 +3040,75 @@
   &amp;= n(1 - \dfrac{1}{p_1})(1 - \dfrac{1}{p_2})\cdots(1 - \dfrac{1}{p_k})
 \end{align*}\]</div>
 </details>
+</li>
+<li>
+<p>e.g.2 </p>
+<p>计算幂集 <span class="arithmatex">\(P(A)\)</span></p>
 <ul>
-<li>e.g.2 计算幂集 <span class="arithmatex">\(P(A)\)</span><ul>
 <li><span class="arithmatex">\(A = P(\left \{ 1, 2 \right \})\)</span></li>
 <li><span class="arithmatex">\(A = P\left \{ \left \{ 1, 1 \right \}, \left \{ 2, 1 \right \}, \left \{ 1, 2, 1 \right \}\right \}\)</span></li>
-</ul>
-</li>
 </ul>
 <details class="success">
 <summary>Solution</summary>
 <ul>
 <li><span class="arithmatex">\(|P(\{ 1, 2 \})| = 2^2 = 4\)</span>，<span class="arithmatex">\(|P(A)| = 2^4 = 16\)</span>，依次列出即可。</li>
-<li>注意审题，要先化。，<span class="arithmatex">\(A = P\{ \{1\}, \{2, 1\}, \{1, 2\}\} = P \{\{1\}, \{1, 2\}\}\)</span>，故 <span class="arithmatex">\(|P\{A\}| = 2^2 = 4\)</span>，全部列出来即可。</li>
+<li>注意审题，要先化。<span class="arithmatex">\(A = P\{ \{1\}, \{2, 1\}, \{1, 2\}\} = P \{\{1\}, \{1, 2\}\}\)</span>，故 <span class="arithmatex">\(|P\{A\}| = 2^2 = 4\)</span>，全部列出来即可。</li>
 </ul>
 </details>
-<ul>
-<li>e.g.3 证明下列命题是否正确，若不正确，请给出反例。<ul>
-<li><span class="arithmatex">\(A \cap (B \oplus C) = (A \cap B) \oplus (A \cap B)\)</span></li>
-<li><span class="arithmatex">\(A \subset B \wedge C \subset D \Rightarrow A \cap B \subset B \cap D\)</span></li>
-</ul>
 </li>
+<li>
+<p>e.g.3 </p>
+<p>证明下列命题是否正确，若不正确，请给出反例。</p>
+<ul>
+<li><span class="arithmatex">\(A \cap (B \oplus C) = (A \cap B) \oplus (A \cap C)\)</span></li>
+<li><span class="arithmatex">\(A \subset B \wedge C \subset D \Rightarrow A \cap C \subset B \cap D\)</span></li>
+<li><span class="arithmatex">\(A \times B \subseteq C \times D \Rightarrow A \subseteq C \times B \subseteq D\)</span></li>
 </ul>
 <details class="success">
 <summary>Solution</summary>
 <ul>
-<li>对于左式，<span class="arithmatex">\(A \cap (B \oplus C) = A \cap ((B - C) \cup (C - B)) = (A \cap (B - C)) \cup (A \cap (C - B))\)</span></li>
-</ul>
-<p>对于右式，<span class="arithmatex">\((A \cap B) \oplus (A \cap B) = ((A \cap B) - (A \cap C)) \cup ((A \cap B) - (A \cap B))\)</span>，故原式可化为</p>
-<ul>
-<li>不正确，若 <span class="arithmatex">\(A = \{1\}\)</span>，<span class="arithmatex">\(B = \{1, 4\}\)</span>，<span class="arithmatex">\(C = {2}\)</span>，<span class="arithmatex">\(D = \{2, 3\}\)</span>，那么就有 <span class="arithmatex">\(A \subset B \wedge C \subset D\)</span></li>
+<li>
+<p>对于左式，<span class="arithmatex">\(A \cap (B \oplus C) = A \cap ((B - C) \cup (C - B)) = (A \cap (B - C)) \cup (A \cap (C - B))\)</span>；对于右式，<span class="arithmatex">\((A \cap B) \oplus (A \cap C) = ((A \cap B) - (A \cap C)) \cup ((A \cap C) - (A \cap B))\)</span>，故右式可化为 <span class="arithmatex">\((A \cap (B - C)) \cup (A \cap (C - B))\)</span>，与左式化简结果相同，故成立。</p>
+</li>
+<li>
+<p>不正确，若 <span class="arithmatex">\(A = \{1\}\)</span>，<span class="arithmatex">\(B = \{1, 4\}\)</span>，<span class="arithmatex">\(C = \{2\}\)</span>，<span class="arithmatex">\(D = \{2, 3\}\)</span>，那么就有 <span class="arithmatex">\(A \cap C = B \cap D\)</span>，正确的形式应写为 <span class="arithmatex">\(A \cap C \subseteq B \cap D\)</span>。</p>
+</li>
 </ul>
 </details>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>遇到 <span class="arithmatex">\(A - B\)</span>，一是考虑用算律来做，二是利用定义化为 <span class="arithmatex">\(A \cap ~B\)</span>。</li>
+<li>遇到 <span class="arithmatex">\(A - B\)</span>，一是考虑用算律来做，二是利用定义化为 <span class="arithmatex">\(A \cap \sim B\)</span>。</li>
 <li>遇到 <span class="arithmatex">\(A \oplus B\)</span>，常常考虑化为 <span class="arithmatex">\((A - B) \cup (B - A)\)</span> 或 <span class="arithmatex">\((A \cup B) - (A \cap B)\)</span> 的形式。</li>
 </ul>
 </div>
+</li>
+<li>
+<p>e.g.4</p>
+<p>证明 <span class="arithmatex">\(A - (B \cup C) = (A - B) \cap (A - C)\)</span></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="2.4-7" src="../images/2/2.4-7.png" /></p>
+</details>
+</li>
+<li>
+<p>e.g.5</p>
+<p>设 <span class="arithmatex">\(A \subseteq B\)</span>，证明 <span class="arithmatex">\(\sim B \subseteq \sim A\)</span></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="2.4-8" src="../images/2/2.4-8.png" /></p>
+</details>
+</li>
+<li>
+<p>e.g.6</p>
+<p><img alt="2.4-9" src="../images/2/2.4-9.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="2.4-10" src="../images/2/2.4-10.png" /></p>
+<p><img alt="2.4-11" src="../images/2/2.4-11.png" /></p>
+</details>
+</li>
+</ul>
 
 
 

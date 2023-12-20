@@ -659,6 +659,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4 例题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2882,6 +2889,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4 例题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2973,6 +2987,48 @@
 <li>
 <p>等值式与基本等值式</p>
 <p>若 <span class="arithmatex">\(A \leftrightarrow B\)</span> 为逻辑有效式，则称 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 是等值的，记作 <span class="arithmatex">\(A \Leftrightarrow B\)</span>，并称 <span class="arithmatex">\(A \Leftrightarrow B\)</span> 为等值式。</p>
+<p><img alt="2.3-1" src="../images/2/2.3-1.png" /></p>
+<p><img alt="2.3-2" src="../images/2/2.3-2.png" /></p>
+<blockquote>
+<p>主要记忆一下 <span class="arithmatex">\(\forall x(A(x) \to B) \Leftrightarrow \exists x A(x) \to B\)</span> 和 <span class="arithmatex">\(\exists x(A(x) \to B) \Leftrightarrow \forall x A(x) \to B\)</span></p>
+<p>这里主要是因为 <span class="arithmatex">\(A \to B\)</span> 相当于 <span class="arithmatex">\(\neg A \vee B\)</span>，多了一个 <span class="arithmatex">\(\neg\)</span>，所以前面的量词也要变化。</p>
+</blockquote>
+<p><img alt="2.3-3" src="../images/2/2.3-3.png" /></p>
+<blockquote>
+<p>人们称第一个是 <span class="arithmatex">\(\forall\)</span> 对 <span class="arithmatex">\(\wedge\)</span> 的分配；称第二个为 <span class="arithmatex">\(\exists\)</span> 对 <span class="arithmatex">\(\vee\)</span> 的分配。注意 <span class="arithmatex">\(\forall\)</span> 对 <span class="arithmatex">\(\vee\)</span> 以及 <span class="arithmatex">\(\exists\)</span> 对 <span class="arithmatex">\(\wedge\)</span> 均不存在分配等值式。</p>
+</blockquote>
+<p><img alt="2.3-4" src="../images/2/2.3-4.png" /></p>
+</li>
+<li>
+<p>前束范式</p>
+<p>设 <span class="arithmatex">\(A\)</span> 为一谓词公式，若 <span class="arithmatex">\(A\)</span> 具有如下形式：</p>
+<div class="arithmatex">\[
+    Q_1 x_1 Q_2 x_2 \cdots Q_k x_k B
+\]</div>
+<p>则称 <span class="arithmatex">\(A\)</span> 是前束范式，其中每个 <span class="arithmatex">\(Q_i\)</span> 为 <span class="arithmatex">\(\forall\)</span> 或 <span class="arithmatex">\(\exists\)</span>，<span class="arithmatex">\(B\)</span> 为不含量词的谓词公式。</p>
+</li>
+</ul>
+<h2 id="4">4 例题<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>e.g.1 </p>
+<p>证明：</p>
+<p><img alt="2.4-1" src="../images/2/2.4-1.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="2.4-2" src="../images/2/2.4-2.png" /></p>
+<p><img alt="2.4-3" src="../images/2/2.4-3.png" /></p>
+</details>
+</li>
+<li>
+<p>e.g.2</p>
+<p>求下列公式的前束范式</p>
+<p><img alt="2.4-4" src="../images/2/2.4-4.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="2.4-5" src="../images/2/2.4-5.png" /></p>
+<p><img alt="2.4-6" src="../images/2/2.4-6.png" /></p>
+</details>
 </li>
 </ul>
 
