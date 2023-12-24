@@ -3042,7 +3042,7 @@
 </details>
 </li>
 <li>
-<p>e.g.2 </p>
+<p>e.g.2 <strong>有坑捏</strong></p>
 <p>计算幂集 <span class="arithmatex">\(P(A)\)</span></p>
 <ul>
 <li><span class="arithmatex">\(A = P(\left \{ 1, 2 \right \})\)</span></li>
@@ -3057,12 +3057,13 @@
 </details>
 </li>
 <li>
-<p>e.g.3 </p>
+<p>e.g.3 <strong>Attention, please!</strong></p>
 <p>证明下列命题是否正确，若不正确，请给出反例。</p>
 <ul>
 <li><span class="arithmatex">\(A \cap (B \oplus C) = (A \cap B) \oplus (A \cap C)\)</span></li>
 <li><span class="arithmatex">\(A \subset B \wedge C \subset D \Rightarrow A \cap C \subset B \cap D\)</span></li>
-<li><span class="arithmatex">\(A \times B \subseteq C \times D \Rightarrow A \subseteq C \times B \subseteq D\)</span></li>
+<li><span class="arithmatex">\((A \cup B \cup C) - (A \cup B) = C\)</span></li>
+<li><span class="arithmatex">\(A \times B \subseteq C \times D \Rightarrow A \subseteq C \wedge B \subseteq D\)</span></li>
 </ul>
 <details class="success">
 <summary>Solution</summary>
@@ -3072,6 +3073,12 @@
 </li>
 <li>
 <p>不正确，若 <span class="arithmatex">\(A = \{1\}\)</span>，<span class="arithmatex">\(B = \{1, 4\}\)</span>，<span class="arithmatex">\(C = \{2\}\)</span>，<span class="arithmatex">\(D = \{2, 3\}\)</span>，那么就有 <span class="arithmatex">\(A \cap C = B \cap D\)</span>，正确的形式应写为 <span class="arithmatex">\(A \cap C \subseteq B \cap D\)</span>。</p>
+</li>
+<li>
+<p>不正确，<span class="arithmatex">\((A \cup B \cup C) - (A \cup B) =(A \cup B - (A \cup B)) \cup (C - (A \cup B)) = (C - (A \cup B))\)</span>。</p>
+</li>
+<li>
+<p>不正确，这里有一个陷阱，那就是如果 <span class="arithmatex">\(A\)</span> 或 <span class="arithmatex">\(B\)</span> 其中一个是空集那么这个就不成立了。 </p>
 </li>
 </ul>
 </details>

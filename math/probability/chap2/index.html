@@ -1112,7 +1112,7 @@
       
         <li class="md-nav__item">
   <a href="#6" class="md-nav__link">
-    6 习题课（待完成）
+    6 习题课
   </a>
   
 </li>
@@ -2933,7 +2933,7 @@
       
         <li class="md-nav__item">
   <a href="#6" class="md-nav__link">
-    6 习题课（待完成）
+    6 习题课
   </a>
   
 </li>
@@ -2977,13 +2977,11 @@
 <ul>
 <li>
 <p>若随机变量 <span class="arithmatex">\(X\)</span> 可取到的不同值是有限个或<strong>可列无限多个项</strong>，并且以确定的概率取这些值，则称 <span class="arithmatex">\(X\)</span> 为<strong>离散型随机变量</strong>。</p>
-</li>
-<li>
 <p><img alt="2.2-1" src="../images/2/2.2-1.png" /></p>
-</li>
-</ul>
 <p><img alt="2.2-2" src="../images/2/2.2-2.png" /></p>
 <p><img alt="2.2-3" src="../images/2/2.2-3.png" /></p>
+</li>
+</ul>
 <h2 id="3">3 连续型随机变量及其概率密度<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -3014,7 +3012,14 @@
 <li>
 <p>二项分布</p>
 <p>每次实验只有 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(\bar A\)</span> 结果，独立实验 <span class="arithmatex">\(n\)</span> 次，用 <span class="arithmatex">\(X\)</span> 表示 <span class="arithmatex">\(n\)</span> 次实验中 <span class="arithmatex">\(A\)</span> 发生的次数，<span class="arithmatex">\(P\{x = k\} = C_{n}^{k}p^k(1 - p)^{n - k}\)</span>，则称 <span class="arithmatex">\(X\)</span> 服从参数为 <span class="arithmatex">\(np\)</span> 的二项分布，记作 <span class="arithmatex">\(X \sim B(n, p)\)</span>。</p>
-<p><img alt="2.4-1" src="../images/2/2.4-1.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">二项分布形状特点</p>
+<ul>
+<li>二项分布的形状取决于 <span class="arithmatex">\(p\)</span> 和 <span class="arithmatex">\(n\)</span> 的大小。</li>
+<li>当 <span class="arithmatex">\(p\)</span> 接近 <span class="arithmatex">\(0.5\)</span> 时，图形是对称的。</li>
+<li><span class="arithmatex">\(p\)</span> 离 <span class="arithmatex">\(0.5\)</span> 越远，对称性越差，但随着 <span class="arithmatex">\(n\)</span> 的增大，分布趋于对称。</li>
+</ul>
+</div>
 <p>若 <span class="arithmatex">\((n + 1) \cdot p\)</span> 是整数 <span class="arithmatex">\(m\)</span>，则 <span class="arithmatex">\(P\{X = m\} = P\{X = m - 1\}\)</span> 且在这两处可以取到最大值。</p>
 <p>若 <span class="arithmatex">\((n + 1) \cdot p\)</span> 不是整数，则令 $m = \left \lfloor  (n + 1) \cdot p\right \rfloor $，在 <span class="arithmatex">\(P\{X = m\}\)</span> 处可以取到最大值。</p>
 </li>
@@ -3023,8 +3028,12 @@
 <p>设 <span class="arithmatex">\(X\)</span> 的所有可能取值为 <span class="arithmatex">\(0, 1, 2, \dots\)</span>，并且 <span class="arithmatex">\(P\{X = k\} = \dfrac{\lambda^ke^{-\lambda}}{k!}(k = 0, 1, 2, \dots)\)</span>，其中 <span class="arithmatex">\(\lambda &gt; 0\)</span>，则称 <span class="arithmatex">\(x\)</span> 服从泊松分布，记作 <span class="arithmatex">\(X \sim P(\lambda)\)</span> 或 <span class="arithmatex">\(X \sim \pi(\lambda)\)</span>。</p>
 <p><strong>泊松定理：</strong>若满足 <span class="arithmatex">\(np_n = \lambda\)</span>，则对任一固定的非负整数 <span class="arithmatex">\(k\)</span>，有 <span class="arithmatex">\(\lim_{n \to \infty}C_{n}^{k}p_n^k(1 - p_n)^{n - k} = \dfrac{\lambda^ke^{-\lambda}}{k!}(k = 0, 1, 2, \dots)\)</span>。（说明了二项分布与泊松分布的关系）</p>
 <blockquote>
-<p>泊松定理说明，泊松分布是二项分布的极限分布，当 <span class="arithmatex">\(n\)</span> 很大而 <span class="arithmatex">\(p\)</span> 很小时，二项分布可近似看作参数 <span class="arithmatex">\(\lambda = np\)</span> 的泊松分布。</p>
+<p><strong>泊松定理说明，泊松分布是二项分布的极限分布，当 <span class="arithmatex">\(n\)</span> 很大而 <span class="arithmatex">\(p\)</span> 很小时，二项分布可近似看作参数 <span class="arithmatex">\(\lambda = np\)</span> 的泊松分布。</strong></p>
 </blockquote>
+<details class="success">
+<summary>Proof</summary>
+<p><img alt="" src="../images/2/2.4-7.png" /></p>
+</details>
 </li>
 <li>
 <p>几何分布</p>
@@ -3074,6 +3083,11 @@
 <li>
 <p>特殊情况</p>
 <p><img alt="2.5-3" src="../images/2/2.5-3.png" /></p>
+<details class="success">
+<summary>Proof</summary>
+<p><img alt="2.5-9" src="../images/2/2.5-9.png" /></p>
+<p><img alt="2.5-10" src="../images/2/2.5-10.png" /></p>
+</details>
 <p><img alt="2.5-4" src="../images/2/2.5-4.png" /></p>
 <p>用一道例题具体说明一下该方法的使用</p>
 <p><img alt="2.5-5" src="../images/2/2.5-5.png" /></p>
@@ -3082,10 +3096,57 @@
 </li>
 <li>
 <p>随机变量的函数分布的两种方法</p>
-<p><img alt="2.5-7" src="../images/2/2.5-7.png" /></p>
+<ul>
+<li>一般方法：先求分布函数，再求密度函数的方法。</li>
+<li>特殊情况：如果 <span class="arithmatex">\(Y = g(x)\)</span> 单调可导，利用反函数代入的方法。</li>
+</ul>
 </li>
 </ul>
-<h2 id="6">6 习题课（待完成）<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h2 id="6">6 习题课<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>e.g.1</p>
+<p><img alt="" src="../images/2/2.6-01.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="" src="../images/2/2.6-02.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这题有点类似于第八章假设检验中的右侧检验，假设随机猜的为真，按随即猜测的概率算出的样本事件是小概率事件，故不是猜测的。这里相当于计算落入右边区间的概率。</p>
+</div>
+</details>
+</li>
+<li>
+<p>e.g.2</p>
+<p><img alt="" src="../images/2/2.6-03.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="" src="../images/2/2.6-04.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本题有一点绕，分布函数中涉及到了两个变量，一定要弄明白这两个变量在随机函数中的意义和作用。<strong>需要注意的是，在第一小问中，令 <span class="arithmatex">\(k = 0\)</span>，算出来的是 <span class="arithmatex">\(P\{T &gt; t\}\)</span> 的概率而不是 <span class="arithmatex">\(P\{T &lt; t\}\)</span> 的概率。</strong></p>
+</div>
+</details>
+</li>
+<li>
+<p>e.g.3</p>
+<p><img alt="" src="../images/2/2.6-05.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="" src="../images/2/2.6-06.png" /></p>
+<p><img alt="" src="../images/2/2.6-07.png" /></p>
+</details>
+</li>
+<li>
+<p>e.g.4 <strong>又是条件概率的问题，和 chap 1 e.g.10 很像，但是还是做错了 🥲</strong></p>
+<p><img alt="" src="../images/2/2.6-08.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="" src="../images/2/2.6-09.png" /></p>
+<p><img alt="" src="../images/2/2.6-10.png" /></p>
+</details>
+</li>
+</ul>
 
 
 

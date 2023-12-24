@@ -3070,6 +3070,19 @@
 <li><span class="arithmatex">\(F_{\min}(x) = 1 - [1 - F(x)]^n\)</span></li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">有关 <span class="arithmatex">\(E(S^2)\)</span> 的一点细节</p>
+<div class="arithmatex">\[
+  \begin{align*}
+    E(S^2) &amp; = E \left [\dfrac{1}{n - 1}\sum_{i = 1}^n (X_i - \bar X)^2 \right ] \\
+          &amp; = E \left [\dfrac{1}{n - 1} \left (\sum_{i = 1}^n X_i^2 - n\bar X^2 \right ) \right ] \\
+          &amp; = \dfrac{1}{n - 1} \left [\sum_{i = 1}^n E(X_i^2) - nE(\bar X^2) \right ] \\
+          &amp; = \dfrac{1}{n - 1} \left \{ \sum_{i = 1}^n \left \{ D(X_i) + [E(X_i)]^2 \right \} - n \left \{ D(\bar X) + [E(\bar X)]^2 \right \} \right \} \\
+          &amp; = \sigma^2
+  \end{align*}
+\]</div>
+<p>这里注意 <span class="arithmatex">\(\bar{X}\)</span> 不能当作常量，故算 <span class="arithmatex">\(E(\bar{X}^2)\)</span> 的时候不能直接当成 <span class="arithmatex">\(\bar{X}^2\)</span>，要当作样本变量来处理。</p>
+</div>
 </li>
 <li>
 <p>正态总体的两个抽样分布定理</p>
@@ -3274,6 +3287,14 @@
 <summary>Solution</summary>
 <p><img alt="6.7-12" src="../images/6/6.7-12.png" /></p>
 <p><img alt="6.7-13" src="../images/6/6.7-13.png" /></p>
+</details>
+</li>
+<li>
+<p>e.g.6</p>
+<p><img alt="6.7-14" src="../images/6/6.7-14.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="6.7-15" src="../images/6/6.7-15.png" /></p>
 </details>
 </li>
 </ul>

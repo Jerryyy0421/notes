@@ -2954,9 +2954,12 @@
 <ul>
 <li>
 <p>字母表，项，原子公式，合式公式</p>
-</li>
-<li>
 <p><img alt="2.2-1" src="../images/2/2.2-1.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">闭式和非闭式的区别</p>
+<p>在任何解释下，闭式的真值都唯一确定。</p>
+<p>但是对于非闭式，它在某些解释下就可能不是命题，真值不唯一。但也有一些非闭式，可能在某些解释下能成为命题，甚至在任何解释下都能成为命题，例如 <span class="arithmatex">\(F(x) \to F(x)\)</span> 或 <span class="arithmatex">\(F(x) \wedge \neg F(x)\)</span>。</p>
+</div>
 </li>
 <li>
 <p>换名规则</p>
@@ -2966,9 +2969,10 @@
 <li>
 <p>解释和赋值</p>
 <p><img alt="2.2-2" src="../images/2/2.2-2.png" /></p>
-<blockquote>
-<p>这里 <span class="arithmatex">\(a,f,F,x\)</span> 都是抽象的，不定的。而 <span class="arithmatex">\(\bar a, \bar f, \bar F, \sigma(x)\)</span> 是具体的。代入具体的符号之后，我们就可以把一个抽象的命题变为一个具体的命题。并判断其真假。</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这里 <span class="arithmatex">\(a,f,F,x\)</span> 都是抽象的，不定的。而 <span class="arithmatex">\(\bar a, \bar f, \bar F, \sigma(x)\)</span> 是具体的。代入具体的符号之后，我们就可以把一个抽象的命题变为一个具体的命题。并判断其真假。然后把每个抽象符号就有个具体含义，我们可以将原来的数学公式用自然语言表示出来。</p>
+</div>
 </li>
 <li>
 <p>公式分类</p>
@@ -2988,14 +2992,28 @@
 <p>等值式与基本等值式</p>
 <p>若 <span class="arithmatex">\(A \leftrightarrow B\)</span> 为逻辑有效式，则称 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 是等值的，记作 <span class="arithmatex">\(A \Leftrightarrow B\)</span>，并称 <span class="arithmatex">\(A \Leftrightarrow B\)</span> 为等值式。</p>
 <p><img alt="2.3-1" src="../images/2/2.3-1.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>这两个等值式很重要，这个可以让 <span class="arithmatex">\(\neg\)</span> 在量词外面和里面之间来回变换。</p>
+<p>若想证明这个等值式可以通过消去量词然后来证明左右两边等值。</p>
+</div>
 <p><img alt="2.3-2" src="../images/2/2.3-2.png" /></p>
 <blockquote>
 <p>主要记忆一下 <span class="arithmatex">\(\forall x(A(x) \to B) \Leftrightarrow \exists x A(x) \to B\)</span> 和 <span class="arithmatex">\(\exists x(A(x) \to B) \Leftrightarrow \forall x A(x) \to B\)</span></p>
-<p>这里主要是因为 <span class="arithmatex">\(A \to B\)</span> 相当于 <span class="arithmatex">\(\neg A \vee B\)</span>，多了一个 <span class="arithmatex">\(\neg\)</span>，所以前面的量词也要变化。</p>
 </blockquote>
+<details class="success">
+<summary>证明一下 <span class="arithmatex">\(\forall x(A(x) \to B) \Leftrightarrow \exists x A(x) \to B\)</span></summary>
+<div class="arithmatex">\[
+\begin{align*}
+    \forall x(A(x) \to B) &amp; \Leftrightarrow \forall x(\neg A(x) \vee B) \\
+                          &amp; \Leftrightarrow \neg \exists x A(x) \vee B \\
+                          &amp; \Leftrightarrow \exists x A(x) \to B 
+\end{align*}        
+\]</div>
+</details>
 <p><img alt="2.3-3" src="../images/2/2.3-3.png" /></p>
 <blockquote>
-<p>人们称第一个是 <span class="arithmatex">\(\forall\)</span> 对 <span class="arithmatex">\(\wedge\)</span> 的分配；称第二个为 <span class="arithmatex">\(\exists\)</span> 对 <span class="arithmatex">\(\vee\)</span> 的分配。注意 <span class="arithmatex">\(\forall\)</span> 对 <span class="arithmatex">\(\vee\)</span> 以及 <span class="arithmatex">\(\exists\)</span> 对 <span class="arithmatex">\(\wedge\)</span> 均不存在分配等值式。</p>
+<p><strong>人们称第一个是 <span class="arithmatex">\(\forall\)</span> 对 <span class="arithmatex">\(\wedge\)</span> 的分配；称第二个为 <span class="arithmatex">\(\exists\)</span> 对 <span class="arithmatex">\(\vee\)</span> 的分配。注意 <span class="arithmatex">\(\forall\)</span> 对 <span class="arithmatex">\(\vee\)</span> 以及 <span class="arithmatex">\(\exists\)</span> 对 <span class="arithmatex">\(\wedge\)</span> 均不存在分配等值式。</strong></p>
 </blockquote>
 <p><img alt="2.3-4" src="../images/2/2.3-4.png" /></p>
 </li>
