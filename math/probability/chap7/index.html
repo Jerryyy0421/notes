@@ -3108,6 +3108,10 @@
 <li>总体未知量的矩估计量不是唯一的。</li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>矩估计法的核心就是利用样本的 <span class="arithmatex">\(1, 2, ..., r\)</span> 阶矩和总体的 <span class="arithmatex">\(1, 2, ..., r\)</span> 阶矩近似相等。</p>
+</div>
 </li>
 </ul>
 <h3 id="12">1.2 最大似然估计法<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
@@ -3122,8 +3126,9 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>一言以蔽之，最大似然估计就是改变 <span class="arithmatex">\(\theta\)</span> 的值使得 <span class="arithmatex">\(L\)</span> 取值最大，使得样本结果最有可能出现。</li>
+<li><strong>一言以蔽之，最大似然估计就是改变 <span class="arithmatex">\(\theta\)</span> 的值使得 <span class="arithmatex">\(L\)</span> 取值最大，使得样本结果最有可能出现。</strong></li>
 <li>对于 <span class="arithmatex">\(\theta_i\)</span> 的求法，就是联立 <span class="arithmatex">\(\dfrac{\partial L}{\partial \theta_i} = 0\)</span> 或 <span class="arithmatex">\(\dfrac{\partial \ln L}{\partial \theta_i} = 0\)</span>（后者使用次数更多）方程，然后求解。</li>
+<li><strong>值得注意的是，这里算概率的时候不用考虑样本打乱顺序排列的全部概率，即每个样本出现都是有序的，第一个样本就是 <span class="arithmatex">\(x_1\)</span>，第二个就是 <span class="arithmatex">\(x_2\)</span>，以此类推。</strong></li>
 <li>参数的最大似然估计不是唯一的，也可能不存在。</li>
 <li>
 <p>若 <span class="arithmatex">\(\hat \theta\)</span> 是未知参数 <span class="arithmatex">\(\theta\)</span> 的最大似然估计，且满足 <span class="arithmatex">\(g(\theta)\)</span> 是关于 <span class="arithmatex">\(\theta\)</span> 的严格单调函数，则 <span class="arithmatex">\(g(\theta)\)</span> 的最大似然估计还是在 <span class="arithmatex">\(\theta = \hat \theta\)</span> 时取到，即 <span class="arithmatex">\(g(\hat{\theta})\)</span>。</p>
@@ -3153,20 +3158,18 @@
 <p>设 <span class="arithmatex">\(\hat{\theta} = \hat{\theta}(X_1, X_2, \dots, X_n)\)</span> 是未知参数 <span class="arithmatex">\(\theta\)</span> 的估计量，若 <span class="arithmatex">\(E(\hat{\theta})\)</span> 存在且 <span class="arithmatex">\(E(\hat{\theta}) = \theta\)</span>，那么 <span class="arithmatex">\(\hat{\theta}\)</span> 为 <span class="arithmatex">\(\theta\)</span> 的无偏估计量，否则称为有偏估计量。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <ul>
-<li>设总体 <span class="arithmatex">\(X\)</span> 的均值和方差都存在，<span class="arithmatex">\(X_1, X_2, \dots, X_n\)</span> 是来自总体 <span class="arithmatex">\(X\)</span> 的样本，证明无论总体 <span class="arithmatex">\(X\)</span> 服从什么分布，均有<ul>
+<li>设总体 <span class="arithmatex">\(X\)</span> 的均值和方差都存在，<span class="arithmatex">\(X_1, X_2, \dots, X_n\)</span> 是来自总体 <span class="arithmatex">\(X\)</span> 的样本，证明无论总体 <span class="arithmatex">\(X\)</span> 服从什么分布，均有</li>
 <li>样本均值 <span class="arithmatex">\(\bar X\)</span> 是总体均值 <span class="arithmatex">\(E(X)\)</span> 的无偏估计量。</li>
 <li>样本方差 <span class="arithmatex">\(S^2\)</span> 是总体方差 <span class="arithmatex">\(D(X)\)</span> 的无偏估计量。</li>
 <li>样本 <span class="arithmatex">\(k\)</span> 阶矩 <span class="arithmatex">\(A_k\)</span> 是总体 <span class="arithmatex">\(k\)</span> 阶矩 <span class="arithmatex">\(E(X^k)\)</span> 的无偏估计量。</li>
 </ul>
-</li>
-</ul>
+</div>
 </li>
 </ul>
 <h3 id="22">2.2 有效性<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <ul>
-<li>设 <span class="arithmatex">\(\hat{\theta_1} = \hat{\theta_1}(X_1, X_2, \dots, X_n)\)</span> 和 <span class="arithmatex">\(\hat{\theta_2} = \hat{\theta_2}(X_1, X_2, \dots, X_n)\)</span> 都是总体参数 <span class="arithmatex">\(\theta\)</span> 的无偏估计量，若 <span class="arithmatex">\(D(\hat{\theta_1}) &lt; D(\hat{\theta_2})\)</span>，则称 <span class="arithmatex">\(\hat{\theta_2}\)</span> 比 <span class="arithmatex">\(\hat{\theta_2}\)</span> 更有效。</li>
+<li>设 <span class="arithmatex">\(\hat{\theta_1} = \hat{\theta_1}(X_1, X_2, \dots, X_n)\)</span> 和 <span class="arithmatex">\(\hat{\theta_2} = \hat{\theta_2}(X_1, X_2, \dots, X_n)\)</span> 都是总体参数 <span class="arithmatex">\(\theta\)</span> 的无偏估计量，若 <span class="arithmatex">\(D(\hat{\theta_1}) &lt; D(\hat{\theta_2})\)</span>，则称 <span class="arithmatex">\(\hat{\theta_1}\)</span> 比 <span class="arithmatex">\(\hat{\theta_2}\)</span> 更有效。</li>
 </ul>
 <h3 id="23">2.3 一致性<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3258,6 +3261,10 @@
 <li>
 <p><span class="arithmatex">\(\mu_1, \mu_2\)</span> 未知，方差比 <span class="arithmatex">\(\dfrac{\sigma_1^2}{\sigma_2^2}\)</span> 的置信水平为 <span class="arithmatex">\(1 - \alpha\)</span> 的置信区间。</p>
 <p>利用 <span class="arithmatex">\(F = \dfrac{S_1^2 / S_2^2}{\sigma_1^2 / \sigma_2^2} \sim F(n_1 - 1, n_2 - 1)\)</span>，然后从 <span class="arithmatex">\(F\)</span> 的置信区间可以推出 <span class="arithmatex">\(\sigma^2\)</span> 的置信区间为 <span class="arithmatex">\(\left(\dfrac{S_1^2}{S_2^2 F_{\frac{\alpha}{2}(n_1 - 1, n_2 - 1)}}, \dfrac{S_1^2}{S_2^2} F_{\frac{\alpha}{2}(n_2 - 1, n_1 - 1)}\right)\)</span>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>双变量和单变量处理方法很类似，主要是要记住 6 个概率分布公式（双变量和单变量有两个是重复的）。</strong></p>
+</div>
 </li>
 </ul>
 <h2 id="5">5 单侧置信区间<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
@@ -3286,15 +3293,85 @@
 </li>
 </ul>
 <h2 id="6">6 例题<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
-<p><img alt="7.1-1" src="../images/7/7.1-1.png" />
-<img alt="7.1-2" src="../images/7/7.1-2.png" />
-<img alt="7.1-3" src="../images/7/7.1-3.png" />
-<img alt="7.1-4" src="../images/7/7.1-4.png" />
-<img alt="7.1-5" src="../images/7/7.1-5.png" /></p>
-<p><img alt="7.2-1" src="../images/7/7.2-1.png" />
-<img alt="7.2-2" src="../images/7/7.2-2.png" /></p>
-<p><img alt="7.2-3" src="../images/7/7.2-3.png" />
-<img alt="7.2-4" src="../images/7/7.2-4.png" /></p>
+<ul>
+<li>
+<p>e.g.1</p>
+<p><img alt="7.6-01" src="../images/7/7.6-01.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="7.6-02" src="../images/7/7.6-02.png" /></p>
+<p><img alt="7.6-03" src="../images/7/7.6-03.png" /></p>
+</details>
+</li>
+<li>
+<p>e.g.2</p>
+<p><img alt="7.6-04" src="../images/7/7.6-04.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="7.6-05" src="../images/7/7.6-05.png" />
+<img alt="7.6-14" src="../images/7/7.6-14.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本题不能直接求偏导求出答案，观察得 <span class="arithmatex">\(a, b\)</span> 均存在范围，结合单调性可以求出 <span class="arithmatex">\(a, b\)</span> 在何处取得极值。</p>
+</div>
+</details>
+</li>
+<li>
+<p>e.g.3</p>
+<p><img alt="7.6-06" src="../images/7/7.6-06.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="7.6-07" src="../images/7/7.6-07.png" /></p>
+</details>
+</li>
+<li>
+<p>e.g.4</p>
+<p><img alt="7.6-08" src="../images/7/7.6-08.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="7.6-09" src="../images/7/7.6-09.png" /></p>
+<p><img alt="7.6-10" src="../images/7/7.6-10.png" /></p>
+</details>
+</li>
+<li>
+<p>e.g.5 <strong>有细节需要注意</strong></p>
+<p><img alt="7.6-11" src="../images/7/7.6-11.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="7.6-12" src="../images/7/7.6-12.png" /></p>
+<p><img alt="7.6-13" src="../images/7/7.6-13.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>在本题中书上的做法是相当于看作是 <span class="arithmatex">\(n\)</span> 次样本取样，由于 <span class="arithmatex">\(L(\theta) = \prod p(x_i)\)</span>，所以前面不用乘以 <span class="arithmatex">\(C_{n}^k\)</span>，但是如果当作是一次样本取样，样本服从二项分布，那么算概率的时候就要乘以 <span class="arithmatex">\(C_{n}^{k}\)</span>，不过由于在求导的时候 <span class="arithmatex">\(C_{n}^{k}\)</span> 不含有 <span class="arithmatex">\(p\)</span>，所以对求导结果不产生影响。但是我们一般在选取样本的时候，都会选择多个样本来估计参数，而不是只选一个样本来估计，所以最好按照书上的当作是 <span class="arithmatex">\(n\)</span> 次服从 <span class="arithmatex">\((0 - 1)\)</span> 分布的样本来做。</strong></p>
+</div>
+</details>
+</li>
+<li>
+<p>e.g.6 <strong>多变量的最大似然估计</strong></p>
+<p><img alt="7.6-15" src="../images/7/7.6-15.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="7.6-16" src="../images/7/7.6-16.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>如果要求的是 <span class="arithmatex">\(\sigma\)</span> 的最大似然估计，就要对 <span class="arithmatex">\(\sigma\)</span> 求偏导。</p>
+</div>
+</details>
+</li>
+<li>
+<p>e.g.7 </p>
+<p><img alt="7.6-17" src="../images/7/7.6-17.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="7.6-18" src="../images/7/7.6-18.png" /></p>
+<p><img alt="7.6-19" src="../images/7/7.6-19.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这里求 <span class="arithmatex">\(\hat{\theta}\)</span> 的分布函数的时候用到的是算 <span class="arithmatex">\(\max\{X_1, X_2, ..., X_n\}\)</span> 的性质公式。  </p>
+</div>
+</details>
+</li>
+</ul>
 
 
 

@@ -2937,7 +2937,7 @@
 <ul>
 <li>关联是指点和边之间的关系。</li>
 <li>相邻既指点和点之间的关系，也指边和边之间的关系。</li>
-<li>邻接指的是点和边之间的关系，且是有向的。</li>
+<li>邻接指的是点和点之间的关系，且是有向的。</li>
 </ul>
 </div>
 </li>
@@ -2962,20 +2962,18 @@
 <ul>
 <li>在无向图中，如果有 <span class="arithmatex">\(2\)</span> 条或 <span class="arithmatex">\(2\)</span> 条以上的边关联同一对顶点，则称这些边为平行边，平行边的条数称为重数。</li>
 <li>在有向图中，如果有 <span class="arithmatex">\(2\)</span> 条或 <span class="arithmatex">\(2\)</span> 条以上的边具有相同的始点和终点，则称这些边为有向平行边，简称平行边。平行边的条数称为重数。</li>
-<li>含平行边的图称为多重图。</li>
-<li>既无平行边也无环的图称为简单图。</li>
+<li><strong>含平行边的图称为多重图。</strong></li>
+<li><strong>既无重边也无自环的图称为简单图。</strong></li>
 </ul>
 </li>
 <li>
 <p>图的同构</p>
-<ul>
-<li>如果一个图上的点可以通过点的映射变换变成另外一个图，那么这两个图就是同构的。或者说，如果两个图的邻接矩阵经过合同变换可以变成相同的矩阵，那么则称这两个图是同构的。记作 <span class="arithmatex">\(G_1 \cong G_2\)</span>。</li>
-</ul>
+<p>如果一个图上的点可以通过点的映射变换变成另外一个图，那么这两个图就是同构的。或者说，如果两个图的邻接矩阵经过合同变换可以变成相同的矩阵，那么则称这两个图是同构的。记作 <span class="arithmatex">\(G_1 \cong G_2\)</span>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
 <li>图之间的同构关系具有自反性、对称性和传递性。</li>
-<li>能找到多条同构的必要条件, 但它们都不是充分条件:<ul>
+<li>能找到多条同构的必要条件，但它们都不是充分条件：<ul>
 <li>边数相同，顶点数相同。</li>
 <li>度数列相同（不计度数的顺序）。</li>
 <li>对应顶点的关联集及邻域的元素个数相同，等等。</li>
@@ -2988,8 +2986,8 @@
 <li>
 <p>完全图</p>
 <ul>
-<li><span class="arithmatex">\(n\)</span> 阶无向完全图 <span class="arithmatex">\(K_n\)</span>: 每个顶点都与其余顶点相邻的 n 阶无向简单图。</li>
-<li><span class="arithmatex">\(n\)</span> 阶有向完全图: 每对顶点之间均有两条方向相反的有向边的 n 阶有向简单图。</li>
+<li><span class="arithmatex">\(n\)</span> 阶无向完全图 <span class="arithmatex">\(K_n\)</span>：每个顶点都与其余顶点相邻的 <span class="arithmatex">\(n\)</span> 阶无向简单图。</li>
+<li><span class="arithmatex">\(n\)</span> 阶有向完全图：每对顶点之间均有两条方向相反的有向边的 <span class="arithmatex">\(n\)</span> 阶有向简单图。</li>
 </ul>
 </li>
 <li>
@@ -3000,13 +2998,13 @@
 <li>若 <span class="arithmatex">\(V' = V\)</span> 且 <span class="arithmatex">\(E' \subseteq E\)</span>，则称 <span class="arithmatex">\(G'\)</span> 为 <span class="arithmatex">\(G\)</span> 的生成子图。</li>
 <li>若 <span class="arithmatex">\(V' \subset V\)</span> 且 <span class="arithmatex">\(E' \subset E\)</span>，则称 <span class="arithmatex">\(G'\)</span> 为 <span class="arithmatex">\(G\)</span> 的真子图。</li>
 <li>若 <span class="arithmatex">\(V' \subseteq V\)</span> 且 <span class="arithmatex">\(V' \ne \varnothing\)</span>，以 <span class="arithmatex">\(V'\)</span> 为顶点集，两端点都在 <span class="arithmatex">\(V'\)</span> 中的所有边的边集为 <span class="arithmatex">\(G\)</span> 的子图称作 <span class="arithmatex">\(V'\)</span> 的导出子图，记作 <span class="arithmatex">\(G[V']\)</span>。</li>
-<li>若 <span class="arithmatex">\(E' \subseteq E\)</span> 且 <span class="arithmatex">\(E' \ne \varnothing\)</span>，以 <span class="arithmatex">\(V'\)</span> 为边集，以 <span class="arithmatex">\(E'\)</span> 中边关联的所有顶点为顶点集的 <span class="arithmatex">\(G\)</span> 的子图称作 <span class="arithmatex">\(E'\)</span> 的导出子图, 记作 <span class="arithmatex">\(G[E']\)</span>。 </li>
+<li>若 <span class="arithmatex">\(E' \subseteq E\)</span> 且 <span class="arithmatex">\(E' \ne \varnothing\)</span>，以 <span class="arithmatex">\(E'\)</span> 为边集，以 <span class="arithmatex">\(E'\)</span> 中边关联的所有顶点为顶点集的 <span class="arithmatex">\(G\)</span> 的子图称作 <span class="arithmatex">\(E'\)</span> 的导出子图, 记作 <span class="arithmatex">\(G[E']\)</span>。 </li>
 </ul>
 </li>
 <li>
 <p>补图</p>
 <ul>
-<li>设 <span class="arithmatex">\(G=&lt;V,E&gt;\)</span> 为 n 阶无向简单图，以 V 为顶点集，所有使 G 成为完全图 <span class="arithmatex">\(K_n\)</span> 的添加边组成的集合为边集的图，称为 G 的补图，记作 <span class="arithmatex">\(\bar G\)</span>。若 <span class="arithmatex">\(G \cong \bar G\)</span>，则称 G 是自补图。</li>
+<li>设 <span class="arithmatex">\(G=&lt;V,E&gt;\)</span> 为 <span class="arithmatex">\(n\)</span> 阶无向简单图，以 <span class="arithmatex">\(V\)</span> 为顶点集，所有使 <span class="arithmatex">\(G\)</span> 成为完全图 <span class="arithmatex">\(K_n\)</span> 的添加边组成的集合为边集的图，称为 <span class="arithmatex">\(G\)</span> 的补图，记作 <span class="arithmatex">\(\bar G\)</span>。若 <span class="arithmatex">\(G \cong \bar G\)</span>，则称 <span class="arithmatex">\(G\)</span> 是自补图。</li>
 </ul>
 </li>
 </ul>
