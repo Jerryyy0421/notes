@@ -3309,7 +3309,13 @@ P\{Y = y_j\} = p_{.j} = \sum_{i = 1}^{\infty}p_{ij}
 </ul>
 <h3 id="33">3.3 二维连续型随机变量的独立性<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <ul>
-<li>若 <span class="arithmatex">\(f(x, y) = f_X(x)f_Y(y)\)</span>，则 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 事件相互独立，且这两者互为充要关系。</li>
+<li>
+<p>若 <span class="arithmatex">\(f(x, y) = f_X(x)f_Y(y)\)</span>，则 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 事件相互独立，且这两者互为充要关系。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>如果判断出 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 相互独立，直接用恒等式证明即可。如果判断出不相互独立，还需要代入特值说明一下。</p>
+</div>
+</li>
 </ul>
 <h3 id="34">3.4 二维均匀分布和正态分布<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3360,6 +3366,10 @@ f(x, y) = \dfrac{1}{2 \pi \sigma_1 \sigma_2 \sqrt{1 - \rho^2}}e^{\left \{\dfrac{
 <h3 id="51">5.1 离散型<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(Z = g(x, y)\)</span>，通过列表格法，确定不同 <span class="arithmatex">\(x, y\)</span> 数值所对应 <span class="arithmatex">\(z\)</span> 的值，然后再求出每个 <span class="arithmatex">\(P\{Z = z_k\}\)</span> 概率。</p>
 <p><img alt="3.5-1" src="../images/3/3.5-1.png" /></p>
+<details class="success">
+<summary>证明 <span class="arithmatex">\(X + Y \sim P(\lambda_1 + \lambda_2)\)</span></summary>
+<p><img alt="" src="../images/3/3.5-11.png" /></p>
+</details>
 <h3 id="52">5.2 连续型<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3407,9 +3417,51 @@ f(x, y) = \dfrac{1}{2 \pi \sigma_1 \sigma_2 \sqrt{1 - \rho^2}}e^{\left \{\dfrac{
 <p><img alt="3.6-6" src="../images/3/3.6-6.png" /></p>
 <p><img alt="3.6-7" src="../images/3/3.6-7.png" /></p>
 <h2 id="7">7 例题<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>e.g.1</p>
 <p><img alt="3.4-3" src="../images/3/3.4-3.png" /></p>
+</li>
+<li>
+<p>e.g.2</p>
 <p><img alt="3.4-4" src="../images/3/3.4-4.png" /></p>
+</li>
+<li>
+<p>e.g.3  </p>
 <p><img alt="3.5-10" src="../images/3/3.5-10.png" /></p>
+</li>
+<li>
+<p>e.g.4</p>
+<p><img alt="" src="../images/3/3.7-01.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="" src="../images/3/3.7-02.png" /></p>
+</details>
+</li>
+<li>
+<p>e.g.5</p>
+<p><img alt="" src="../images/3/3.7-03.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="" src="../images/3/3.7-04.png" /></p>
+<p><img alt="" src="../images/3/3.7-05.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这题最后化成积分的时候要想起来利用正态分布公式来做！</p>
+</div>
+</details>
+</li>
+<li>
+<p>e.g.6</p>
+<p><img alt="" src="../images/3/3.7-06.png" /></p>
+<p><img alt="" src="../images/3/3.7-07.png" /></p>
+<details class="success">
+<summary>Solution</summary>
+<p><img alt="" src="../images/3/3.7-08.png" /></p>
+<p><img alt="" src="../images/3/3.7-09.png" /></p>
+</details>
+</li>
+</ul>
 
 
 
