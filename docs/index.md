@@ -1,21 +1,20 @@
-# Welcome to MkDocs
+# Hey bro!
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+这里是 Ana_Su 的笔记本！
 
 
+!!! danger "施工中"
+    前方施工道路，小心道路危险 ~
 
-? !
+    绝赞修建中~~咕噜咕噜 ƪ(˘⌣˘)ʃ
+
+会陆续讲博客中的笔记转移到这里。
+
+博客预计之后会重新美化一下，成为日常闲聊场所（？。
+
+总之这里以后会存放一些学习文档和学校笔记，博客会写一些读书笔记或记录一下每周生活（？
+
+欢迎大家常来玩~ (●'◡'●)
+
+
+

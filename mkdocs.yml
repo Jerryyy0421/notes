@@ -1,25 +1,221 @@
-site_name: 我的第一个站点
+site_name: Ana_Su's NoteBook
+site_description: 生生不息
+repo_name: Ana_Su/notes
+repo_url: https://github.com/AnaSuuuu/notes
 
 nav:
-  - 首页: index.md  
-  - 数学学习: Math.md
+  - Home: 
+    - index.md  
+  
+  - Math & Physcics: 
+    - math/index.md
+    
+#    - 微积分:
+#      - math/calculus/index.md
+#      - 多元函数的极限和连续性: math/calculus/chap1.md
+#      - 随机变量及其概率分布: math/calculus/chap2.md
+#      - 重积分: math/calculus/chap3.md
+#      - 第一型曲线积分与曲面积分: math/calculus/chap4.md
+#      - 第二型曲线积分和曲面积分: math/calculus/chap5.md
+#      - 无穷级数: math/calculus/chap6.md
+#      - 常微分方程: math/calculus/chap7.md
+    
+#    - 线性代数:
+#      - math/linear_algebra/index.md
+#      - 矩阵的运算与初等变换: math/linear_algebra/chap1.md
+#      - 方阵的行列式: math/linear_algebra/chap2.md
+#      - 可逆矩阵: math/linear_algebra/chap3.md
+#      - 线性方程组和向量组的线性相关性: math/linear_algebra/chap4.md
+#      - 方阵的特征值，特征向量与相似化简: math/linear_algebra/chap5.md
+#      - 二次型与对称矩阵: math/linear_algebra/chap6.md
+      
+#    - 离散数学: 
+#      - math/discrete_math/index.md
+#      - 命题逻辑: math/discrete_math/chap1.md
+#      - 一阶逻辑: math/discrete_math/chap2.md
+#      - 集合的基本概念和运算: math/discrete_math/chap3.md
+#      - 二元关系与函数: math/discrete_math/chap4.md
+#      - 图的基本概念: math/discrete_math/chap5.md
+#      - 特殊的图: math/discrete_math/chap6.md
+#      - 树: math/discrete_math/chap7.md
+    
+    - 复变函数: 
+      - math/complex_analysis/index.md
+      - 复数与复变函数: math/complex_analysis/chap1.md
+      - 解析函数: math/complex_analysis/chap2.md
+      - 复变函数的积分: math/complex_analysis/chap3.md
+      - 级数: math/complex_analysis/chap4.md
+      - 留数: math/complex_analysis/chap5.md
+      - 傅里叶变换: math/complex_analysis/chap6.md
+      - 拉普拉斯变换: math/complex_analysis/chap7.md
+    
+    - 概率论:
+      - math/probability/index.md
+      - 随机事件及其概率论: math/probability/chap1.md
+      - 随机变量及其概率分布: math/probability/chap2.md
+      - 多维随机变量及其概率分布: math/probability/chap3.md
+      - 随机变量数字特征: math/probability/chap4.md
+      - 大数定律及中心极限定理: math/probability/chap5.md
+      - 样本及样本函数的分布: math/probability/chap6.md
+      - 参数估计: math/probability/chap7.md
+      - 假设检验: math/probability/chap8.md
+    
+#    - 大学物理I:
+#      - math/physics_I/index.md
+#      - 刚体的定轴转动: math/physics_I/chap3.md
+#      - 热力学基础: math/physics_I/chap6.md
+#      - 静电场: math/physics_I/chap7.md
+#      - 稳恒磁场: math/physics_I/chap8.md
+#      - 电磁感应与麦克斯韦方程组: math/physics_I/chap9.md
+
+#    - 大学物理II:
+#      - 振动: math/physics_II/chap1.md
+#      - 机械波: math/physics_II/chap2.md
+#      - 电磁波: math/physics_II/chap3.md
+#      - 几何光学成像原理: math/physics_II/chap4.md
+#      - 光的干涉: math/physics_II/chap5.md
+#      - 光的衍射: math/physics_II/chap6.md
+#      - 光的偏振: math/physics_II/chap7.md
+#      - 相对论基础: math/physics_II/chap8.md
+#      - 波粒二象性: math/physics_II/chap9.md
+#      - 量子力学基础: math/physics_II/chap10.md
+
+#  - EE:
+#    - ee/index.md
+    
+#    - 电路分析:
+#      - ee/circuit_analysis/index.md
+#      - 电路模型和电路定律: ee/circuit_analysis/chap1.md
+#      - 直流电阻电路的等效变换分析: ee/circuit_analysis/chap2.md
+#      - 直流电阻电路的一般分析: ee/circuit_analysis/chap3.md
+#      - 电路定理: ee/circuit_analysis/chap4.md
+#      - 一阶直流动态电路时域分析: ee/circuit_analysis/chap5.md
+#      - 相量法: ee/circuit_analysis/chap6.md
+#      - 正弦稳态电路的分析: ee/circuit_analysis/chap7.md
+#      - 含有耦合电感的电路: ee/circuit_analysis/chap8.md
+#      - 三相电路: ee/circuit_analysis/chap9.md
+    
+#    - 信号与系统:
+#      - 概论: ee/signals-and-systems/chap1.md
+#      - 连续系统的时域分析: ee/signals-and-systems/chap2.md
+#      - 傅里叶变换: ee/signals-and-systems/chap3.md
+#      - 拉普拉斯变换: ee/signals-and-systems/chap4.md
+#      - 离散系统的时域分析: ee/signals-and-systems/chap5.md
+#      - 离散系统的 z 变换: ee/signals-and-systems/chap6.md
+    
+#    - 模拟电子技术基础:
+#      - 二极管: ee/analog-circuit-design/chap1.md
+#      - 三极管: ee/analog-circuit-design/chap2.md
+#      - 场效应管: ee/analog-circuit-design/chap3.md
+#      - 负反馈放大电路: ee/analog-circuit-design/chap4.md
+#      - 集成运算放大电路: ee/analog-circuit-design/chap5.md
+#      - 功率放大电路: ee/analog-circuit-design/chap6.md
+#      - 直流稳压电源: ee/analog-circuit-design/chap7.md
+  
+  - CS:
+    - cs/index.md
+    - CS61A:
+      - Building Abstractions with Functions: cs/cs61a/topic1.md
+      - Building Abstractions with Data: cs/cs61a/topic2.md
+ 
+  - ACM:
+    - acm/index.md
+    - 算法专题:
+      - 数学:
+        - 数论初步: acm/algorithm/math/number-theory/topic1.md
+        - 数论进阶: acm/algorithm/math/number-theory/topic2.md
+        - 多项式初步: acm/algorithm/math/poly/topic1.md
+        - 博弈论初步: acm/algorithm/math/game-theory/topic1.md
+      - 计算几何:
+        - acm/algorithm/geometry/topic1.md
+      - 字符串:
+        - 字符串初步: acm/algorithm/string/topic1.md
+        - 字符串进阶: acm/algorithm/string/topic2.md
+      - Others:
+        - how to generate random numbers: acm/algorithm/others/random.md
+    - CF 补全计划:
+      - acm/cf/index.md
+      - 1826 ~ 1850: acm/cf/cf1826.md
+      - 1851 ~ 1875: acm/cf/cf1851.md
+      - 1876 ~ 1900: acm/cf/cf1876.md
+      - 1943: acm/cf/cf1943.md
+
+    - AT 补全计划:
+      - acm/at/index.md
+      - arc173: acm/at/arc/arc173
+
+    - XCPC 补全计划:
+      - ICPC 2023 Hong Kong: acm/xcpc/icpc-2023-hk
+    - 杭电被虐实记:
+      - acm/hdu2023/index.md
+      - Day1: acm/hdu2023/contest01.md
+      - Day2: acm/hdu2023/contest02.md
+  
+  - Daily Progress: 
+    - daily/index.md
 
 theme:
-  name: material
+  font: false
+  name: material    
+  language: 'zh'
+  favicon: images/favicon.png
+  icon: 
+    logo: material/notebook-outline
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - content.code.select
+    - content.code.copy
+
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+      # primary: teal
+      accent: purple 
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode    
+      # primary: teal
+      # accent: lime
 
 markdown_extensions:
-    - meta # 支持markdown博客文件头的元数据，比如标题
     - pymdownx.arithmatex:
           generic: true
+    - pymdownx.highlight:
+        anchor_linenums: true
+    - pymdownx.tabbed:
+        alternate_style: true
+        combine_header_slug: true
     - toc:
-        permalink: "#"
-        baselevel: 1
-        separator: "_"
+        permalink: true
+        toc_depth: 4
+    - meta # 支持markdown博客文件头的元数据，比如标题
     - footnotes # 支持脚注
+    - abbr
+    - tables # 支持表格
+    - pymdownx.snippets
     - admonition  # 支持提示块
     - pymdownx.details  # 提示块可折叠
     - pymdownx.superfences
     - attr_list 
+    - pymdownx.critic
+    - pymdownx.caret
+    - pymdownx.keys
+    - pymdownx.mark
+    - pymdownx.tilde
+    - md_in_html
+    - def_list
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+    - pymdownx.tasklist:
+        custom_checkbox: true
     - pymdownx.inlinehilite # 支持行内语法高亮
     # - pymdownx.highlight: # 支持代码块语法高亮，！！！跟mermaid冲突
     #     linenums: true # 显示行号
@@ -30,7 +226,28 @@ markdown_extensions:
               class: mermaid
               format: !!python/name:mermaid2.fence_mermaid
 
+
 extra_javascript:
-    - javascripts/mathjax.js
+    - javascripts/katex.js 
+    - https://cdn.tonycrane.cc/utils/katex.min.js
+
     - https://polyfill.io/v3/polyfill.min.js?features=es6
     - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+  - https://cdn.tonycrane.cc/utils/katex.min.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  
+extra:
+  social: # 社交账号
+    - icon: fontawesome/brands/github
+      link: https://github.com/AnaSuuuu
+        #   name: Fusyong on Github
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/Ana_Suuuu
+        #   name: Fusyong on Twitter
+    # disqus: XXXXXXXX # disqus评论插件
+
+copyright: |
+  &copy; 2023 <a href="https://github.com/AnaSuuuu"  target="_blank" rel="noopener">Ana Su</a>
