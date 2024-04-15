@@ -80,9 +80,14 @@ nav:
 #      - 波粒二象性: math/physics_II/chap9.md
 #      - 量子力学基础: math/physics_II/chap10.md
 
-#  - EE:
-#    - ee/index.md
+  - EE:
+    - ee/index.md
     
+    - Robot Dynamics and Control:
+      - Kinematics: ee/RDnC/topic1.md
+      - Dynamics: ee/RDnC/topic2.md
+      - Linear Control: ee/RDnC/topic3.md
+
 #    - 电路分析:
 #      - ee/circuit_analysis/index.md
 #      - 电路模型和电路定律: ee/circuit_analysis/chap1.md
@@ -143,6 +148,7 @@ nav:
     - AT 补全计划:
       - acm/at/index.md
       - arc173: acm/at/arc/arc173
+      - arc174: acm/at/arc/arc174
 
     - XCPC 补全计划:
       - ICPC 2023 Hong Kong: acm/xcpc/icpc-2023-hk
@@ -151,7 +157,7 @@ nav:
       - Day1: acm/hdu2023/contest01.md
       - Day2: acm/hdu2023/contest02.md
   
-  - Daily Progress: 
+  - Others: 
     - daily/index.md
 
 theme:
