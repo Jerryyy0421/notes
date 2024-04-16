@@ -125,34 +125,39 @@ nav:
  
   - ACM:
     - acm/index.md
-    - 算法专题:
-      - 数学:
-        - 数论初步: acm/algorithm/math/number-theory/topic1.md
+    - Project of Fucking Algorithm:
+      - Math:
+        - Number-theory: acm/algorithm/math/number-theory/topic1.md
         - 数论进阶: acm/algorithm/math/number-theory/topic2.md
         - 多项式初步: acm/algorithm/math/poly/topic1.md
         - 博弈论初步: acm/algorithm/math/game-theory/topic1.md
-      - 计算几何:
+      - Geometry:
         - acm/algorithm/geometry/topic1.md
-      - 字符串:
+      - String:
         - 字符串初步: acm/algorithm/string/topic1.md
         - 字符串进阶: acm/algorithm/string/topic2.md
       - Others:
         - how to generate random numbers: acm/algorithm/others/random.md
-    - CF 补全计划:
+    - Project of Fucking CF:
       - acm/cf/index.md
       - 1826 ~ 1850: acm/cf/cf1826.md
       - 1851 ~ 1875: acm/cf/cf1851.md
       - 1876 ~ 1900: acm/cf/cf1876.md
       - 1943: acm/cf/cf1943.md
+      - 1946: acm/cf/cf1946.md
 
-    - AT 补全计划:
+    - Project of Fucking AT:
       - acm/at/index.md
-      - arc173: acm/at/arc/arc173
-      - arc174: acm/at/arc/arc174
+      - ABC: 
+        - arc173: acm/at/arc/arc173
+        - arc174: acm/at/arc/arc174
+      - ARC:
+        - arc173: acm/at/arc/arc173
+        - arc174: acm/at/arc/arc174
 
-    - XCPC 补全计划:
+    - Project of Fucking XCPC:
       - ICPC 2023 Hong Kong: acm/xcpc/icpc-2023-hk
-    - 杭电被虐实记:
+    - Project of Fucking HDU:
       - acm/hdu2023/index.md
       - Day1: acm/hdu2023/contest01.md
       - Day2: acm/hdu2023/contest02.md
