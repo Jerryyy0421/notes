@@ -9,6 +9,10 @@ nav:
   
   - Math & Physcics: 
     - math/index.md
+
+    - Concrete Math:
+      - math/concrete_math/index.md 
+      - Recurrent Problems: math/concrete_math/chap1.md
     
 #    - 微积分:
 #      - math/calculus/index.md
@@ -145,6 +149,8 @@ nav:
       - 1876 ~ 1900: acm/cf/cf1876.md
       - 1943: acm/cf/cf1943.md
       - 1946: acm/cf/cf1946.md
+      - 1954: acm/cf/cf1954.md
+      - 1956: acm/cf/cf1956.md
 
     - Project of Fucking AT:
       - acm/at/index.md
