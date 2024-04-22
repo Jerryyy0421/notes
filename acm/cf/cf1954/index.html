@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../cf1876/">
+        <link rel="prev" href="../cf1946/">
       
       
-        <link rel="next" href="../cf1946/">
+        <link rel="next" href="../cf1956/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>1943 - Ana_Su's NoteBook</title>
+        <title>1954 - Ana_Su's NoteBook</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#codeforces-round-934-div-1" class="md-skip">
+        <a href="#educational-codeforces-round-164-rated-for-div-2" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1943
+              1954
             
           </span>
         </div>
@@ -2029,30 +2029,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    1943
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cf1943/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2061,44 +2041,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#b-non-palindromic-substring" class="md-nav__link">
-    <span class="md-ellipsis">
-      B. Non-Palindromic Substring
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#c-tree-compass" class="md-nav__link">
-    <span class="md-ellipsis">
-      C. Tree Compass
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2129,10 +2071,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../cf1954/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1954
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2141,6 +2103,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#d-colored-balls" class="md-nav__link">
+    <span class="md-ellipsis">
+      D. Colored Balls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-chain-reaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      E. Chain Reaction
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2698,18 +2698,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#b-non-palindromic-substring" class="md-nav__link">
+  <a href="#d-colored-balls" class="md-nav__link">
     <span class="md-ellipsis">
-      B. Non-Palindromic Substring
+      D. Colored Balls
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#c-tree-compass" class="md-nav__link">
+  <a href="#e-chain-reaction" class="md-nav__link">
     <span class="md-ellipsis">
-      C. Tree Compass
+      E. Chain Reaction
     </span>
   </a>
   
@@ -2733,43 +2733,29 @@
   
 
 
-<h1 id="codeforces-round-934-div-1"><a href="https://codeforces.com/contest/1943">Codeforces Round 934 (Div. 1)</a><a class="headerlink" href="#codeforces-round-934-div-1" title="Permanent link">&para;</a></h1>
-<h2 id="b-non-palindromic-substring"><a href="https://codeforces.com/contest/1943/problem/B">B. Non-Palindromic Substring</a><a class="headerlink" href="#b-non-palindromic-substring" title="Permanent link">&para;</a></h2>
-<p><strong>Solution:</strong></p>
-<p>If a string is not k-th good, the all substring of length k is palindromic.</p>
-<p>So [i ... j] and [i + 1 ... j + 1] is palindromic.</p>
-<p>And in that case, if k is odd, we can know that </p>
-<p>$$
-    a_i = a_{i + 1} = a_{i + 2} = ... = a_j
-  $$</p>
-<p>If k is even, we can know that,</p>
-<p>\begin{align}
-    a_i = a_{i + 2} = a_{i + 4} = ... \newline
-    a_{i + 1} = a_{i + 3} = a_{i + 5} = ...
-  \end{align}</p>
-<p>So we can find out that:</p>
-<ol>
-<li>k = 1: never possible</li>
-<li>1 &lt; k &lt; n, odd: not an alternating string</li>
-<li>1 &lt; k &lt; n, even: not all characters same</li>
-<li>k = n: non-palindromic string</li>
-</ol>
-<h2 id="c-tree-compass"><a href="https://codeforces.com/contest/1943/problem/C">C. Tree Compass</a><a class="headerlink" href="#c-tree-compass" title="Permanent link">&para;</a></h2>
-<p><strong>Solution:</strong></p>
-<p>We can find out that we can only color two nodes of a line at a time.</p>
-<p>And we may think that if we can color the longer line, then the shorter line can also be satisfied.</p>
-<p>And after simulation by hands, we can find out, if we choose the centre node in the diameter, 
-  after coloring the whole diameter, the other lines in the tree can also be colored.</p>
-<p>So we can turn the problem into coloring the diameter.</p>
-<p>If the diameter is odd, we can choose the center node, and choose the distance between <span class="arithmatex">\([0, \dfrac{len + 1}{2})\)</span>.</p>
-<p>If the diameter is even, we find out that for len = 2 and len = 4, the answer is both 2.
-  So we divide it into two conditions:</p>
-<ol>
-<li><code>len % 4 == 2</code>: if the center is between <span class="arithmatex">\([m_1, m_2]\)</span>, then we can choose <span class="arithmatex">\([m_1, d \in [0, \dfrac{len}{2})]\)</span> and <span class="arithmatex">\([m_2, \dfrac{len}{2}]\)</span>.
-  And we can find that all the nodes in the tree can be convered.</li>
-<li><code>len % 4 == 0</code>: if the center is between <span class="arithmatex">\([m_1, m_2]\)</span>, then we can choose <span class="arithmatex">\([m_1, d \in [1, \dfrac{len}{2}) \wedge (d \mod 2 = 0)]\)</span> and <span class="arithmatex">\([m_2, d \in [1, \dfrac{len}{2}) \wedge (d \mod 2 = 0)]\)</span>.
-  And we can find that all the nodes in the tree can be convered.</li>
-</ol>
+<h1 id="educational-codeforces-round-164-rated-for-div-2"><a href="https://codeforces.com/contest/1954">Educational Codeforces Round 164 (Rated for Div. 2)</a><a class="headerlink" href="#educational-codeforces-round-164-rated-for-div-2" title="Permanent link">&para;</a></h1>
+<h2 id="d-colored-balls"><a href="https://codeforces.com/contest/1954/problem/D">D. Colored Balls</a><a class="headerlink" href="#d-colored-balls" title="Permanent link">&para;</a></h2>
+<p><strong><em>Solution:</em></strong></p>
+<p>Let <span class="arithmatex">\(f_{ij}\)</span> be the total kinds of conditions when we use some of first i colored balls, and the sum of balls we used is j.</p>
+<p>Let's denote the max balls of all we used is k. If <span class="arithmatex">\(k \ge j\)</span>, the contribution to the answer is j.
+  Otherwise is <span class="arithmatex">\(\left \lceil \dfrac{j}{2} \right \rceil\)</span>.</p>
+<p>In order to find the max number, we can sort the array a. And when we deal with the i-th balls, the max number must be <span class="arithmatex">\(a_i\)</span>.</p>
+<p>If <span class="arithmatex">\(a_i \ge j - a_i\)</span>, <span class="arithmatex">\(answer += f_{i - 1, j - a_i} + a_i\)</span>.</p>
+<p>Otherwise <span class="arithmatex">\(answer += f_{i - 1, j - a_i} + \left \lceil \dfrac{j}{2} \right \rceil\)</span>.</p>
+<p>And simultaneously, <span class="arithmatex">\(f_{ij} += f_{i - 1, j - a_i}\)</span>.</p>
+<p>Finally we can optimize the first dimension, the time complexity is O(<span class="arithmatex">\(n \times \sum a_i\)</span>).</p>
+<h2 id="e-chain-reaction"><a href="https://codeforces.com/contest/1954/problem/E">E. Chain Reaction</a><a class="headerlink" href="#e-chain-reaction" title="Permanent link">&para;</a></h2>
+<p><strong><em>Solution:</em></strong></p>
+<p>Good problem.</p>
+<p>We can find that the answer depend on the mountain of the array.</p>
+<p>For the mountain of the subarray, how do we calculate the contribution to the answer?</p>
+<p>Let's denote <span class="arithmatex">\(\left \lceil \dfrac{a_i}{k} \right \rceil\)</span> be x. And we can find that either <span class="arithmatex">\(x \le \sqrt{a_i}\)</span> or <span class="arithmatex">\(k \le \sqrt{a_i}\)</span>.
+  So the x can be no more than <span class="arithmatex">\(2\sqrt{a_i}\)</span>. Hence we can solve the problem with the complexity of <span class="arithmatex">\(O(n \times \sqrt{A})\)</span>.</p>
+<p>And consider that for many ks, they share the same answer. So we can use a difference array to note the contribution to the answer.
+  That is, for each x, we can find the <span class="arithmatex">\(k_l\)</span> and <span class="arithmatex">\(k_r\)</span>, and modify the whole segment <span class="arithmatex">\([k_l, k_r]\)</span> by adding x.</p>
+<p>But we can also find that we calculate the answer twice when we deal with the adjacent mount. So we should also sub the contribution of bottom.
+  And the method is the same as above(just change the signal).</p>
+<p>Don't forget that, for each bottom and mountain, they can a difference for any k which is bigger than them.</p>
 
 
 
