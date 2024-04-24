@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../cf1946/">
+        <link rel="prev" href="../cf1951/">
       
       
         <link rel="next" href="../cf1956/">
@@ -1911,16 +1911,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
       
@@ -1961,6 +1951,52 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1800 ~ 1899
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            1800 ~ 1899
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -2025,6 +2061,112 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_3" id="__nav_5_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1900 ~ 1999
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            1900 ~ 1999
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cf1930/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1930
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cf1942/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1942
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
               
                 
   
@@ -2058,6 +2200,27 @@
   
   <span class="md-ellipsis">
     1946
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cf1951/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1951
   </span>
   
 
@@ -2162,6 +2325,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2735,7 +2906,7 @@
 
 <h1 id="educational-codeforces-round-164-rated-for-div-2"><a href="https://codeforces.com/contest/1954">Educational Codeforces Round 164 (Rated for Div. 2)</a><a class="headerlink" href="#educational-codeforces-round-164-rated-for-div-2" title="Permanent link">&para;</a></h1>
 <h2 id="d-colored-balls"><a href="https://codeforces.com/contest/1954/problem/D">D. Colored Balls</a><a class="headerlink" href="#d-colored-balls" title="Permanent link">&para;</a></h2>
-<p><strong><em>Solution:</em></strong></p>
+<p><strong>Solution:</strong></p>
 <p>Let <span class="arithmatex">\(f_{ij}\)</span> be the total kinds of conditions when we use some of first i colored balls, and the sum of balls we used is j.</p>
 <p>Let's denote the max balls of all we used is k. If <span class="arithmatex">\(k \ge j\)</span>, the contribution to the answer is j.
   Otherwise is <span class="arithmatex">\(\left \lceil \dfrac{j}{2} \right \rceil\)</span>.</p>
@@ -2745,7 +2916,7 @@
 <p>And simultaneously, <span class="arithmatex">\(f_{ij} += f_{i - 1, j - a_i}\)</span>.</p>
 <p>Finally we can optimize the first dimension, the time complexity is O(<span class="arithmatex">\(n \times \sum a_i\)</span>).</p>
 <h2 id="e-chain-reaction"><a href="https://codeforces.com/contest/1954/problem/E">E. Chain Reaction</a><a class="headerlink" href="#e-chain-reaction" title="Permanent link">&para;</a></h2>
-<p><strong><em>Solution:</em></strong></p>
+<p><strong>Solution:</strong></p>
 <p>Good problem.</p>
 <p>We can find that the answer depend on the mountain of the array.</p>
 <p>For the mountain of the subarray, how do we calculate the contribution to the answer?</p>

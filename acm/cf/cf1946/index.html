@@ -14,7 +14,7 @@
         <link rel="prev" href="../cf1943/">
       
       
-        <link rel="next" href="../cf1954/">
+        <link rel="next" href="../cf1951/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -1911,16 +1911,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
       
@@ -1961,6 +1951,52 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1800 ~ 1899
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            1800 ~ 1899
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -2016,6 +2052,112 @@
   
   <span class="md-ellipsis">
     1876 ~ 1900
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_3" id="__nav_5_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1900 ~ 1999
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            1900 ~ 1999
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cf1930/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1930
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cf1942/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1942
   </span>
   
 
@@ -2116,10 +2258,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#e-girl-permutation" class="md-nav__link">
+    <span class="md-ellipsis">
+      E. Girl Permutation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cf1951/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1951
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2162,6 +2334,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2715,6 +2895,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#e-girl-permutation" class="md-nav__link">
+    <span class="md-ellipsis">
+      E. Girl Permutation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2758,6 +2947,15 @@
 </li>
 <li>If <code>(x &gt;&gt; i &amp; 1) == 0</code> and <code>(cnt &amp; 1) == 0</code> : the same as <code>2.a</code>.</li>
 </ol>
+<h2 id="e-girl-permutation"><a href="https://codeforces.com/problemset/problem/1946/E">E. Girl Permutation</a><a class="headerlink" href="#e-girl-permutation" title="Permanent link">&para;</a></h2>
+<p><strong>Solution:</strong></p>
+<p>The condition is invalid only when <span class="arithmatex">\(a_1 \ne 1\)</span> or <span class="arithmatex">\(b_{m_2} \ne n\)</span> or <span class="arithmatex">\(a_{m_1} \ne b_{1}\)</span>.</p>
+<p>And for the whole array, we can only determine where is <span class="arithmatex">\(n\)</span>. It's position must be <span class="arithmatex">\(a_{m_1}\)</span>. </p>
+<p>But for the part before <span class="arithmatex">\(n\)</span>, and the part after <span class="arithmatex">\(n\)</span>, we only care about the relative difference in one part.</p>
+<p>We can choose <span class="arithmatex">\(a_{m_1} - 1\)</span> numbers from left <span class="arithmatex">\(n - 1\)</span> numbers. And the quantity of choice is <span class="arithmatex">\(C_{n - 1}^{a_{m_1} - 1}\)</span>.
+  And for the front part, the biggest element is determined, and it must be on the position of <span class="arithmatex">\(a_{m - 1}\)</span>, so we need to choose <span class="arithmatex">\(a_{m_1 - 1} - 1\)</span> numbers in the front of <span class="arithmatex">\(a_{m - 1}\)</span>.
+  The quantity of choices is <span class="arithmatex">\(C_{m_1 - 2}^{a_{m_1 - 1} - 1}\)</span>, we also find that the quantity of order between <span class="arithmatex">\(a_{m_1 - 1}\)</span> and <span class="arithmatex">\(a_{m_1}\)</span> is <span class="arithmatex">\((a_{m_1} - a_{m_1 - 1} - 1)!\)</span>.</p>
+<p>And we can do similarly to the left set.</p>
 
 
 
