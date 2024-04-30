@@ -13,6 +13,8 @@ nav:
     - Concrete Math:
       - math/concrete_math/index.md 
       - Recurrent Problems: math/concrete_math/chap1.md
+      - Sums: math/concrete_math/chap2.md
+      - Binomial Coefficients: math/concrete_math/chap5.md
     
 #    - 微积分:
 #      - math/calculus/index.md
@@ -87,10 +89,11 @@ nav:
   - EE:
     - ee/index.md
     
+  - Robotics:
     - Robot Dynamics and Control:
-      - Kinematics: ee/RDnC/topic1.md
-      - Dynamics: ee/RDnC/topic2.md
-      - Linear Control: ee/RDnC/topic3.md
+      - Kinematics: robotics/RDnC/topic1.md
+      - Dynamics: robotics/RDnC/topic2.md
+      - Linear Control: robotics/RDnC/topic3.md
 
 #    - 电路分析:
 #      - ee/circuit_analysis/index.md
@@ -144,13 +147,18 @@ nav:
         - how to generate random numbers: acm/algorithm/others/random.md
     - Project of Fucking CF:
       - acm/cf/index.md
-      - 1826 ~ 1850: acm/cf/cf1826.md
-      - 1851 ~ 1875: acm/cf/cf1851.md
-      - 1876 ~ 1900: acm/cf/cf1876.md
-      - 1943: acm/cf/cf1943.md
-      - 1946: acm/cf/cf1946.md
-      - 1954: acm/cf/cf1954.md
-      - 1956: acm/cf/cf1956.md
+      - 1800 ~ 1899:
+        - 1826 ~ 1850: acm/cf/cf1826.md
+        - 1851 ~ 1875: acm/cf/cf1851.md
+        - 1876 ~ 1900: acm/cf/cf1876.md
+      - 1900 ~ 1999:
+        - 1930: acm/cf/cf1930.md
+        - 1942: acm/cf/cf1942.md
+        - 1943: acm/cf/cf1943.md
+        - 1946: acm/cf/cf1946.md
+        - 1951: acm/cf/cf1951.md
+        - 1954: acm/cf/cf1954.md
+        - 1956: acm/cf/cf1956.md
 
     - Project of Fucking AT:
       - acm/at/index.md
