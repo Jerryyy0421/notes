@@ -147,15 +147,18 @@ nav:
         - how to generate random numbers: acm/algorithm/others/random.md
     - Project of Fucking CF:
       - acm/cf/index.md
-      - 1800 ~ 1899:
+      - 1801 ~ 1850:
         - 1826 ~ 1850: acm/cf/cf1826.md
+        - 1845: acm/cf/cf1845.md
+      - 1851 ~ 1900:
         - 1851 ~ 1875: acm/cf/cf1851.md
         - 1876 ~ 1900: acm/cf/cf1876.md
-      - 1900 ~ 1999:
+      - 1901 ~ 1950:
         - 1930: acm/cf/cf1930.md
         - 1942: acm/cf/cf1942.md
         - 1943: acm/cf/cf1943.md
         - 1946: acm/cf/cf1946.md
+      - 1951 ~ 2000:
         - 1951: acm/cf/cf1951.md
         - 1954: acm/cf/cf1954.md
         - 1956: acm/cf/cf1956.md
@@ -168,6 +171,7 @@ nav:
       - ARC:
         - arc173: acm/at/arc/arc173
         - arc174: acm/at/arc/arc174
+        - arc176: acm/at/arc/arc176
 
     - Project of Fucking XCPC:
       - ICPC 2023 Hong Kong: acm/xcpc/icpc-2023-hk
