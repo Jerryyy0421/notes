@@ -66,6 +66,13 @@ nav:
       - 参数估计: math/probability/chap7.md
       - 假设检验: math/probability/chap8.md
     
+    - Analysis:
+      - math/analysis/index.md
+      - Analysis I:
+        - math/analysis/chap1.md
+      - Analysis II:
+        - math/analysis/chap1.md
+
 #    - 大学物理I:
 #      - math/physics_I/index.md
 #      - 刚体的定轴转动: math/physics_I/chap3.md
@@ -180,8 +187,8 @@ nav:
       - Day1: acm/hdu2023/contest01.md
       - Day2: acm/hdu2023/contest02.md
   
-  - Others: 
-    - daily/index.md
+      #   - Others: 
+      # - daily/index.md
 
 theme:
   font: false
