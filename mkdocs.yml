@@ -136,6 +136,11 @@ nav:
     - CS61A:
       - Building Abstractions with Functions: cs/cs61a/topic1.md
       - Building Abstractions with Data: cs/cs61a/topic2.md
+
+  - YSYX:
+    - ysyx/index.md
+
+
  
   - ACM:
     - acm/index.md
@@ -169,16 +174,16 @@ nav:
         - 1951: acm/cf/cf1951.md
         - 1954: acm/cf/cf1954.md
         - 1956: acm/cf/cf1956.md
+        - 1957: acm/cf/cf1957.md
 
     - Project of Fucking AT:
       - acm/at/index.md
       - ABC: 
-        - arc173: acm/at/arc/arc173
-        - arc174: acm/at/arc/arc174
+        - abc352: acm/at/abc352.md
       - ARC:
-        - arc173: acm/at/arc/arc173
-        - arc174: acm/at/arc/arc174
-        - arc176: acm/at/arc/arc176
+        - arc173: acm/at/arc173.md
+        - arc174: acm/at/arc174.md
+        - arc176: acm/at/arc176.md
 
     - Project of Fucking XCPC:
       - ICPC 2023 Hong Kong: acm/xcpc/icpc-2023-hk
