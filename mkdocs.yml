@@ -14,6 +14,8 @@ nav:
       - math/concrete_math/index.md 
       - Recurrent Problems: math/concrete_math/chap1.md
       - Sums: math/concrete_math/chap2.md
+      - Integer Functions: math/concrete_math/chap3.md
+      - Number Theory: math/concrete_math/chap4.md
       - Binomial Coefficients: math/concrete_math/chap5.md
     
 #    - 微积分:
@@ -139,7 +141,7 @@ nav:
 
   - YSYX:
     - ysyx/index.md
-
+    - Timeline: ysyx/timeline.md
 
  
   - ACM:
@@ -164,6 +166,7 @@ nav:
         - 1845: acm/cf/cf1845.md
       - 1851 ~ 1900:
         - 1851 ~ 1875: acm/cf/cf1851.md
+        - 1859: acm/cf/cf1859.md
         - 1876 ~ 1900: acm/cf/cf1876.md
       - 1901 ~ 1950:
         - 1930: acm/cf/cf1930.md
@@ -198,7 +201,7 @@ nav:
 theme:
   font: false
   name: material    
-  language: 'zh'
+  language: 'en'
   favicon: images/favicon.png
   icon: 
     logo: material/notebook-outline
