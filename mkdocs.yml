@@ -148,15 +148,17 @@ nav:
     - acm/index.md
     - Project of Fucking Algorithm:
       - Math:
-        - Number-theory: acm/algorithm/math/number-theory/topic1.md
-        - 数论进阶: acm/algorithm/math/number-theory/topic2.md
-        - 多项式初步: acm/algorithm/math/poly/topic1.md
-        - 博弈论初步: acm/algorithm/math/game-theory/topic1.md
+        - Number-Theory1: acm/algorithm/math/number-theory/topic1.md
+        - Number-Theory2: acm/algorithm/math/number-theory/topic2.md
+        - Poly: acm/algorithm/math/poly/topic1.md
+        - Game-Theory: acm/algorithm/math/game-theory/topic1.md
+      - Graph:
+        - Graph3: acm/algorithm/graph/topic3.md
       - Geometry:
         - acm/algorithm/geometry/topic1.md
       - String:
-        - 字符串初步: acm/algorithm/string/topic1.md
-        - 字符串进阶: acm/algorithm/string/topic2.md
+        - String1: acm/algorithm/string/topic1.md
+        - String2: acm/algorithm/string/topic2.md
       - Others:
         - how to generate random numbers: acm/algorithm/others/random.md
     - Project of Fucking CF:
@@ -169,16 +171,12 @@ nav:
         - 1859: acm/cf/cf1859.md
         - 1876 ~ 1900: acm/cf/cf1876.md
       - 1901 ~ 1950:
-        - 1930: acm/cf/cf1930.md
-        - 1942: acm/cf/cf1942.md
-        - 1943: acm/cf/cf1943.md
-        - 1946: acm/cf/cf1946.md
+        - 1921 ~ 1930: acm/cf/cf1921.md
+        - 1941 ~ 1950: acm/cf/cf1941.md
       - 1951 ~ 2000:
-        - 1951: acm/cf/cf1951.md
-        - 1954: acm/cf/cf1954.md
-        - 1956: acm/cf/cf1956.md
-        - 1957: acm/cf/cf1957.md
+        - 1951 ~ 1960: acm/cf/cf1951.md
         - 1961 ~ 1970: acm/cf/cf1961.md
+        - 1971 ~ 1980: acm/cf/cf1971.md
 
     - Project of Fucking AT:
       - acm/at/index.md
