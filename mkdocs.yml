@@ -194,8 +194,13 @@ nav:
       - Day1: acm/hdu2023/contest01.md
       - Day2: acm/hdu2023/contest02.md
   
-      #   - Others: 
-      # - daily/index.md
+  - Others: 
+    - others/index.md
+    - Cpp:
+      - The Basics: others/cpp/topic1.md
+      - The C++ Library: others/cpp/topic2.md
+      - Tools for Class Authors: others/cpp/topic2.md
+      - Advanced Topics: others/cpp/topic2.md
 
 theme:
   font: false
