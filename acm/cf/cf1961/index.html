@@ -2999,6 +2999,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#f-equal-xor-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      F. Equal XOR Segments
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3786,6 +3795,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#f-equal-xor-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      F. Equal XOR Segments
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3837,6 +3855,11 @@ So <span class="arithmatex">\(b_v\)</span> should minus <span class="arithmatex"
 <p>for <span class="arithmatex">\(n = 4\)</span>, the answer is:</p>
 <p><img alt="1968E-sol2" src="../images/1968/1968E-sol2.png" /></p>
 <p>So we can generate the following patterns by putting cells at the top left position. </p>
+<h3 id="f-equal-xor-segments"><a href="https://codeforces.com/contest/1968/problem/F">F. Equal XOR Segments</a><a class="headerlink" href="#f-equal-xor-segments" title="Permanent link">&para;</a></h3>
+<p><strong>Solution:</strong></p>
+<p>If <span class="arithmatex">\(a_l \oplus a_{l + 1} \oplus ... \oplus a_r = 0\)</span>, then there must be answers.</p>
+<p>If <span class="arithmatex">\(a_l \oplus a_{l + 1} \oplus ... \oplus a_r = k\)</span>, find a position <span class="arithmatex">\(i\)</span> satisfying that <span class="arithmatex">\(s_i = s_r\)</span> and a position <span class="arithmatex">\(j\)</span> satisfying that <span class="arithmatex">\(s_j = s_{l - 1}\)</span>, and if <span class="arithmatex">\(i &lt; j\)</span> then there must be answers.
+(<span class="arithmatex">\(s_i = a_1 \oplus ... \oplus a_i\)</span>)</p>
 
 
 
