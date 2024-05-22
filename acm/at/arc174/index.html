@@ -3205,9 +3205,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
+  <a href="#c-catastrophic-roulette" class="md-nav__link">
     <span class="md-ellipsis">
-      C.
+      C. Catastrophic Roulette
     </span>
   </a>
   
@@ -3702,9 +3702,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
+  <a href="#c-catastrophic-roulette" class="md-nav__link">
     <span class="md-ellipsis">
-      C.
+      C. Catastrophic Roulette
     </span>
   </a>
   
@@ -3747,7 +3747,20 @@
 <p><strong>Solution</strong></p>
 <p>It's obvious that only one review has the highest cost-effectiveness.</p>
 <p>So we just need to compare the review 4 and review 5, which to choose.</p>
-<h2 id="c"><a href="https://atcoder.jp/contests/arc174/tasks/arc174_c">C. </a><a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<h2 id="c-catastrophic-roulette"><a href="https://atcoder.jp/contests/arc174/tasks/arc174_c">C. Catastrophic Roulette</a><a class="headerlink" href="#c-catastrophic-roulette" title="Permanent link">&para;</a></h2>
+<p><strong>Solution:</strong></p>
+<p>Good Probability DP.</p>
+<p><span class="arithmatex">\(F_i\)</span> denotes that after choose i items, the expeted fine for the first people.</p>
+<p><span class="arithmatex">\(G_i\)</span> denotes that after choose i items, the expected fine for the second people.</p>
+<p>(First people denotes the one who will choose the item this time.)</p>
+<p>Then we can get the transformation formula:</p>
+<div class="arithmatex">\[
+\begin{align*}
+    F_i &amp;= (1 - \dfrac{i}{n})G_{i + 1} + \dfrac{i}{n}(G_i + 1)  \newline
+    G_i &amp;= (1 - \dfrac{i}{n})F_{i + 1} + \dfrac{i}{n}F_i
+\end{align*}
+\]</div>
+<p><span class="arithmatex">\(F_0\)</span> and <span class="arithmatex">\(G_0\)</span> are the answers.</p>
 <h2 id="d-digit-vs-square-root"><a href="https://atcoder.jp/contests/arc174/tasks/arc174_c">D. Digit vs Square Root</a><a class="headerlink" href="#d-digit-vs-square-root" title="Permanent link">&para;</a></h2>
 <p><strong>Solution</strong></p>
 <p>To create a table, we can enumerate some of the smallest Ns and find that the experimental result below:</p>
