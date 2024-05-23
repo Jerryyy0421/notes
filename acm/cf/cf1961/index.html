@@ -1518,6 +1518,8 @@
       
         
       
+        
+      
     
     
       
@@ -1603,6 +1605,27 @@
   
   <span class="md-ellipsis">
     Linear Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../robotics/RDnC/topic4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nonlinear Control
   </span>
   
 
@@ -3013,6 +3036,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1969-educational-codeforces-round-165-rated-for-div-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1969. Educational Codeforces Round 165 (Rated for Div. 2)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1969. Educational Codeforces Round 165 (Rated for Div. 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e-unique-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      E. Unique Array
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3809,6 +3856,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1969-educational-codeforces-round-165-rated-for-div-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1969. Educational Codeforces Round 165 (Rated for Div. 2)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1969. Educational Codeforces Round 165 (Rated for Div. 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e-unique-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      E. Unique Array
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3860,6 +3931,18 @@ So <span class="arithmatex">\(b_v\)</span> should minus <span class="arithmatex"
 <p>If <span class="arithmatex">\(a_l \oplus a_{l + 1} \oplus ... \oplus a_r = 0\)</span>, then there must be answers.</p>
 <p>If <span class="arithmatex">\(a_l \oplus a_{l + 1} \oplus ... \oplus a_r = k\)</span>, find a position <span class="arithmatex">\(i\)</span> satisfying that <span class="arithmatex">\(s_i = s_r\)</span> and a position <span class="arithmatex">\(j\)</span> satisfying that <span class="arithmatex">\(s_j = s_{l - 1}\)</span>, and if <span class="arithmatex">\(i &lt; j\)</span> then there must be answers.
 (<span class="arithmatex">\(s_i = a_1 \oplus ... \oplus a_i\)</span>)</p>
+<h2 id="1969-educational-codeforces-round-165-rated-for-div-2"><a href="https://codeforces.com/contest/1969">1969. Educational Codeforces Round 165 (Rated for Div. 2)</a><a class="headerlink" href="#1969-educational-codeforces-round-165-rated-for-div-2" title="Permanent link">&para;</a></h2>
+<h3 id="e-unique-array"><a href="https://codeforces.com/contest/1969/problem/E">E. Unique Array</a><a class="headerlink" href="#e-unique-array" title="Permanent link">&para;</a></h3>
+<p><strong>Solution:</strong></p>
+<p>Greedy + Segment Tree</p>
+<p>We use the greedy tragedy, deal with each position from front to the end, 
+if when we deal with i-th position, the prefix array can't safisfy the condition, 
+then we should translate the i-th number into one which has never occurred before.</p>
+<p>How to judge it is illegal? We can use segment tree to maintain the array. 
+we can know that the right point of the illegal part is i, then we should find the left point.</p>
+<p><span class="arithmatex">\(C_j\)</span> denotes the different kinds of number in the segment whose left point is j and right point is i.
+If <span class="arithmatex">\(C_j\)</span> is zero, then the segment is illegal. So we should find the minimum of the <span class="arithmatex">\(C_j\)</span>. 
+To update, it's an segment modify operation. So we can use segment tree to deal with these two operations.</p>
 
 
 

@@ -1518,6 +1518,8 @@
       
         
       
+        
+      
     
     
       
@@ -1603,6 +1605,27 @@
   
   <span class="md-ellipsis">
     Linear Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../robotics/RDnC/topic4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nonlinear Control
   </span>
   
 
@@ -2816,6 +2839,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1923-educational-codeforces-round-162-rated-for-div-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1923. Educational Codeforces Round 162 (Rated for Div. 2)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1923. Educational Codeforces Round 162 (Rated for Div. 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e-count-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      E. Count Paths
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1930-think-cell-round-1" class="md-nav__link">
     <span class="md-ellipsis">
       1930. think-cell Round 1
@@ -3672,6 +3719,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1923-educational-codeforces-round-162-rated-for-div-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1923. Educational Codeforces Round 162 (Rated for Div. 2)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1923. Educational Codeforces Round 162 (Rated for Div. 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e-count-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      E. Count Paths
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1930-think-cell-round-1" class="md-nav__link">
     <span class="md-ellipsis">
       1930. think-cell Round 1
@@ -3714,36 +3785,42 @@
 
 
 <h1 id="1921-1930">1921 ~ 1930<a class="headerlink" href="#1921-1930" title="Permanent link">&para;</a></h1>
+<h2 id="1923-educational-codeforces-round-162-rated-for-div-2"><a href="https://codeforces.com/contest/1923">1923. Educational Codeforces Round 162 (Rated for Div. 2)</a><a class="headerlink" href="#1923-educational-codeforces-round-162-rated-for-div-2" title="Permanent link">&para;</a></h2>
+<h3 id="e-count-paths"><a href="https://codeforces.com/contest/1923/problem/E">E. Count Paths</a><a class="headerlink" href="#e-count-paths" title="Permanent link">&para;</a></h3>
+<p><strong>Solution:</strong></p>
+<p>For each node, we just need to count the contribution it can match except the nodes in its subtree.</p>
+<p><span class="arithmatex">\(cnt_{c_i}\)</span> denotes the numbers that <span class="arithmatex">\(c_i\)</span> can match except i's subtree.</p>
+<p>When we dfs the subtree, <span class="arithmatex">\(cnt_{c_i}\)</span> initially is <span class="arithmatex">\(1\)</span>, when we iterate other subtress, it becomes the previous <span class="arithmatex">\(cnt_{c_i}\)</span> plus <span class="arithmatex">\(1\)</span>.</p>
 <h2 id="1930-think-cell-round-1"><a href="https://codeforces.com/contest/1930">1930. think-cell Round 1</a><a class="headerlink" href="#1930-think-cell-round-1" title="Permanent link">&para;</a></h2>
 <h3 id="d2-sum-over-all-substrings-hard-version"><a href="https://codeforces.com/problemset/problem/1930/D2">D2. Sum over all Substrings (Hard Version)</a><a class="headerlink" href="#d2-sum-over-all-substrings-hard-version" title="Permanent link">&para;</a></h3>
 <p><strong>Solution:</strong></p>
 <p>Good problem.</p>
 <p>Suppose <code>dp[i][j]</code> denotes <code>f(s[i, j])</code>.</p>
 <p>For a fixed 01-string, we should put 1s greedily. In other word, if we put a <code>1</code>, then it should be <code>0101</code>.
-  And not hard to find that this tragedy of putting 1 is most optimal.</p>
+And not hard to find that this tragedy of putting 1 is most optimal.</p>
 <p>So the transition may be:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  if(s[i] == &#39;1&#39;) dp[i][j] = 1 + dp[i + 3][j] (i, i + 1, i + 2 should be &#39;010&#39;)
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  else dp[i][j] = dp[i + 1][j]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>if(s[i] == &#39;1&#39;) dp[i][j] = 1 + dp[i + 3][j] (i, i + 1, i + 2 should be &#39;010&#39;)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>else dp[i][j] = dp[i + 1][j]
 </code></pre></div>
 <p>But the complexity is <span class="arithmatex">\(O(n^2)\)</span>.To we need further optimization.</p>
 <p>Suppose <code>F[i]</code> denotes <span class="arithmatex">\(\sum dp[i][j]\)</span>.</p>
 <p>If <code>s[i] = '0'</code>:</p>
-<p>$$
-  \begin{align}
+<div class="arithmatex">\[
+\begin{align}
   F[i] = \sum_{j = i}^{n} dp[i][j] &amp;= dp[i][i] + \sum_{j = i}^{n}dp[i][j] \newline
       &amp;= dp[i][i] + \sum_{j = i + 1}^{n} dp[i][j] \newline
       &amp;= dp[i][i] + \sum_{j = i + 1}^{n} dp[i + 1][j] \newline
       &amp;= 0 + F[i + 1] = F[i + 1]
-  \end{align}
-  $$</p>
+\end{align}
+\]</div>
 <p>If <code>s[i] = '1'</code>:</p>
-<p>$$
-  \begin{align}
-  F[i] = \sum_{j = i}^{n} 1 + dp[i + 3][j] &amp;= n - i + 1 + \sum_{j = i}^{n} dp[i + 3][j] \newline
-      &amp;= n - i + 1 + \sum_{j = i + 3}^{n} dp[i + 3][j] \newline
-      &amp;= n - i + 1 + F[i + 3]
-  \end{align}
-  $$</p>
+<div class="arithmatex">\[
+\begin{align}
+F[i] = \sum_{j = i}^{n} 1 + dp[i + 3][j] &amp;= n - i + 1 + \sum_{j = i}^{n} dp[i + 3][j] \newline
+    &amp;= n - i + 1 + \sum_{j = i + 3}^{n} dp[i + 3][j] \newline
+    &amp;= n - i + 1 + F[i + 3]
+\end{align}
+\]</div>
 <p>So we can solve the problem with the complexity of <span class="arithmatex">\(O(n)\)</span>.</p>
 
 
