@@ -103,6 +103,7 @@ nav:
       - Kinematics: robotics/RDnC/topic1.md
       - Dynamics: robotics/RDnC/topic2.md
       - Linear Control: robotics/RDnC/topic3.md
+      - Nonlinear Control: robotics/RDnC/topic4.md
 
 #    - 电路分析:
 #      - ee/circuit_analysis/index.md
