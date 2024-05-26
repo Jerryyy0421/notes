@@ -4,9 +4,48 @@
 
 Linear System: $x = Ax + Bu$
 
-Nonlinear System: $\ddot{x} = Ax + Bu$
+Nonlinear System: $\ddot{x} = f(x, u)$
 
+$$
+\begin{align*}
+    \dot{x} &= f(x_d, u_d) + \dfrac{\partial f}{\partial x}(x_d, u_d)(x - x_d)+ \dfrac{\partial f}{\partial u}(x_d, u_d)(u - u_d) \\
+    \dot{x} - \dot{x_d} &= A(x - x_d) + B(u - u_d) \\
+    \delta \dot{x} &= A\delta x + Bu
+\end{align*}
+$$
 
+Linear Control:
+
+$$
+\begin{align*}
+\delta u &= -k\delta x\\
+\to \delta x &= (A - Bk) \delta x \\
+         &= A_{CL} x
+\end{align*}
+$$
+
+**CL: Closed Loop**
+
+Methods of judging the stability of the system: 
+
+1. All eigenvalues of $A_{CL}$ is negative.
+2. Lyapunov Analysis
+
+    Lyapunov function: $V(x) = x^TPx$
+
+    Lyapunov equation: $A_{CL}^T \dot P + P \dot A_{CL} = -Q$
+
+    **Theorem**: If a system satisfies the conditions below,
+    
+      1. $V(x)$ is positive-definite matrix.
+      2. $\dot V(x)$ is positive-definite matrix.
+      3. $x \to \infty, V(x) \to \infty$
+
+    the system is stable.
+
+!!! tip "Generalization of Lyapunov theorem"
+    1. For a given positive-definite matrix $P$, there exits a positive-definite matrix $Q$ which satisfies $A_{CL}^T \dot P + P \dot A_{CL} = -Q$, then the system is stable.
+    2. In the linear system, for all positive-definite system $P$, there is only one positive-definite matrix $Q$, which satisfies $A_{CL}^T \dot P + P \dot A_{CL} = -Q$, then the system is stable.
 
 ## 3x02. PD Control
 
@@ -47,12 +86,6 @@ Q, R: coefficient matrix of cost-function
       **LQR**: $x \to 0$, $u \to 0$
     - Whether it has a cost function.
 
-
-Lyapunov function: $V(x) = x^TPx$
-
-!!! tip "References"
-
-
 ## 3x04. QP Control
 > Quadratic Program Control
 
@@ -67,8 +100,13 @@ $$
 > Modern Predictive Control
 
 Discrete-time dynamics:
+
 $$
-    \delta x[k + 1] = A_k \delta x[k + 1] + B_k \delta u[k]
+\begin{align*} 
+    \delta x[k + 1] &= Adt \delta x[k + 1] + Bdt \delta u[k] + \delta x[k] \\
+    \to \delta x[k + 1] &= (Adt + I) \delta x[k + 1] + Bdt \delta u[k] \\
+    \to \delta x[k + 1] &= A_k \delta x[k + 1] + B_k \delta u[k] 
+\end{align*}
 $$
 
 Procedures:
@@ -77,9 +115,6 @@ Procedures:
 - optimal control based on $u_k, u_{k + 1}, ... u_{k + n - 1}$
 - get the optimal $x^*$
 - only get $u[k]$ as the next input
-
-## 3x04. Control Simulation
-
 
 
 ## 3x05. Stability Judgment
