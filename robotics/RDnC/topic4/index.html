@@ -1639,6 +1639,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Nonlinear Control
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1648,6 +1659,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4x01-input-output-linearization" class="md-nav__link">
+    <span class="md-ellipsis">
+      4x01. Input-Output Linearization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4x02-clf-qp-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      4x02. CLF-QP controller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4x03-clf-qp-input-saturation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4x03. CLF-QP + input saturation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3634,6 +3691,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4x01-input-output-linearization" class="md-nav__link">
+    <span class="md-ellipsis">
+      4x01. Input-Output Linearization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4x02-clf-qp-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      4x02. CLF-QP controller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4x03-clf-qp-input-saturation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4x03. CLF-QP + input saturation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3651,9 +3743,37 @@
 
 
 <h1 id="nonlinear-control">Nonlinear Control<a class="headerlink" href="#nonlinear-control" title="Permanent link">&para;</a></h1>
-<p>Input-output linearization</p>
-<p>CLF-QP controller</p>
-<p>CLF-QP + input saturation</p>
+<h2 id="4x01-input-output-linearization">4x01. Input-Output Linearization<a class="headerlink" href="#4x01-input-output-linearization" title="Permanent link">&para;</a></h2>
+<p>For a nonlinear system:</p>
+<div class="arithmatex">\[
+    \dot{x} = f(x, u)
+\]</div>
+<p>we can translate it into</p>
+<div class="arithmatex">\[
+    \dot{x} = f(x) + g(x) u 
+\]</div>
+<p>Note: nonlinear affine system</p>
+<p>and we have an output function:</p>
+<div class="arithmatex">\[
+    y = h(x)
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>$x \in $</p>
+<p>Lie Derivative:</p>
+<div class="arithmatex">\[
+\left.\begin{matrix} 
+y = h(x) \\
+\dot x = f(x) + g(x)u
+\end{matrix}\eight\} \to \dot y = \dfrac{\partial h}{\partial x}(f(x) + g(x)u)
+\]</div>
+<p>Linearized dynamics:
+$$
+    \dot{\eta} = F\eta + G\mu
+$$</p>
+<h2 id="4x02-clf-qp-controller">4x02. CLF-QP controller<a class="headerlink" href="#4x02-clf-qp-controller" title="Permanent link">&para;</a></h2>
+<h2 id="4x03-clf-qp-input-saturation">4x03. CLF-QP + input saturation<a class="headerlink" href="#4x03-clf-qp-input-saturation" title="Permanent link">&para;</a></h2>
 
 
 
