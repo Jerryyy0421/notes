@@ -57,6 +57,7 @@ nav:
       - 傅里叶变换: math/complex_analysis/chap6.md
       - 拉普拉斯变换: math/complex_analysis/chap7.md
     
+    
     - 概率论:
       - math/probability/index.md
       - 随机事件及其概率论: math/probability/chap1.md
