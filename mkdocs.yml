@@ -57,7 +57,7 @@ nav:
       - 傅里叶变换: math/complex_analysis/chap6.md
       - 拉普拉斯变换: math/complex_analysis/chap7.md
     
-    
+
     - 概率论:
       - math/probability/index.md
       - 随机事件及其概率论: math/probability/chap1.md
@@ -75,6 +75,13 @@ nav:
         - math/analysis/chap1.md
       - Analysis II:
         - math/analysis/chap1.md
+
+    - Electromagnetic Field Theory:
+      - math/electromagnetic-field-theory/index.md
+      - Analysis I:
+        - math/electromagnetic-field-theory/chap1.md
+      - Analysis II:
+        - math/electromagnetic-field-theory/chap2.md
 
 #    - 大学物理I:
 #      - math/physics_I/index.md
@@ -144,7 +151,6 @@ nav:
   - YSYX:
     - ysyx/index.md
     - Timeline: ysyx/timeline.md
-
  
   - ACM:
     - acm/index.md
