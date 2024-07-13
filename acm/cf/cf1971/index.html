@@ -3204,6 +3204,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1980-codeforces-round-950-div-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1980. Codeforces Round 950 (Div. 3)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g-yasya-and-the-mysterious-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      G. Yasya and the Mysterious Tree
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3916,6 +3934,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1980-codeforces-round-950-div-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1980. Codeforces Round 950 (Div. 3)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g-yasya-and-the-mysterious-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      G. Yasya and the Mysterious Tree
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3957,6 +3993,13 @@ $$</p>
 <p>And for one single node we can split it into two nodes, recognized as <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(i + n\)</span>.</p>
 <p>So we can construct a graph demonstrate the logical relationship. 
 If <span class="arithmatex">\(i + n\)</span> and <span class="arithmatex">\(i\)</span> are in the same SCC, then the answer is "NO", otherwise is "YES".</p>
+<h2 id="1980-codeforces-round-950-div-3"><a href="https://codeforces.com/contest/1980">1980. Codeforces Round 950 (Div. 3)</a><a class="headerlink" href="#1980-codeforces-round-950-div-3" title="Permanent link">&para;</a></h2>
+<h2 id="g-yasya-and-the-mysterious-tree"><a href="https://codeforces.com/contest/1980/problem/G">G. Yasya and the Mysterious Tree</a><a class="headerlink" href="#g-yasya-and-the-mysterious-tree" title="Permanent link">&para;</a></h2>
+<p><strong>Solution:</strong></p>
+<p>For each query, <span class="arithmatex">\(ans = f_{x, y} \oplus val = f_{x, root} \oplus f_{root, y} \oplus val\)</span></p>
+<p>So we should the max <span class="arithmatex">\(f_{x, root}\)</span>, and we can use 01-trie to solve the problem.</p>
+<p>For the modify operation, cause it changes all the edges, so only the node with odd distances can be changed.</p>
+<p>We can maintain two 01-trie trees. One for the odd-distances nodes, the other for even-distances nodes.</p>
 
 
 
