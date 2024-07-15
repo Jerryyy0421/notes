@@ -155,6 +155,7 @@ nav:
   - ACM:
     - acm/index.md
     - Project of Fucking Algorithm:
+      - String: acm/algorithm/string.md
       - Math:
         - Number-Theory1: acm/algorithm/math/number-theory/topic1.md
         - Number-Theory2: acm/algorithm/math/number-theory/topic2.md
@@ -164,9 +165,6 @@ nav:
         - Graph3: acm/algorithm/graph/topic3.md
       - Geometry:
         - acm/algorithm/geometry/topic1.md
-      - String:
-        - String1: acm/algorithm/string/topic1.md
-        - String2: acm/algorithm/string/topic2.md
       - Others:
         - how to generate random numbers: acm/algorithm/others/random.md
     - Project of Fucking CF:
