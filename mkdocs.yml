@@ -156,6 +156,8 @@ nav:
     - acm/index.md
     - Project of Fucking Algorithm:
       - String: acm/algorithm/string.md
+      - Math: acm/algorithm/math.md
+      - Misc: acm/algorithm/misc.md
       - Math:
         - Number-Theory1: acm/algorithm/math/number-theory/topic1.md
         - Number-Theory2: acm/algorithm/math/number-theory/topic2.md
@@ -197,8 +199,10 @@ nav:
       - ICPC 2023 Hong Kong: acm/xcpc/icpc-2023-hk
     - Project of Fucking HDU:
       - acm/hdu2023/index.md
-      - Day1: acm/hdu2023/contest01.md
-      - Day2: acm/hdu2023/contest02.md
+      - 2023:
+        - Day1: acm/hdu2023/contest01.md
+        - Day2: acm/hdu2023/contest02.md
+
   
   - Others: 
     - others/index.md
