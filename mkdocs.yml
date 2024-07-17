@@ -157,6 +157,7 @@ nav:
     - Project of Fucking Algorithm:
       - String: acm/algorithm/string.md
       - Math: acm/algorithm/math.md
+      - Datestructure: acm/algorithm/datastructure.md
       - Misc: acm/algorithm/misc.md
       - Math:
         - Number-Theory1: acm/algorithm/math/number-theory/topic1.md
