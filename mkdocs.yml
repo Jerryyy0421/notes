@@ -158,6 +158,7 @@ nav:
       - String: acm/algorithm/string.md
       - Math: acm/algorithm/math.md
       - Datestructure: acm/algorithm/datastructure.md
+      - Geometry: acm/algorithm/geometry.md
       - Misc: acm/algorithm/misc.md
       - Math:
         - Number-Theory1: acm/algorithm/math/number-theory/topic1.md
@@ -166,8 +167,8 @@ nav:
         - Game-Theory: acm/algorithm/math/game-theory/topic1.md
       - Graph:
         - Graph3: acm/algorithm/graph/topic3.md
-      - Geometry:
-        - acm/algorithm/geometry/topic1.md
+        # - Geometry:
+        # - acm/algorithm/geometry/topic1.md
       - Others:
         - how to generate random numbers: acm/algorithm/others/random.md
     - Project of Fucking CF:
