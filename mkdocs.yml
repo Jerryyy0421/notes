@@ -155,22 +155,23 @@ nav:
   - ACM:
     - acm/index.md
     - Project of Fucking Algorithm:
+      - Datestructure: acm/algorithm/datastructure.md
+      - Graph: acm/algorithm/graph.md
       - String: acm/algorithm/string.md
       - Math: acm/algorithm/math.md
-      - Datestructure: acm/algorithm/datastructure.md
       - Geometry: acm/algorithm/geometry.md
       - Misc: acm/algorithm/misc.md
-      - Math:
-        - Number-Theory1: acm/algorithm/math/number-theory/topic1.md
-        - Number-Theory2: acm/algorithm/math/number-theory/topic2.md
-        - Poly: acm/algorithm/math/poly/topic1.md
-        - Game-Theory: acm/algorithm/math/game-theory/topic1.md
-      - Graph:
-        - Graph3: acm/algorithm/graph/topic3.md
+#       - Math:
+#         - Number-Theory1: acm/algorithm/math/number-theory/topic1.md
+#         - Number-Theory2: acm/algorithm/math/number-theory/topic2.md
+#         - Poly: acm/algorithm/math/poly/topic1.md
+#         - Game-Theory: acm/algorithm/math/game-theory/topic1.md
+#       - Graph:
+#         - Graph3: acm/algorithm/graph/topic3.md
         # - Geometry:
         # - acm/algorithm/geometry/topic1.md
-      - Others:
-        - how to generate random numbers: acm/algorithm/others/random.md
+#       - Others:
+#         - how to generate random numbers: acm/algorithm/others/random.md
     - Project of Fucking CF:
       - acm/cf/index.md
       - 1801 ~ 1850:
