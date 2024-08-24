@@ -51,7 +51,169 @@ struct RMQ {
 } rmq;
 ```
 
-## 线段树
+## SegmentTree
+
++ no lazy tag, SegmentTree + biosection method 
+
+```cpp
+const int INF = 1e9;
+struct Info {
+    i64 sum = 0; int lmx = -INF, rmx = -INF, ans = -INF;
+};
+
+Info operator+(const Info &a, const Info &b){
+    Info ret;
+    ret.sum = a.sum + b.sum;
+    ret.lmx = std::max(1LL * a.lmx, a.sum + b.lmx);
+    ret.rmx = std::max(1LL * b.rmx, b.sum + a.rmx);
+    ret.ans = std::max({a.ans, b.ans, a.rmx + b.lmx});
+    return ret;
+}
+
+template<class Info>
+struct SegmentTree{
+    int n;
+    std::vector<Info> info;
+
+    SegmentTree() {}
+
+    SegmentTree(int n, Info _init = Info()){
+        init(std::vector<Info>(n, _init));
+    }
+
+    SegmentTree(const std::vector<Info> &_init){
+        init(_init);
+    }
+
+    void init(const std::vector<Info> &_init){
+        n = (int)_init.size();
+        info.assign((n << 2) + 1, Info());
+        std::function<void(int, int, int)> build = [&](int p, int l, int r){
+            if (l == r){
+                info[p] = _init[l - 1];
+                return;
+            }
+            int m = (l + r) / 2;
+            build(2 * p, l, m);
+            build(2 * p + 1, m + 1, r);
+            pull(p);
+        };
+        build(1, 1, n);
+    }
+
+    void pull(int p){
+        info[p] = info[2 * p] + info[2 * p + 1];
+    }
+
+    void modify(int p, int l, int r, int x, const Info &v){
+        if (l == r){
+            info[p] = v;
+            return;
+        }
+        int m = (l + r) / 2;
+        if (x <= m){
+            modify(2 * p, l, m, x, v);
+        } 
+        else{
+            modify(2 * p + 1, m + 1, r, x, v);
+        }
+        pull(p);
+    }
+
+    void modify(int p, const Info &v){
+        modify(1, 1, n, p, v);
+    }
+
+    Info query(int p, int l, int r, int x, int y){
+        if (l > y || r < x){
+            return Info();
+        }
+        if (l >= x && r <= y){
+            return info[p];
+        }
+        int m = (l + r) / 2;
+        return query(2 * p, l, m, x, y) + query(2 * p + 1, m + 1, r, x, y);
+    }
+
+    Info query(int l, int r){
+        return query(1, 1, n, l, r);
+    }
+
+    int find_first(int p, int l, int r, int L, int R, const std::function<bool(const Info&)> &f, Info &pre){
+        if (l > R || r < L){
+            return r + 1;
+        }
+        if (l >= L && r <= R){
+            if (!f(pre + info[p])){
+                pre = pre + info[p];
+                return r + 1;
+            }
+            if (l == r) return r;
+            int m = (l + r) / 2;
+            int res;
+            if (f(pre + info[2 * p])){
+                res = find_first(2 * p, l, m, L, R, f, pre);
+            }
+            else{
+                pre = pre + info[2 * p];
+                res = find_first(2 * p + 1, m + 1, r, L, R, f, pre);
+            }
+            return res;
+        }
+        int m = (l + r) / 2;
+        int res = m + 1;
+        if (L <= m){
+            res = find_first(2 * p, l, m, L, R, f, pre);
+        }
+        if (R > m && res == m + 1){
+            res = find_first(2 * p + 1, m + 1, r, L, R, f, pre);
+        }
+        return res;
+    }
+
+    int find_first(int l, int r, const std::function<bool(const Info&)> &f){
+        Info pre = Info();
+        return find_first(1, 1, n, l, r, f, pre);
+    }
+
+    int find_last(int p, int l, int r, int L, int R, const std::function<bool(const Info&)> &f, Info &suf){
+        if (l > R || r < L){
+            return l - 1;
+        }
+        if (l >= L && r <= R){
+            if (!f(info[p] + suf)){
+                suf = info[p] + suf;
+                return l - 1;
+            }
+            if (l == r) return r;
+            int m = (l + r) / 2;
+            int res;
+            if (f(info[2 * p + 1] + suf)){
+                res = find_last(2 * p + 1, m + 1, r, L, R, f, suf);
+            }
+            else{
+                suf = info[2 * p + 1] + suf;
+                res = find_last(2 * p, l, m, L, R, f, suf);
+            }
+            return res;
+        }
+        int m = (l + r) / 2;
+        int res = m;
+        if (R > m){
+            res = find_last(2 * p + 1, m + 1, r, L, R, f, suf);
+        }
+        if (L <= m && res == m){
+            res = find_last(2 * p, l, m, L, R, f, suf);
+        }
+        return res;        
+    }
+
+    int find_last(int l, int r, const std::function<bool(const Info&)> &f){
+        Info suf = Info();
+        return find_last(1, 1, n, l, r, f, suf);
+    }
+};
+```
 
 + 普适
 
@@ -488,23 +650,73 @@ namespace kd {
 
 ## 树状数组
 
+```cpp
+template <typename T>
+struct Fenwick {
+    i64 n;
+    std::vector<T> a;
+    
+    Fenwick(i64 n_ = 0) {
+        init(n_);
+    }
+    
+    void init(i64 n_) {
+        n = n_;
+        a.assign(n, T{});
+    }
+    
+    void add(i64 x, const T &v) {
+        for (i64 i = x + 1; i <= n; i += i & -i) {
+            a[i - 1] = a[i - 1] + v;
+        }
+    }
+    
+    T sum(i64 x) {
+        T ans{};
+        for (i64 i = x; i > 0; i -= i & -i) {
+            ans = ans + a[i - 1];
+        }
+        return ans;
+    }
+    
+    T rangeSum(i64 l, i64 r) { // [l, r)
+        return sum(r) - sum(l);
+    }
+    
+    i64 select(const T &k) {
+        i64 x = 0;
+        T cur{};
+        for (i64 i = 1 << std::__lg(n); i; i /= 2) {
+            if (x + i <= n && cur + a[x + i - 1] <= k) {
+                x += i;
+                cur = cur + a[x - 1];
+            }
+        }
+        return x;
+    }
+};
+
+```
+
+
 * 注意：0 是无效下标
 
 ```cpp
+const int M = 1e5 + 5;
 namespace bit {
-    LL c[M];
+    i64 c[M];
     inline int lowbit(int x) { return x & -x; }
-    void add(int x, LL v) {
+    void add(int x, i64 v) {
         for (int i = x; i < M; i += lowbit(i))
             c[i] += v;
     }
-    LL sum(int x) {
-        LL ret = 0;
+    i64 sum(int x) {
+        i64 ret = 0;
         for (int i = x; i > 0; i -= lowbit(i))
             ret += c[i];
         return ret;
     }
-    int kth(LL k) {
+    int kth(i64 k) {
         int p = 0;
         for (int lim = 1 << 20; lim; lim /= 2)
             if (p + lim < M && c[p + lim] < k) {
@@ -513,8 +725,8 @@ namespace bit {
             }
         return p + 1;
     }
-    LL sum(int l, int r) { return sum(r) - sum(l - 1); }
-    void add(int l, int r, LL v) { add(l, v); add(r + 1, -v); }
+    i64 sum(int l, int r) { return sum(r) - sum(l - 1); }
+    void add(int l, int r, i64 v) { add(l, v); add(r + 1, -v); }
 }
 ```
 
@@ -540,33 +752,6 @@ namespace bit {
 }
 ```
 
-+ 单点修改，查询前缀和的前缀和的前缀和（有用才怪）
-
-```cpp
-namespace bit {
-    LL c[N], cc[N], ccc[N];
-    inline LL lowbit(LL x) { return x & -x; }
-    void add(LL x, LL v) {
-        for (LL i = x; i < N; i += lowbit(i)) {
-            c[i] = (c[i] + v) % MOD;
-            cc[i] = (cc[i] + x * v) % MOD;
-            ccc[i] = (ccc[i] + x * x % MOD * v) % MOD;
-        }
-    }
-    void add(LL l, LL r, LL v) { add(l, v); add(r + 1, -v); }
-    LL sum(LL x) {
-        static LL INV2 = (MOD + 1) / 2;
-        LL ret = 0;
-        for (LL i = x; i > 0; i -= lowbit(i))
-            ret += (x + 1) * (x + 2) % MOD * c[i] % MOD
-                    - (2 * x + 3) * cc[i] % MOD
-                    + ccc[i];
-        return ret % MOD * INV2 % MOD;
-    }
-    LL sum(LL l, LL r) { return sum(r) - sum(l - 1); }
-}
-
-```
 
 + 三维
 
