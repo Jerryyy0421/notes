@@ -5,24 +5,27 @@
 + 倍增
 
 ```cpp
+const int N = 3e5 + 5;
+std::vector<int> E[N];
+int Fa[N][25], dep[N];
 void dfs(int u, int fa) {
-    pa[u][0] = fa; dep[u] = dep[fa] + 1;
-    FOR (i, 1, SP) pa[u][i] = pa[pa[u][i - 1]][i - 1];
-    for (int& v: G[u]) {
+    Fa[u][0] = fa; dep[u] = dep[fa] + 1;
+    for (int i = 1; i <= 20; i++) Fa[u][i] = Fa[Fa[u][i - 1]][i - 1];
+    for (int& v: E[u]) {
         if (v == fa) continue;
         dfs(v, u);
     }
 }
 
 int lca(int u, int v) {
-    if (dep[u] < dep[v]) swap(u, v);
+    if (dep[u] < dep[v]) std::swap(u, v);
     int t = dep[u] - dep[v];
-    FOR (i, 0, SP) if (t & (1 << i)) u = pa[u][i];
-    FORD (i, SP - 1, -1) {
-        int uu = pa[u][i], vv = pa[v][i];
+    for (int i = 0; i <= 20; i++) if (t & (1 << i)) u = Fa[u][i];
+    for (int i = 20; i >= 0; i--) {
+        int uu = Fa[u][i], vv = Fa[v][i];
         if (uu != vv) { u = uu; v = vv; }
     }
-    return u == v ? u : pa[u][0];
+    return u == v ? u : Fa[u][0];
 }
 ```
 
