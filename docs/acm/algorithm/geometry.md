@@ -217,9 +217,9 @@ LD rotating_Calipers(std::vector<P>& qs) {
     if (n == 2)
         return dist(qs[0] - qs[1]);
     LD res = 0;
-    for (int i = 0, j = 2; i < n; i++) { 
+    for (int i = 0, j = 2; i < n; i++) {
         res = std::max(res, dist(qs[i + 1] - qs[i]));
-        while (cross(qs[i + 1], qs[j], qs[i]) < cross(qs[i + 1], qs[(j + 1) % n], qs[i])) j = (j + 1) % n; 
+        while (cross(qs[i + 1], qs[j], qs[i]) < cross(qs[i + 1], qs[(j + 1) % n], qs[i])) j = (j + 1) % n;
         res = std::max(res, std::max(dist(qs[i] - qs[j]), dist(qs[i + 1] - qs[j])));
     }
     return res;
@@ -311,7 +311,7 @@ P compute_circle_center(P a, P b, P c) {
 
 ### 圆线交点、圆圆交点
 
-+ 圆和线的交点关于圆心是顺时针的
+- 圆和线的交点关于圆心是顺时针的
 
 ```cpp
 std::vector<P> c_l_intersection(const L& l, const C& c) {
@@ -356,8 +356,8 @@ int c_c_relation(const C& a, const C& v) {
 
 ### 圆与多边形交
 
-+ HDU 5130
-+ 注意顺时针逆时针（可能要取绝对值）
+- HDU 5130
+- 注意顺时针逆时针（可能要取绝对值）
 
 ```cpp
 LD sector_area(const P& a, const P& b, LD r) {
@@ -405,10 +405,10 @@ LD c_poly_area(S poly, const C& c) {
 
 SPOJ: CIRU, EOJ: 284
 
-+ 版本 1：复杂度 $O(n^3 \log n)$。虽然常数小，但还是难以接受。
-+ 优点？想不出来。
-+ 原理上是用竖线进行切分，然后对每一个切片分别计算。
-+ 扫描线部分可以魔改，求各种东西。
+- 版本 1：复杂度 $O(n^3 \log n)$。虽然常数小，但还是难以接受。
+- 优点？想不出来。
+- 原理上是用竖线进行切分，然后对每一个切片分别计算。
+- 扫描线部分可以魔改，求各种东西。
 
 ```cpp
 inline LD rt(LD x) { return sgn(x) == 0 ? 0 : sqrt(x); }
@@ -494,11 +494,11 @@ LD circle_union(const std::vector<C>& cs) {
 }
 ```
 
-+ 版本 2：复杂度 $O(n^2 \log n)$。
-+ 原理是：认为所求部分是一个奇怪的多边形 + 若干弓形。然后对于每个圆分别求贡献的弓形，并累加多边形有向面积。
-+ 同样可以魔改扫描线的部分，用于求周长、至少覆盖 $k$ 次等等。
-+ 内含、内切、同一个圆的情况，通常需要特殊处理。
-+ 下面的代码是 $k$ 圆覆盖。
+- 版本 2：复杂度 $O(n^2 \log n)$。
+- 原理是：认为所求部分是一个奇怪的多边形 + 若干弓形。然后对于每个圆分别求贡献的弓形，并累加多边形有向面积。
+- 同样可以魔改扫描线的部分，用于求周长、至少覆盖 $k$ 次等等。
+- 内含、内切、同一个圆的情况，通常需要特殊处理。
+- 下面的代码是 $k$ 圆覆盖。
 
 ```cpp
 inline LD angle(const P& p) { return atan2(p.y, p.x); }
@@ -570,7 +570,7 @@ void circle_union(const vector<C>& cs) {
 
 ### 最小圆覆盖
 
-+ 随机增量。期望复杂度 $O(n)$。
+- 随机增量。期望复杂度 $O(n)$。
 
 ```cpp
 P compute_circle_center(P a, P b) { return (a + b) / 2; }
@@ -722,7 +722,7 @@ int opposite_side(const P& u, const P& v, const L& l) {
 bool parallel(const L& a, const L& b) { return !sgn(dist2(cross(P(a), P(b)))); }
 // 线段相交
 int s_intersect(const L& u, const L& v) {
-    return p_on_plane(F(u.s, u.t, v.s), v.t) && 
+    return p_on_plane(F(u.s, u.t, v.s), v.t) &&
            opposite_side(u.s, u.t, v) &&
            opposite_side(v.s, v.t, u);
 }
@@ -789,5 +789,3 @@ found:
     return out;
 }
 ```
-
-
