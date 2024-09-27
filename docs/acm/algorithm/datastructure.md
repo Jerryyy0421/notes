@@ -651,50 +651,28 @@ namespace kd {
 ## 树状数组
 
 ```cpp
-template <typename T>
-struct Fenwick {
-    i64 n;
-    std::vector<T> a;
-    
-    Fenwick(i64 n_ = 0) {
-        init(n_);
-    }
-    
-    void init(i64 n_) {
-        n = n_;
-        a.assign(n, T{});
-    }
-    
-    void add(i64 x, const T &v) {
-        for (i64 i = x + 1; i <= n; i += i & -i) {
-            a[i - 1] = a[i - 1] + v;
-        }
-    }
-    
-    T sum(i64 x) {
-        T ans{};
-        for (i64 i = x; i > 0; i -= i & -i) {
-            ans = ans + a[i - 1];
-        }
-        return ans;
-    }
-    
-    T rangeSum(i64 l, i64 r) { // [l, r)
-        return sum(r) - sum(l);
-    }
-    
-    i64 select(const T &k) {
-        i64 x = 0;
-        T cur{};
-        for (i64 i = 1 << std::__lg(n); i; i /= 2) {
-            if (x + i <= n && cur + a[x + i - 1] <= k) {
-                x += i;
-                cur = cur + a[x - 1];
-            }
-        }
-        return x;
-    }
-};
+struct BIT {
+	static constexpr int M = 1e5 + 5;
+	int c[M];
+
+	int lowbit(int x) {
+		return x & (-x);
+	}
+
+	void add(int x, int y) {
+		for (int i = x; i < M; i += lowbit(i)) c[i] += y;
+	}
+
+	int query(int x) {
+		int num = 0;
+		for (int i = x; i; i -= lowbit(i)) num += c[i];	
+		return num;
+	}
+
+	int query(int L, int R) {
+		return query(R) - query(L - 1);	
+	}
+} bit;
 
 ```
 

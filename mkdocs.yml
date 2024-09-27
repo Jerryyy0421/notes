@@ -154,7 +154,7 @@ nav:
  
   - ACM:
     - acm/index.md
-    - Project of Fucking Algorithm:
+    - Template:
       - Datestructure: acm/algorithm/datastructure.md
       - Graph: acm/algorithm/graph.md
       - String: acm/algorithm/string.md
@@ -172,7 +172,19 @@ nav:
         # - acm/algorithm/geometry/topic1.md
 #       - Others:
 #         - how to generate random numbers: acm/algorithm/others/random.md
-    - Project of Fucking CF:
+    - Algorithm:
+      - acm/idea/index.md
+      - 常规套路: acm/idea/regular.md
+      - 小清新思维: acm/idea/mind.md
+      - 数据结构: acm/idea/datastructure.md
+      - 图论: acm/idea/graph.md
+      - DP: acm/idea/dp.md
+      - 字符串: acm/idea/string.md
+      - 数学: acm/idea/math.md
+      - 计算几何: acm/idea/geometry.md
+      - 杂项: acm/idea/misc.md
+    
+    - CodeForces:
       - acm/cf/index.md
       - 1801 ~ 1850:
         - 1826 ~ 1850: acm/cf/cf1826.md
@@ -191,23 +203,33 @@ nav:
       - 2001 ~ 2050:
         - 2001 ~ 2010: acm/cf/cf2001.md
 
-    - Project of Fucking AT:
+    - Atcoder:
       - acm/at/index.md
       - ABC: 
         - abc352: acm/at/abc352.md
       - ARC:
-        - arc173: acm/at/arc173.md
-        - arc174: acm/at/arc174.md
-        - arc176: acm/at/arc176.md
+        - 101 ~ 110: acm/at/arc101.md
+        - 171 ~ 180: acm/at/arc171.md
 
-    - Project of Fucking XCPC:
-      - ICPC 2023 Hong Kong: acm/xcpc/icpc-2023-hk
-    - Project of Fucking HDU:
-      - acm/hdu2023/index.md
+    - XCPC region:
       - 2023:
-        - Day1: acm/hdu2023/contest01.md
-        - Day2: acm/hdu2023/contest02.md
-
+        - ICPC 2023 Hong Kong: acm/xcpc/2023/icpc-hk.md
+      - 2024:
+        - The 2024 CCPC Online Contest: acm/xcpc/2024/ccpc-ol.md
+        - The 2024 ICPC Asia East Continent Online Contest (I): acm/xcpc/2024/icpc-ol1.md
+    - HDU:
+      - 2023 summer:
+        - Day1: acm/hdu/2023/contest01.md
+        - Day2: acm/hdu/2023/contest02.md
+      - 2024 summer:
+        - Day1: acm/hdu/2023/contest01.md
+        - Day2: acm/hdu/2023/contest01.md
+    - Nowcoder:
+      - 2024 summer:
+        - Day1: acm/nowcoder/2024/contest01.md
+        - Day2: acm/nowcoder/2024/contest02.md
+        - Day3: acm/nowcoder/2024/contest03.md
+        - Day4: acm/nowcoder/2024/contest04.md
   
   - Others: 
     - others/index.md

@@ -1,12 +1,8 @@
 ---
-title: ICPC-2022
+title: ICPC-hongkong
 date: 2023-10-18 15:09:57
 tags:
 ---
-
-ICPC 2022 补题合集
-
-<!--more-->
 
 ## [The 2023 ICPC Asia Hong Kong Regional Programming Contest (The 1st Universal Cup, Stage 2:Hong Kong)](https://codeforces.com/gym/104172)
 
