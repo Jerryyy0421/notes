@@ -9,7 +9,7 @@
 
 ![01-e08](images/01-e08.png)
 
-!!! success "Solution"
+??? success "Solution"
     $Q_0 = \alpha, Q_1 = \beta, Q_2 = \dfrac{1 + \beta}{\alpha}, Q_3 = \dfrac{1 + \alpha + \beta}{\alpha\beta}, Q_4 = \dfrac{1 + \alpha}{\beta}, Q_5 = \alpha, Q_6 = \beta$
 
     呈周期变换。
@@ -19,7 +19,7 @@
 
 ![01-e09](images/01-e09.png)
 
-!!! success "Solution"
+??? success "Solution"
     **a.** 把 $x_n = \dfrac{\sum x_{n - 1}}{n - 1}$ 代入公式即可推出。
 
     **b.** 
@@ -31,28 +31,42 @@
     **c.** 所有的二的幂次都可以满足，然后小于二的幂次的也都能满足。
 
 
-**Exercise 10** 
+### Exercise 10 
 
 ![01-e10](images/01-e10.png)
 
+??? success "Solution"  
+    设从左到右依次为 A，B，C。那么对于从 A -> B 移走 n 个，一定是 A -> C 移走 n - 1 个，A -> B 移走一个，然后 C -> B 移走 n - 1 个。故 $Q_n = R_{n - 1} + 1 + R_{n - 1}$。
+
+    那么对于从 B -> A 移走 n 个，一定是 B -> A 移走 n - 1 个，B -> C 移走一个，然后 A -> B 移走 n - 1 个，C -> A 移走一个，然后 B -> A 移走 n - 1 个。故 $R_n = R_{n - 1} + 1 + Q_{n - 1} + 1 + R_{n - 1}$。带入先前的 $Q_n$ 可得 $R_n = 2R_{n - 1} + 2 + Q_{n - 1}$。
 
 
-
-**Exercise 11** 
+### Exercise 11
 
 ![01-e11](images/01-e11.png)
 
+??? success "Solution"
+    **a.** $A_n = 2A_{n - 1} + 2 = 2^{n + 1} - 2$
 
-**Exercise 12** 
+    **b.** 虽然不太会严格的证明，但是可以大致知道是如何操作的。结合 a 的操作，我们发现，a 操作完之后相邻两个盘子都互换了位置，那么操作两次之后就可以换回来。所以我们应该尽可能进行限制少的操作（即 a 操作），这样步数才会少。所以具体操作是从 A -> B 移走 n - 1 对（反），一定是 A -> C 移走 1 对（反），B -> A 移走 n - 1 对（正），然后 C -> B 移走 1 对（正），最后要保持顺序不变地把 n - 1 对从 A 移到 B。故 $B_n = A_{n - 1} + 2 + A_{n - 1} + 2 + B_{n - 1}$。其实也可以看作 $B_n = A_{n - 1} + 1 + A_{n - 1} + 1 + A_{n - 1} + 1 + A_{n - 1}$。则有 $B_n = 2^{n + 2} - 5$，确实无法构造出更小的方案。
+    
+
+### Exercise 12
 
 ![01-e12](images/01-e12.png)
+
+??? success "Solution"
+    递推公式：$R_n = 2R_{n - 1} + m_n$。
+
+    通项：$R_n = 2^{n - 1}m_1 + ... + 2m_{n - 1} + m_n$。
+
 
 
 ### Exercise 13
 
 ![01-e13](images/01-e13.png)
 
-!!! success "Solution"  
+??? success "Solution"  
     **先给出一个神秘结论：如果对于某种划分，新加入的线产生了 k 个交点，那么则会产生 k + 1 个新区域。
     这个结论对于直线，折线和本题均适用。**
 
@@ -64,9 +78,13 @@
 
 
 
+
+
 **Exercise 15** 
 
 ![01-e15](images/01-e15.png)
+
+
 
 
 
