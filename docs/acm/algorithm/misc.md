@@ -1,9 +1,11 @@
 
 ## rand
 ```cpp
+using i64 = long long;
+
 std::mt19937 rnd(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count());
-int randint(int L, int R) {
-    std::uniform_int_distribution<int> dist(L, R);
+i64 randi64(i64 L, i64 R) {
+    std::uniform_int_distribution<i64> dist(L, R);
     return dist(rnd);
 }
 ```
