@@ -3405,6 +3405,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#atcoder-regular-contest-107" class="md-nav__link">
+    AtCoder Regular Contest 107
+  </a>
+  
+    <nav class="md-nav" aria-label="AtCoder Regular Contest 107">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-shuffle-permutation" class="md-nav__link">
+    C. Shuffle Permutation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-number-of-multisets" class="md-nav__link">
+    D. Number of Multisets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atcoder-regular-contest-108" class="md-nav__link">
+    AtCoder Regular Contest 108
+  </a>
+  
+    <nav class="md-nav" aria-label="AtCoder Regular Contest 108">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-keep-graph-connected" class="md-nav__link">
+    C. Keep Graph Connected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-ab" class="md-nav__link">
+    D. AB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4382,6 +4436,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#atcoder-regular-contest-107" class="md-nav__link">
+    AtCoder Regular Contest 107
+  </a>
+  
+    <nav class="md-nav" aria-label="AtCoder Regular Contest 107">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-shuffle-permutation" class="md-nav__link">
+    C. Shuffle Permutation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-number-of-multisets" class="md-nav__link">
+    D. Number of Multisets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atcoder-regular-contest-108" class="md-nav__link">
+    AtCoder Regular Contest 108
+  </a>
+  
+    <nav class="md-nav" aria-label="AtCoder Regular Contest 108">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-keep-graph-connected" class="md-nav__link">
+    C. Keep Graph Connected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-ab" class="md-nav__link">
+    D. AB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4449,6 +4557,36 @@
     \sum_{l = 1}^n\sum_{r = 1}^n (a_l + a_r)^x = \sum_{l = 1}^n\sum_{r = 1}^n \sum_{i = 0}^x \binom{x}{i}a_l^ia_r^{x - i} \newline = \sum_{i = 0}^x \binom{x}{i}\left(\sum_{l = 1}^n a_l^i \right ) \left(\sum_{r = 1}^n a_r^{x - i}\right ) \newline
 \end{eqnarray}\]</div>
 <p>然后预处理一下 i 次幂的前缀和即可。时间复杂度 <span class="arithmatex">\(O(nk + k^2)\)</span>。</p>
+<h2 id="atcoder-regular-contest-107"><a href="https://atcoder.jp/contests/arc107">AtCoder Regular Contest 107</a><a class="headerlink" href="#atcoder-regular-contest-107" title="Permanent link">&para;</a></h2>
+<h3 id="c-shuffle-permutation"><a href="https://atcoder.jp/contests/arc107/tasks/arc107_c">C. Shuffle Permutation</a><a class="headerlink" href="#c-shuffle-permutation" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong></p>
+<p>行列相对独立，故分开考虑。不难发现若 <span class="arithmatex">\(A, B\)</span> 可以交换，<span class="arithmatex">\(B, C\)</span> 可以交换，则 <span class="arithmatex">\(A, C\)</span> 可以交换。</p>
+<p>故并查集维护，对于集合个数为 <span class="arithmatex">\(n\)</span> 的并查集，一共 <span class="arithmatex">\(n!\)</span> 种排列方式。累乘即可。</p>
+<h3 id="d-number-of-multisets"><a href="https://atcoder.jp/contests/arc107/tasks/arc107_d">D. Number of Multisets</a><a class="headerlink" href="#d-number-of-multisets" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong></p>
+<p>喵喵题。</p>
+<p>设 <code>f[i][j]</code> 表示用 <span class="arithmatex">\(i\)</span> 个数，和为 <span class="arithmatex">\(j\)</span> 的方案数。</p>
+<p>考虑不遗漏的全部转移到位，相当于可以由另一个集合添加 <span class="arithmatex">\(1\)</span> 或整体除以 <span class="arithmatex">\(2\)</span> 得来。</p>
+<p>这样一定是所有情况都包含的，前者表示可重集最大元素是 <span class="arithmatex">\(1\)</span> 的情况，后者表示最大元素不是 <span class="arithmatex">\(1\)</span> 的情况。</p>
+<p>注意转移的时候从大到小转移，这样除以 <span class="arithmatex">\(4\)</span>，除以 <span class="arithmatex">\(8\)</span> 的情况等等都会以前缀和的形式被考虑进来。</p>
+<h2 id="atcoder-regular-contest-108"><a href="https://atcoder.jp/contests/arc108">AtCoder Regular Contest 108</a><a class="headerlink" href="#atcoder-regular-contest-108" title="Permanent link">&para;</a></h2>
+<h3 id="c-keep-graph-connected"><a href="https://atcoder.jp/contests/arc108/tasks/arc108_c">C. Keep Graph Connected</a><a class="headerlink" href="#c-keep-graph-connected" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong></p>
+<p>简单构造。不难发现若图联通则一定存在一种合理方式。</p>
+<p>看作一棵树，树根的值随便取，我们尽量让儿子节点的值和它连向父亲的那条边的值相等。如果父亲的值已经和这条边的值相等，那么我们就让儿子随便取一个不同的值。这样的构造的话不难发现，构造到儿子节点为止，从儿子到根节点的每条边都满足，那么整棵树也都满足。</p>
+<h3 id="d-ab"><a href="https://atcoder.jp/contests/arc108/tasks/arc108_d">D. AB</a><a class="headerlink" href="#d-ab" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong></p>
+<p>喵喵分类讨论题。</p>
+<p>不妨假设 <span class="arithmatex">\(C_{AB} = A\)</span>，那么长度为 <span class="arithmatex">\(3\)</span>，就是 <code>AAB</code>。</p>
+<ul>
+<li>如果 <span class="arithmatex">\(C_{AA} = A\)</span>，那么最终的字符串只能是形如 <code>A...AB</code> 的形式。答案为 <span class="arithmatex">\(1\)</span>。</li>
+<li>如果 <span class="arithmatex">\(C_{AA} = B\)</span>，这样就可以出现 <code>ABAB</code> 的结构，我们继续分类讨论。<ul>
+<li>如果 <span class="arithmatex">\(C_{BA} = A\)</span>，此时无法出现连续的 <span class="arithmatex">\(B\)</span>，一定是出现一段 <span class="arithmatex">\(A\)</span>，然后一个 <span class="arithmatex">\(B\)</span> 的形式。可以用 DP 来解决。由于出现不了 <code>BB</code> 的结构所以都不用考虑 <span class="arithmatex">\(C_{BB}\)</span>。</li>
+<li>如果 <span class="arithmatex">\(C_{BA} = B\)</span>，此时 <span class="arithmatex">\(B\)</span> 可以连续，然后 <span class="arithmatex">\(A\)</span> 也可以连续，手模发现其实中间的 <span class="arithmatex">\(n - 3\)</span> 长度是任意 <span class="arithmatex">\(A,B\)</span> 序列都可以。故答案为 <span class="arithmatex">\(2^{n - 3}\)</span>。</li>
+</ul>
+</li>
+</ul>
+<p>对于 <span class="arithmatex">\(C_{AB} = B\)</span> 同理。</p>
 
 
 
