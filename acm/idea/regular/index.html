@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2382,6 +2387,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    常规套路
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2392,6 +2410,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    习题
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3174,6 +3218,8 @@
       
         
       
+        
+      
     
     
     
@@ -3210,11 +3256,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../at/abc352/" class="md-nav__link">
+      <a href="../../at/abc352.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    abc352
+    351 ~ 360
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../at/abc371/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    371 ~ 380
   </span>
   
 
@@ -4172,6 +4238,23 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    习题
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -4189,9 +4272,18 @@
   
 
 
-  <h1>常规套路</h1>
-
-
+<h1 id="_1">常规套路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h3 id="_2">习题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><a href="https://codeforces.com/contest/1843/problem/F2"><strong>CF1843F2 Omsk Metro (hard version)</strong></a></p>
+<blockquote>
+<p>简单说下题意：</p>
+<p>给定一颗带点权且只可能为 <span class="arithmatex">\(1\)</span> 或 <span class="arithmatex">\(−1\)</span> 的树，若干次询问顶点 <span class="arithmatex">\(x\)</span> 和顶点 <span class="arithmatex">\(y\)</span> 之间是否存在点权和为 <span class="arithmatex">\(k\)</span> 的子路径。</p>
+</blockquote>
+<p><strong>Solution</strong></p>
+<p>算是经典套路了。</p>
+<p>由于全是 <span class="arithmatex">\(1\)</span> 和 <span class="arithmatex">\(-1\)</span>，如果一个区间能构成的最大值大于等于 <span class="arithmatex">\(k\)</span>，最小值小于等于 <span class="arithmatex">\(k\)</span>，则一定可以构成。</p>
+<p>我们则只需维护一个点到它父亲的最大前驱，最小前驱，最大后驱，最小后驱，最大值，最小值，总和即可。</p>
+<p>这里用倍增维护，写的时候一个小细节是，可以重载结构体的加法，让写法更加简便。</p>
 
 
 
