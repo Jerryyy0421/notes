@@ -29,16 +29,17 @@ std::vector<int> manacher(std::vector<int> s) {
 ## KMP
 ### Prefix Function
 
-kmp 算法，下标从 $1$ 开始。
+kmp 算法，下标从 $1$ 开始，其中 `pi[0]` 的值为 $-1$。但是 `std::string s` 的下标从 $0$ 开始。 
 
 ```c++
 std::vector<int> Get_Pi(std::string s) {
     int n = s.size();
-    std::vector<int> pi(n); 
-    int j = pi[0] = 0;
-    for (int i = 1; i < n; i++) {
-        while (j && s[i] != s[j]) j = pi[j - 1];
-        pi[i] = j += s[i] == s[j];
+    std::vector<int> pi(n + 1); 
+    pi[0] = -1;
+    for (int i = 1; i <= n; i++) {
+    	int j = pi[i - 1];
+        while (j != -1 && s[i - 1] != s[j]) j = pi[j];
+        pi[i] = j + 1;
     }
     return pi;
 }
@@ -116,7 +117,7 @@ struct trie {
 
 ## AC-Automaton
 
-Trie 树根节点是 $0$。
+Trie 树根节点是 $0$。初始化 `ac.init()` 一定要记得！
 
 ```c++
 const int N = 2e5 + 5;

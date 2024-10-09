@@ -2,11 +2,98 @@
 
 ## 数论
 
-### 相关知识
+### 整除和同余
+
+#### 逆元
+
+**逆元唯一性定理**
+
+逆元若存在，则总是是唯一的。
+
+**逆元存在性定理**
+
+在模 $m$ 下，当且仅当 $a \perp m$ 时，$a$ 有乘法逆元。
+
+**裴蜀定理**
+
+不定方程 $ax + by = c$ 当且仅当 $\text{gcd}(a, b) | c$ 时有解。
+
+**费马小定理**
+
+对于质数 $p$，任意正整数 $a$ 满足 $a^{p - 1} \equiv 1(\mod p)$。
+
+**欧拉定理**
+
+当 $a \perp m$ 时，$a^{\varphi (m)} \equiv 1(\mod m)$。
+
+**线性求前缀逆元**
+
+对于质数 $p$，存在 $n^{-1} \equiv -\left \lfloor p / n  \right \rfloor(p\mod n)^{-1} (\mod p)$。
+
+**批量求逆元**
+
+对于 $A_{1 \sim n}$，$S = (\prod_{i = 1}^n A_i)^{-1}$，则有 $A_i^{-1} = SL_{i - 1}R_{i + 1}$。
+
+
+#### 线性同余方程组
+
+**中国剩余定理**
+
+满足模数两两互质，先看两个方程组的情况，
+
+\begin{eqnarray}
+\left\{\begin{matrix}
+x \equiv c_1(\mod m_1) \\
+x \equiv c_2(\mod m_2)
+\end{matrix}\right.
+\end{eqnarray}
+
+求解出答案是 $x \equiv c_1m_2\text{Inv}_{m_1}(m_2) + c_2m_1\text{Inv}_{m_2}(m_1)(\mod m_1m_2)$。
+对于 $n$ 个方程组，两两合并即可。
+
+**拓展中国剩余定理**
+
+不保证模数两两互质。
+
+相当于解方程 $am_1 + bm_2 = c_2 - c_1$，先判断有无解，然后再利用扩欧求解。新方程相当于变成了
+
+\begin{eqnarray}
+\left\{\begin{matrix}
+x \equiv x_0(\mod \text{lcm}(m_1, m_2)) \\
+x \equiv c_3(\mod m_3)
+\end{matrix}\right.
+\end{eqnarray}
+
+然后不断两两合并即可。
+
+#### 组合数取模
+
+**求阶乘逆元小技巧**
+
+先算 $n!$ 逆元，然后不断从后往前乘，依次算逆元。
+
+**卢卡斯定理**
+
+$$
+\binom{n}{m} \equiv \binom{\left \lfloor n/p \right \rfloor}{\left \lfloor m/p \right \rfloor}\binom{n\mod p}{m\mod p}(\mod p)
+$$
+
+**库默尔定理**
+
+$\binom{n + m}{m}$ 中素因子 $p$ 个数等于 $n, m$ 在 $p$ 进制下相加的进位次数。
+
+
+**拓展卢卡斯定理**
+
+
+
+#### 杂项
 
 **威尔逊定理**
 
 当且仅当 $p$ 是质数时，$(p - 1)! \equiv -1(\mod p)$。
+
+### 数论函数与求和
 
 
 

@@ -3,23 +3,31 @@
 ## 矩阵运算
 
 ```cpp
+using i64 = long long;
+
+i64 Mod;
+
 struct Mat {
-    static const LL M = 2;
-    LL v[M][M];
+	static const i64 M = 21;
+	i64 v[M][M];
     Mat() { memset(v, 0, sizeof v); }
-    void eye() { FOR (i, 0, M) v[i][i] = 1; }
-    LL* operator [] (LL x) { return v[x]; }
-    const LL* operator [] (LL x) const { return v[x]; }
+    void eye() { for (i64 i = 0; i < M; i++) v[i][i] = 1; }
+    i64* operator [] (i64 x) { return v[x]; }
+    const i64* operator [] (i64 x) const { return v[x]; }
     Mat operator * (const Mat& B) {
         const Mat& A = *this;
         Mat ret;
-        FOR (k, 0, M)
-            FOR (i, 0, M) if (A[i][k])
-                FOR (j, 0, M)     
-                    ret[i][j] = (ret[i][j] + A[i][k] * B[k][j]) % MOD;
+        for (i64 k = 0; k < M; k++) {	
+            for (i64 i = 0; i < M; i++) {
+            	if (A[i][k]) {	
+	                for (i64 j = 0; j < M; j++)     
+	                    ret[i][j] = (ret[i][j] + A[i][k] * B[k][j]) % Mod;
+            	}
+            }
+        }
         return ret;
     }
-    Mat pow(LL n) const {
+    Mat pow(i64 n) const {
         Mat A = *this, ret; ret.eye();
         for (; n; n >>= 1, A = A * A)
             if (n & 1) ret = ret * A;
@@ -28,17 +36,17 @@ struct Mat {
     Mat operator + (const Mat& B) {
         const Mat& A = *this;
         Mat ret;
-        FOR (i, 0, M)
-            FOR (j, 0, M)
-                 ret[i][j] = (A[i][j] + B[i][j]) % MOD;
+        for (int i = 0; i < M; i++)
+            for (int j = 0; j < M; j++)
+                 ret[i][j] = (A[i][j] + B[i][j]) % Mod;
         return ret;
     }
     void prt() const {
-        FOR (i, 0, M)
-            FOR (j, 0, M)
-                 printf("%lld%c", (*this)[i][j], j == M - 1 ? '\n' : ' ');
+        for (int i = 0; i < M; i++)
+            for (int j = 0; j < M; j++)
+            	std::cout << (*this)[i][j] << " \n"[j == M - 1];
     }
-};
+} M;
 ```
 
 ## 筛
