@@ -34,6 +34,60 @@
 
 ## Trie
 
+### 代码实现
+
+Trie 树板子
+
+```c++
+struct trie {
+	int t[N][26], sz, ed[N];
+	void init() { sz = 2; memset(ed, 0, sizeof ed); }
+	int _new() { memset(t[sz], 0, sizeof t[sz]); return sz++; }
+	void ins(std::string s, int p) {
+    	int u = 1;
+    	for(int i = 0; i < s.size(); i++) {
+      		int c = s[i] - 'a';
+      		if (!t[u][c]) t[u][c] = _new();
+      		u = t[u][c];
+    	}
+    	ed[u] = p;
+  	}
+};
+
+```
+
+01 trie 板子
+
+```cpp
+struct trie {
+	int t[N][2], sz, ed[N];
+	void init() { sz = 2; memset(ed, 0, sizeof ed); }
+	int _new() { memset(t[sz], 0, sizeof t[sz]); return sz++; }
+	void ins(int s) {
+	    int u = 1;
+	    for (int i = 30; i >= 0; i--) {
+	      	int c = (s >> i) & 1;
+	     	if (!t[u][c]) t[u][c] = _new();
+	      	u = t[u][c];
+	    }
+	}
+	int find(int x) {
+	  	int u = 1, num = 0;
+	    for (int i = 30; i >= 0; i--) {
+	    	int c = (x >> i) & 1;
+	      	if (t[u][c ^ 1]) {
+	      		u = t[u][c ^ 1], num += (1 << i);
+	      	}
+	      	else u = t[u][c];
+	    }
+	   	return num;
+	}
+} T;
+
+```
+
+
+
 ### 习题
 
 [**P3294 [SCOI2016] 背单词**](https://www.luogu.com.cn/problem/P3294)
@@ -49,6 +103,47 @@
 ## KMP && Border 理论
 
 Border : 字符串的某个前缀(**非原串**)，能与后缀完全匹配。
+
+### 代码实现
+
+Prefix Function
+
+kmp 算法，下标从 $1$ 开始，其中 `pi[0]` 的值为 $-1$。但是 `std::string s` 的下标从 $0$ 开始。 
+
+```c++
+std::vector<int> Get_Pi(std::string s) {
+    int n = s.size();
+    std::vector<int> pi(n + 1); 
+    pi[0] = -1;
+    for (int i = 1; i <= n; i++) {
+    	int j = pi[i - 1];
+        while (j != -1 && s[i - 1] != s[j]) j = pi[j];
+        pi[i] = j + 1;
+    }
+    return pi;
+}
+```
+
+Z Function
+
+```c++
+std::vector<int> ZFunction(std::string s) {
+    int n = s.size();
+    std::vector<int> z(n + 1);
+    z[0] = n;
+    for (int i = 1, j = 1; i < n; i++) {
+        z[i] = std::max(0, std::min(j + z[j] - i, z[i - j]));
+        while (i + z[i] < n && s[z[i]] == s[i + z[i]]) {
+            z[i]++;
+        }
+        if (i + z[i] > j + z[j]) {
+            j = i;
+        }
+    }
+    return z;
+}
+```
+
 
 ### 相关结论
 
@@ -89,6 +184,68 @@ KMP 的 fail 数组刻画的就是各个前缀的最大 Border。
 
 ACAM 本质就是在 Trie 树上跑 kmp。
 
+### 代码实现
+
+Trie 树根节点是 $0$。初始化 `ac.init()` 一定要记得！
+
+```c++
+const int N = 2e5 + 5;
+struct AhoCorasick {
+	static constexpr int M = 26;
+	int ch[N][M], cnt[N], fail[N];
+	int sz;
+	void init() {
+	    sz = 1;
+    	std::memset(ch[0], 0, sizeof ch[0]);
+    	std::memset(cnt, 0, sizeof cnt);
+  	}
+  	void insert(const std::string &s) {
+    	int n = s.size(); int u = 0, c;
+    	for(int i = 0; i < n; i++) {
+      		c = s[i] - 'a';
+      		if (!ch[u][c]) {
+        		memset(ch[sz], 0, sizeof ch[sz]);
+        		cnt[sz] = 0; ch[u][c] = sz++;
+      		}
+      		u = ch[u][c];
+    	}
+    	cnt[u]++;
+  	}
+  	void build() {
+    	std::queue<int> Q;
+    	fail[0] = 0;
+    	for (int c = 0, u; c < M; c++) {
+      		u = ch[0][c];
+      		if (u) { Q.push(u); fail[u] = 0; }
+    	}
+    	while (!Q.empty()) {
+      		int r = Q.front(); Q.pop();
+      		for (int c = 0, u; c < M; c++) {
+        		u = ch[r][c];
+        		if (!u) {
+          			ch[r][c] = ch[fail[r]][c];
+          			continue;
+        		}
+        		fail[u] = ch[fail[r]][c];
+        		Q.push(u);
+      		}
+    	}
+  	}
+  	int query(std::string t) {
+    	int u = 0, res = 0, n = t.size();
+    	for (int i = 0; i < n; i++) {
+      		u = ch[u][t[i] - 'a'];
+      		for (int j = u; j && cnt[j] != -1; j = fail[j]) {
+        		res += cnt[j], cnt[j] = -1;
+      		}
+    	}
+    	return res;
+  	}
+} ac;
+
+```
+
+
 ### 习题
 
 [**P2414 [NOI2011] 阿狸的打字机**](https://www.luogu.com.cn/problem/P2414)
@@ -120,13 +277,220 @@ x 在 y 中的出现次数即在 Fail 树中有节点 x 作为祖先的 Trie 树
 
 最后从前往后转移即可，时间复杂度为 $O(m|s|)$。
 
+[**P3966 [TJOI2013] 单词**](https://www.luogu.com.cn/problem/P3966)
+
+**Solution**
+
+显然是建立 AC 自动机，然后我们在 Trie 树上跑，对于每一个节点，我们都让计数 +1，表示我们经过了这个字符串，同时这个字符串可以作为别的串的后缀出现，所以所有这个节点还要加上所有 fail 子树和。
+
+统计的时候倒着跑一遍统计子树和即可（这里是按照构建 AC 自动机时的节点倒序跑），随后输出每个字符串所在的节点答案。
+
+[**P3121 [USACO15FEB] Censoring G**](https://www.luogu.com.cn/problem/P3121)
+
+**Solution**
+
+本题做法是 ACAM + 栈，对于单词建 ACAM，然后用文本串去跑，对于跑到的每个点用栈存起来，跑到一个单词节点上，我们就跳回这个单词长度即可。
+
+## PAM
+
+回文自动机即回文树。时间复杂度为 $O(n)$。
+
+### 代码实现
+
+字符串下标从 $1$ 开始。
+
+PAM 中 $1$ 号点是奇回文的根，$0$ 号点是偶回文的根。故实际有含义的点是 $2 \sim \text{tot}$。
+
+每个节点对应一个回文串，`fail[i]` 表示和这个 $i$ 回文串同右端点的最长回文串。每个节点均有 `fail` 连接。
+
+可以求出本质不同回文串个数，每个回文串出现次数，长度。板子里只求出这个回文作为最长回文出现的次数，若求全部出现的次数要从后往前对 `cnt` 求和。
+
+```cpp
+const int N = 500005;
+struct PAM { 
+    int fail[N], ch[N][26], cnt[N], len[N];
+    int tot, last, p, q;
+    std::string s;
+    void init() {
+        tot = last = 0;
+        s[0] = -1, fail[0] = 1, last = 0;
+        len[0] = 0, len[1] = -1, tot = 1; 
+        memset(ch[0], 0, sizeof(ch[0]));
+        memset(ch[1], 0, sizeof(ch[1]));
+        std::cin >> s;
+        s = ' ' + s;
+    }
+    int newnode(int x) {
+        len[++tot] = x;
+        memset(ch[tot], 0, sizeof(ch[tot]));
+        return tot;
+    }
+    int getfail(int x, int n) {
+        while(s[n - 1 - len[x]] != s[n]) x = fail[x];
+        return x;
+    }
+    void build() {
+        for(int i = 1; s[i]; ++i){
+            int x = s[i] - 'a';
+            p = getfail(last, i);
+            if(!ch[p][x]) {
+                // 如果有了转移就不用建了，否则要新建 
+                // 前后都加上新字符，所以新回文串长度要加2 
+                q = newnode(len[p] + 2);
+                // 因为fail指向的得是原串的严格后缀，所以要从p的fail开始找起 
+                fail[q] = ch[getfail(fail[p], i)][x]; 
+                // 记录转移 
+                ch[p][x] = q;
+            }
+            ++cnt[last = ch[p][x]];
+        }
+    }
+} pam;
+```
+
+### 习题
+
+[**P4287 [SHOI2011] 双倍回文**](https://www.luogu.com.cn/problem/P4287)
+
+**Solution**
+
+如果我们对于每一个节点暴力跳 `fail` 一定会超时，所以我们再开一个数组 `kkk[i]` 表示这个 `i` 能往上跳的 `fail` 中长度小于等于 `i` 一半中最长的那个回文。 
+
+所以我们判断一个节点能否作为双倍回文只用判断 `kkk[i]` 的长度是否恰好为 `len[i]` 的一半并且 `len[i]` 是 $4$ 的倍数。
+
+
+[**P4762 [CERC2014] Virus synthesis**](https://www.luogu.com.cn/problem/P4762)
+
+**Solution**
+
+回文自动机好题。
+
+我们观察可以发现，最终串一定是一个回文加上若干次单个加得来的。
+
+所以我们可以用 dp 求出文本串中每一个回文串的最小操作次数，然后 $ans = \min \{|s| - |i| + f_i\}$。
+
+而且这里注意，我们求的回文是只求偶回文的答案，因为翻转的时候对奇回文操作会破坏其结构。
+
+我们利用上个例题中的 `kkk` 数组，所以转移的时候 $f_v = \min \{f_v, f_{kkk} + len_v - len_{kkk}\}$。
+
+以及，我们转移的时候枚举每次两边新增的字符是什么，若从状态 $u$ 可以转移到状态 $v$， 则有 $f_v = \min \{f_v, f_u + 1\}$。 因为这是偶对称串，我们可以把翻折放到最后做。
 
 ## SA
 
+### 代码实现
 
+下标从 $1$ 开始。
+
+```cpp
+constexpr int N = 2e5 + 5;
+int ht[N], sa[N], rk[N];
+int ork[N], buc[N], id[N];
+void build(std::string s) {
+	int m = N - 1, p = 0;
+	int n = s.size() - 1;
+	for (int i = 1; i <= n; i++) ork[i] = 0;	
+	for (int i = 1; i <= n; i++) buc[i] = 0;
+	for(int i = 1; i <= n; i++) buc[rk[i] = s[i]]++;
+	for(int i = 1; i <= m; i++) buc[i] += buc[i - 1];
+	for(int i = n; i; i--) sa[buc[rk[i]]--] = i;
+	for(int w = 1; ; m = p, p = 0, w <<= 1) { // m 表示桶的大小, 等于上一轮的 rk 最大值.
+    	for(int i = n - w + 1; i <= n; i++) id[++p] = i; // 循环顺序无关, 顺序倒序都可以, 不影响最终结果.
+    	for(int i = 1; i <= n; i++) if(sa[i] > w) id[++p] = sa[i] - w;
+    	memset(buc, 0, m + 1 << 2); // 注意清空桶.
+    	memcpy(ork, rk, n + 1 << 2); // 注意拷贝 rk -> ork.
+    	p = 0;
+    	for(int i = 1; i <= n; i++) buc[rk[i]]++;
+    	for(int i = 1; i <= m; i++) buc[i] += buc[i - 1];
+    	for(int i = n; i; i--) sa[buc[rk[id[i]]]--] = id[i]; // 注意, 倒序枚举保证计数排序的稳定性. 基数排序的正确性基于内层计数排序的稳定性.
+    	for(int i = 1; i <= n; i++) rk[sa[i]] = ork[sa[i - 1]] == ork[sa[i]] && ork[sa[i - 1] + w] == ork[sa[i] + w] ? p : ++p; // 原排名二元组相同则新排名相同, 否则排名 +1.
+    	if(p == n) break; // n 个排名互不相同, 排序完成.
+	}
+	for(int i = 1, k = 0; i <= n; i++) {
+  		if(k) k--;
+  		while(s[i + k] == s[sa[rk[i] - 1] + k]) k++; // sa[rk[i]] = i, 需要保证 s[0] 和 s[n + 1] 为空字符 (多测清空), 否则可能出错.
+  		ht[rk[i]] = k;
+	}
+}
+```
 
 
 ## SAM
+
+### 代码实现
+```cpp
+struct SAM {
+  static constexpr int ALPHABET_SIZE = 26;
+  struct Node {
+    int len;
+    int link;
+    std::array<int, ALPHABET_SIZE> next;
+    Node() : len{}, link{}, next{} {}
+  };
+  std::vector<Node> t;
+  SAM() {
+    init();
+  }
+  void init() {
+    t.assign(2, Node());
+    t[0].next.fill(1);
+    t[0].len = -1;
+  }
+  int newNode() {
+    t.emplace_back();
+    return t.size() - 1;
+  }
+  int extend(int p, int c) {
+    if (t[p].next[c]) {
+      int q = t[p].next[c];
+      if (t[q].len == t[p].len + 1) {
+        return q;
+      }
+      int r = newNode();
+      t[r].len = t[p].len + 1;
+      t[r].link = t[q].link;
+      t[r].next = t[q].next;
+      t[q].link = r;
+      while (t[p].next[c] == q) {
+        t[p].next[c] = r;
+        p = t[p].link;
+      }
+      return r;
+    }
+    int cur = newNode();
+    t[cur].len = t[p].len + 1;
+    while (!t[p].next[c]) {
+      t[p].next[c] = cur;
+      p = t[p].link;
+    }
+    t[cur].link = extend(p, c);
+    return cur;
+  }
+  int extend(int p, char c, char offset = 'a') {
+    return extend(p, c - offset);
+  }
+    
+  int next(int p, int x) {
+    return t[p].next[x];
+  }
+    
+  int next(int p, char c, char offset = 'a') {
+    return next(p, c - 'a');
+  }
+    
+  int link(int p) {
+    return t[p].link;
+  }
+    
+  int len(int p) {
+    return t[p].len;
+  }
+
+  int size() {
+    return t.size();
+  }
+};
+
+```
 
 
 ## bitset 乱搞
@@ -217,3 +581,4 @@ void solve() {
 
 [后缀自动机学习笔记(应用篇)](https://www.luogu.com/article/w967d5rp)
 
+[回文自动机学习笔记](https://www.cnblogs.com/bztMinamoto/p/9630617.html)

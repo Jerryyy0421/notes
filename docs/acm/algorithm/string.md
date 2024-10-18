@@ -291,73 +291,46 @@ struct SAM {
 
 ## PAM
 ```c++
-struct PAM {
-  static constexpr int ALPHABET_SIZE = 28;
-  struct Node {
-    int len;
-    int link;
-    int cnt;
-    std::array<int, ALPHABET_SIZE> next;
-    Node() : len{}, link{}, cnt{}, next{} {}
-  };
-  std::vector<Node> t;
-  int suff;
-  std::string s;
-  PAM() {
-    init();
-  }
-  void init() {
-    t.assign(2, Node());
-    t[0].len = -1;
-    suff = 1;
-    s.clear();
-  }
-  int newNode() {
-    t.emplace_back();
-    return t.size() - 1;
-  }
-     
-  bool add(char c, char offset = 'a') {
-    int pos = s.size();
-    s += c;
-    int let = c - offset;
-    int cur = suff, curlen = 0;
- 
-    while (true) {
-      curlen = t[cur].len;
-      if (pos - 1 - curlen >= 0 && s[pos - 1 - curlen] == s[pos])
-        break;  
-      cur = t[cur].link;
-    }       
-    if (t[cur].next[let]) {  
-      suff = t[cur].next[let];
-      return false;
+const int N = 500005;
+struct PAM { 
+    int fail[N], ch[N][26], cnt[N], len[N];
+    int tot, last, p, q;
+    std::string s;
+    void init() {
+        tot = last = 0;
+        s[0] = -1, fail[0] = 1, last = 0;
+        len[0] = 0, len[1] = -1, tot = 1; 
+        memset(ch[0], 0, sizeof(ch[0]));
+        memset(ch[1], 0, sizeof(ch[1]));
+        std::cin >> s;
+        s = ' ' + s;
     }
-         
-    int num = newNode();
-    suff = num;
-    t[num].len = t[cur].len + 2;
-    t[cur].next[let] = num;
- 
-    if (t[num].len == 1) {
-      t[num].link = 1;
-      t[num].cnt = 1;
-      return true;
+    int newnode(int x) {
+        len[++tot] = x;
+        memset(ch[tot], 0, sizeof(ch[tot]));
+        return tot;
     }
- 
-    while (true) {
-      cur = t[cur].link;
-      curlen = t[cur].len;
-      if (pos - 1 - curlen >= 0 && s[pos - 1 - curlen] == s[pos]) {
-        t[num].link = t[cur].next[let];
-        break;
-      }       
-    }           
- 
-    t[num].cnt = 1 + t[t[num].link].cnt;
- 
-    return true;
-  }
-};
+    int getfail(int x, int n) {
+        while(s[n - 1 - len[x]] != s[n]) x = fail[x];
+        return x;
+    }
+    void build() {
+        for(int i = 1; s[i]; ++i){
+            int x = s[i] - 'a';
+            p = getfail(last, i);
+            if(!ch[p][x]) {
+                // 如果有了转移就不用建了，否则要新建 
+                // 前后都加上新字符，所以新回文串长度要加2 
+                q = newnode(len[p] + 2);
+                // 因为fail指向的得是原串的严格后缀，所以要从p的fail开始找起 
+                fail[q] = ch[getfail(fail[p], i)][x]; 
+                // 记录转移 
+                ch[p][x] = q;
+            }
+            ++cnt[last = ch[p][x]];
+        }
+    }
+} pam;
+
 ```
 

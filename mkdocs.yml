@@ -187,14 +187,22 @@ nav:
     - CodeForces:
       - acm/cf/index.md
       - 1801 ~ 1850:
-        - 1826 ~ 1850: acm/cf/cf1826.md
-        - 1845: acm/cf/cf1845.md
+        - 1801 ~ 1810: acm/cf/cf1801.md
+        - 1811 ~ 1820: acm/cf/cf1811.md
+        - 1821 ~ 1830: acm/cf/cf1821.md
+        - 1831 ~ 1840: acm/cf/cf1831.md
+        - 1841 ~ 1850: acm/cf/cf1841.md
       - 1851 ~ 1900:
-        - 1851 ~ 1875: acm/cf/cf1851.md
-        - 1859: acm/cf/cf1859.md
-        - 1876 ~ 1900: acm/cf/cf1876.md
+        - 1851 ~ 1860: acm/cf/cf1851.md
+        - 1861 ~ 1870: acm/cf/cf1861.md
+        - 1871 ~ 1980: acm/cf/cf1871.md
+        - 1881 ~ 1980: acm/cf/cf1881.md
+        - 1891 ~ 1900: acm/cf/cf1891.md
       - 1901 ~ 1950:
+        - 1901 ~ 1910: acm/cf/cf1901.md
+        - 1911 ~ 1920: acm/cf/cf1911.md
         - 1921 ~ 1930: acm/cf/cf1921.md
+        - 1931 ~ 1940: acm/cf/cf1931.md
         - 1941 ~ 1950: acm/cf/cf1941.md
       - 1951 ~ 2000:
         - 1951 ~ 1960: acm/cf/cf1951.md
@@ -202,11 +210,13 @@ nav:
         - 1971 ~ 1980: acm/cf/cf1971.md
       - 2001 ~ 2050:
         - 2001 ~ 2010: acm/cf/cf2001.md
+        - 2011 ~ 2020: acm/cf/cf2011.md
+        - 2021 ~ 2030: acm/cf/cf2021.md
 
     - Atcoder:
       - acm/at/index.md
       - ABC: 
-        - 351 ~ 360: acm/at/abc352.md
+        - 351 ~ 360: acm/at/abc351.md
         - 371 ~ 380: acm/at/abc371.md
       - ARC:
         - 101 ~ 110: acm/at/arc101.md
