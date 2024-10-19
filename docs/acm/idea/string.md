@@ -381,6 +381,12 @@ struct PAM {
 
 下标从 $1$ 开始。
 
+定义 `rk[i]` 表示 `suf[i]` 在所有后缀中的字典序排序。   
+
+定义 `sa[i]` 表示排名为 $i$ 的后缀开始的位置。
+
+定义 `ht[i]` 表示 `suf[sa[i - 1]]` 与 `suf[sa[i]]` 的最长公共前缀长度 $|\text{lcp}(sa_{i - 1}, sa_i)|$，即排名为 $i$ 和 $i - 1$ 的后缀的 LCP 长度。`ht[1]` 未定义，一般为 $0$。
+
 ```cpp
 constexpr int N = 2e5 + 5;
 int ht[N], sa[N], rk[N];
@@ -412,6 +418,22 @@ void build(std::string s) {
 	}
 }
 ```
+### 相关性质
+
+**任意两个后缀的 LCP**
+
+设 `rk[i]` < `rk[j]`，则 $|\text{lcp}(i, j)| = \min_{p = rk_i + 1}^{rk_j}\{ht_p\}$。
+
+**本质不同子串数**
+
+个数为 
+
+$$
+\binom{n + 1}{2} - \sum_{i = 2}^n ht_i
+$$
+
+### 习题
+
 
 
 ## SAM

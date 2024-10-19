@@ -1,9 +1,13 @@
 # Recurrent Problems
 
+## 0x00. Note
+
 对于 n 条直线划分区域个数 $L_n$，满足 $L_n = L_{n - 1} + n = S_n + 1 = \dfrac{1}{2}n(n + 1) + 1$。
 其中 $S_n$ 也被称为三角数。
 
 对于 n 条折线划分区域个数 $Z_n$，可以看作是两条直线，然后每两条直线（即一个折线）切割的区域少了 2 个，满足 $Z_n = L_{2n} - 2n = 2n^2 - n + 1$。
+
+## 0x01. Exercise
 
 ### Exercise 8
 
@@ -88,10 +92,14 @@
 
 
 
-**Exercise 16** 
+### Exercise 16
 
 ![01-e16](images/01-e16.png)
 
+??? success "Solution"  
+    设 $g(n) = A(n)\alpha + B(n)\gamma + C(n)\beta_0 + D(n)\beta_1$，我们令 $\gamma = 0$，则有 $g((1b_1b_2...b_m)_2) = (\alpha\beta_{b_1}\beta_{b_2}...\beta_{b_m})_3$，那么有 $A(n)\alpha + C(n)\beta_0 + D(n)\beta_1 = (\alpha\beta_{b_1}\beta_{b_2}...\beta_{b_m})_3$，分别令其中一个变量为 $1$，另外两个为 $0$ 即可求出 $A(n)$，$C(n)$，$D(n)$ 的通项。
+
+    然后再令 $g(n) = n$，可以得出 $A(n) - B(n) + D(n) = n$，故也可以求出 $B(n)$ 通项。
 
 
 **Exercise 17** 
@@ -112,11 +120,14 @@
 
 
 
-**Exercise 20** 
+### Exercise 20
 
 ![01-e20](images/01-e20.png)
 
+??? success "Solution"  
+    设 $g(n) = A(n)\alpha + B(n)\gamma_0 + C(n)\gamma_1 + D(n)\beta_0 + E(n)\beta_1$，我们令 $\gamma_1 = \gamma_0 = 0$，则有 $g((1b_1b_2...b_m)_2) = (\alpha\beta_{b_1}\beta_{b_2}...\beta_{b_m})_4$，那么有 $A(n)\alpha + D(n)\beta_0 + E(n)\beta_1 = (\alpha\beta_{b_1}\beta_{b_2}...\beta_{b_m})_4$，分别令其中一个变量为 $1$，另外两个为 $0$ 即可求出 $A(n)$，$D(n)$，$E(n)$ 的通项。
 
+    然后再令 $g(n) = n$，可以得出 $A(n) - 2B(n) - 2C(n) + E(n) = n$；令 $g(n) = n^2$，可以得出 $A(n) + 4C(n) + E(n) = n^2$，故也可以求出 $B(n)$ 和 $C(n)$ 通项。
 
 **Exercise 21** 
 
