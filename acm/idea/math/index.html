@@ -2616,6 +2616,13 @@
       
         <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
+    组合数学
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
     博弈论
   </a>
   
@@ -2623,14 +2630,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     相关知识
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     习题
   </a>
   
@@ -2642,7 +2649,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     参考资料
   </a>
   
@@ -3625,6 +3632,8 @@
       
         
       
+        
+      
     
     
     
@@ -3666,6 +3675,26 @@
   
   <span class="md-ellipsis">
     101 ~ 110
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../at/arc111/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    111 ~ 120
   </span>
   
 
@@ -4632,6 +4661,13 @@
       
         <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
+    组合数学
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
     博弈论
   </a>
   
@@ -4639,14 +4675,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     相关知识
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     习题
   </a>
   
@@ -4658,7 +4694,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     参考资料
   </a>
   
@@ -4736,8 +4772,43 @@ x \equiv c_3(\mod m_3)
 <p>当且仅当 <span class="arithmatex">\(p\)</span> 是质数时，<span class="arithmatex">\((p - 1)! \equiv -1(\mod p)\)</span>。</p>
 <h3 id="_8">数论函数与求和<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <h2 id="_9">线性代数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<h2 id="_10">博弈论<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<h3 id="_11">相关知识<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h2 id="_10">组合数学<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li>现有 <span class="arithmatex">\(n\)</span> 个 <strong>完全相同</strong> 的元素，要求将其分为 <span class="arithmatex">\(k\)</span> 组，保证每组至少有一个元素，一共有多少种分法？</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Solution</p>
+<p>用 <span class="arithmatex">\(k - 1\)</span> 个板子来插板，答案就是 <span class="arithmatex">\(\dbinom{n - 1}{k - 1}\)</span>。</p>
+</div>
+<ul>
+<li>如果问题变化一下，每组允许为空呢？</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Solution</p>
+<p>先借 <span class="arithmatex">\(k\)</span> 个再插板，答案为</p>
+<div class="arithmatex">\[
+\binom{n + k - 1}{k - 1} = \binom{n + k - 1}{n}
+\]</div>
+</div>
+<ul>
+<li>如果再扩展一步，要求对于第 <span class="arithmatex">\(i\)</span> 组，至少要分到 <span class="arithmatex">\(a_i,\sum a_i \le n\)</span> 个元素呢？</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Solution</p>
+<p>第 <span class="arithmatex">\(i\)</span> 组借来 <span class="arithmatex">\(a_i\)</span> 个，然后问题三就转化成了问题二，直接用插板法公式得到答案为</p>
+<div class="arithmatex">\[
+\binom{n - \sum a_i + k - 1}{n - \sum a_i}
+\]</div>
+</div>
+<ul>
+<li>不相邻的排列</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Solution</p>
+<p><span class="arithmatex">\(1 \sim n\)</span> 这 <span class="arithmatex">\(n\)</span> 个自然数中选 <span class="arithmatex">\(k\)</span> 个，这 <span class="arithmatex">\(k\)</span> 个数中任何两个数都不相邻的组合有 <span class="arithmatex">\(\dbinom {n-k+1}{k}\)</span> 种。</p>
+</div>
+<h2 id="_11">博弈论<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="_12">相关知识<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p><strong>SG 函数</strong></p>
 <p>定义 SG 函数为 <span class="arithmatex">\(\operatorname{SG}(x)=\operatorname{mex}\{\operatorname{SG}(y_1), \operatorname{SG}(y_2), \ldots, \operatorname{SG}(y_k)\}\)</span>。</p>
 <p>而对于由 n 个有向图游戏组成的组合游戏，设它们的起点分别为 <span class="arithmatex">\(s_1, s_2, \ldots, s_n\)</span>，则有定理：当且仅当 <span class="arithmatex">\(\operatorname{SG}(s_1) \oplus \operatorname{SG}(s_2) \oplus \ldots \oplus \operatorname{SG}(s_n) \neq 0\)</span> 时，这个游戏是先手必胜的。同时，这是这一个组合游戏的游戏状态 x 的 SG 值。</p>
@@ -4775,12 +4846,12 @@ x \equiv c_3(\mod m_3)
 <p><strong>斐波那契博弈</strong></p>
 <p>有一堆物品，两人轮流取物品，先手最少取一个，至多无上限，但不能把物品取完，之后每次取的物品数不能超过上一次取的物品数的二倍且至少为一件，取走最后一件物品的人获胜。</p>
 <p>结论是：先手胜当且仅当 n 不是斐波那契数（n 为物品总数）。</p>
-<h3 id="_12">习题<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_13">习题<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.luogu.com.cn/problem/P2252"><strong>P2252 [SHOI2002] 取石子游戏|【模板】威佐夫博弈</strong></a></p>
 <p><strong>Solution</strong></p>
 <p>结论和证明见上。</p>
 <p>唯一要注意的是要用 <code>sqrtl</code> 而不是 <code>sqrt</code>，不然会有精度问题。</p>
-<h2 id="_13">参考资料<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h2 id="_14">参考资料<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <p><a href="https://blog.csdn.net/ac_gibson/article/details/41624623">博弈论（巴什博奕，威佐夫博弈，尼姆博弈，斐波那契博弈）</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/662127559">OI-Note Chapter4.1 整除与同余</a></p>
 

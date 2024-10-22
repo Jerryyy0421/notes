@@ -14,7 +14,7 @@
         <link rel="prev" href="../abc371/">
       
       
-        <link rel="next" href="../arc171/">
+        <link rel="next" href="../arc111/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -3485,6 +3485,8 @@
       
         
       
+        
+      
     
     
     
@@ -3728,10 +3730,50 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#atcoder-regular-contest-110" class="md-nav__link">
+    AtCoder Regular Contest 110
+  </a>
+  
+    <nav class="md-nav" aria-label="AtCoder Regular Contest 110">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d-binomial-coefficient-is-fun" class="md-nav__link">
+    D. Binomial Coefficient is Fun
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arc111/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    111 ~ 120
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4786,6 +4828,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#atcoder-regular-contest-110" class="md-nav__link">
+    AtCoder Regular Contest 110
+  </a>
+  
+    <nav class="md-nav" aria-label="AtCoder Regular Contest 110">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d-binomial-coefficient-is-fun" class="md-nav__link">
+    D. Binomial Coefficient is Fun
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4886,8 +4948,77 @@
 <h2 id="atcoder-regular-contest-109"><a href="https://atcoder.jp/contests/arc109">AtCoder Regular Contest 109</a><a class="headerlink" href="#atcoder-regular-contest-109" title="Permanent link">&para;</a></h2>
 <h3 id="c-large-rps-tournament"><a href="https://atcoder.jp/contests/arc109/tasks/arc109_c">C. Large RPS Tournament</a><a class="headerlink" href="#c-large-rps-tournament" title="Permanent link">&para;</a></h3>
 <p><strong>Solution</strong></p>
+<p>倍增。</p>
+<p>设 <code>a1[i][j]</code> 表示从 <span class="arithmatex">\(i\)</span> 开始往后 <span class="arithmatex">\(2^{j}\)</span> 个人的位置是多少，<code>ans[i][j]</code> 表示从 <span class="arithmatex">\(i\)</span> 开始往后 <span class="arithmatex">\(2^{j}\)</span> 个人最终胜出的是哪种状态，转移即可。</p>
 <h3 id="d-l"><a href="https://atcoder.jp/contests/arc109/tasks/arc109_d">D. L</a><a class="headerlink" href="#d-l" title="Permanent link">&para;</a></h3>
 <p><strong>Solution</strong></p>
+<p>思路和打的表参考自 <a href="https://www.luogu.com.cn/article/4zhlkw8z">这个博客</a>。</p>
+<p>非常神秘的题目，感觉不看题解还是很难做出来。</p>
+<p>我们发现对于横纵坐标和可以唯一确定这个 <code>L</code>。所以就是从 <span class="arithmatex">\((1, 1)\)</span> 到达 <span class="arithmatex">\((ax + bx + cx, ay + by + cy)\)</span> 的最小步数。</p>
+<p>我们打表可得</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> 7,  , 6, 6,  , 6, 6,  , 6, 6,  , 6, 6,  , 6, 6,  , 6, 6,  , 7,
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> 7,  , 6, 5,  , 5, 5,  , 5, 5,  , 5, 5,  , 5, 5,  , 5, 6,  , 6,
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a> 7,  , 6, 5,  , 4, 4,  , 4, 4,  , 4, 4,  , 4, 4,  , 5, 5,  , 6,
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a> 7,  , 6, 5,  , 4, 3,  , 3, 3,  , 3, 3,  , 3, 4,  , 4, 5,  , 6,
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a> 7,  , 6, 5,  , 4, 3,  , 2, 2,  , 2, 2,  , 3, 3,  , 4, 5,  , 6,
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a> 7,  , 6, 5,  , 4, 3,  , 2, 1,  , 1, 1,  , 2, 3,  , 4, 5,  , 6,
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a> 7,  , 6, 5,  , 4, 3,  , 2, 1,  , 0, 1,  , 2, 3,  , 4, 5,  , 6,
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a> 7,  , 6, 5,  , 4, 3,  , 2, 2,  , 1, 1,  , 2, 3,  , 4, 5,  , 6,
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a> 7,  , 6, 5,  , 4, 3,  , 3, 2,  , 2, 2,  , 2, 3,  , 4, 5,  , 6,
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a> 7,  , 6, 5,  , 4, 4,  , 3, 3,  , 3, 3,  , 3, 3,  , 4, 5,  , 6,
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a> 7,  , 6, 5,  , 5, 4,  , 4, 4,  , 4, 4,  , 4, 4,  , 4, 5,  , 6,
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a> 7,  , 6, 6,  , 5, 5,  , 5, 5,  , 5, 5,  , 5, 5,  , 5, 5,  , 6,
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a> 7,  , 7, 6,  , 6, 6,  , 6, 6,  , 6, 6,  , 6, 6,  , 6, 6,  , 6,
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a> 8,  , 7, 7,  , 7, 7,  , 7, 7,  , 7, 7,  , 7, 7,  , 7, 7,  , 7,
+</code></pre></div>
+<p>其中有一些点是无法取到的，就用空来表示。</p>
+<p>中间的 <span class="arithmatex">\(0\)</span> 对应的就是 <span class="arithmatex">\((1, 1)\)</span>，我们可以重新进行坐标变换，把空的行列去掉，然后把 <span class="arithmatex">\(0\)</span> 看作是 <span class="arithmatex">\((0, 0)\)</span>。这样最终答案就是 <span class="arithmatex">\(\max \{|x|, |y|\} + [x = y]\)</span>，注意 <span class="arithmatex">\((0, 0)\)</span> 和 <span class="arithmatex">\((1, 1)\)</span> 位置要特判。</p>
+<h2 id="atcoder-regular-contest-110"><a href="https://atcoder.jp/contests/arc110">AtCoder Regular Contest 110</a><a class="headerlink" href="#atcoder-regular-contest-110" title="Permanent link">&para;</a></h2>
+<h3 id="d-binomial-coefficient-is-fun"><a href="https://atcoder.jp/contests/arc110/tasks/arc110_d">D. Binomial Coefficient is Fun</a><a class="headerlink" href="#d-binomial-coefficient-is-fun" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong></p>
+<p>生成函数题。</p>
+<p>分别从 OGF 和组合意义两种方面去入手。</p>
+<p><strong>方法一</strong>：</p>
+<p>考虑 <span class="arithmatex">\(\binom{i}{j}\)</span> 的生成函数 <span class="arithmatex">\(F_j(x) = \sum_{i \ge 0}\binom{i}{j}x^i\)</span>，由 <span class="arithmatex">\(\binom{i}{j} = \binom{i - 1}{j - 1} + \binom{i - 1}{j}\)</span>，我们可以推导出 <span class="arithmatex">\(F_j(x) = \dfrac{x}{1 - x}F_{j - 1}(x)\)</span>，又因为 <span class="arithmatex">\(F_0(x) = \dfrac{1}{1 - x}\)</span>，所以 <span class="arithmatex">\(F_j(x) = \dfrac{x^j}{(1 - x)^{j + 1}}\)</span>。</p>
+<p>设 <span class="arithmatex">\(s = \sum a_i\)</span>，则本题是求</p>
+<div class="arithmatex">\[\begin{align}
+    \sum_{j = s}^m[x^j]\prod_{i = 1}^n F_{a_i}(x) 
+    &amp;= \sum_{j = s}^m[x^j] F_{s}(x) \\
+    &amp;= \sum_{j = s}^m[x^j] \dfrac{x^s}{(1 - x)^{s + 1}}\\
+    &amp;= \sum_{j = s}^m[x^{j - s}] \dfrac{1}{(1 - x)^{s + 1}}
+\end{align}\]</div>
+<p>这里有一个结论 <span class="arithmatex">\([x^i]\left(\dfrac{1}{1 - x}\right)^j = \binom{i + j - 1}{i}\)</span>。</p>
+<details class="success">
+<summary>proof</summary>
+<div class="arithmatex">\[\begin{align}
+    [x^i]\left(\dfrac{1}{1 - x}\right)^j
+    &amp;= [x^i]\left(1 - x\right)^{-j}\\
+    &amp;= (-1)^i\dfrac{(-j)^{\underline{i}}}{i!}\\
+    &amp;= (-1)^i\dfrac{(-1)^ij^{\overline{i}}}{i!}\\
+    &amp;= \dfrac{(i + j - 1)^{\underline{i}}}{i!}\\
+    &amp;= \binom{i + j - 1}{i}
+\end{align}\]</div>
+</details>
+<p>故</p>
+<div class="arithmatex">\[
+    \text{原式} = \sum_{j = s}^m \binom{j + n - 1}{s + n - 1} = \binom{m + n}{s + n}
+\]</div>
+<p><strong>方法二</strong>：</p>
+<p>组合意义更是十分巧妙。</p>
+<p>每一项 <span class="arithmatex">\(\binom{b_i}{a_i} = \binom{a_i + c_i}{a_i}\)</span>，相当于向 <span class="arithmatex">\(a_i\)</span> 个球中插入 <span class="arithmatex">\(c_i\)</span> 个球。</p>
+<p>我们可以看作有 <span class="arithmatex">\(n\)</span> 袋球，每袋 <span class="arithmatex">\(a_i\)</span> 个球，那么则是：</p>
+<p><span class="arithmatex">\(a_1\)</span> |挡板| <span class="arithmatex">\(a_2\)</span> |挡板| ... |挡板| <span class="arithmatex">\(a_{n - 1}\)</span> |挡板| <span class="arithmatex">\(a_n\)</span> |挡板|</p>
+<p><strong>注意这里一定要是 <span class="arithmatex">\(n\)</span> 个挡板，因为我插入的球是 <span class="arithmatex">\(0 \sim m - \sum a_i\)</span>。多的球相当于插到最后的板子后面了。</strong></p>
+<p>向 <span class="arithmatex">\(n\)</span> 个球里插入 <span class="arithmatex">\(k - 1\)</span> 个板子且允许板子之间为空的方案数是 <span class="arithmatex">\(\binom{n + k - 1}{n}\)</span>。</p>
+<p>那么本题其实也可以看作向全是 <span class="arithmatex">\(a_i\)</span> 和隔板的序列插入不同的代表是 <span class="arithmatex">\(b_i\)</span> 的球。</p>
+<p>球的总个数是 <span class="arithmatex">\(m - \sum a_i\)</span>，那么方案数是 <span class="arithmatex">\(\binom{n + m}{\sum a_i + n}\)</span>。</p>
 
 
 
