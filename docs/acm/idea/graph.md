@@ -6,7 +6,7 @@
 
 主要有 EK 算法 和 Dicnic 算法，其中 Dinic 算法效率更高。
 
-EK 代码实现
+EK 代码实现。时间复杂度是 $O(nm^2)$。
 
 ```cpp
 #define LL long long
@@ -71,105 +71,7 @@ void solve(){
 ```
 
 
-Dicnic 代码实现
-
-```cpp
-using i64 = long long;
-
-const int N = 5e5;
-const int INF = 0x3f3f3f3f;
-
-struct MF {
-	struct edge {
-		int v, nxt, cap, flow;
-	} e[N];
-
-	int fir[N], cnt = 0;
-
-	int n, S, T;
-	i64 maxflow = 0;
-	int dep[N], cur[N];
-
-	void init() {
-		memset(fir, -1, sizeof fir);
-		memset(dep, 0, sizeof dep);
-		memset(cur, 0, sizeof cur);
-		cnt = 0;
-	}
-
-	void add_edge(int u, int v, int w) {
-		e[cnt] = {v, fir[u], w, 0};
-		fir[u] = cnt++;
-		e[cnt] = {u, fir[v], 0, 0};
-		fir[v] = cnt++;
-	}
-
-	bool bfs() {
-		std::queue<int> q;
-		memset(dep, 0, sizeof(int) * (n + 1));
-
-		dep[S] = 1;
-		q.push(S);
-		while (q.size()) {
-			int u = q.front();
-			q.pop();
-			for (int i = fir[u]; ~i; i = e[i].nxt) {
-				int v = e[i].v;
-				if ((!dep[v]) && (e[i].cap > e[i].flow)) {
-					dep[v] = dep[u] + 1;
-					q.push(v);
-				}
-			}
-		}
-		return dep[T];
-	}
-
-	int dfs(int u, int flow) {
-		if ((u == T) || (!flow)) return flow;
-
-		int ret = 0;
-		for (int& i = cur[u]; ~i; i = e[i].nxt) {
-			int v = e[i].v, d;
-			if ((dep[v] == dep[u] + 1) &&
-			        (d = dfs(v, std::min(flow - ret, e[i].cap - e[i].flow)))) {
-				ret += d;
-				e[i].flow += d;
-				e[i ^ 1].flow -= d;
-				if (ret == flow) return ret;
-			}
-		}
-		return ret;
-	}
-
-	void dinic() {
-		while (bfs()) {
-			memcpy(cur, fir, sizeof(int) * (n + 1));
-			maxflow += dfs(S, INF);
-		}
-	}
-} mf;
-
-void solve() {
-	int m, n;
-	std::cin >> n >> m >> mf.S >> mf.T;
-    mf.n = n;
-	mf.init();
-	for (int i = 0; i < m; i++) {
-		int u, v, w;
-		std::cin >> u >> v >> w;
-		mf.add_edge(u, v, w);
-		mf.add_edge(v, u, 0);
-	}
-	mf.dinic();
-	std::cout << mf.maxflow << '\n';	
-}
-```
-
-### 二分图最大匹配
-
-新增加一个超级源点指向左边所有的点，再新增加一个超级汇点被右边所有的点指向。然后跑最大流即可。
-
-时间复杂度 $O(n\sqrt{e})$。
+Dicnic 代码实现。时间复杂度是 $O(n^2m)$。
 
 ```cpp
 using i64 = long long;
@@ -217,57 +119,239 @@ struct MF {
                     dep[v] = dep[u] + 1;
                     q.push(v);
                 }
+			}
+		}
+		return dep[T];
+	}
+
+	int dfs(int u, int flow) {
+		if ((u == T) || (!flow)) return flow;
+
+		int ret = 0;
+		for (int& i = cur[u]; ~i; i = e[i].nxt) {
+			int v = e[i].v, d;
+			if ((dep[v] == dep[u] + 1) &&
+			        (d = dfs(v, std::min(flow - ret, e[i].cap - e[i].flow)))) {
+				ret += d;
+				e[i].flow += d;
+				e[i ^ 1].flow -= d;
+				if (ret == flow) return ret;
+			}
+		}
+		return ret;
+	}
+
+	void dinic() {
+		while (bfs()) {
+			memcpy(cur, fir, sizeof(int) * (n + 1));
+			maxflow += dfs(S, INF);
+		}
+	}
+} mf;
+
+void solve() {
+    int m, n;
+    std::cin >> n >> m >> mf.S >> mf.T;
+    mf.n = n;
+    mf.init();
+    for (int i = 0; i < m; i++) {
+        int u, v, w;
+        std::cin >> u >> v >> w;
+        mf.add_edge(u, v, w);
+        mf.add_edge(v, u, 0);
+    }
+    mf.dinic();
+    std::cout << mf.maxflow << '\n';	
+}
+```
+
+isap 代码实现。时间复杂度优于以上两个算法。
+
+```cpp
+using i64 = long long;
+
+const int N = 5000 + 5;
+using P = std::pair<int, int>;
+
+int n;
+struct MF {
+    const int inf = 2147483647;
+    int S, T;
+    int dep[N], gap[N];
+    i64 maxflow;
+    std::vector<P> e[N]; 
+    std::vector<int> id[N];
+    std::queue<int> q;
+
+    void add(int u, int v, i64 w) {
+        id[u].push_back(e[v].size());
+        id[v].push_back(e[u].size());
+        e[u].push_back({v, w});
+        e[v].push_back({u, 0});
+    }
+
+    void bfs() {
+        std::memset(dep, -1, sizeof(dep));
+        std::memset(gap, 0, sizeof(gap));
+        gap[0] = 1;
+        dep[T] = 0;
+        q.push(T);
+        while(!q.empty()) {
+            int x = q.front();
+            q.pop();
+            for (int i = 0; i < e[x].size(); i++) {
+                int v = e[x][i].first;
+                if(dep[v] == -1) {                
+                    dep[v] = dep[x] + 1;
+                    gap[dep[v]]++;
+                    q.push(v);
+                }
             }
         }
-        return dep[T];
     }
 
-    int dfs(int u, int flow) {
-        if ((u == T) || (!flow)) return flow;
-
-        int ret = 0;
-        for (int& i = cur[u]; ~i; i = e[i].nxt) {
-            int v = e[i].v, d;
-            if ((dep[v] == dep[u] + 1) &&
-                    (d = dfs(v, std::min(flow - ret, e[i].cap - e[i].flow)))) {
-                ret += d;
-                e[i].flow += d;
-                e[i ^ 1].flow -= d;
-                if (ret == flow) return ret;
+    i64 dfs(int x, int flow) {
+        if(x == T) {
+            maxflow += flow;
+            return flow;
+        }
+        i64 used = 0;
+        for (int i = 0; i < e[x].size() ; i++ ) {
+            int v = e[x][i].first, w = e[x][i].second;
+            if(w == 0 || dep[v] + 1 != dep[x]) continue;
+            i64 f = dfs(v, std::min(flow - used, (i64)w));
+            if(f) {
+                used += f;
+                e[x][i].second -= f;
+                e[v][id[x][i]].second += f;
+                if(used == flow) return flow;
             }
         }
-        return ret;
+        gap[dep[x]]--;
+        if(!gap[dep[x]]) dep[S] = n + 1;
+        dep[x]++;
+        gap[dep[x]]++;
+        return used;
     }
 
-    void dinic() {
-        while (bfs()) {
-            memcpy(cur, fir, sizeof(int) * (n + 1));
-            maxflow += dfs(S, INF);
+    void isap() {
+        bfs();
+        while(dep[S] < n) {
+            dfs(S, inf);
         }
     }
+
+} mf;
+
+void solve() {
+	int m;
+	std::cin >> n >> m >> mf.S >> mf.T;
+	for (int i = 0; i < m; i++) {
+		int u, v, w;
+		std::cin >> u >> v >> w;
+		mf.add(u, v, w);
+	}
+	mf.isap();
+	std::cout << mf.maxflow << '\n';	
+}
+```
+
+### 二分图最大匹配
+
+新增加一个超级源点指向左边所有的点，再新增加一个超级汇点被右边所有的点指向。然后跑最大流即可。
+
+时间复杂度 $O(n\sqrt{e})$。
+
+```cpp
+using i64 = long long;
+
+const int N = 1e6 + 5;
+using P = std::pair<int, int>;
+
+struct MF {
+    const int inf = 0x3f3f3f3f;
+    int S, T;
+    int dep[N], gap[N], maxflow;
+    std::vector<P> e[N]; 
+    std::vector<int> id[N];
+    std::queue<int> q;
+
+    void add(int u,int v,int w) {
+        id[u].push_back(e[v].size());
+        id[v].push_back(e[u].size());
+        e[u].push_back({v, w});
+        e[v].push_back({u, 0});
+    }
+
+
+    void bfs() {
+        std::memset(dep, 0x3f, sizeof(dep));
+        gap[0] = 1;
+        dep[T] = 0;
+        q.push(T);
+        while(!q.empty()) {
+            int x = q.front();
+            q.pop();
+            for (int i = 0; i < e[x].size(); i++) {
+                int v = e[x][i].first;
+                if(dep[v] == inf) {                
+                    dep[v] = dep[x] + 1;
+                    gap[dep[v]]++;
+                    q.push(v);
+                }
+            }
+        }
+    }
+
+    int dfs(int x, int flow) {
+        if(x == T) {
+            maxflow += flow;
+            return flow;
+        }
+        int used = 0;
+        for ( int i = 0 ; i < e[x].size() ; i++ ) {
+            int v = e[x][i].first, w = e[x][i].second;
+            if(w == 0 || dep[v] + 1 != dep[x])continue;
+            int f = dfs(v, std::min(flow - used, w));
+            if(f) {
+                used += f;
+                e[x][i].second -= f;
+                e[v][id[x][i]].second += f;
+                if(used == flow) return flow;
+            }
+        }
+        gap[dep[x]]--;
+        if(!gap[dep[x]]) dep[S] = T + 1;
+        dep[x]++;
+        gap[dep[x]]++;
+        return used;
+    }
+
+    void isap() {
+        bfs();
+        while(dep[S] <= T) {
+            dfs(S, inf);
+        }
+    }
+
 } mf;
 
 void solve() {
     int n, m, e;
     std::cin >> n >> m >> e;
-    mf.init();
-    mf.n = n + m + 1;
     mf.S = 0, mf.T = n + m + 1;
     for (int i = 0; i < e; i++) {
         int u, v;
         std::cin >> u >> v;
-        mf.add_edge(u, v + n, 1);
-        mf.add_edge(v + n, u, 0);
+        mf.add(u, v + n, 1);
     }
     for (int i = 1; i <= n; i++) {
-        mf.add_edge(mf.S, i, 1);
-        mf.add_edge(i, mf.S, 0);
+        mf.add(mf.S, i, 1);
     }
     for (int i = 1; i <= m; i++) {
-        mf.add_edge(i + n, mf.T, 1);
-        mf.add_edge(mf.T, i + n, 0);
+        mf.add(i + n, mf.T, 1);
     }
-    mf.dinic();
+    mf.isap();
     std::cout << mf.maxflow << '\n';    
 }
 ```
