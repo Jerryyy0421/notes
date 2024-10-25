@@ -3611,6 +3611,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#c-too-heavy" class="md-nav__link">
+    C. Too Heavy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#d-orientation" class="md-nav__link">
     D. Orientation
   </a>
@@ -4541,6 +4548,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#c-too-heavy" class="md-nav__link">
+    C. Too Heavy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#d-orientation" class="md-nav__link">
     D. Orientation
   </a>
@@ -4584,10 +4598,22 @@
 <p>快速幂即可。</p>
 <h3 id="b-reversible-cards"><a href="https://atcoder.jp/contests/arc111/tasks/arc111_b">B. Reversible Cards</a><a class="headerlink" href="#b-reversible-cards" title="Permanent link">&para;</a></h3>
 <p><strong>Solution</strong></p>
-<p>难绷，本题是二分图最大匹配，也不会 QwQ</p>
+<p>难绷，本题是二分图最大匹配，也不会。QwQ</p>
 <p>其实缩点也能做，当时想到了但感觉不用，写了个贪心果然不对。。。</p>
+<p>可以让每个卡片看作是左边的点，卡片上的两种颜色看作是右边的点，我们跑一遍最大匹配即可。注意颜色相同时连一边即可，不然会超时。</p>
+<p>Dinic 的最大匹配时限还是有点紧张，后来换成 isap 的最大匹配就快多了。</p>
+<h3 id="c-too-heavy"><a href="https://atcoder.jp/contests/arc111/tasks/arc111_c">C. Too Heavy</a><a class="headerlink" href="#c-too-heavy" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong></p>
+<p>C 做的相当顺，不过还是写题解记录一下。</p>
+<p>我们不难发现这是一个类似置换环一样的结构。不过由于会有人拎不动的限制，我们按照每个人承受的极限从小到大找，如果这个人的东西不是他的并且他现在搬不动，或者要和他互换的那个人搬不动，则无解。否则我们就找到拿他东西的那个人，和他互换即可。</p>
+<p>这样的话，每次操作完之后我们可以发现一个人的东西都会给承受能力更强的人，所以不存在一个强的人把东西给弱的人导致无解的情况，这样一定就会是最优的。</p>
+<p>换个角度想，弱的人限制条件也多，所以也要先满足他们，然后一次至少满足一个人，不存在比这更优的策略。</p>
 <h3 id="d-orientation"><a href="https://atcoder.jp/contests/arc111/tasks/arc111_d">D. Orientation</a><a class="headerlink" href="#d-orientation" title="Permanent link">&para;</a></h3>
 <p><strong>Solution</strong></p>
+<p>喵喵构造题。</p>
+<p>首先题目保证一定有可行解，所以我们只用负责构造就行。</p>
+<p>对于每条边 <span class="arithmatex">\((x, y)\)</span>，若 <span class="arithmatex">\(C_x &lt; C_y\)</span> 那么一定是大的指向小的。</p>
+<p>现在考虑 <span class="arithmatex">\(C_x = C_y\)</span> 的情况，若 <span class="arithmatex">\(x\)</span> 连向 <span class="arithmatex">\(y\)</span>，那么 <span class="arithmatex">\(y\)</span> 到的点 <span class="arithmatex">\(x\)</span> 都能到，故 <span class="arithmatex">\(C_x \ge C_y\)</span>；若 <span class="arithmatex">\(x\)</span> 连向 <span class="arithmatex">\(y\)</span>，那么 <span class="arithmatex">\(y\)</span> 到的点 <span class="arithmatex">\(x\)</span> 都能到，故 <span class="arithmatex">\(C_x \ge C_y\)</span>。所以不难想到 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 是在一个环上，所以我们把相等的边都挨个连成环即可。</p>
 
 
 
