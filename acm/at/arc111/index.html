@@ -3629,6 +3629,53 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#atcoder-regular-contest-112" class="md-nav__link">
+    AtCoder Regular Contest 112
+  </a>
+  
+    <nav class="md-nav" aria-label="AtCoder Regular Contest 112">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-dfs-game" class="md-nav__link">
+    C. DFS Game
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-skate" class="md-nav__link">
+    D. Skate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atcoder-regular-contest-113" class="md-nav__link">
+    AtCoder Regular Contest 113
+  </a>
+  
+    <nav class="md-nav" aria-label="AtCoder Regular Contest 113">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d-sky-reflector" class="md-nav__link">
+    D. Sky Reflector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4566,6 +4613,53 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#atcoder-regular-contest-112" class="md-nav__link">
+    AtCoder Regular Contest 112
+  </a>
+  
+    <nav class="md-nav" aria-label="AtCoder Regular Contest 112">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-dfs-game" class="md-nav__link">
+    C. DFS Game
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-skate" class="md-nav__link">
+    D. Skate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atcoder-regular-contest-113" class="md-nav__link">
+    AtCoder Regular Contest 113
+  </a>
+  
+    <nav class="md-nav" aria-label="AtCoder Regular Contest 113">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d-sky-reflector" class="md-nav__link">
+    D. Sky Reflector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4614,6 +4708,37 @@
 <p>首先题目保证一定有可行解，所以我们只用负责构造就行。</p>
 <p>对于每条边 <span class="arithmatex">\((x, y)\)</span>，若 <span class="arithmatex">\(C_x &lt; C_y\)</span> 那么一定是大的指向小的。</p>
 <p>现在考虑 <span class="arithmatex">\(C_x = C_y\)</span> 的情况，若 <span class="arithmatex">\(x\)</span> 连向 <span class="arithmatex">\(y\)</span>，那么 <span class="arithmatex">\(y\)</span> 到的点 <span class="arithmatex">\(x\)</span> 都能到，故 <span class="arithmatex">\(C_x \ge C_y\)</span>；若 <span class="arithmatex">\(x\)</span> 连向 <span class="arithmatex">\(y\)</span>，那么 <span class="arithmatex">\(y\)</span> 到的点 <span class="arithmatex">\(x\)</span> 都能到，故 <span class="arithmatex">\(C_x \ge C_y\)</span>。所以不难想到 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 是在一个环上，所以我们把相等的边都挨个连成环即可。</p>
+<h2 id="atcoder-regular-contest-112"><a href="https://atcoder.jp/contests/arc112">AtCoder Regular Contest 112</a><a class="headerlink" href="#atcoder-regular-contest-112" title="Permanent link">&para;</a></h2>
+<h3 id="c-dfs-game"><a href="https://atcoder.jp/contests/arc112/tasks/arc112_c">C. DFS Game</a><a class="headerlink" href="#c-dfs-game" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong></p>
+<p>挺巧妙的 树形DP + 贪心题。</p>
+<p>我们发现先手取到当前点的香蕉后，接下来的决策权在后手。所以后手的决定是关键。</p>
+<p>如果从 <span class="arithmatex">\(u\)</span> 走向 <span class="arithmatex">\(v\)</span>，<span class="arithmatex">\(v\)</span> 子树里有偶数个节点，那么重回到 <span class="arithmatex">\(u\)</span> 时还是后手决策。</p>
+<p>不妨设 <code>f[u]</code> 表示先手选择 <span class="arithmatex">\(u\)</span> 节点，由后手做决定，先手能获得的价值。那么后手的价值就是 <span class="arithmatex">\(size_u - f_u\)</span>。</p>
+<p>我们可以将 <span class="arithmatex">\(u\)</span> 的子树节点分为三类：</p>
+<ol>
+<li><span class="arithmatex">\(2 \mid size_{v}\)</span> 且 <span class="arithmatex">\(f_v \le size_v - f_v\)</span>，此时后手拿比先手有优势，且之后还是后手操作，所以后手会多拿这些点，把能拿的都拿。</li>
+<li><span class="arithmatex">\(2 \mid size_{v}\)</span> 且 <span class="arithmatex">\(f_v &gt; size_v - f_v\)</span>，此时后手肯定不想拿这些点，这些点最终由谁拿走是固定的，是由第三类点的个数决定的。</li>
+<li><span class="arithmatex">\(2 \nmid size_{v}\)</span>，这些点会改变先后手的顺序。我们拿这些点的顺序是按照 <span class="arithmatex">\((size_v - f_v) - (f_v)\)</span> 从大到小决定的，因为每次决策者得到的都是 <span class="arithmatex">\(size_v - f_v\)</span> 而对方得到的是 <span class="arithmatex">\(f_v\)</span>，所以贪心策略是每次选择 <span class="arithmatex">\((size_v - f_v) - (f_v)\)</span> 最大的那个。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>问：有 <span class="arithmatex">\(n\)</span> 个物品，每个物品有两个价值 <span class="arithmatex">\(a_i\)</span> 和 <span class="arithmatex">\(b_i\)</span>，一人选了 <span class="arithmatex">\(a_i\)</span>，另一人就选 <span class="arithmatex">\(b_i\)</span>。每个人最优策略是什么使得价值和最大。</p>
+<p><strong>解：按照 <span class="arithmatex">\(|a_i - b_i|\)</span> 从大到小排序，然后每人依次选取即可。</strong></p>
+</div>
+<h3 id="d-skate"><a href="https://atcoder.jp/contests/arc112/tasks/arc112_d">D. Skate</a><a class="headerlink" href="#d-skate" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong></p>
+<p>我们发现如果 <span class="arithmatex">\((i, j)\)</span> 是一个 <code>#</code>，那么能走第 <span class="arithmatex">\(i\)</span> 行就能走第 <span class="arithmatex">\(j\)</span> 列，所以第 <span class="arithmatex">\(i\)</span> 行和第 <span class="arithmatex">\(j\)</span> 列可以理解在一个连通块里。初始的时候最外层的一圈也肯定在一个连通块里。</p>
+<p>而且我们发现任何位置都能走到 <span class="arithmatex">\((1, 1)\)</span>，所以只要 <span class="arithmatex">\((1, 1)\)</span> 能到达全部即可。</p>
+<p>最后我们的目标其实要么是全部行在一个连通块里，要么全部列在一个连通块里。直接把能连的用并查集连起来，最后判断一下是把行连起来次数少还是列连起来次数少即可。</p>
+<p>时间复杂度 <span class="arithmatex">\(O(hw\log (hw))\)</span>。</p>
+<h2 id="atcoder-regular-contest-113"><a href="https://atcoder.jp/contests/arc113">AtCoder Regular Contest 113</a><a class="headerlink" href="#atcoder-regular-contest-113" title="Permanent link">&para;</a></h2>
+<h3 id="d-sky-reflector"><a href="https://atcoder.jp/contests/arc113/tasks/arc113_d">D. Sky Reflector</a><a class="headerlink" href="#d-sky-reflector" title="Permanent link">&para;</a></h3>
+<p><strong>Solution</strong></p>
+<p>简单计数题。</p>
+<p>我们观察发现 <span class="arithmatex">\(\min\{B_i\} \ge \max \{A_i\}\)</span>，我们枚举 <span class="arithmatex">\(A_i\)</span> 的最大值设为 <span class="arithmatex">\(x\)</span>，那么 <span class="arithmatex">\(\{A_i\}\)</span> 一共有 <span class="arithmatex">\((x)^n - (x - 1)^n\)</span> 种选法，且 <span class="arithmatex">\(\{B_i\}\)</span> 一共有 <span class="arithmatex">\((k - x + 1)^m\)</span> 种选法。
+相乘累加即可。</p>
+<p>注意要分别特判一下 <span class="arithmatex">\(n = 1\)</span> 和 <span class="arithmatex">\(m = 1\)</span> 的情况。</p>
 
 
 
