@@ -119,10 +119,10 @@ struct MF {
                     dep[v] = dep[u] + 1;
                     q.push(v);
                 }
-			}
-		}
-		return dep[T];
-	}
+            }
+        }
+        return dep[T];
+    }
 
 	int dfs(int u, int flow) {
 		if ((u == T) || (!flow)) return flow;

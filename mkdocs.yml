@@ -155,12 +155,12 @@ nav:
   - ACM:
     - acm/index.md
     - Template:
-      - Datestructure: acm/algorithm/datastructure.md
-      - Graph: acm/algorithm/graph.md
-      - String: acm/algorithm/string.md
-      - Math: acm/algorithm/math.md
-      - Geometry: acm/algorithm/geometry.md
-      - Misc: acm/algorithm/misc.md
+      - Datestructure: acm/template/ds/datastructure.md
+      - Graph: acm/template/graph/graph.md
+      - String: acm/template/string/string.md
+      - Math: acm/template/math/math.md
+      - Geometry: acm/template/geometry/geometry.md
+      - Misc: acm/template/others/misc.md
 #       - Math:
 #         - Number-Theory1: acm/algorithm/math/number-theory/topic1.md
 #         - Number-Theory2: acm/algorithm/math/number-theory/topic2.md
@@ -174,15 +174,29 @@ nav:
 #         - how to generate random numbers: acm/algorithm/others/random.md
     - Algorithm:
       - acm/idea/index.md
-      - 常规套路: acm/idea/regular.md
-      - 小清新思维: acm/idea/mind.md
-      - 数据结构: acm/idea/datastructure.md
-      - 图论: acm/idea/graph.md
-      - DP: acm/idea/dp.md
-      - 字符串: acm/idea/string.md
-      - 数学: acm/idea/math.md
-      - 计算几何: acm/idea/geometry.md
-      - 杂项: acm/idea/misc.md
+      - 常规套路: acm/algorithm/regular.md
+      - 小清新思维 && 构造: acm/algorithm/mind.md
+      - 数据结构: 
+        - 基础数据结构: acm/algorithm/ds/topic1.md
+        - 进阶数据结构: acm/algorithm/ds/topic2.md
+      - 图论: 
+        - 基础图论: acm/algorithm/graph/topic1.md
+        - 网络流相关: acm/algorithm/graph/topic2.md
+        - 进阶图论: acm/algorithm/graph/topic3.md
+      - DP: 
+        - 常规 DP: acm/algorithm/dp/topic1.md
+        - DP 优化技巧: acm/algorithm/dp/topic2.md
+      - 字符串: 
+        - 基础字符串: acm/algorithm/string/topic1.md
+        - 进阶字符串: acm/algorithm/string/topic2.md
+      - 数学: 
+        - 数论: acm/algorithm/math/topic1.md
+        - 组合数学: acm/algorithm/math/topic2.md
+        - 线性代数 && 博弈: acm/algorithm/math/topic3.md
+      - 计算几何: 
+        - 二维计算几何: acm/algorithm/geometry/topic1.md
+        - 三维计算几何: acm/algorithm/geometry/topic2.md
+      - 杂项: acm/algorithm/others/misc.md
     
     - CodeForces:
       - acm/cf/index.md
@@ -212,6 +226,8 @@ nav:
         - 2001 ~ 2010: acm/cf/cf2001.md
         - 2011 ~ 2020: acm/cf/cf2011.md
         - 2021 ~ 2030: acm/cf/cf2021.md
+        - 2031 ~ 2040: acm/cf/cf2031.md
+        
 
     - Atcoder:
       - acm/at/index.md

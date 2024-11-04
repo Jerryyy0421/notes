@@ -1,8 +1,6 @@
 # 常规套路
 
-
-
-### 习题
+## 习题
 
 [**CF1843F2 Omsk Metro (hard version)**](https://codeforces.com/contest/1843/problem/F2)
 
@@ -19,3 +17,7 @@
 我们则只需维护一个点到它父亲的最大前驱，最小前驱，最大后驱，最小后驱，最大值，最小值，总和即可。
 
 这里用倍增维护，写的时候一个小细节是，可以重载结构体的加法，让写法更加简便。
+
+[**CF2021C2 Adjust The Presentation (Hard Version)**](https://codeforces.com/contest/2021/problem/C2)
+
+**Solution**
