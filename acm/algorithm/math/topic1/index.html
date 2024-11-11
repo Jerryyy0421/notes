@@ -5402,11 +5402,26 @@ x \equiv c_3(\mod m_3)
 <li><strong>威尔逊定理</strong></li>
 </ul>
 <p>当且仅当 <span class="arithmatex">\(p\)</span> 是质数时，<span class="arithmatex">\((p - 1)! \equiv -1(\mod p)\)</span>。</p>
+<div class="admonition success">
+<p class="admonition-title">Proof</p>
+<ul>
+<li>当 <span class="arithmatex">\(p = 2\)</span> 时显然成立。</li>
+<li>设 <span class="arithmatex">\(p \ge 3\)</span> 时，我们发现 <span class="arithmatex">\(1 \sim p - 1\)</span> 中的逆元必定两两配对，更近一步，只有 <span class="arithmatex">\(a \equiv a^{-1}\)</span> 时有些特殊，满足这个的 <span class="arithmatex">\(a\)</span> 只有 <span class="arithmatex">\(\pm 1\)</span>，也就是 <span class="arithmatex">\(\{2 \sim p - 2\}\)</span> 的逆元同样也是 <span class="arithmatex">\(\{2 \sim p - 2\}\)</span> 的一个排列，那么 <span class="arithmatex">\(\prod_{i = 2}^{p - 2}i \equiv 1(\mod p)\)</span>，那么再乘上 <span class="arithmatex">\(1\)</span> 和 <span class="arithmatex">\(p - 1\)</span>，最后有 <span class="arithmatex">\(\prod_{i = 1}^{p - 1}i \equiv -1(\mod p)\)</span>。</li>
+</ul>
+</div>
 <h2 id="_10">数论函数与求和<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <h3 id="_11">前置知识<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>数论函数：定义域为正整数的函数。陪域（值域可取的范围）一般认为是复数，在复杂的问题中也代以幂级数等。</p>
 <p>完全积性函数：若数论函数 <span class="arithmatex">\(f\)</span> 满足 <span class="arithmatex">\(f(xy) = f(x)f(y)\)</span>，则称为完全积性函数。</p>
 <p>积性函数：若数论函数 <span class="arithmatex">\(f\)</span> 满足 <span class="arithmatex">\(x \perp y \Rightarrow f(xy) = f(x)f(y)\)</span>，则称为完全积性函数。</p>
+<p>积性分解：对于积性函数 <span class="arithmatex">\(f\)</span>，给出质因数分解 <span class="arithmatex">\(n = p_1^{c_1}...p_m^{c_m}\)</span>，则有</p>
+<div class="arithmatex">\[
+    f(n) = \prod_{i = 1}^m f(p_i^{c_i})
+\]</div>
+<p>狄利克雷卷积：</p>
+<div class="arithmatex">\[
+    (f*g)(n) \sum_{x \times y = n} f(x)g(y) = \sum_{d \mid n}f(d)g(n / d)
+\]</div>
 <h3 id="_12">莫比乌斯反演<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <h3 id="_13">整除<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <h2 id="_14">习题<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>

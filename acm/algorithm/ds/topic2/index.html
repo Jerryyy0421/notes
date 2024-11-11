@@ -5067,7 +5067,7 @@
 <h1 id="_1">进阶数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">线段树<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">线段树分治<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>摘自 xht37‘s blog</p>
+<p>以下3摘自 xht37‘s blog</p>
 <blockquote>
 <p><strong>核心思想</strong></p>
 <p>考虑这样一个问题：</p>
@@ -5187,25 +5187,35 @@
 </code></pre></div>
 <h2 id="_4">习题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><a href="https://codeforces.com/problemset/problem/19/E"><strong>CF19E Boss, Thirsty</strong></a></p>
-<p><strong>Solution</strong></p>
 <blockquote>
-<p>题目是求给定一张图，只能删一条边，有多少种方法能变成二分图。</p>
+<p>给定一张图，只能删一条边，有多少种方法能变成二分图。</p>
 </blockquote>
+<p><strong>Solution</strong></p>
 <p>仔细想来，对于第 <span class="arithmatex">\(i\)</span> 条边，我们在第 <span class="arithmatex">\(i\)</span> 个时刻删掉它，相当于它在 <span class="arithmatex">\([1, i - 1]\)</span> 和 <span class="arithmatex">\([i + 1, m]\)</span> 时间段出现。</p>
 <p>这样第 <span class="arithmatex">\(i\)</span> 个时刻就是只有 <span class="arithmatex">\(i\)</span> 边不在，其他都在的情况。和线段树分治的例题一模一样，用线段树分治即可。</p>
 <p><a href="https://codeforces.com/problemset/problem/1814/F"><strong>CF1814F Communication Towers</strong></a></p>
-<p><strong>Solution</strong></p>
 <blockquote>
-<p>题目大意是每个点只在 <span class="arithmatex">\(l_i\)</span> 到 <span class="arithmatex">\(r_i\)</span> 时间段出现过，问对于每个点，是否存在一时刻和 <span class="arithmatex">\(1\)</span> 联通。</p>
+<p>每个点只在 <span class="arithmatex">\(l_i\)</span> 到 <span class="arithmatex">\(r_i\)</span> 时间段出现过，问对于每个点，是否存在一时刻和 <span class="arithmatex">\(1\)</span> 联通。</p>
 </blockquote>
+<p><strong>Solution</strong></p>
 <p>线段树分治 + 一个很巧妙的 trick。</p>
 <p>又是在时间轴上处理，很容易想到线段树分治，点的出现时间段转化为边的出现时间段。维护连通块也很自然想到并查集。</p>
 <p>但是如何维护每个点是否和 <span class="arithmatex">\(1\)</span> 联通呢？</p>
 <p>这里有一个很巧妙的点，我们可以只记录并查集的根是否和 <span class="arithmatex">\(1\)</span> 相连，用 <code>tag</code> 数组记录状态，若大于 <span class="arithmatex">\(1\)</span> 则是相连的。</p>
 <p>回溯的时候会退回到根节点和之前某个根合并的状态，这里相当于对它进行树上差分，差分的结果 <code>tag</code> 数组就表示这个合并前的根在合并之后是否也满足 <code>tag</code> 大于 <span class="arithmatex">\(0\)</span>，即是否也满足和 <span class="arithmatex">\(1\)</span> 联通。</p>
 <p>但这里注意一下，由于并查集合并上的边权是差分值，所以在合并的时候，被合并为别人儿子的那个根的 <code>tag</code> 要减去新根的 <code>tag</code>，因为回溯的时候要加回来，所以那样才是它真正的 <code>tag</code>。</p>
+<p><a href="https://codeforces.com/contest/1681/problem/F"><strong>CF1681F Unique Occurrences</strong></a></p>
+<blockquote>
+<p>一棵 <span class="arithmatex">\(n\)</span> 个点的树，每条边都有颜色。求 <span class="arithmatex">\(\sum_{u = 1}^n \sum_{v = u + 1}^n f(u, v)\)</span>。</p>
+<p>其中 <span class="arithmatex">\(f(u, v)\)</span> 表示 <span class="arithmatex">\(u\)</span> 到 <span class="arithmatex">\(v\)</span> 的简单路径中恰好出现了一次的颜色数量。</p>
+</blockquote>
+<p><strong>Solution</strong></p>
+<p>直接找路径肯定不可以，我们计算每条边可以对哪些路径产生贡献。</p>
+<p>对于颜色 <span class="arithmatex">\(i\)</span> 的贡献，显然就是断掉所有颜色为 <span class="arithmatex">\(i\)</span> 的边，然后算每条颜色为 <span class="arithmatex">\(i\)</span> 的两端对应的点所在连通块大小的乘积。累加求和即可。</p>
+<p>对于这种断边再连边的操作，我们可以采用线段树分治去做。设第 <span class="arithmatex">\(i\)</span> 个时刻所有颜色为 <span class="arithmatex">\(i\)</span> 的边都断开，其余时刻连上，然后算这个时刻连通块大小乘积，用可撤回并查集很好维护。</p>
 <h2 id="_5">参考资料<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.xht37.com/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%88%86%E6%B2%BB-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">线段树分治 学习笔记</a></p>
+<p><a href="https://www.cnblogs.com/dx123">董晓算法</a></p>
 
 
 
