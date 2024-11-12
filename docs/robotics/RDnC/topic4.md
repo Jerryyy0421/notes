@@ -1,6 +1,6 @@
 # Nonlinear Control
 
-## 4x01. Input-Output Linearization
+## 0x01. Input-Output Linearization
 
 For a nonlinear system:
 
@@ -40,11 +40,11 @@ $$
 $$
 
 
-## 4x02. CLF-QP controller
+## 0x02. CLF-QP controller
 
 
 
-## 4x03. CLF-QP + input saturation
+## 0x03. CLF-QP + input saturation
 
 
 

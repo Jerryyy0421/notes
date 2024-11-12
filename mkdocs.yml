@@ -1,7 +1,105 @@
-site_name: Ana_Su's NoteBook
+site_name: Jerry_Su's NoteBook
 site_description: 生生不息
 repo_name: Ana_Su/notes
 repo_url: https://github.com/AnaSuuuu/notes
+
+theme:
+  font: false
+  name: material    
+  language: 'en'
+  favicon: images/favicon.png
+  icon: 
+    logo: material/notebook-outline
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - content.code.select
+    - content.code.copy
+
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+      # primary: teal
+      accent: purple 
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode    
+      # primary: teal
+      # accent: lime
+
+markdown_extensions:
+    - pymdownx.arithmatex:
+          generic: true
+    - pymdownx.highlight:
+        anchor_linenums: true
+    - pymdownx.tabbed:
+        alternate_style: true
+        combine_header_slug: true
+    - toc:
+        permalink: true
+        toc_depth: 4
+    - meta # 支持markdown博客文件头的元数据，比如标题
+    - footnotes # 支持脚注
+    - abbr
+    - tables # 支持表格
+    - pymdownx.snippets
+    - admonition  # 支持提示块
+    - pymdownx.details  # 提示块可折叠
+    - pymdownx.superfences
+    - attr_list 
+    - pymdownx.critic
+    - pymdownx.caret
+    - pymdownx.keys
+    - pymdownx.mark
+    - pymdownx.tilde
+    - md_in_html
+    - def_list
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.inlinehilite # 支持行内语法高亮
+    # - pymdownx.highlight: # 支持代码块语法高亮，！！！跟mermaid冲突
+    #     linenums: true # 显示行号
+    - pymdownx.superfences: # 可在列表等处嵌入块
+        # make exceptions to highlighting of code:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:mermaid2.fence_mermaid
+
+extra_javascript:
+    - javascripts/katex.js 
+    - https://cdn.tonycrane.cc/utils/katex.min.js
+
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+  - https://cdn.tonycrane.cc/utils/katex.min.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  
+extra:
+  social: # 社交账号
+    - icon: fontawesome/brands/github
+      link: https://github.com/AnaSuuuu
+        #   name: Fusyong on Github
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/Ana_Suuuu
+        #   name: Fusyong on Twitter
+    # disqus: XXXXXXXX # disqus评论插件
+
+copyright: |
+  &copy; 2023 <a href="https://github.com/AnaSuuuu"  target="_blank" rel="noopener">Ana Su</a>
+
 
 nav:
   - Home: 
@@ -147,6 +245,14 @@ nav:
     - CS61A:
       - Building Abstractions with Functions: cs/cs61a/topic1.md
       - Building Abstractions with Data: cs/cs61a/topic2.md
+    
+    - Computer Networking:
+      - Note:
+        - Computer Networks and the Internet: cs/cnatda/topic00.md
+        - Application Layer: cs/cnatda/topic01.md
+      - Lab:
+        - lab01: cs/cnatda/lab01.md
+
 
   - YSYX:
     - ysyx/index.md
@@ -191,6 +297,7 @@ nav:
         - 进阶字符串: acm/algorithm/string/topic2.md
       - 数学: 
         - 数论: acm/algorithm/math/topic1.md
+        - 数论函数: acm/algorithm/math/topic4.md
         - 组合数学: acm/algorithm/math/topic2.md
         - 线性代数 && 博弈: acm/algorithm/math/topic3.md
       - 计算几何: 
@@ -268,101 +375,3 @@ nav:
       - The C++ Library: others/cpp/topic2.md
       - Tools for Class Authors: others/cpp/topic2.md
       - Advanced Topics: others/cpp/topic2.md
-
-theme:
-  font: false
-  name: material    
-  language: 'en'
-  favicon: images/favicon.png
-  icon: 
-    logo: material/notebook-outline
-  features:
-    - content.code.annotate
-    - navigation.tracking
-    - navigation.tabs
-    - navigation.indexes
-    - navigation.top
-    - content.code.select
-    - content.code.copy
-
-  palette:
-    - scheme: default
-      toggle:
-        icon: material/toggle-switch-off-outline 
-        name: Switch to dark mode
-      # primary: teal
-      accent: purple 
-    - scheme: slate 
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode    
-      # primary: teal
-      # accent: lime
-
-markdown_extensions:
-    - pymdownx.arithmatex:
-          generic: true
-    - pymdownx.highlight:
-        anchor_linenums: true
-    - pymdownx.tabbed:
-        alternate_style: true
-        combine_header_slug: true
-    - toc:
-        permalink: true
-        toc_depth: 4
-    - meta # 支持markdown博客文件头的元数据，比如标题
-    - footnotes # 支持脚注
-    - abbr
-    - tables # 支持表格
-    - pymdownx.snippets
-    - admonition  # 支持提示块
-    - pymdownx.details  # 提示块可折叠
-    - pymdownx.superfences
-    - attr_list 
-    - pymdownx.critic
-    - pymdownx.caret
-    - pymdownx.keys
-    - pymdownx.mark
-    - pymdownx.tilde
-    - md_in_html
-    - def_list
-    - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
-    - pymdownx.tasklist:
-        custom_checkbox: true
-    - pymdownx.inlinehilite # 支持行内语法高亮
-    # - pymdownx.highlight: # 支持代码块语法高亮，！！！跟mermaid冲突
-    #     linenums: true # 显示行号
-    - pymdownx.superfences: # 可在列表等处嵌入块
-        # make exceptions to highlighting of code:
-        custom_fences:
-            - name: mermaid
-              class: mermaid
-              format: !!python/name:mermaid2.fence_mermaid
-
-
-extra_javascript:
-    - javascripts/katex.js 
-    - https://cdn.tonycrane.cc/utils/katex.min.js
-
-    - https://polyfill.io/v3/polyfill.min.js?features=es6
-    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-extra_css:
-  - stylesheets/extra.css
-  - https://cdn.tonycrane.cc/utils/katex.min.css
-  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
-  
-extra:
-  social: # 社交账号
-    - icon: fontawesome/brands/github
-      link: https://github.com/AnaSuuuu
-        #   name: Fusyong on Github
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/Ana_Suuuu
-        #   name: Fusyong on Twitter
-    # disqus: XXXXXXXX # disqus评论插件
-
-copyright: |
-  &copy; 2023 <a href="https://github.com/AnaSuuuu"  target="_blank" rel="noopener">Ana Su</a>

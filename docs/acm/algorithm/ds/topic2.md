@@ -2,6 +2,129 @@
 
 ## 线段树
 
+### 普通线段树
+
+线段树是一类以分块思想为核心的基础且强大的数据结构。
+
+区间修改 + 区间求和。
+
+```cpp
+using i64 = long long;
+struct Info {
+    i64 sum = 0;
+};
+
+Info operator+(const Info &a, const Info &b) {
+	return {a.sum + b.sum};
+}
+
+struct SegmentTree {
+    int n;
+    std::vector<int> tag;
+    std::vector<Info> info;
+    SegmentTree(int n_) : n(n_), tag(4 * n), info(4 * n) {}
+
+    void pull(int p) {
+        info[p] = info[2 * p] + info[2 * p + 1];
+    }
+
+    void add(int p, int v, int l, int r) {
+        tag[p] += v;
+        info[p].sum += (i64) v * (r - l + 1);
+    }
+
+    void push(int p, int l, int r) {
+        int mid = (l + r) >> 1;
+        add(2 * p, tag[p], l, mid);
+        add(2 * p + 1, tag[p], mid + 1, r);
+        tag[p] = 0;
+    }
+    
+    Info query(int p, int l, int r, int nl, int nr) {
+        if (l > nr || r < nl) {
+            return {};
+        }
+        if (l >= nl && r <= nr) {
+            return info[p];
+        }
+        int m = (l + r) / 2;
+        push(p, l, r);
+        return query(2 * p, l, m, nl, nr) + query(2 * p + 1, m + 1, r, nl, nr);
+    }
+    
+    Info query(int x, int y) {
+        return query(1, 1, n, x, y);
+    }
+    
+    void rangeAdd(int p, int l, int r, int nl, int nr, int v) {
+        if (l > nr || r < nl) {
+            return;
+        }
+        if (l >= nl && r <= nr) {
+            return add(p, v, l, r);
+        }
+        int m = (l + r) / 2;
+        push(p, l, r);
+        rangeAdd(2 * p, l, m, nl, nr, v);
+        rangeAdd(2 * p + 1, m + 1, r, nl, nr, v);
+        pull(p);
+    }
+    
+    void rangeAdd(int x, int y, int v) {
+        rangeAdd(1, 1, n, x, y, v);
+    }
+    
+    void modify(int p, int l, int r, int x, const Info &v) {
+        if (r == l) {
+            info[p] = v;
+            return;
+        }
+        int m = (l + r) / 2;
+        push(p, l, r);
+        if (x <= m) {
+            modify(2 * p, l, m, x, v);
+        } else {
+            modify(2 * p + 1, m + 1, r, x, v);
+        }
+        pull(p);
+    }
+    
+    void modify(int x, const Info &v) {
+        modify(1, 1, n, x, v);
+    }
+};
+
+void solve() {
+	int n, m;
+	std::cin >> n >> m;
+    std::vector<int> a(n + 1);
+
+    SegmentTree seg(n);
+
+    for (int i = 1; i <= n; i++) {
+        std::cin >> a[i];
+        seg.modify(i, {a[i]});
+    }
+    while (m--) {
+        int op;
+        std::cin >> op;
+        if (op == 1) {
+            int x, y, k;
+            std::cin >> x >> y >> k;
+            seg.rangeAdd(x, y, k);
+        }
+        else {
+            int x, y;
+            std::cin >> x >> y;
+            std::cout << seg.query(x, y).sum << '\n';
+        }
+    }
+}
+```
+
+
+
+
 ### 线段树分治
 
 以下3摘自 xht37‘s blog
@@ -21,7 +144,7 @@
 
 - 例题
 
-[P5787 二分图 /【模板】线段树分治](https://www.luogu.com.cn/problem/P5787)
+[**P5787 二分图 /【模板】线段树分治**](https://www.luogu.com.cn/problem/P5787)
 
 **Solution**
 
@@ -34,6 +157,13 @@
 时间复杂度为 $O(m\log n\log k)$。
 
 ```cpp
+const int N = 2e5 + 5;
+
+using P = std::pair<int, int>;
+int n, m, k;
+std::vector<int> E[N << 2];
+std::vector<P> e;
+
 struct DSU {
     std::vector<int> siz;
     std::vector<int> f;
@@ -125,7 +255,6 @@ void solve() {
 		int x, y, l, r;
 		std::cin >> x >> y >> l >> r;
 		e.push_back({x, y});
-		l++;
 		update(1, 1, k, l, r, i - 1);
 	}
 	dfs(1, 1, k);
@@ -177,6 +306,54 @@ void solve() {
 对于颜色 $i$ 的贡献，显然就是断掉所有颜色为 $i$ 的边，然后算每条颜色为 $i$ 的两端对应的点所在连通块大小的乘积。累加求和即可。
 
 对于这种断边再连边的操作，我们可以采用线段树分治去做。设第 $i$ 个时刻所有颜色为 $i$ 的边都断开，其余时刻连上，然后算这个时刻连通块大小乘积，用可撤回并查集很好维护。
+
+[**P5227 [AHOI2013] 连通图**](https://www.luogu.com.cn/problem/P5227)
+
+> 给定一张 $n$ 个点 $m$ 条边的无向图，有 $k$ 次询问，每次问删完 $c_i$ 条边之后整个图还是否能联通。
+
+**Solution**
+
+数据范围为 $2\times 10^5$，考虑 $O(n\log n\log n)$ 的线段树分治，设第 $i$ 个时间点，我们把第 $i$ 次询问的边集都删除了，对于每一条边，我们记录它被删掉的时间点，然后只在它存在的时间点连边，跑线段树分治即可。
+
+和 [P10075 [GDKOI2024 普及组] 切割](https://www.luogu.com.cn/problem/P10075) 原了，但是后者数据更强，只能哈希过，做法见  。
+
+[**P5631 最小mex生成树**](https://www.luogu.com.cn/problem/P5631)
+
+> 给定一张 $n$ 个点 $m$ 条边的无向图，边有权值。求这棵树的生成树要求其边权集合的 $\text{mex}$ 最小。
+
+**Solution**
+
+我们按权值的值域来建线段树，设第 $i$ 个时刻，权值为 $i$ 的边是不存在的，若第 $i$ 时刻满足所有点联通，则 $\text{mex}$ 就是 $i$，故在 $[1, w_i - 1]$ 和 $[w_i + 1, maxn]$ 时间段连边即可。
+
+[**P4219 [BJOI2014] 大融合**](https://www.luogu.com.cn/problem/P4219)
+
+> 维护一个 $n$ 个点的森林，初始全是散点。有 $q$ 个操作，支持加边（保证这两个点之前不连边）；输出经过某一边的简单路径数。允许离线。
+
+**Solution**
+
+输出的时候让这条边消失，答案即为边所在两点的连通块乘积。一条边只在第 $i$ 时刻之后出现，且每次访问这条边的时候都会消失，跑线段树分治即可。
+
+[**P2056 [ZJOI2007] 捉迷藏**](https://www.luogu.com.cn/problem/P2056)
+
+> 一棵树，初始所有点都是黑点，每次有两种操作，一种是把黑点变为白点，把白点变为黑点；另一种是查询最远的两个黑点距离。
+
+**Solution**
+
+
+
+[**CF601E A Museum Robbery**](https://codeforces.com/contest/601/problem/E)
+
+> 
+
+**Solution**
+
+
+
+[**P4585 [FJOI2015] 火星商店问题**](https://www.luogu.com.cn/problem/P4585)
+
+> 
+
+**Solution**
 
 
 

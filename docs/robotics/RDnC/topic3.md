@@ -1,6 +1,6 @@
 # Linear Control
 
-## 3x01. Linearization
+## 0x01. Linearization
 
 Linear System: $x = Ax + Bu$
 
@@ -47,13 +47,13 @@ Methods of judging the stability of the system:
     1. For a given positive-definite matrix $P$, there exits a positive-definite matrix $Q$ which satisfies $A_{CL}^T \dot P + P \dot A_{CL} = -Q$, then the system is stable.
     2. In the linear system, for all positive-definite system $P$, there is only one positive-definite matrix $Q$, which satisfies $A_{CL}^T \dot P + P \dot A_{CL} = -Q$, then the system is stable.
 
-## 3x02. PD Control
+## 0x02. PD Control
 
 $$
     u = k_p(x_d - x) + k_d(\dot{x_d} - \dot{x})
 $$
 
-## 3x03. LQR Control
+## 0x03. LQR Control
 > Linear Quadratic Regulator Control
 
 We can't minimize the energy consumption and don't know when to reach optimality.
@@ -86,7 +86,7 @@ Q, R: coefficient matrix of cost-function
       **LQR**: $x \to 0$, $u \to 0$
     - Whether it has a cost function.
 
-## 3x04. QP Control
+## 0x04. QP Control
 > Quadratic Program Control
 
 Linear Control: $u = -kx$ without constraints
@@ -96,7 +96,7 @@ $$
 $$
 
 
-## 3x05. MPC Control
+## 0x05. MPC Control
 > Modern Predictive Control
 
 Discrete-time dynamics:
@@ -117,7 +117,7 @@ Procedures:
 - only get $u[k]$ as the next input
 
 
-## 3x05. Stability Judgment
+## 0x05. Stability Judgment
 
 
 
