@@ -1810,6 +1810,8 @@
       
         
       
+        
+      
     
     
     
@@ -1839,6 +1841,26 @@
             信息论
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信源和信源熵
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -5603,26 +5625,22 @@
 <h2 id="_4">等长信源编码定理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>定理：一个熵为 H(S) 的离散无记忆信源，若对信源长为N的符号序
 列进行等长编码，设码字是从 r 个字母的码符号集中选取 l 个码元组
-成，对任意ε&gt;0, 只要满足</p>
+成，对任意 ε&gt;0, 只要满足</p>
 <p>则当 N 足够大时,几乎可以实现无失真编码， 即译码错误的概率为任意小。</p>
-<p>1）该定理是在平稳无记忆离散信源下论证的 编码信息率
-R
-，也适用于平稳
-有记忆信源，但极限熵 和极限方差 存在。
-  H S 
- 
-2
-S  
+<p>1）该定理是在平稳无记忆离散信源下论证的 编码信息率R，也适用于平稳有记忆信源，但极限熵 和极限方差 存在。  H S 2S  
 2）当信源长度N为有限时，用等长码有失真。</p>
 <h2 id="_5">变长码<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h2 id="_6">变长信源编码定理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>平均码长 <span class="arithmatex">\(\bar L\)</span> 最小的唯一可译码（即时码）。</p>
 <p>香农第一编码定理（变长无失真信源编码定理）</p>
 <div class="arithmatex">\[
-    \dfrac{H(S)}{\log r} + \dfrac{1}{N} \ge \dfrac{\bar L_N}{N} \ge \dfrac{H(S)}{\log r}
+    \dfrac{H(S)}{\log r} \le \dfrac{\bar L_N}{N} &lt; \dfrac{1}{N} + \dfrac{H(S)}{\log r}
 \]</div>
 <h2 id="_7">变长码编码方法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>紧致码：平均码长 <span class="arithmatex">\(L\)</span> 最小的唯一可译码（即时码）。</p>
 <p><span class="arithmatex">\(r\)</span> 元霍夫曼编码方法 <span class="arithmatex">\(q = (r - 1)\theta + r\)</span>。</p>
+<p>平均码长 <span class="arithmatex">\(\bar L = \sum_{i}p(s_i)l_i\)</span></p>
+<p>编码效率 <span class="arithmatex">\(\eta = \dfrac{H(S)}{\bar L}\)</span></p>
 
 
 
@@ -5650,7 +5668,7 @@ S  
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; 2023 <a href="https://github.com/AnaSuuuu"  target="_blank" rel="noopener">Ana Su</a>
+      &copy; 2024 <a href="https://github.com/AnaSuuuu"  target="_blank" rel="noopener">Jerry</a>
 
     </div>
   

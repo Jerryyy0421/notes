@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../../">
+        <link rel="prev" href="../chap2/">
       
       
         <link rel="next" href="../chap4/">
@@ -1810,6 +1810,8 @@
       
         
       
+        
+      
     
     
     
@@ -1839,6 +1841,26 @@
             信息论
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信源和信源熵
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -5701,20 +5723,23 @@ p(b_j) = \sum_{i = 1}^r p(a_i)p(b_j/a_i)
 <li>非负性。该性质说明：离散信源通过有噪声信道传输，接收端总会获取到关于信源的信息量，除非输入输出是统计独立的。</li>
 <li>极值性。在有噪声信道中，信道疑义度总大于零。</li>
 <li>对称性（交互性）。</li>
-<li>凸函数性<ul>
-<li>意义：对于某一个固定信道，一定存在一种信源使输出端获得的平均信息量最大（存在极大值）。</li>
+<li>凸函数性
+    对于固定信道：<span class="arithmatex">\(I(X;Y)\)</span> 是输入信源的概率 <span class="arithmatex">\(p(x)\)</span> 的上凸函数。<ul>
+<li>意义：对于某一个固定信道，一定存在一种信源使输出端获得的平均信息量最大（存在极大值），即对于每种信道都存在一种最好的信源。
+对于固定信源：<span class="arithmatex">\(I(X;Y)\)</span> 是信道传递概率的概率 <span class="arithmatex">\(p(y/x)\)</span> 的下凸函数。</li>
 <li>说明：对每一种信源都存在一种最差的信道，此信道的干扰（噪声）最大，使输出端获得的信息量最小。</li>
 </ul>
 </li>
 </ul>
 <p>从通信系统角度看熵的意义</p>
 <ul>
-<li>H(X)：表示信源侧每个符号的平均信息量（信源熵）。</li>
-<li>H(Y)：表示信宿侧每个符号的平均信息量（信宿熵）。</li>
-<li>H(X|Y)：信道疑义度(含糊度)，表示在输出端接收到Y后，发送端X 尚存的平均不确定性，通常称为损失熵。</li>
-<li>H(Y|X)：信道散布度，表示在已知X后，对于输出Y尚存的平均不确定性，通常称为噪声熵。</li>
-<li>H(XY)：表示整个信息传输系统的平均不确定性。</li>
+<li><span class="arithmatex">\(H(X)\)</span>：表示信源侧每个符号的平均信息量（信源熵）。</li>
+<li><span class="arithmatex">\(H(Y)\)</span>：表示信宿侧每个符号的平均信息量（信宿熵）。</li>
+<li><span class="arithmatex">\(H(X|Y)\)</span>：信道疑义度（含糊度），表示在输出端接收到 <span class="arithmatex">\(Y\)</span> 后，发送端 <span class="arithmatex">\(X\)</span> 尚存的平均不确定性，通常称为损失熵。</li>
+<li><span class="arithmatex">\(H(Y|X)\)</span>：信道散布度，表示在已知 <span class="arithmatex">\(X\)</span> 后，对于输出 <span class="arithmatex">\(Y\)</span> 尚存的平均不确定性，通常称为噪声熵。</li>
+<li><span class="arithmatex">\(H(XY)\)</span>：表示整个信息传输系统的平均不确定性。</li>
 </ul>
+<p><img alt="" src="../assets/3-01.png" /></p>
 <h2 id="_7">离散信道的信道容量<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>信息传输率</p>
 <div class="arithmatex">\[
@@ -5737,17 +5762,33 @@ p(b_j) = \sum_{i = 1}^r p(a_i)p(b_j/a_i)
 <div class="arithmatex">\[
     C_t = \dfrac{1}{t}C = \dfrac{1}{t}\max_{p(x)} [I(X;Y)]  
 \]</div>
+<p>离散信道达到信道容量时的输入概率分布<strong>不是</strong>唯一的、输出概率分布<strong>是</strong>唯一的。</p>
+<p><strong>对称离散信道的信道容量</strong></p>
+<div class="arithmatex">\[
+    C = \log S - H(p_1', p_2',..., p_s')
+\]</div>
+<p>当输入符号是等概的时候才能达到该最大值。</p>
+<p><strong>强对称信道的信道容量</strong></p>
+<div class="arithmatex">\[
+    C = \log r - p\log(r - 1) - H(p, \bar p)
+\]</div>
+<p>当 <span class="arithmatex">\(r = 2\)</span> 时，<span class="arithmatex">\(C = 1 - H(p, \bar p)\)</span>。</p>
+<p><strong>准对称信道</strong></p>
+<div class="arithmatex">\[
+    C = \log S - H(p_1', p_2',..., p_s') - \sum_{k = 1}N_k\log M_k
+\]</div>
+<p>其中 <span class="arithmatex">\(N_k\)</span> 是第 <span class="arithmatex">\(k\)</span> 个子矩阵中行元素之和，<span class="arithmatex">\(M_k\)</span> 是第 <span class="arithmatex">\(k\)</span> 个子矩阵中列元素之和。</p>
 <h2 id="_8">离散无记忆扩展信道的信道容量<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <h2 id="_9">组合信道的信道容量<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <h2 id="_10">连续信道和波形信道的信道容量<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>连续信道的信道容量为 <span class="arithmatex">\(C = \dfrac{1}{2}\log_2\left(1 + \dfrac{P_X}{P_N}\right)\)</span></p>
 <p>信道中加性高斯白噪声的均值为零，功率谱密度为 <span class="arithmatex">\(\dfrac{n_0}{2}\)</span>，设信道带宽为 <span class="arithmatex">\(B\)</span>，则 </p>
 <div class="arithmatex">\[
-    C = BT\log_2 \left (1 + \dfrac{P_X}{n_0B} \right )
+    C = BT\log_2 \left (1 + \dfrac{P_X}{N} \right ) = BT\log_2 \left (1 + \dfrac{P_X}{n_0B} \right )
 \]</div>
 <p>Shannon 公式</p>
 <div class="arithmatex">\[
-    C_t = \lim_{T \to \infty} \dfrac{C}{T} = B\log_2 \left (1 + \dfrac{P_X}{n_0B} \right )
+    C_t = \lim_{T \to \infty} \dfrac{C}{T} = B\log_2 \left (1 + \dfrac{P_X}{N} \right )
 \]</div>
 <p>重要指导意义：</p>
 <ul>
@@ -5774,10 +5815,10 @@ p(b_j) = \sum_{i = 1}^r p(a_i)p(b_j/a_i)
 <blockquote>
 <p><span class="arithmatex">\(\dfrac{E_b}{n_0}\)</span>：能噪比，反映了系统的功率利用率，即系统利用所发送信号功率的能力；能噪比越小，系统的功率利用率越高。</p>
 </blockquote>
-<p>若想实现可靠通信，则要满足 <span class="arithmatex">\(\dfrac{E_b}{n_0} &gt; \dfrac{2^{\frac{R_b}{B} - 1}}{\frac{R_b}{B}}\)</span>。这里 <span class="arithmatex">\(R_b\)</span> 是传输速率，<span class="arithmatex">\(B\)</span> 是信道带宽。</p>
+<p>若想实现可靠通信，则要满足 <span class="arithmatex">\(R_b \le C\)</span>。又因为 <span class="arithmatex">\(P_X = R_bE_b\)</span> 且 <span class="arithmatex">\(R_b = B\log \left (1 + \dfrac{E_bR_b}{n_0B} \right )\)</span>，则有 <span class="arithmatex">\(\dfrac{E_b}{n_0} &gt; \dfrac{2^{\frac{R_b}{B} - 1}}{\frac{R_b}{B}}\)</span>。这里 <span class="arithmatex">\(R_b\)</span> 是传输速率，<span class="arithmatex">\(B\)</span> 是信道带宽。</p>
 <blockquote>
 <ol>
-<li>当能噪比较小时，频带利用率随能噪比的增大而增大；</li>
+<li>当能噪比较小时，频带利用率随能噪比的增大而增大。</li>
 <li>当能噪比较大时，频带利用率趋近于 <span class="arithmatex">\(C/B\)</span> (<span class="arithmatex">\(C_t = C\)</span>)。</li>
 </ol>
 </blockquote>
@@ -5808,7 +5849,7 @@ p(b_j) = \sum_{i = 1}^r p(a_i)p(b_j/a_i)
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; 2023 <a href="https://github.com/AnaSuuuu"  target="_blank" rel="noopener">Ana Su</a>
+      &copy; 2024 <a href="https://github.com/AnaSuuuu"  target="_blank" rel="noopener">Jerry</a>
 
     </div>
   
