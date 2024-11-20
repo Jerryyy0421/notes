@@ -98,7 +98,7 @@ extra:
     # disqus: XXXXXXXX # disqus评论插件
 
 copyright: |
-  &copy; 2023 <a href="https://github.com/AnaSuuuu"  target="_blank" rel="noopener">Ana Su</a>
+  &copy; 2024 <a href="https://github.com/AnaSuuuu"  target="_blank" rel="noopener">Jerry</a>
 
 
 nav:
@@ -211,6 +211,7 @@ nav:
     - ee/index.md
 
     - 信息论:
+      - 信源和信源熵: ee/information_theory/chap2.md
       - 信道和信道容量: ee/information_theory/chap3.md
       - 信源编码: ee/information_theory/chap4.md
     
