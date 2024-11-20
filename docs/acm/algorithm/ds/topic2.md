@@ -122,8 +122,179 @@ void solve() {
 }
 ```
 
+### 可持久化线段树
 
 
+
+- 例题
+
+[**P3919 【模板】可持久化线段树 1（可持久化数组）**](https://www.luogu.com.cn/problem/P3919)
+
+> 查询数组版本历史值。
+
+**Solution**
+
+```cpp
+const int N = 1e6 + 5;
+
+struct Info {
+    int l = 0, r = 0;
+    int val = 0;
+};
+
+std::vector<int> a(N);
+
+struct PST {
+    int n, cnt;
+    std::vector<int> rt;
+    std::vector<Info> tr;
+
+    PST(int n_): n(n_), cnt(0), rt(N << 5), tr(N << 5) {}
+
+    void build(int &root, int l, int r) {
+    	root = ++cnt;
+  		if(l == r) {
+    		tr[root].val = a[l];
+    		return ;
+  		}
+  		int mid = (l + r) >> 1;
+  		build(tr[root].l, l, mid);
+  		build(tr[root].r, mid + 1, r);
+  		return ;
+    }
+
+    void modify(int &root, int last, int l, int r, int x, int v) {
+        root = ++cnt;
+  		tr[root] = tr[last];
+  		if(l == r) {
+    		tr[root].val = v;
+    		return ;
+  		}
+  		int mid = (l + r) >> 1;
+  		if(x <= mid) modify(tr[root].l, tr[last].l, l, mid, x, v);
+  		else modify(tr[root].r, tr[last].r, mid + 1, r, x, v);
+        return ;
+    }
+
+    void modify(int a, int b, int x, int v) {
+        modify(rt[a], rt[b], 1, n, x, v);
+        return ;
+    }
+
+    int query(int root, int l, int r, int pos) {
+  		if(l == r) return tr[root].val;
+  		int mid = (l + r) >> 1;
+  		if(pos <= mid) return query(tr[root].l, l, mid, pos);
+  		else return query(tr[root].r, mid + 1, r, pos);
+	}
+
+    int query(int x, int pos) {
+        return query(rt[x], 1, n, pos);
+    }
+};
+
+void solve() {
+	int n, m;
+	std::cin >> n >> m;
+	for (int i = 1; i <= n; i++) std::cin >> a[i];
+	PST pst(n);
+	pst.build(pst.rt[0], 1, n);
+
+	for (int i = 1; i <= m; i++) {
+		int v, op, pos, num;
+		std::cin >> v >> op >> pos;
+		if (op == 1) {
+			std::cin >> num;
+			pst.modify(i, v, pos, num);
+		}
+		else {
+			std::cout << pst.query(v, pos) << '\n';
+			pst.rt[i] = pst.rt[v];
+		}
+	}
+}
+```
+
+[**P3834 【模板】可持久化线段树 2**](https://www.luogu.com.cn/problem/P3834)
+
+> 求静态区间第 $k$ 大值。
+
+**Solution**
+
+!!! warning
+    注意初始的时候 `PST` 里 `rt` 和 `tr` 数组开的大小，是 `N` 不是 `n_`。
+
+主席树的全称是可持久化权值线段树。
+
+主席树思想是每个位置都维护一个线段树，线段树的节点是值的范围，然后第 $i$ 个线段树中某个区间 $[x, y]$ 维护的是，$1 \sim i$ 中数字在 $[x, y]$ 范围内的个数。这里利用到了前缀和的思想。
+
+```cpp
+const int N = 2e5 + 5;
+
+struct Info {
+    int l = 0, r = 0;
+    int sum = 0;
+};
+
+struct PST {
+    int n, cnt;
+    std::vector<int> rt;
+    std::vector<Info> tr;
+
+    PST(int n_): n(n_), cnt(0), rt(N << 5), tr(N << 5) {}
+    
+    void modify(int &root, int last, int l, int r, int x, int v) {
+        root = ++cnt;
+		tr[root] = tr[last], tr[root].sum += v;
+        if (l == r) return;
+        int mid = l + r >> 1;
+        if (x <= mid) modify(tr[root].l, tr[last].l, l, mid, x, v);
+        else modify(tr[root].r, tr[last].r, mid + 1, r, x, v);
+        return ;
+    }
+
+    void modify(int a, int b, int x, int v) {
+        modify(rt[a], rt[b], 1, n, x, v);
+        return ;
+    }
+
+    int query(int rt_1, int rt_2, int l, int r, int num) {
+        if (l >= r) return l;
+        int x = tr[tr[rt_2].l].sum - tr[tr[rt_1].l].sum;
+        int mid = (l + r) >> 1;
+        if (x >= num) return query(tr[rt_1].l, tr[rt_2].l, l, mid, num);
+        else return query(tr[rt_1].r, tr[rt_2].r, mid + 1, r, num - x);
+    }
+
+    int query(int l, int r, int num) {
+        return query(rt[l - 1], rt[r], 1, n, num);
+    }
+};
+
+
+void solve() {
+    int n, m;
+    std::cin >> n >> m;
+    std::vector<int> a(n + 1), b;
+    for(int i = 1; i <= n; i++) std::cin >> a[i], b.push_back(a[i]);
+    std::sort(b.begin(), b.end());
+    b.erase(std::unique(b.begin(), b.end()), b.end());
+    int n0 = b.size();
+    PST pst(n0);
+    for(int i = 1; i <= n; i++) {
+        int pos = std::lower_bound(b.begin(), b.end(), a[i]) - b.begin() + 1;   
+        pst.modify(i, i - 1, pos, 1);
+    }
+
+    while(m--) {
+        int l, r, k;
+        std::cin >> l >> r >> k;
+        int pos = pst.query(l, r, k) - 1;
+        std::cout << b[pos] << '\n'; 
+    }
+    return ;
+}
+```
 
 ### 线段树分治
 
@@ -260,6 +431,14 @@ void solve() {
 	dfs(1, 1, k);
 }
 ```
+
+### 线段树合并
+
+
+
+
+## 平衡树
+
 
 
 

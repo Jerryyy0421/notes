@@ -1,8 +1,12 @@
-# 图论
+# 网络流
 
-## 网络流
+## 网络流算法
 
 ### 最大流
+
+[**P3376 【模板】网络最大流**](https://www.luogu.com.cn/problem/P3376)
+
+**Solution**
 
 主要有 EK 算法 和 Dicnic 算法，其中 Dinic 算法效率更高。
 
@@ -71,7 +75,7 @@ void solve(){
 ```
 
 
-Dicnic 代码实现。时间复杂度是 $O(n^2m)$。
+Dinic 代码实现。时间复杂度是 $O(n^2m)$。
 
 ```cpp
 using i64 = long long;
@@ -97,8 +101,8 @@ struct MF {
         cnt = 0;
     }
 
-    void add_edge(int u, int v, int w) {
-        e[cnt] = {v, fir[u], w, 0};
+    void add_edge(int u, int v, int c) {
+        e[cnt] = {v, fir[u], c, 0};
         fir[u] = cnt++;
         e[cnt] = {u, fir[v], 0, 0};
         fir[v] = cnt++;
@@ -256,6 +260,103 @@ void solve() {
 }
 ```
 
+### 费用流
+
+在最大流的基础上，每条边都有单位流量的费用。我们需要求出在最大化流量的前提下，还要使得总费用最小。
+
+**定理**：求得同流量中最小费用的流，当且仅当残量网络中不存在负环（费用和为负数的环）。
+
+- 例题
+
+[**P3381 【模板】最小费用最大流**](https://www.luogu.com.cn/problem/P3381)
+
+**Solution**
+
+```cpp
+const int N = 5e5;
+const int INF = 0x3f3f3f3f;
+
+struct MCMF {
+    int S, T, cnt = 1, Mincost, Maxflow;
+    int head[N], dis[N], book[N], vis[N];
+    std::deque <int> q;
+    struct Edge {
+        int to, w, c, nxt;
+    } e[N << 1];
+	
+    void init() {
+        memset(head, 0, sizeof(head));
+        for (int i = 1; i <= cnt; i++)
+            e[i].to = e[i].w = e[i].c = e[i].nxt = 0;
+       	cnt = 1;
+        Mincost = Maxflow = 0;
+    }
+    
+    void add(int from, int to, int w, int c) {
+        e[++cnt].nxt = head[from];
+        e[cnt].w = w;
+        e[cnt].c = c;
+        e[cnt].to = to;
+        head[from] = cnt;
+    }
+    
+    void ADD(int from, int to, int w, int c) {
+        add(from, to, w, c), add(to, from, 0, -c);
+    }
+
+    void clear() {
+        memset(book, 0, sizeof(book));
+        memset(vis, 0, sizeof(vis));
+        memset(dis, 0x3f, sizeof(dis));
+        dis[S] = 0;
+        q.push_front(S);
+    }
+
+    bool spfa() {
+        clear();
+        while (!q.empty()) {
+            int x = q.front();
+            q.pop_front(), vis[x] = 0;
+            for (int i = head[x]; i; i = e[i].nxt) {
+                int v = e[i].to;
+                if (e[i].w <= 0 || dis[v] <= dis[x] + e[i].c)
+                    continue;
+                dis[v] = dis[x] + e[i].c;
+                if (vis[v]) continue;
+                vis[v] = 1;
+                if (!q.empty() && dis[q.front()] > dis[v])
+                    q.push_front(v);
+                else
+                    q.push_back(v);
+            }
+        }
+        return dis[T] != INF;
+    }
+
+    int dfs(int x, int Min) {
+        if (x == T) return Min;
+        book[x] = 1;
+        int flow = 0;
+        for (int i = head[x]; i; i = e[i].nxt) {
+            int v = e[i].to, c = e[i].c;
+            if (e[i].w <= 0 || book[v] || dis[v] != dis[x] + c)
+                continue;
+            int tmp = dfs(v, std::min(e[i].w, Min - flow));
+            flow += tmp, e[i].w -= tmp, e[i ^ 1].w += tmp, Mincost += c * tmp;
+            if (flow == Min)
+                break;
+        }
+        return flow;
+    }
+
+    void dinic() {
+        while (spfa())
+            Maxflow += dfs(S, INF);
+    }
+    
+} mf;
+```
+
 ### 二分图最大匹配
 
 新增加一个超级源点指向左边所有的点，再新增加一个超级汇点被右边所有的点指向。然后跑最大流即可。
@@ -355,3 +456,13 @@ void solve() {
     std::cout << mf.maxflow << '\n';    
 }
 ```
+
+## 网络流和二分图的经典模型
+
+### 最小割
+
+
+
+### 最大权闭合子图
+
+

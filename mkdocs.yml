@@ -181,6 +181,12 @@ nav:
       - Analysis II:
         - math/electromagnetic-field-theory/chap2.md
 
+    - Euler Project:
+      - 1 ~ 100:
+        - 1 ~ 10: math/ep/0001.md
+        - 11 ~ 20: math/ep/0011.md
+        - 21 ~ 30: math/ep/0021.md
+
 #    - 大学物理I:
 #      - math/physics_I/index.md
 #      - 刚体的定轴转动: math/physics_I/chap3.md
@@ -203,6 +209,10 @@ nav:
 
   - EE:
     - ee/index.md
+
+    - 信息论:
+      - 信道和信道容量: ee/information_theory/chap3.md
+      - 信源编码: ee/information_theory/chap4.md
     
   - Robotics:
     - Robot Dynamics and Control:
@@ -299,7 +309,8 @@ nav:
         - 数论: acm/algorithm/math/topic1.md
         - 数论函数: acm/algorithm/math/topic4.md
         - 组合数学: acm/algorithm/math/topic2.md
-        - 线性代数 && 博弈: acm/algorithm/math/topic3.md
+        - 线性代数: acm/algorithm/math/topic3.md
+        - 博弈: acm/algorithm/math/topic5.md
       - 计算几何: 
         - 二维计算几何: acm/algorithm/geometry/topic1.md
         - 三维计算几何: acm/algorithm/geometry/topic2.md
@@ -335,7 +346,6 @@ nav:
         - 2021 ~ 2030: acm/cf/cf2021.md
         - 2031 ~ 2040: acm/cf/cf2031.md
         
-
     - Atcoder:
       - acm/at/index.md
       - ABC: 
@@ -348,10 +358,10 @@ nav:
 
     - XCPC region:
       - 2023:
-        - ICPC 2023 Hong Kong: acm/xcpc/2023/icpc-hk.md
+        - ICPC Hong Kong: acm/xcpc/2023/icpc-hk.md
       - 2024:
-        - The 2024 CCPC Online Contest: acm/xcpc/2024/ccpc-ol.md
-        - The 2024 ICPC Asia East Continent Online Contest (I): acm/xcpc/2024/icpc-ol1.md
+        - CCPC Online: acm/xcpc/2024/ccpc-ol.md
+        - ICPC Online (I): acm/xcpc/2024/icpc-ol1.md
     
     
     - HDU:
@@ -361,6 +371,7 @@ nav:
       - 2024 summer:
         - Day1: acm/hdu/2023/contest01.md
         - Day2: acm/hdu/2023/contest01.md
+    
     - Nowcoder:
       - 2024 summer:
         - Day1: acm/nowcoder/2024/contest01.md
