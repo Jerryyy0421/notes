@@ -5775,9 +5775,13 @@ p(b_j) = \sum_{i = 1}^r p(a_i)p(b_j/a_i)
 <p>当 <span class="arithmatex">\(r = 2\)</span> 时，<span class="arithmatex">\(C = 1 - H(p, \bar p)\)</span>。</p>
 <p><strong>准对称信道</strong></p>
 <div class="arithmatex">\[
-    C = \log S - H(p_1', p_2',..., p_s') - \sum_{k = 1}N_k\log M_k
+    C = \log r - H(p_1', p_2',..., p_s') - \sum_{k = 1}N_k\log M_k
 \]</div>
 <p>其中 <span class="arithmatex">\(N_k\)</span> 是第 <span class="arithmatex">\(k\)</span> 个子矩阵中行元素之和，<span class="arithmatex">\(M_k\)</span> 是第 <span class="arithmatex">\(k\)</span> 个子矩阵中列元素之和。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>注意信道公式中一个是 <span class="arithmatex">\(\log s\)</span>，一个是 <span class="arithmatex">\(\log r\)</span>。</p>
+</div>
 <h2 id="_8">离散无记忆扩展信道的信道容量<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <h2 id="_9">组合信道的信道容量<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <h2 id="_10">连续信道和波形信道的信道容量<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>

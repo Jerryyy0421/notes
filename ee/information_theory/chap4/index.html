@@ -5620,6 +5620,7 @@
 <p>非奇异码：信源符号与码字是一一对应的，码字集合中所有码字都不相同。</p>
 <p>奇异码：信源符号与码字不是一一对应的，码字集合中有相同的码字。</p>
 <p>其中，非奇异码是正确译码的必要条件，非奇异码的分组码并不能保证正确的译出，当码字排在一起时还可能出现奇异性。</p>
+<p>信道编码可以提高信息传输的可靠性。</p>
 <h2 id="_3">等长码和等长信源编码定理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>对无失真编码的要求：信源符号和码字是一一对应的。且反变换也是唯一对应的。</p>
 <h2 id="_4">等长信源编码定理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
@@ -5640,7 +5641,8 @@
 <p>紧致码：平均码长 <span class="arithmatex">\(L\)</span> 最小的唯一可译码（即时码）。</p>
 <p><span class="arithmatex">\(r\)</span> 元霍夫曼编码方法 <span class="arithmatex">\(q = (r - 1)\theta + r\)</span>。</p>
 <p>平均码长 <span class="arithmatex">\(\bar L = \sum_{i}p(s_i)l_i\)</span></p>
-<p>编码效率 <span class="arithmatex">\(\eta = \dfrac{H(S)}{\bar L}\)</span></p>
+<p>编码效率 <span class="arithmatex">\(\eta = \dfrac{H(S)}{\bar L \log r}\)</span></p>
+<p>信道传递速率 <span class="arithmatex">\(R = \dfrac{H(S)}{n}\)</span></p>
 
 
 
