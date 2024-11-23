@@ -262,6 +262,7 @@ nav:
         - Computer Networks and the Internet: cs/cnatda/topic00.md
         - Application Layer: cs/cnatda/topic01.md
       - Lab:
+        - lab00: cs/cnatda/lab00.md
         - lab01: cs/cnatda/lab01.md
 
 
