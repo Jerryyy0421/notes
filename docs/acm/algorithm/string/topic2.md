@@ -148,81 +148,194 @@ $$
 ## SAM
 
 ### 代码实现
+
+根节点是 $1$。
+
 ```cpp
 struct SAM {
-  static constexpr int ALPHABET_SIZE = 26;
-  struct Node {
-    int len;
-    int link;
-    std::array<int, ALPHABET_SIZE> next;
-    Node() : len{}, link{}, next{} {}
-  };
-  std::vector<Node> t;
-  SAM() {
-    init();
-  }
-  void init() {
-    t.assign(2, Node());
-    t[0].next.fill(1);
-    t[0].len = -1;
-  }
-  int newNode() {
-    t.emplace_back();
-    return t.size() - 1;
-  }
-  int extend(int p, int c) {
-    if (t[p].next[c]) {
-      int q = t[p].next[c];
-      if (t[q].len == t[p].len + 1) {
-        return q;
-      }
-      int r = newNode();
-      t[r].len = t[p].len + 1;
-      t[r].link = t[q].link;
-      t[r].next = t[q].next;
-      t[q].link = r;
-      while (t[p].next[c] == q) {
-        t[p].next[c] = r;
-        p = t[p].link;
-      }
-      return r;
+    static constexpr int ALPHABET_SIZE = 26;
+    struct Node {
+        int len;
+        int fa; // 链接边，也即 parent tree 父边。
+        std::array<int, ALPHABET_SIZE> next; // 转移边
+        Node() : len{}, fa{}, next{} {}
+    };
+    std::vector<Node> t;
+    SAM() {
+        init();
     }
-    int cur = newNode();
-    t[cur].len = t[p].len + 1;
-    while (!t[p].next[c]) {
-      t[p].next[c] = cur;
-      p = t[p].link;
+    void init() {
+        t.assign(2, Node()) ;
+        t[0].next.fill(1);
+        t[0].len = -1;
     }
-    t[cur].link = extend(p, c);
-    return cur;
-  }
-  int extend(int p, char c, char offset = 'a') {
-    return extend(p, c - offset);
-  }
+    int newNode() {
+        t.emplace_back();
+        return t.size() - 1;
+    }
+    int add(int p, int c) {
+        if (t[p].next[c]) {
+            int q = t[p].next[c];
+            if (t[q].len == t[p].len + 1) {
+                return q;
+            }
+            int r = newNode();
+            t[r].len = t[p].len + 1;
+            t[r].fa = t[q].fa;
+            t[r].next = t[q].next;
+            t[q].fa = r;
+            while (t[p].next[c] == q) {
+                t[p].next[c] = r;
+                p = t[p].fa;
+            }
+            return r;
+        }
+        int cur = newNode();
+        cnt[cur] = 1;
+        t[cur].len = t[p].len + 1;
+        while (!t[p].next[c]) {
+            t[p].next[c] = cur;
+            p = t[p].fa;
+        }
+        t[cur].fa = add(p, c);
+        return cur;
+    }
+    int add(int p, char c, char offset = 'a') {
+        return add(p, c - offset);
+    }
     
-  int next(int p, int x) {
-    return t[p].next[x];
-  }
-    
-  int next(int p, char c, char offset = 'a') {
-    return next(p, c - 'a');
-  }
-    
-  int link(int p) {
-    return t[p].link;
-  }
-    
-  int len(int p) {
-    return t[p].len;
-  }
+    int next(int p, int x) {
+        return t[p].next[x];
+    }
+      
+    int next(int p, char c, char offset = 'a') {
+        return next(p, c - 'a');
+    }
+      
+    int fa(int p) {
+        return t[p].fa;
+    }
+      
+    int len(int p) {
+        return t[p].len;
+    }
 
-  int size() {
-    return t.size();
-  }
+    int size() {
+        return t.size();
+    }
+
 };
 
 ```
 
+- 例题
+
+[**P3804 【模板】后缀自动机（SAM）**](https://www.luogu.com.cn/problem/P3804)
+
+**Solution**
+
+```cpp
+const int N = 4e6 + 6;
+i64 cnt[N];
+
+struct SAM {
+    static constexpr int ALPHABET_SIZE = 26;
+    struct Node {
+        int len;
+        int fa; // 链接边，也即 parent tree 父边。
+        std::array<int, ALPHABET_SIZE> next; // 转移边
+        Node() : len{}, fa{}, next{} {}
+    };
+    std::vector<Node> t;
+    SAM() {
+        init();
+    }
+    void init() {
+        t.assign(2, Node()) ;
+        t[0].next.fill(1);
+        t[0].len = -1;
+    }
+    int newNode() {
+        t.emplace_back();
+        return t.size() - 1;
+    }
+    int add(int p, int c) {
+        if (t[p].next[c]) {
+            int q = t[p].next[c];
+            if (t[q].len == t[p].len + 1) {
+                return q;
+            }
+            int r = newNode();
+            t[r].len = t[p].len + 1;
+            t[r].fa = t[q].fa;
+            t[r].next = t[q].next;
+            t[q].fa = r;
+            while (t[p].next[c] == q) {
+                t[p].next[c] = r;
+                p = t[p].fa;
+            }
+            return r;
+        }
+        int cur = newNode();
+        cnt[cur] = 1;
+        t[cur].len = t[p].len + 1;
+        while (!t[p].next[c]) {
+            t[p].next[c] = cur;
+            p = t[p].fa;
+        }
+        t[cur].fa = add(p, c);
+        return cur;
+    }
+    int add(int p, char c, char offset = 'a') {
+        return add(p, c - offset);
+    }
+    
+    int next(int p, int x) {
+        return t[p].next[x];
+    }
+      
+    int next(int p, char c, char offset = 'a') {
+        return next(p, c - 'a');
+    }
+      
+    int fa(int p) {
+        return t[p].fa;
+    }
+      
+    int len(int p) {
+        return t[p].len;
+    }
+
+    int size() {
+        return t.size();
+    }
+
+};
+
+std::vector<int> e[N];
+SAM sam;
+i64 ans = 0;
+
+void dfs(int u) {
+    for(auto v: e[u]) {
+        dfs(v);
+        cnt[u] += cnt[v];
+    }
+    if(cnt[u] != 1) ans = std::max(ans, 1ll * cnt[u] * sam.len(u));
+}
+
+void solve() {
+    std::string s;
+    std::cin >> s;
+    int p = 1;
+    for(int i = 0; i < s.size(); i++) {
+        p = sam.add(p, s[i]);
+    }
+    for(int i = 1; i <= p; i++) e[sam.fa(i)].push_back(i); 
+    dfs(1);
+    std::cout << ans << '\n'; 
+}
+```
 
 ## bitset 乱搞
 
@@ -309,3 +422,6 @@ void solve() {
 [后缀自动机学习笔记(应用篇)](https://www.luogu.com/article/w967d5rp)
 
 [回文自动机学习笔记](https://www.cnblogs.com/bztMinamoto/p/9630617.html)
+
+[字符串 - 董晓算法](https://www.cnblogs.com/dx123/category/2356333.html)
+
