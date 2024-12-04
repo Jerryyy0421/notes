@@ -147,6 +147,14 @@ $$
 
 ## SAM
 
+### SAM 的构造
+
+![](assets/SAM.png)
+
+其中 parent tree（即后缀链接树） 按照子串的 endpos 将其划分为若干集合，每个集合交集为空。
+
+而后缀自动机上的每个转移边都可以形成一个子串。我们维护的就是后缀自动机和 parent tree。
+
 ### 代码实现
 
 根节点是 $1$。
@@ -160,48 +168,38 @@ struct SAM {
         std::array<int, ALPHABET_SIZE> next; // 转移边
         Node() : len{}, fa{}, next{} {}
     };
+    int las, tot; // 最后一个点以及总点数
     std::vector<Node> t;
     SAM() {
         init();
     }
     void init() {
-        t.assign(2, Node()) ;
-        t[0].next.fill(1);
-        t[0].len = -1;
+        t.assign(3, Node());
+        las = tot = 1;
     }
-    int newNode() {
+    void add(int c) {
+        int p = las, np = ++tot;
+        las = np;
         t.emplace_back();
-        return t.size() - 1;
-    }
-    int add(int p, int c) {
-        if (t[p].next[c]) {
-            int q = t[p].next[c];
-            if (t[q].len == t[p].len + 1) {
-                return q;
-            }
-            int r = newNode();
-            t[r].len = t[p].len + 1;
-            t[r].fa = t[q].fa;
-            t[r].next = t[q].next;
-            t[q].fa = r;
-            while (t[p].next[c] == q) {
-                t[p].next[c] = r;
-                p = t[p].fa;
-            }
-            return r;
+        t[np].len = t[p].len + 1;
+        for (; p && !t[p].next[c]; p = t[p].fa) t[p].next[c] = np;
+        if (!p) t[np].fa = 1;
+        else {
+            int v = t[p].next[c];
+            if (t[v].len == t[p].len + 1) t[np].fa = v;
+            else { 
+                int nv = ++tot;
+                t.emplace_back();
+                t[nv] = t[v];
+                t[nv].len = t[p].len + 1;
+                for (; p && (t[p].next[c] == v); p = t[p].fa) t[p].next[c] = nv;
+                t[np].fa = t[v].fa = nv;
+            } 
+
         }
-        int cur = newNode();
-        cnt[cur] = 1;
-        t[cur].len = t[p].len + 1;
-        while (!t[p].next[c]) {
-            t[p].next[c] = cur;
-            p = t[p].fa;
-        }
-        t[cur].fa = add(p, c);
-        return cur;
     }
-    int add(int p, char c, char offset = 'a') {
-        return add(p, c - offset);
+    void add(char c, char offset = 'a') {
+        return add(c - offset);
     }
     
     int next(int p, int x) {
@@ -228,11 +226,17 @@ struct SAM {
 
 ```
 
-- 例题
+### 例题
+
+**1. SAM 可以求出所有本质不同子串的出现次数。**
 
 [**P3804 【模板】后缀自动机（SAM）**](https://www.luogu.com.cn/problem/P3804)
 
+> 请你求出 $S$ 的所有出现次数不为 $1$ 的子串的出现次数乘上该子串长度的最大值。
+
 **Solution**
+
+利用 SAM 构造出 parent tree，parent tree 可以表示出全部的子串。在 parent tree 上跑一个 dfs 即可统计出每个子串出现的次数。
 
 ```cpp
 const int N = 4e6 + 6;
@@ -246,48 +250,38 @@ struct SAM {
         std::array<int, ALPHABET_SIZE> next; // 转移边
         Node() : len{}, fa{}, next{} {}
     };
+    int las, tot; // 最后一个点以及总点数
     std::vector<Node> t;
     SAM() {
         init();
     }
     void init() {
-        t.assign(2, Node()) ;
-        t[0].next.fill(1);
-        t[0].len = -1;
+        t.assign(3, Node());
+        las = tot = 1;
     }
-    int newNode() {
+    void add(int c) {
+        int p = las, np = ++tot;
+        las = np;
         t.emplace_back();
-        return t.size() - 1;
-    }
-    int add(int p, int c) {
-        if (t[p].next[c]) {
-            int q = t[p].next[c];
-            if (t[q].len == t[p].len + 1) {
-                return q;
-            }
-            int r = newNode();
-            t[r].len = t[p].len + 1;
-            t[r].fa = t[q].fa;
-            t[r].next = t[q].next;
-            t[q].fa = r;
-            while (t[p].next[c] == q) {
-                t[p].next[c] = r;
-                p = t[p].fa;
-            }
-            return r;
+        t[np].len = t[p].len + 1;
+        for (; p && !t[p].next[c]; p = t[p].fa) t[p].next[c] = np;
+        if (!p) t[np].fa = 1;
+        else {
+            int v = t[p].next[c];
+            if (t[v].len == t[p].len + 1) t[np].fa = v;
+            else { 
+                int nv = ++tot;
+                t.emplace_back();
+                t[nv] = t[v];
+                t[nv].len = t[p].len + 1;
+                for (; p && (t[p].next[c] == v); p = t[p].fa) t[p].next[c] = nv;
+                t[np].fa = t[v].fa = nv;
+            } 
+
         }
-        int cur = newNode();
-        cnt[cur] = 1;
-        t[cur].len = t[p].len + 1;
-        while (!t[p].next[c]) {
-            t[p].next[c] = cur;
-            p = t[p].fa;
-        }
-        t[cur].fa = add(p, c);
-        return cur;
     }
-    int add(int p, char c, char offset = 'a') {
-        return add(p, c - offset);
+    void add(char c, char offset = 'a') {
+        return add(c - offset);
     }
     
     int next(int p, int x) {
@@ -321,21 +315,160 @@ void dfs(int u) {
         dfs(v);
         cnt[u] += cnt[v];
     }
-    if(cnt[u] != 1) ans = std::max(ans, 1ll * cnt[u] * sam.len(u));
+    if(cnt[u] > 1) ans = std::max(ans, 1ll * cnt[u] * sam.len(u));
 }
 
 void solve() {
     std::string s;
     std::cin >> s;
-    int p = 1;
     for(int i = 0; i < s.size(); i++) {
-        p = sam.add(p, s[i]);
+        sam.add(s[i]);
     }
-    for(int i = 1; i <= p; i++) e[sam.fa(i)].push_back(i); 
+    int tmp = 1;
+    for (int i = 0; i < s.size(); i++) {
+        tmp = sam.next(tmp, s[i]);
+        cnt[tmp] = 1;
+    }
+    for(int i = 2; i <= sam.tot; i++) e[sam.fa(i)].push_back(i); 
     dfs(1);
     std::cout << ans << '\n'; 
 }
 ```
+
+**2. SAM 可以求出所有本质不同子串的总个数。**
+
+[**P2408 不同子串个数**](https://www.luogu.com.cn/problem/P2408)
+
+> 给你一个长为 $n$ 的字符串，求不同的子串的个数。
+
+**Solution**
+
+本题有两种方法。
+
+方法一：
+
+parent tree 每个节点表示的串没有交集，而且一定表示了所有的串。故把所有节点表示的串的个数加起来即为答案。
+
+$ans = \sum sam.len(i) - sam.len(sam.fa(i))$。
+
+```cpp
+const int N = 4e6 + 6;
+i64 cnt[N];
+
+struct SAM {
+    static constexpr int ALPHABET_SIZE = 26;
+    struct Node {
+        int len;
+        int fa; // 链接边，也即 parent tree 父边。
+        std::array<int, ALPHABET_SIZE> next; // 转移边
+        Node() : len{}, fa{}, next{} {}
+    };
+    int las, tot; // 最后一个点以及总点数
+    std::vector<Node> t;
+    SAM() {
+        init();
+    }
+    void init() {
+        t.assign(3, Node());
+        las = tot = 1;
+    }
+    void add(int c) {
+        int p = las, np = ++tot;
+        las = np;
+        t.emplace_back();
+        t[np].len = t[p].len + 1;
+        for (; p && !t[p].next[c]; p = t[p].fa) t[p].next[c] = np;
+        if (!p) t[np].fa = 1;
+        else {
+            int v = t[p].next[c];
+            if (t[v].len == t[p].len + 1) t[np].fa = v;
+            else { 
+                int nv = ++tot;
+                t.emplace_back();
+                t[nv] = t[v];
+                t[nv].len = t[p].len + 1;
+                for (; p && (t[p].next[c] == v); p = t[p].fa) t[p].next[c] = nv;
+                t[np].fa = t[v].fa = nv;
+            } 
+
+        }
+    }
+    void add(char c, char offset = 'a') {
+        return add(c - offset);
+    }
+    
+    int next(int p, int x) {
+        return t[p].next[x];
+    }
+      
+    int next(int p, char c, char offset = 'a') {
+        return next(p, c - 'a');
+    }
+      
+    int fa(int p) {
+        return t[p].fa;
+    }
+      
+    int len(int p) {
+        return t[p].len;
+    }
+
+    int size() {
+        return t.size();
+    }
+
+};
+
+std::vector<int> e[N];
+SAM sam;
+i64 ans = 0;
+
+void solve() {
+    int n;
+    std::cin >> n;
+    std::string s;
+    std::cin >> s;
+    for(int i = 0; i < n; i++) {
+        sam.add(s[i]);
+    }
+    i64 ans = 0;
+    for(int i = 2; i <= sam.tot; i++) ans += sam.len(i) - sam.len(sam.fa(i)); 
+    dfs(1);
+    std::cout << ans << '\n'; 
+}
+```
+
+方法二：
+
+SAM 本质是一个 DAG，从根节点所走的转移边可以形成一个子串，我们可以在上面跑 dp，我们令 `f[u]` 表示从 `u` 开始的可以形成的字符串个数。并且由于每个顶点出发形成的串都是互不相同的，那么转移的时候是 `f[u] += f[v]`，再算上自己 `f[u]++`。
+
+最后统计答案的时候要减去空串，答案即为 `f[1] - 1`。
+
+```cpp
+void dfs(int u) {
+    if (cnt[u]) return ;
+    for (int i = 0; i < 26; i++) {
+        int v = sam.next(u, i); 
+        if (v) dfs(v);
+        cnt[u] += cnt[v];
+    }
+    cnt[u]++;
+}
+
+void solve() {
+    int n;
+    std::cin >> n;
+    std::string s;
+    std::cin >> s;
+    for(int i = 0; i < n; i++) {
+        sam.add(s[i]);
+    }
+    dfs(1);
+    std::cout << cnt[1] - 1 << '\n'; 
+}
+```
+
+
 
 ## bitset 乱搞
 
@@ -347,7 +480,7 @@ void solve() {
 
 **这样我们就在 $O\left(\dfrac{|s|\sum |t|}{\omega}\right)$ 的时间内求出了所有模式串在文本串中出现的所有位置。**
 
-### 习题
+### 例题
 
 [**CF914F Substrings in a String**](https://codeforces.com/problemset/problem/914/F)
 
@@ -410,6 +543,20 @@ void solve() {
 证明：长度为 $L$ 的字符串 $\text{endpos}$ 集合大小最多为 $n - L + 1 \le n$，而 $\sum L \le M$ 意味着最多只有 $\sqrt{M}$ 种长度，得证。
 
 故总时间复杂度为 $O\left(\dfrac{|s|\sum |t|}{\omega} + |s|\sqrt{\sum |t|}\right)$。
+
+
+## 习题
+
+[**CF802I Fake News (hard)**](https://codeforces.com/contest/802/problem/I)
+
+> 给定一个串 $S$，对于所有的子串，求 $\sum_p \text{cnt}^2(s, p)$，其中 $\text{cnt}(s, p)$ 表示 $p$ 在 $s$ 中出现的次数。
+
+**Solution**
+
+SAM 的典型应用，比较板。
+
+SAM 可以方便求出在每个划分集合下子串出现的次数，那么我们直接求出平方相加即可，即为 $\sum cnt^2_u \times (len[u] - len[fa_u] )$。
+
 
 ## 参考资料
 
