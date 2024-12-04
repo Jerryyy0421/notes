@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2923,6 +2928,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    小清新思维 && 构造
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2933,6 +2951,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    习题
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -5487,6 +5531,23 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    习题
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -5504,9 +5565,56 @@
   
 
 
-  <h1>小清新思维 && 构造</h1>
-
-
+<h1 id="_1">小清新思维 &amp;&amp; 构造<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">习题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a href="https://codeforces.com/contest/802/problem/H"><strong>CF802H Fake News (medium)</strong></a></p>
+<blockquote>
+<p>给定 <span class="arithmatex">\(n\)</span>，构造出子串 <span class="arithmatex">\(p\)</span> 和 <span class="arithmatex">\(s\)</span>，使得 <span class="arithmatex">\(p\)</span> 恰在 <span class="arithmatex">\(s\)</span> 中出现 <span class="arithmatex">\(n\)</span> 次。其中 <span class="arithmatex">\(p\)</span> 和 <span class="arithmatex">\(s\)</span> 的长度均不超过 <span class="arithmatex">\(200\)</span>。</p>
+</blockquote>
+<p><strong>Solution</strong></p>
+<p>巧妙构造题。</p>
+<p>方法一：</p>
+<p>由于这个长度有限制，最后多半按照形如进制拆分的形式去构造。</p>
+<p>且最后是选择子串，我们想到和组合数相关。一开始想选择的 <span class="arithmatex">\(p\)</span> 是 <code>ab</code>，但是这样很难能达到 <span class="arithmatex">\(n\)</span> 个数。</p>
+<p>故选择 <span class="arithmatex">\(p\)</span> 可以是连续若干 <span class="arithmatex">\(a\)</span> 加上一个 <span class="arithmatex">\(b\)</span>。假定 <span class="arithmatex">\(p\)</span> 是 <code>aaaaab</code>，那么最后的答案就是形如 </p>
+<div class="arithmatex">\[
+\sum_{i = 1} a_i \times \binom{n}{5}。
+\]</div>
+<p>这个式子就和进制拆分有点类似了，并且我们发现这个 <span class="arithmatex">\(a_i\)</span> 和 <span class="arithmatex">\(n\)</span> 都不可能太大，所以按这种方法构造即可。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">solve</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">calc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="n">i64</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i64</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cnt</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">calc</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">            </span><span class="n">i</span><span class="o">--</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">calc</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="n">cnt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cnt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="p">}</span><span class="w">   </span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; aaaaab</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">}</span>
+</code></pre></div>
+<p>方法二：（官方做法）</p>
+<p>我们假设现在已经构造出 <span class="arithmatex">\(p\)</span> 恰好在 <span class="arithmatex">\(s\)</span> 中出现了 <span class="arithmatex">\(k\)</span> 次。</p>
+<p>那么由于我们要在长度不太长的情况下能够造出 <strong>任意且足够大</strong> 的数。</p>
+<p>我们不难想到要可以从 <span class="arithmatex">\(k \to k + 1\)</span> 以及 <span class="arithmatex">\(k \to 2k\)</span>。</p>
+<ul>
+<li>对于 <span class="arithmatex">\(k \to 2k\)</span> 比较简单，设现在是 <span class="arithmatex">\(p\)</span> 和 <span class="arithmatex">\(s\)</span>，那么 <span class="arithmatex">\(p' = px\)</span>，<span class="arithmatex">\(s' = sxx\)</span>（<span class="arithmatex">\(x\)</span> 是之前没出现的字母）。</li>
+<li>对于 <span class="arithmatex">\(k \to k + 1\)</span> 比较复杂，但是我们可以构造出 <span class="arithmatex">\(k \to 2k + 1\)</span>。设现在是 <span class="arithmatex">\(p\)</span> 和 <span class="arithmatex">\(s = pu\)</span>，那么 <span class="arithmatex">\(p' = px\)</span>，<span class="arithmatex">\(s' = pxuxx\)</span>（<span class="arithmatex">\(x\)</span> 是之前没出现的字母）。注意这里 <span class="arithmatex">\(s\)</span> 并不用严格等于 <span class="arithmatex">\(pu\)</span>，这里前面的 <span class="arithmatex">\(p\)</span> 即表示 <span class="arithmatex">\(s\)</span> 中 <span class="arithmatex">\(p\)</span> 首次出现的位置。</li>
+</ul>
+<p>这里第二个构造很巧妙。可以这样想，第一个 <span class="arithmatex">\(x\)</span> 只能和前面的 <span class="arithmatex">\(p\)</span> 配对，贡献为 <span class="arithmatex">\(1\)</span>，后面的两个 <span class="arithmatex">\(x\)</span> 均和 <span class="arithmatex">\(pxu\)</span> 配对，贡献都是 <span class="arithmatex">\(k\)</span>，故 <span class="arithmatex">\(k \to 2k + 1\)</span>。</p>
+<p>有这样的操作之后就可以把 <span class="arithmatex">\(n\)</span> 按二进制划分，然后逐位构造。</p>
 
 
 
