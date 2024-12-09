@@ -63,4 +63,50 @@ $$
 \mu = I^{-1} \Leftrightarrow \sum_{d \mid n}\mu(d) = [n = 1]
 $$
 
+莫比乌斯公式的表达式为
+
+$$
+\mu(x) = \left\{\begin{matrix}
+ 1, & n = 1 \\
+ (-1)^m, & n = p_1p_2...p_m \\
+ 0, & \text{otherwise}
+\end{matrix}\right.
+$$
+
+莫比乌斯反演公式
+
+$$
+    g(n) = \sum_{d \mid n} f(d) \Leftrightarrow f(n) = \sum_{d \mid n} \mu(d) g\left (\dfrac{d}{n}\right )
+$$
+
+利用狄利克雷卷积形式改写可得
+
+$$
+    f * 1 = g \Leftrightarrow f = g * \mu
+$$  
+
+### 例题
+
+> 求 $1 \le x \le n$，$1 \le y \le m$ 且 $\text{gcd}(x, y) = 1$ 的二元组数量。
+
+**Solution**
+
+
+> 求 $1 \le x \le n$，$1 \le y \le m$ 且 $\text{gcd}(x, y) = k$ 的二元组数量。
+
+**Solution**
+
+
+
+> 求 $\sum_{i = 1}^n\sum_{j = 1}^n\text{gcd}(i, j)$。
+
+**Solution**
+
+$$
+    \sum_{i = 1}^n\sum_{j = 1}^n\text{gcd}(i, j) = \\
+    
+$$
+
+
+
 ## 整除

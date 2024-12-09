@@ -26,19 +26,19 @@
 
 ```cpp
 struct DSU {
-    std::vector<size_t> fa, size;
+    std::vector<int> fa, size;
 
-    size_t find(size_t x) { return fa[x] == x ? x : find(fa[x]); }
+    int find(int x) { return fa[x] == x ? x : find(fa[x]); }
 
-    explicit DSU(size_t size_) : fa(size_), size(size_, 1) {
+    explicit DSU(int size_) : fa(size_), size(size_, 1) {
         std::iota(fa.begin(), fa.end(), 0);
     }
 
-    bool query(size_t x, size_t y) {
+    bool query(int x, int y) {
     	return (find(x) == find(y));
     }
 
-    void merge(size_t x, size_t y) {
+    void merge(int x, int y) {
         x = find(x), y = find(y);
         if (x == y) return;
         if (size[x] < size[y]) std::swap(x, y);
@@ -46,7 +46,7 @@ struct DSU {
         size[x] += size[y];
     }
 
-    void move(size_t x, size_t y) {
+    void move(int x, int y) {
         auto fx = find(x), fy = find(y);
         if (fx == fy) return;
         fa[x] = fy;
@@ -59,19 +59,19 @@ struct DSU {
 
 ```cpp
 struct DSU {
-    std::vector<size_t> fa, rk;
+    std::vector<int> fa, rk;
 
-    size_t find(size_t x) { return fa[x] == x ? x : find(fa[x]); }
+    int find(int x) { return fa[x] == x ? x : find(fa[x]); }
 
-    explicit DSU(size_t size_) : fa(size_), rk(size_, 1) {
+    explicit DSU(int size_) : fa(size_), rk(size_, 1) {
         std::iota(fa.begin(), fa.end(), 0);
     }
 
-    bool query(size_t x, size_t y) {
+    bool query(int x, int y) {
     	return (find(x) == find(y));
     }
 
-    void merge(size_t x, size_t y) {
+    void merge(int x, int y) {
         x = find(x), y = find(y);
         if (rk[x] <= rk[y])
             fa[x] = y;
@@ -305,32 +305,32 @@ struct Fenwick{
  
     Fenwick(int n) : n(n), tr(n + 1, 0){}
  
-    int lowbit(int x){
+    int lowbit(int x) {
         return x & -x;
     }
  
-    void modify(int x, T c){
+    void modify(int x, T c) {
         for(int i = x; i <= n; i += lowbit(i)) tr[i] += c;
     }
  
-    void modify(int l, int r, T c){
+    void modify(int l, int r, T c) {
         modify(l, c);
         if (r + 1 <= n) modify(r + 1, -c);
     }
  
-    T query(int x){
+    T query(int x) {
         T res = T();
         for(int i = x; i; i -= lowbit(i)) res += tr[i];
         return res;
     }
  
-    T query(int l, int r){
+    T query(int l, int r) { 
         return query(r) - query(l - 1);
     }
  
-    int find_first(T sum){
+    int find_first(T sum) {
         int ans = 0; T val = 0;
-        for(int i = __lg(n); i >= 0; i--){
+        for(int i = __lg(n); i >= 0; i--) {
             if ((ans | (1 << i)) <= n && val + tr[ans | (1 << i)] < sum){
                 ans |= 1 << i;
                 val += tr[ans];
@@ -339,9 +339,9 @@ struct Fenwick{
         return ans + 1;
     }
  
-    int find_last(T sum){
+    int find_last(T sum) {
         int ans = 0; T val = 0;
-        for(int i = __lg(n); i >= 0; i--){
+        for(int i = __lg(n); i >= 0; i--) {
             if ((ans | (1 << i)) <= n && val + tr[ans | (1 << i)] <= sum){
                 ans |= 1 << i;
                 val += tr[ans];
@@ -358,6 +358,22 @@ using BIT = Fenwick<int>;
 
 ## 习题
 
+
+[**CF2018D Max Plus Min Plus Size**](https://codeforces.com/contest/2018/problem/D)
+
+> 给定长度 $n$ 数组，不能选择相邻的元素，要求选择的最大元素，最小元素，选择个数之和最大。 
+
+**Solution**
+
+挺巧妙的题，并查集做法。略微有点细节。
+
+不难发现，如果最终选择的元素没有整个数组的最大值，那么我们可以换一下选择的奇偶选择最大值，这样答案是不减的。
+
+所以最大值一定会选上。这下我们可以从大到小枚举最小值，这是相当于每次加入若干新的数，将整个数组分成若干段。用并查集来维护统计个数。
+
+注意的是，我们还要记录每段取最大情况的时候是否能取到最大值。对于每一段，我们可能尽量取 $\left \lceil \dfrac{len}{2} \right \rceil$，所以如果我们每一段都这样取的话可能会出现没取最大值的情况，所以要判断一下每段奇数位和偶数位能不能取到最大值。如果全都没取到最后答案要减一（少取一个数来取最大值）。
+
+以及，我们不用考虑当前枚举的最小值是否真的会被取到。假设没被取到，那么一定没有之前的优，所以不会对答案产生影响。
 
 
 

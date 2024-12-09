@@ -5,7 +5,7 @@
 
 ## 习题
 
-[**F Choose Your Queries**](https://codeforces.com/contest/2026/problem/F)
+[**CF2026F Choose Your Queries**](https://codeforces.com/contest/2026/problem/F)
 
 **Solution**
 
