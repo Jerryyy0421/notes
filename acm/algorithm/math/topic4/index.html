@@ -3464,10 +3464,23 @@
     莫比乌斯反演
   </a>
   
+    <nav class="md-nav" aria-label="莫比乌斯反演">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    例题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     整除
   </a>
   
@@ -5594,10 +5607,23 @@
     莫比乌斯反演
   </a>
   
+    <nav class="md-nav" aria-label="莫比乌斯反演">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    例题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     整除
   </a>
   
@@ -5671,7 +5697,39 @@ g(n) &amp; = &amp; \begin{cases}
 <div class="arithmatex">\[
 \mu = I^{-1} \Leftrightarrow \sum_{d \mid n}\mu(d) = [n = 1]
 \]</div>
-<h2 id="_5">整除<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>莫比乌斯公式的表达式为</p>
+<div class="arithmatex">\[
+\mu(x) = \left\{\begin{matrix}
+ 1, &amp; n = 1 \\
+ (-1)^m, &amp; n = p_1p_2...p_m \\
+ 0, &amp; \text{otherwise}
+\end{matrix}\right.
+\]</div>
+<p>莫比乌斯反演公式</p>
+<div class="arithmatex">\[
+    g(n) = \sum_{d \mid n} f(d) \Leftrightarrow f(n) = \sum_{d \mid n} \mu(d) g\left (\dfrac{d}{n}\right )
+\]</div>
+<p>利用狄利克雷卷积形式改写可得</p>
+<div class="arithmatex">\[
+    f * 1 = g \Leftrightarrow f = g * \mu
+\]</div>
+<h3 id="_5">例题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>求 <span class="arithmatex">\(1 \le x \le n\)</span>，<span class="arithmatex">\(1 \le y \le m\)</span> 且 <span class="arithmatex">\(\text{gcd}(x, y) = 1\)</span> 的二元组数量。</p>
+</blockquote>
+<p><strong>Solution</strong></p>
+<blockquote>
+<p>求 <span class="arithmatex">\(1 \le x \le n\)</span>，<span class="arithmatex">\(1 \le y \le m\)</span> 且 <span class="arithmatex">\(\text{gcd}(x, y) = k\)</span> 的二元组数量。</p>
+</blockquote>
+<p><strong>Solution</strong></p>
+<blockquote>
+<p>求 <span class="arithmatex">\(\sum_{i = 1}^n\sum_{j = 1}^n\text{gcd}(i, j)\)</span>。</p>
+</blockquote>
+<p><strong>Solution</strong></p>
+<p>$$
+    \sum_{i = 1}^n\sum_{j = 1}^n\text{gcd}(i, j) = \</p>
+<p>$$</p>
+<h2 id="_6">整除<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 
 
 

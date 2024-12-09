@@ -5569,7 +5569,7 @@
 
 <h1 id="_1">基础图论<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">习题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><a href="https://codeforces.com/contest/2026/problem/F"><strong>F Choose Your Queries</strong></a></p>
+<p><a href="https://codeforces.com/contest/2026/problem/F"><strong>CF2026F Choose Your Queries</strong></a></p>
 <p><strong>Solution</strong></p>
 <p>首先不妨先对于每条边都选择 <span class="arithmatex">\(x_i\)</span>，然后如果我们后来改选 <span class="arithmatex">\(y_i\)</span> 的话，则是对这两个点都有影响，相当于均异或 <span class="arithmatex">\(1\)</span>。如果是在一条链上，则是会链式地改变一系列的值。最后整条链上的值就是 <span class="arithmatex">\(n \mod 2\)</span>。</p>
 <p>我们把这些操作看作无向边，开始连边。我们自下向上进行操作，根据当前点的奇偶性，若是奇数，则和父亲操作一次，否则不操作。其实这样的操作逻辑，对于树，环均是成立的，我们把整个图看作若干个连通块，分别操作即可。</p>
