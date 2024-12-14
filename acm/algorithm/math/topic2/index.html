@@ -3474,6 +3474,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#min-max" class="md-nav__link">
+    Min-Max 容斥
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     习题
   </a>
@@ -5571,6 +5578,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#min-max" class="md-nav__link">
+    Min-Max 容斥
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     习题
   </a>
@@ -5681,11 +5695,27 @@
 <p class="admonition-title">Solution</p>
 <p><span class="arithmatex">\(1 \sim n\)</span> 这 <span class="arithmatex">\(n\)</span> 个自然数中选 <span class="arithmatex">\(k\)</span> 个，这 <span class="arithmatex">\(k\)</span> 个数中任何两个数都不相邻的组合有 <span class="arithmatex">\(\dbinom {n-k+1}{k}\)</span> 种。</p>
 </div>
+<h2 id="min-max">Min-Max 容斥<a class="headerlink" href="#min-max" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+    \max (S) = \sum_{T \subseteq S} (-1)^{|T| + 1}\min (T)
+\]</div>
+<p>且这个式子在期望条件下也成立</p>
+<div class="arithmatex">\[
+    E(\max (S)) = \sum_{T \subseteq S} (-1)^{|T| + 1}E(\min (T))
+\]</div>
+<p>拓展到第 <span class="arithmatex">\(k\)</span> 大的情况</p>
+<div class="arithmatex">\[
+    \text{k-th} \max (S) = \sum_{T \subseteq S} (-1)^{|T| - k} \binom{|T| - 1}{k - 1}\min (T)
+\]</div>
+<p>且同样这个式子在期望条件下也成立</p>
+<div class="arithmatex">\[
+    E(\text{k-th} \max (S)) = \sum_{T \subseteq S} (-1)^{|T| - k} \binom{|T| - 1}{k - 1}E(\min (T))
+\]</div>
 <h2 id="_4">习题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><a href="https://codeforces.com/contest/2025/problem/E"><strong>CF2025E Card Game</strong></a></p>
 <p><strong>Solution</strong></p>
 <p>计数好题，卡特兰数相关。</p>
-<p>我们首先要明白一点，对于 <span class="arithmatex">\(1\)</span> 号卡片，玩家1 的数量不少于玩家2 的数量。对于其他种类的卡片，玩家1 的数量不多于玩家2 的数量。</p>
+<p>我们首先要明白一点，对于 <span class="arithmatex">\(1\)</span> 号卡片，玩家1 的数量不少于 玩家2 的数量。对于其他种类的卡片，玩家1 的数量不多于玩家2 的数量。</p>
 <p>先仅考虑 <span class="arithmatex">\(n = 1\)</span> 的情况，相当于两人各选 <span class="arithmatex">\(\dfrac{n}{2}\)</span> 个数，保证玩家2 的每一张牌都有一张比它大的牌在玩家1 那里一一对应。玩家1 的牌相当于左括号，玩家2的牌相当于右括号，则是看作长度为 <span class="arithmatex">\(n\)</span> 的合法括号种数。</p>
 <p>对于 <span class="arithmatex">\(n &gt; 1\)</span> 的情况，玩家1 可以多拿一些 <span class="arithmatex">\(1\)</span> 号牌，抵消玩家2 多出来的其他种类的牌。</p>
 <p>我们设 <span class="arithmatex">\(F_k\)</span> 为有 <span class="arithmatex">\(k\)</span> 个右括号未被匹配的方案数。类比于卡特兰数的推导方式，这相当于走到 <span class="arithmatex">\(\left ( \dfrac{m - k}{2}, \dfrac{m + k}{2}\right )\)</span> 且不穿过直线 <span class="arithmatex">\(y = x + k\)</span> 的方案数。由于总方案数是 <span class="arithmatex">\(\binom{m}{\frac{m - k}{2}}\)</span>，不合法的部分相当于沿 <span class="arithmatex">\(y = x + k + 1\)</span> 翻折成走到 <span class="arithmatex">\(\left(\dfrac{m - k}{2} - 1, \dfrac{m + k}{2} + 1\right)\)</span> 的方案数，是 <span class="arithmatex">\(\binom{m}{\frac{m - k}{2} - 1}\)</span>。所以总方案数是</p>

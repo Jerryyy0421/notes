@@ -3486,6 +3486,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    杜教筛
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5629,6 +5636,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    杜教筛
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5692,6 +5706,14 @@ g(n) &amp; = &amp; \begin{cases}
 <li>对于积性函数 <span class="arithmatex">\(f, g\)</span>，<span class="arithmatex">\(f\circ g,f\cdot g,f(g(n))\)</span> 都是积性函数。</li>
 </ul>
 </div>
+<p>常用数论函数：</p>
+<p>单位函数 <span class="arithmatex">\(\varepsilon(n) = [n = 1]\)</span>，该函数是狄利克雷卷积下的单位元。
+幂函数 <span class="arithmatex">\(\text{Id}_k(n) = n^k\)</span>， 当 <span class="arithmatex">\(k = 1\)</span> 时为恒等函数，当 <span class="arithmatex">\(k = 0\)</span> 时为常数函数。
+除数函数 <span class="arithmatex">\(\sigma_k(n) = \sum_{d \mid n} d^k\)</span> ，当 <span class="arithmatex">\(k = 1\)</span> 时为因数和函数，当 <span class="arithmatex">\(k = 0\)</span> 时为因数个数函数。 
+欧拉函数 <span class="arithmatex">\(\varphi(n)\)</span> 定义为小于 <span class="arithmatex">\(n\)</span> 的数中和 <span class="arithmatex">\(n\)</span> 互质的个数，特别地 <span class="arithmatex">\(\varphi(1) = 1\)</span>。</p>
+<p>性质：
+- <span class="arithmatex">\(\varphi * 1 = \text{Id}\)</span>
+- <span class="arithmatex">\(\text{Id}_k * 1 = \sigma_k\)</span></p>
 <h2 id="_4">莫比乌斯反演<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>将 <span class="arithmatex">\(I\)</span> 的狄利克雷卷积逆元记为 <span class="arithmatex">\(\mu\)</span>，称作莫比乌斯函数。</p>
 <div class="arithmatex">\[
@@ -5718,18 +5740,74 @@ g(n) &amp; = &amp; \begin{cases}
 <p>求 <span class="arithmatex">\(1 \le x \le n\)</span>，<span class="arithmatex">\(1 \le y \le m\)</span> 且 <span class="arithmatex">\(\text{gcd}(x, y) = 1\)</span> 的二元组数量。</p>
 </blockquote>
 <p><strong>Solution</strong></p>
+<div class="arithmatex">\[\begin{align}
+\sum_{i = 1}^n\sum_{j = 1}^m [\text{gcd}(x, y) =1]
+&amp; = \sum_{i = 1}^n\sum_{j = 1}^m \varepsilon(\text{gcd}(x, y)) \newline
+\end{align}\]</div>
+<p>又因为 <span class="arithmatex">\(\mu * 1 = \varepsilon\)</span>，</p>
+<div class="arithmatex">\[\begin{align}
+\sum_{i = 1}^n\sum_{j = 1}^m \varepsilon(\text{gcd}(x, y))
+&amp; = \sum_{i = 1}^n\sum_{j = 1}^m \sum_{d \mid \text{gcd}(i, j)}\mu(d) \newline
+&amp; = \sum_{d = 1}^{\min (n, m)} \sum_{i = 1}^{\left \lfloor \frac{n}{d} \right \rfloor } 
+\sum_{j = 1}^{\left \lfloor \frac{m}{d} \right \rfloor }\mu(d) \newline
+&amp;= \sum_{d = 1}^{\min (n, m)} \left \lfloor \frac{n}{d} \right \rfloor\left \lfloor \frac{m}{d} \right \rfloor
+\mu(d)
+\end{align}\]</div>
 <blockquote>
 <p>求 <span class="arithmatex">\(1 \le x \le n\)</span>，<span class="arithmatex">\(1 \le y \le m\)</span> 且 <span class="arithmatex">\(\text{gcd}(x, y) = k\)</span> 的二元组数量。</p>
 </blockquote>
 <p><strong>Solution</strong></p>
+<p>令 <span class="arithmatex">\(i \to ki\)</span>，<span class="arithmatex">\(j \to kj\)</span>，所求即为 </p>
+<div class="arithmatex">\[
+\sum_{i = 1}^{\left \lfloor \frac{n}{k} \right \rfloor }\sum_{j = 1}^{\left \lfloor \frac{m}{k} \right \rfloor } [\text{gcd}(i, j) = 1]
+\]</div>
+<p>那么就和上一道例题一样了。</p>
+<p><a href="https://www.luogu.com.cn/problem/P2398"><strong>P2398 GCD SUM</strong></a></p>
 <blockquote>
-<p>求 <span class="arithmatex">\(\sum_{i = 1}^n\sum_{j = 1}^n\text{gcd}(i, j)\)</span>。</p>
+<p>求 <span class="arithmatex">\(\sum_{i = 1}^n\sum_{j = 1}^m\text{gcd}(i, j)\)</span>。</p>
 </blockquote>
 <p><strong>Solution</strong></p>
-<p>$$
-    \sum_{i = 1}^n\sum_{j = 1}^n\text{gcd}(i, j) = \</p>
-<p>$$</p>
+<div class="arithmatex">\[\begin{align}
+\sum_{i = 1}^n\sum_{j = 1}^m \text{gcd}(x, y)
+&amp; = \sum_{i = 1}^n\sum_{j = 1}^m \text{Id}(\text{gcd}(x, y)) \newline
+\end{align}\]</div>
+<p>又因为 <span class="arithmatex">\(\varphi * 1 = \text{Id}\)</span>，</p>
+<div class="arithmatex">\[\begin{align}
+\sum_{i = 1}^n\sum_{j = 1}^m \text{Id}(\text{gcd}(x, y))
+&amp; = \sum_{i = 1}^n\sum_{j = 1}^m \sum_{d \mid \text{gcd}(i, j)}\varphi(d) \newline
+&amp; = \sum_{d = 1}^{\min (n, m)} \sum_{i = 1}^{\left \lfloor \frac{n}{d} \right \rfloor } 
+\sum_{j = 1}^{\left \lfloor \frac{m}{d} \right \rfloor }\varphi(d) \newline
+&amp;= \sum_{d = 1}^{\min (n, m)}\left \lfloor \frac{n}{d} \right \rfloor\left \lfloor \frac{m}{d} \right \rfloor
+ \varphi(d)
+\end{align}\]</div>
 <h2 id="_6">整除<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">杜教筛<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>本质是狄利克雷卷积的自然推导，可以实现以 <span class="arithmatex">\(O(n^{\frac{2}{3}})\)</span> 的时间复杂度对积性函数的前缀求和。</p>
+<div class="arithmatex">\[\begin{align}
+\sum_{i = 1}^n (f*g)(i)
+&amp;= \sum_{i = 1}^n\sum_{j = 1}^{\left \lfloor \frac{n}{i} \right \rfloor }f(i)g(j)\newline
+&amp;= \sum_{i = 1}^n g(i)\sum_{j = 1}^{\left \lfloor \frac{n}{i} \right \rfloor }f(j)\newline
+&amp;= \sum_{i = 1}^n g(i)S\left (\left \lfloor \frac{n}{i} \right \rfloor\right )\newline
+&amp;= g(1)S(n) + \sum_{i = 2}^n g(i)S\left (\left \lfloor \frac{n}{i} \right \rfloor\right )\newline
+\end{align}\]</div>
+<p>那么我们便可以得到</p>
+<div class="arithmatex">\[
+g(1)S(n) = \sum_{i = 1}^n (f*g)(i) - \sum_{i = 2}^n g(i)S\left (\left \lfloor \frac{n}{i} \right \rfloor\right )
+\]</div>
+<p>对于后面的那堆式子可以递归求解。当 <span class="arithmatex">\((f*g)(n)\)</span> 和 <span class="arithmatex">\(g(n)\)</span> 的前缀和均可以 <span class="arithmatex">\(O(1)\)</span> 求解出时算法复杂度为 <span class="arithmatex">\(O(n^{\frac{3}{4}})\)</span>，若线性筛预处理 <span class="arithmatex">\(S(n)\)</span> 的前 <span class="arithmatex">\(n^{\frac{2}{3}}\)</span> 项的值，则时间复杂度可以优化到 <span class="arithmatex">\(O(n^{\frac{2}{3}})\)</span>。</p>
+<p>这里分别以求莫比乌斯函数和欧拉函数的前缀和为例。</p>
+<p>由于 <span class="arithmatex">\(\mu * 1 = \varepsilon\)</span>，令 <span class="arithmatex">\(g = 1\)</span> 则有</p>
+<div class="arithmatex">\[\begin{align}
+g(1)S(n) &amp;= \sum_{i = 1}^n (f*g)(i) - \sum_{i = 2}^n g(i)S\left (\left \lfloor \frac{n}{i} \right \rfloor\right ) \newline  
+S(n) &amp;= \sum_{i = 1}^n\varepsilon (i) - \sum_{i = 2}^n S\left (\left \lfloor \frac{n}{i} \right \rfloor\right ) \newline 
+S(n) &amp;= 1 - \sum_{i = 2}^n S\left (\left \lfloor \frac{n}{i} \right \rfloor\right )
+\end{align}\]</div>
+<p>由于 <span class="arithmatex">\(\varphi * 1 = \text{Id}\)</span>，令 <span class="arithmatex">\(g = 1\)</span> 则有</p>
+<div class="arithmatex">\[\begin{align}
+g(1)S(n) &amp;= \sum_{i = 1}^n (f*g)(i) - \sum_{i = 2}^n g(i)S\left (\left \lfloor \frac{n}{i} \right \rfloor\right ) \newline  
+S(n) &amp;= \sum_{i = 1}^n\text{Id} (i) - \sum_{i = 2}^n S\left (\left \lfloor \frac{n}{i} \right \rfloor\right ) \newline 
+S(n) &amp;= \dfrac{n(n + 1)}{2} - \sum_{i = 2}^n S\left (\left \lfloor \frac{n}{i} \right \rfloor\right )
+\end{align}\]</div>
 
 
 
