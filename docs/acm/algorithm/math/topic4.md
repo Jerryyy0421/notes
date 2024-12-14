@@ -55,6 +55,18 @@ g(n) & = & \begin{cases}
     - 积性函数的逆仍是积性函数。
     - 对于积性函数 $f, g$，$f\circ g,f\cdot g,f(g(n))$ 都是积性函数。
 
+常用数论函数：
+
+单位函数 $\varepsilon(n) = [n = 1]$，该函数是狄利克雷卷积下的单位元。
+幂函数 $\text{Id}_k(n) = n^k$， 当 $k = 1$ 时为恒等函数，当 $k = 0$ 时为常数函数。
+除数函数 $\sigma_k(n) = \sum_{d \mid n} d^k$ ，当 $k = 1$ 时为因数和函数，当 $k = 0$ 时为因数个数函数。 
+欧拉函数 $\varphi(n)$ 定义为小于 $n$ 的数中和 $n$ 互质的个数，特别地 $\varphi(1) = 1$。
+
+性质：
+- $\varphi * 1 = \text{Id}$
+- $\text{Id}_k * 1 = \sigma_k$
+
+
 ## 莫比乌斯反演
 
 将 $I$ 的狄利克雷卷积逆元记为 $\mu$，称作莫比乌斯函数。
@@ -91,22 +103,101 @@ $$
 
 **Solution**
 
+\begin{align}
+\sum_{i = 1}^n\sum_{j = 1}^m [\text{gcd}(x, y) =1]
+& = \sum_{i = 1}^n\sum_{j = 1}^m \varepsilon(\text{gcd}(x, y)) \newline
+\end{align}
+
+又因为 $\mu * 1 = \varepsilon$，
+
+\begin{align}
+\sum_{i = 1}^n\sum_{j = 1}^m \varepsilon(\text{gcd}(x, y))
+& = \sum_{i = 1}^n\sum_{j = 1}^m \sum_{d \mid \text{gcd}(i, j)}\mu(d) \newline
+& = \sum_{d = 1}^{\min (n, m)} \sum_{i = 1}^{\left \lfloor \frac{n}{d} \right \rfloor } 
+\sum_{j = 1}^{\left \lfloor \frac{m}{d} \right \rfloor }\mu(d) \newline
+&= \sum_{d = 1}^{\min (n, m)} \left \lfloor \frac{n}{d} \right \rfloor\left \lfloor \frac{m}{d} \right \rfloor
+\mu(d)
+\end{align}
+
+
 
 > 求 $1 \le x \le n$，$1 \le y \le m$ 且 $\text{gcd}(x, y) = k$ 的二元组数量。
 
 **Solution**
 
+令 $i \to ki$，$j \to kj$，所求即为 
 
+$$
+\sum_{i = 1}^{\left \lfloor \frac{n}{k} \right \rfloor }\sum_{j = 1}^{\left \lfloor \frac{m}{k} \right \rfloor } [\text{gcd}(i, j) = 1]
+$$
 
-> 求 $\sum_{i = 1}^n\sum_{j = 1}^n\text{gcd}(i, j)$。
+那么就和上一道例题一样了。
+
+[**P2398 GCD SUM**](https://www.luogu.com.cn/problem/P2398)
+
+> 求 $\sum_{i = 1}^n\sum_{j = 1}^m\text{gcd}(i, j)$。
 
 **Solution**
 
-$$
-    \sum_{i = 1}^n\sum_{j = 1}^n\text{gcd}(i, j) = \\
-    
-$$
+\begin{align}
+\sum_{i = 1}^n\sum_{j = 1}^m \text{gcd}(x, y)
+& = \sum_{i = 1}^n\sum_{j = 1}^m \text{Id}(\text{gcd}(x, y)) \newline
+\end{align}
+
+又因为 $\varphi * 1 = \text{Id}$，
+
+\begin{align}
+\sum_{i = 1}^n\sum_{j = 1}^m \text{Id}(\text{gcd}(x, y))
+& = \sum_{i = 1}^n\sum_{j = 1}^m \sum_{d \mid \text{gcd}(i, j)}\varphi(d) \newline
+& = \sum_{d = 1}^{\min (n, m)} \sum_{i = 1}^{\left \lfloor \frac{n}{d} \right \rfloor } 
+\sum_{j = 1}^{\left \lfloor \frac{m}{d} \right \rfloor }\varphi(d) \newline
+&= \sum_{d = 1}^{\min (n, m)}\left \lfloor \frac{n}{d} \right \rfloor\left \lfloor \frac{m}{d} \right \rfloor
+ \varphi(d)
+\end{align}
 
 
 
 ## 整除
+
+
+
+
+## 杜教筛
+
+本质是狄利克雷卷积的自然推导，可以实现以 $O(n^{\frac{2}{3}})$ 的时间复杂度对积性函数的前缀求和。
+
+\begin{align}
+\sum_{i = 1}^n (f*g)(i)
+&= \sum_{i = 1}^n\sum_{j = 1}^{\left \lfloor \frac{n}{i} \right \rfloor }f(i)g(j)\newline
+&= \sum_{i = 1}^n g(i)\sum_{j = 1}^{\left \lfloor \frac{n}{i} \right \rfloor }f(j)\newline
+&= \sum_{i = 1}^n g(i)S\left (\left \lfloor \frac{n}{i} \right \rfloor\right )\newline
+&= g(1)S(n) + \sum_{i = 2}^n g(i)S\left (\left \lfloor \frac{n}{i} \right \rfloor\right )\newline
+\end{align}
+
+那么我们便可以得到
+
+$$
+g(1)S(n) = \sum_{i = 1}^n (f*g)(i) - \sum_{i = 2}^n g(i)S\left (\left \lfloor \frac{n}{i} \right \rfloor\right )
+$$
+
+对于后面的那堆式子可以递归求解。当 $(f*g)(n)$ 和 $g(n)$ 的前缀和均可以 $O(1)$ 求解出时算法复杂度为 $O(n^{\frac{3}{4}})$，若线性筛预处理 $S(n)$ 的前 $n^{\frac{2}{3}}$ 项的值，则时间复杂度可以优化到 $O(n^{\frac{2}{3}})$。
+
+这里分别以求莫比乌斯函数和欧拉函数的前缀和为例。
+
+由于 $\mu * 1 = \varepsilon$，令 $g = 1$ 则有
+
+\begin{align}
+g(1)S(n) &= \sum_{i = 1}^n (f*g)(i) - \sum_{i = 2}^n g(i)S\left (\left \lfloor \frac{n}{i} \right \rfloor\right ) \newline  
+S(n) &= \sum_{i = 1}^n\varepsilon (i) - \sum_{i = 2}^n S\left (\left \lfloor \frac{n}{i} \right \rfloor\right ) \newline 
+S(n) &= 1 - \sum_{i = 2}^n S\left (\left \lfloor \frac{n}{i} \right \rfloor\right )
+\end{align}
+
+
+由于 $\varphi * 1 = \text{Id}$，令 $g = 1$ 则有
+
+\begin{align}
+g(1)S(n) &= \sum_{i = 1}^n (f*g)(i) - \sum_{i = 2}^n g(i)S\left (\left \lfloor \frac{n}{i} \right \rfloor\right ) \newline  
+S(n) &= \sum_{i = 1}^n\text{Id} (i) - \sum_{i = 2}^n S\left (\left \lfloor \frac{n}{i} \right \rfloor\right ) \newline 
+S(n) &= \dfrac{n(n + 1)}{2} - \sum_{i = 2}^n S\left (\left \lfloor \frac{n}{i} \right \rfloor\right )
+\end{align}
+
