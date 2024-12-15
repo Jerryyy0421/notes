@@ -201,3 +201,80 @@ S(n) &= \sum_{i = 1}^n\text{Id} (i) - \sum_{i = 2}^n S\left (\left \lfloor \frac
 S(n) &= \dfrac{n(n + 1)}{2} - \sum_{i = 2}^n S\left (\left \lfloor \frac{n}{i} \right \rfloor\right )
 \end{align}
 
+
+[**P4213 【模板】杜教筛**](https://www.luogu.com.cn/problem/P4213)
+
+> 分别求出莫比乌斯函数和欧拉函数的前缀和。
+
+**Solution**
+
+```cpp
+bool isnp[N];
+std::vector<int> primes;
+int mu[N], smu[N];
+std::unordered_map<i64, int> umsmu;
+i64 phi[N], sphi[N];
+std::unordered_map<i64, i64> umsphi;
+
+void sieve() {
+    mu[1] = 1;
+    phi[1] = 1;
+    for (int i = 2; i < N; i++) {
+        if (!isnp[i])
+            primes.push_back(i), mu[i] = -1, phi[i] = i - 1;
+        for (int p : primes) {
+            if (p * i >= N)
+                break;
+            isnp[p * i] = 1;
+            if (i % p == 0) {
+                mu[p * i] = 0;
+                phi[p * i] = phi[i] * p;
+                break;
+            }
+            else {
+                mu[p * i] = mu[p] * mu[i];
+                phi[p * i] = phi[p] * phi[i];
+            }
+        }
+    }
+    for (int i = 1; i < N; ++i) {
+        sphi[i] = sphi[i - 1] + phi[i]; 
+        smu[i] = smu[i - 1] + mu[i];
+    }
+}
+
+int sum_mu(i64 n) {
+    if (n < N)
+        return smu[n];
+    if (umsmu.count(n))
+        return umsmu[n];
+    int ans = 1;
+    for (i64 l = 2, r; l <= n; l = r + 1) {
+        r = n / (n / l);
+        ans -= (r - l + 1) * sum_mu(n / l);
+    }
+    umsmu[n] = ans;
+    return ans;
+}
+
+i64 sum_phi(i64 n) {
+    if (n < N)
+        return sphi[n];
+    if (umsphi.count(n))
+        return umsphi[n];
+    i64 ans = n * (n + 1) / 2; 
+    for (i64 l = 2, r; l <= n; l = r + 1) {
+        r = n / (n / l);
+        ans -= (r - l + 1) * sum_phi(n / l);
+    }
+    umsphi[n] = ans;
+    return ans;
+}
+
+
+void solve() {
+    i64 n;
+    std::cin >> n;
+    std::cout << sum_phi(n) << ' ' << sum_mu(n)<< '\n';
+}
+```

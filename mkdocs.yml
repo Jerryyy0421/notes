@@ -108,7 +108,7 @@ nav:
   - Math & Physcics: 
     - math/index.md
 
-    - Concrete Math:
+    - Concrete Mathematics:
       - math/concrete_math/index.md 
       - Recurrent Problems: math/concrete_math/chap1.md
       - Sums: math/concrete_math/chap2.md
