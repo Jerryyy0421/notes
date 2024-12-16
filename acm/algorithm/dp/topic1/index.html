@@ -5581,6 +5581,19 @@
 <p>我们设走到当前位置一共可以改变 <span class="arithmatex">\(cnt\)</span> 次。那么如果出现一个正数 <span class="arithmatex">\(x\)</span>，对 <code>f</code> 数组贡献的区间是 <span class="arithmatex">\(f_x \sim f_{cnt}\)</span>，如果出现一个负数 <span class="arithmatex">\(x\)</span>，对 <code>f</code> 数组贡献的区间是 <span class="arithmatex">\(f_0 \sim f_{x + cnt + 1}\)</span>。</p>
 <p>区间修改可以用线段树，但是没必要。这里用差分数组即可。</p>
 <p>对于出现一个 <span class="arithmatex">\(0\)</span> 时，转移方程为 <span class="arithmatex">\(f_i = \max\{f_i, f_{i - 1}\}\)</span>。所以我们先恢复成原数组，再转移，再变成差分数组。操作一次时间复杂度为 <span class="arithmatex">\(O(m)\)</span>，一共 <span class="arithmatex">\(m\)</span> 个 <span class="arithmatex">\(0\)</span>，最终时间复杂度为 <span class="arithmatex">\(O(n + m^2)\)</span>。</p>
+<p><a href="https://leetcode.cn/contest/weekly-contest-428/problems/minimum-operations-to-make-character-frequencies-equal/description/"><strong>Leetcode 3389</strong></a></p>
+<blockquote>
+<p>给你一个字符串 <span class="arithmatex">\(s\)</span>。如果字符串 <span class="arithmatex">\(t\)</span> 中的字符出现次数相等，那么我们称 <span class="arithmatex">\(t\)</span> 为 好的。</p>
+<p>你可以对 <span class="arithmatex">\(s\)</span> 进行增添，删减任意个字符或让字母变成字母表下一个字母，但是不能将 'z' 变为 'a'。</p>
+<p>请你返回将 <span class="arithmatex">\(s\)</span> 变 好的 最少操作次数。</p>
+</blockquote>
+<p><strong>Solution</strong></p>
+<p>分情况讨论的 DP。</p>
+<p>我们首先枚举最终字符出现次数，那么每种字符要么出现 <span class="arithmatex">\(num\)</span> 次，要么 <span class="arithmatex">\(0\)</span> 次。</p>
+<p>我们分别令 <code>f[i][0]</code> 和 <code>f[i][1]</code> 为这两种情况下的最佳答案。</p>
+<p>分情况讨论，其实只有前一个字符次数多于 <span class="arithmatex">\(num\)</span> 且当前字符少于 <span class="arithmatex">\(num\)</span> 且最终要变为 <span class="arithmatex">\(num\)</span></p>
+<p>或 前一个字符次数最终要变为 <span class="arithmatex">\(0\)</span> 且当前字符少于 <span class="arithmatex">\(num\)</span> 且最终要变为 <span class="arithmatex">\(num\)</span> 时才会出现向后移。</p>
+<p>其他都是正常增删即可。即讨论相邻 <code>00</code>，<code>01</code>，<code>11</code>，<code>10</code> 的情况即可。</p>
 
 
 

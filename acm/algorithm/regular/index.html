@@ -5577,6 +5577,13 @@
 <p>由于全是 <span class="arithmatex">\(1\)</span> 和 <span class="arithmatex">\(-1\)</span>，如果一个区间能构成的最大值大于等于 <span class="arithmatex">\(k\)</span>，最小值小于等于 <span class="arithmatex">\(k\)</span>，则一定可以构成。</p>
 <p>我们则只需维护一个点到它父亲的最大前驱，最小前驱，最大后驱，最小后驱，最大值，最小值，总和即可。</p>
 <p>这里用倍增维护，写的时候一个小细节是，可以重载结构体的加法，让写法更加简便。</p>
+<p><a href="https://leetcode.com/problems/count-beautiful-splits-in-an-array/description/"><strong>Leetcode 3388</strong></a></p>
+<blockquote>
+<p>给定一个序列，分成三段，要求第一段是第二段的前缀或第二段是第三段的前缀。</p>
+</blockquote>
+<p><strong>Solution</strong></p>
+<p>令 <code>lcs[i][j]</code> 表示以 <span class="arithmatex">\(i\)</span> 和 <span class="arithmatex">\(j\)</span> 开头的最长公共前缀长度，求的时候从后往前求，若 <code>a[i] == a[j]</code> 则 <code>lcs[i][j] = lcs[i + 1][j + 1] + 1</code>，否则 <code>lcs[i][j] = 0</code>。</p>
+<p>然后枚举两个中间节点，判断是否前一段是后一段的前缀即可。</p>
 <p><a href="https://codeforces.com/contest/2021/problem/C2"><strong>CF2021C2 Adjust The Presentation (Hard Version)</strong></a></p>
 <p><strong>Solution</strong></p>
 
