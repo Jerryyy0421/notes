@@ -343,7 +343,7 @@ struct DSU {
     DSU(int n) : siz(n + 1, 1), f(n + 1) {
         std::iota(f.begin(), f.end(), 0);
     }
-
+    
     int find(int x) {
         while (f[x] != x) {
             x = f[x];

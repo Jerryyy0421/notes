@@ -18,6 +18,17 @@
 
 这里用倍增维护，写的时候一个小细节是，可以重载结构体的加法，让写法更加简便。
 
+[**Leetcode 3388**](https://leetcode.com/problems/count-beautiful-splits-in-an-array/description/)
+
+> 给定一个序列，分成三段，要求第一段是第二段的前缀或第二段是第三段的前缀。
+
+**Solution**
+
+令 `lcs[i][j]` 表示以 $i$ 和 $j$ 开头的最长公共前缀长度，求的时候从后往前求，若 `a[i] == a[j]` 则 `lcs[i][j] = lcs[i + 1][j + 1] + 1`，否则 `lcs[i][j] = 0`。
+
+然后枚举两个中间节点，判断是否前一段是后一段的前缀即可。
+
 [**CF2021C2 Adjust The Presentation (Hard Version)**](https://codeforces.com/contest/2021/problem/C2)
 
 **Solution**
+

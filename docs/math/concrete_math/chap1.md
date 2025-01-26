@@ -8,7 +8,6 @@
 对于 n 条折线划分区域个数 $Z_n$，可以看作是两条直线，然后每两条直线（即一个折线）切割的区域少了 2 个，满足 $Z_n = L_{2n} - 2n = 2n^2 - n + 1$。
 
 ## 0x01. Exercise
-
 ### Exercise 8
 
 ![01-e08](images/01-e08.png)
@@ -17,7 +16,7 @@
     $Q_0 = \alpha, Q_1 = \beta, Q_2 = \dfrac{1 + \beta}{\alpha}, Q_3 = \dfrac{1 + \alpha + \beta}{\alpha\beta}, Q_4 = \dfrac{1 + \alpha}{\beta}, Q_5 = \alpha, Q_6 = \beta$
 
     呈周期变换。
-
+    
 
 ### Exercise 9
 
