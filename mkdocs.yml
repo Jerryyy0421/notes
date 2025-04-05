@@ -265,6 +265,13 @@ nav:
         - lab00: cs/cnatda/lab00.md
         - lab01: cs/cnatda/lab01.md
 
+    - CSAPP:
+      - notes:
+        - Data Lab: cs/csapp/topic01.md
+        - Bomb Lab: cs/csapp/topic02.md
+      - Labs:
+        - Data Lab: cs/csapp/lab01.md
+        - Bomb Lab: cs/csapp/lab02.md
 
   - YSYX:
     - ysyx/index.md
